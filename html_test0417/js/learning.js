@@ -94,6 +94,41 @@ const learningData = [
             </div>
           </details>
         `
+      },
+      {
+        title: '股市参与者生态',
+        content: `
+          <p class="mb-3">理解股市中不同参与者的行为模式，是新手超越同龄投资者的关键一步。A股市场不是散户与散户的零和博弈，而是散户、机构、北向资金、国家队、游资五大力量之间的多维博弈。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>散户（个人投资者）</strong></p>
+            <p>A股散户数量超过2亿，但资金占比不到30%。散户的典型特征是：追涨杀跌、信息滞后、情绪化交易、缺乏风控。据统计，散户年化收益率中位数为负。但散户也有独特优势——船小好调头，没有持仓比例限制，可以全仓单只股票。</p>
+            <p><strong>机构投资者（公募/私募/保险/社保）</strong></p>
+            <p>机构拥有研究团队、数据优势和信息渠道。公募基金持仓每季度披露（季报/半年报/年报），可以通过"机构重仓股"了解聪明钱的动向。但机构也有劣势：规模大导致进出不便，业绩排名压力导致羊群效应，风控限制导致灵活性不足。</p>
+            <p><strong>北向资金（沪深港通）</strong></p>
+            <p>通过香港交易所流入A股的境外资金。北向资金被称为"聪明钱"，因为外资研究机构对A股的估值体系更成熟。每天收盘后可以在东方财富查看"北向资金净流入"——连续多日大幅流入通常是中期底部信号，连续流出则需警惕。</p>
+            <p><strong>国家队（证金/汇金/社保基金）</strong></p>
+            <p>在市场极端恐慌时（如2015年股灾、2024年初大跌），国家队会入场维稳。国家队的持仓以大盘蓝筹为主（银行、保险、券商、石油），特点是长期持有、不频繁交易。跟紧国家队不适合追求高收益，但适合保守型投资者避险。</p>
+            <p><strong>游资（短线大户）</strong></p>
+            <p>游资是A股最活跃的短期资金，典型的如"章盟主""方新侠"等。游资偏好小市值、题材热的股票，擅长打造涨停板。龙虎榜（每日盘后公布）可以查看游资席位。新手不建议追随游资——游资的进出速度散户跟不上，往往成为接盘侠。</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">实战演练</p>
+            <p class="text-sm text-blue-700">打开同花顺APP → 首页 → "资金流向" → 查看"北向资金"今日净流入金额。再点击 "龙虎榜" → 查看今日哪只股票的买入席位最多。记录你观察到的现象：北向资金流入时大盘通常涨还是跌？龙虎榜上有机构专用席位的股票次日表现如何？</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">核心洞察</p>
+            <p class="text-sm text-yellow-700">不同参与者的"时间框架"不同：游资看分钟线，散户看日线，机构看季度线，国家队看年线。当你决定买入一只股票时，先问问自己——你和谁在交易？对方为什么卖？如果你不知道对手是谁，就不要下单。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 北向资金为什么被称为"聪明钱"？</p>
+              <p>2. 国家队的典型持仓特征是什么？</p>
+              <p>3. 为什么不建议新手追随游资操作？</p>
+              <p>4. 散户相对于机构的唯一优势是什么？</p>
+            </div>
+          </details>
+        `
       }
     ]
   },
@@ -202,6 +237,40 @@ const learningData = [
               <p>1. 印花税是单向还是双向收取？</p>
               <p>2. 每月交易20次、每次10万、佣金万2，年化成本大约是多少？</p>
               <p>3. 降低交易成本的三个方法是什么？</p>
+            </div>
+          </details>
+        `
+      },
+      {
+        title: '停牌、复牌与除权除息',
+        content: `
+          <p class="mb-3">除了日常交易规则，A股还有一些特殊机制会直接影响你的持仓和收益。新手如果对停牌、复牌、除权除息不了解，很容易在操作中吃亏。</p>
+          <p class="mb-3"><strong>停牌</strong>是指股票暂停交易。常见原因包括：重大资产重组、发布重大公告、股价异常波动被监管问询、召开股东大会等。停牌时间从1天到数月不等。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>停牌期间的风险</strong></p>
+            <p>1. <strong>资金冻结</strong>：停牌期间无法卖出，资金被锁定。如果停牌前重仓，期间遇到大盘大跌只能干瞪眼。</p>
+            <p>2. <strong>复牌补跌/补涨</strong>：如果停牌期间大盘大跌，复牌后通常要补跌；反之如果板块大涨，复牌后可能补涨甚至一字涨停。</p>
+            <p>3. <strong>重大重组失败</strong>：如果停牌是为了重组，但重组最终失败，复牌后通常连续跌停。2023年某芯片股重组失败复牌后7个跌停，散户损失惨重。</p>
+          </div>
+          <p class="mb-3"><strong>除权除息（XR/XD/DR）</strong>：上市公司分红或送股后，股价需要相应调整，这个调整过程叫除权除息。</p>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3 text-sm">
+            <p class="font-medium text-blue-800 mb-1">除权除息计算公式</p>
+            <p><strong>除息价</strong> = 股权登记日收盘价 - 每股现金分红</p>
+            <p><strong>除权价</strong> = 股权登记日收盘价 ÷ (1 + 每股送股比例)</p>
+            <p class="mt-2"><strong>举例</strong>：某股票收盘价20元，公告每10股派5元送3股。除息除权后参考价 = (20 - 0.5) ÷ 1.3 = 15.0元。你的持股数量增加了30%，但单价下降了，总资产不变。</p>
+          </div>
+          <p class="mb-3"><strong>填权与贴权</strong>：除权后股价重新涨回除权前的价格叫"填权"，说明市场看好；除权后股价继续下跌叫"贴权"，说明市场看淡。高分红、低估值的白马股填权概率较高。</p>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">实操提醒</p>
+            <p class="text-sm text-yellow-700">1. 持股不到一个月卖出，分红要缴20%个人所得税；持股1个月到1年缴10%；持股超过1年免税。2. 不要为了"抢权"（股权登记日前买入博分红）而买入，因为除权后价格会下调，短期卖出还要缴税，往往得不偿失。3. 停牌股复牌首日通常波动极大，新手不建议首日参与。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 停牌期间最大的风险是什么？</p>
+              <p>2. 除权除息后你的总资产会变吗？</p>
+              <p>3. 持股多久分红可以免税？</p>
+              <p>4. 什么是填权和贴权？</p>
             </div>
           </details>
         `
@@ -314,6 +383,36 @@ const learningData = [
               <p>1. 限价委托和市价委托的区别是什么？</p>
               <p>2. A股最低买入数量是多少？</p>
               <p>3. 为什么新手建议用限价委托？</p>
+            </div>
+          </details>
+        `
+      },
+      {
+        title: '高级看盘技巧',
+        content: `
+          <p class="mb-3">当你已经熟悉同花顺的基本操作后，下一步是掌握高级看盘技巧。专业投资者和散户的一大区别，就在于看盘工具的使用效率和深度。</p>
+          <p class="mb-3"><strong>多周期同列</strong>：在同一屏幕上同时查看一只股票的不同周期K线（如日线+60分钟线+15分钟线）。这可以帮助你判断大周期趋势和小周期买卖点的关系。操作方法：同花顺电脑版 → 右键 → "多周期同列"。</p>
+          <p class="mb-3"><strong>多股同屏（多股同列）</strong>：同时监控4只、9只甚至16只股票的实时走势。适合同时关注板块内多只龙头股，或监控持仓组合的整体表现。快捷键：Ctrl+4（4股同列）、Ctrl+9（9股同列）。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>龙虎榜解读</strong>：每日收盘后，交易所会公布涨跌幅偏离值达±7%、日换手率达20%、日价格振幅达15%的股票的买卖席位。龙虎榜是观察游资和机构动向的重要窗口。</p>
+            <p>关键看点：1. 买入席位中是否有"机构专用"（机构买入通常代表中长期看好）。2. 卖出席位中是否出现知名游资（游资出货后次日通常低开）。3. 买入金额是否均匀分布（如果前五买入占比超过50%，说明筹码集中，后续波动大）。</p>
+            <p><strong>资金流向</strong>：同花顺的"资金流向"功能可以查看大盘、板块、个股的资金净流入/流出。注意区分"大单流入"（机构行为）和"小单流入"（散户行为）。</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">实战演练</p>
+            <p class="text-sm text-blue-700">打开同花顺电脑版，练习以下操作：1. 打开任意股票，按Ctrl+4切换到4股同列。2. 按F5在日K和分时图之间切换。3. 盘后查看今日龙虎榜，找出机构净买入最多的3只股票。4. 查看自选股列表中哪只股票的"大单净流入"最多。</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">避坑指南</p>
+            <p class="text-sm text-yellow-700">不要盲目相信"资金流向"指标。有些软件的资金流向是估算而非真实成交数据，不同软件统计口径差异很大。资金流向只能作为辅助参考，不能作为买卖依据。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 多周期同列有什么作用？</p>
+              <p>2. 龙虎榜中"机构专用"席位买入通常代表什么？</p>
+              <p>3. 为什么资金流向不能作为买卖依据？</p>
+              <p>4. 多股同屏的快捷键是什么？</p>
             </div>
           </details>
         `
@@ -460,6 +559,40 @@ const learningData = [
             </div>
           </details>
         `
+      },
+      {
+        title: 'K线周期与级别',
+        content: `
+          <p class="mb-3">很多新手只看日线，忽略了不同时间周期的配合分析。实际上，日线、周线、月线传递的信息完全不同，多周期共振是高手判断趋势的核心方法。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>日线（日线级别）</strong>：最常用的周期，反映短期趋势。适合短线交易者和波段操作者。日线MACD金叉通常代表1-2周的上涨周期。</p>
+            <p><strong>周线（周线级别）</strong>：反映中期趋势，噪音比日线少。周线多头排列说明中期趋势向上，即使日线回调也是低吸机会。职业投资者的核心决策周期通常是周线。</p>
+            <p><strong>月线（月线级别）</strong>：反映长期趋势，适合价值投资者。月线级别的底部形态（如W底、圆弧底）一旦确认，往往预示着数月的上涨行情。</p>
+            <p><strong>分钟线（5/15/30/60分钟）</strong>：用于日内交易和精确买卖点。60分钟线MACD顶背离通常预示日线级别即将调整。新手不建议过度依赖分钟线，容易陷入频繁交易。</p>
+          </div>
+          <p class="mb-3"><strong>周期共振原则</strong>：当多个周期同时发出同向信号时，成功概率大幅提升。</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3 text-sm">
+            <div class="bg-red-50 p-3 rounded"><p class="font-medium text-up"> bullish 共振（买入信号）</p><p>月线趋势向上 + 周线MACD金叉 + 日线放量突破</p></div>
+            <div class="bg-green-50 p-3 rounded"><p class="font-medium text-down"> bearish 共振（卖出信号）</p><p>月线趋势向下 + 周线MACD死叉 + 日线跌破MA20</p></div>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">实战演练</p>
+            <p class="text-sm text-blue-700">打开同花顺，选择一只你关注的股票：1. 按F5切换到周线，判断中期趋势方向。2. 再切换到月线，判断长期趋势方向。3. 回到日线，寻找与周月趋势同向的买入/卖出信号。记录你的发现：如果三个周期方向不一致，应该听谁的？</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">核心原则</p>
+            <p class="text-sm text-yellow-700">大周期决定小周期，小周期服从大周期。如果月线在下跌，日线出现金叉也不应重仓买入；如果月线在上涨，日线回调到MA20反而是加仓机会。这叫"看大做小"。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 职业投资者的核心决策周期通常是？</p>
+              <p>2. 什么是"看大做小"？</p>
+              <p>3. 当三个周期方向不一致时，应该听谁的？</p>
+              <p>4. 为什么新手不建议过度依赖分钟线？</p>
+            </div>
+          </details>
+        `
       }
     ]
   },
@@ -569,6 +702,38 @@ const learningData = [
               <p>1. MA20在什么情况下被视为支撑？</p>
               <p>2. 年线（MA250）的牛熊分界意义是什么？</p>
               <p>3. 放量跌破支撑且3天无法收回，应该怎么做？</p>
+            </div>
+          </details>
+        `
+      },
+      {
+        title: '均线粘合与均线发散',
+        content: `
+          <p class="mb-3">均线的排列状态可以告诉我们市场处于什么阶段。最常见的两种状态是<strong>粘合</strong>和<strong>发散</strong>，它们分别代表了蓄势期和趋势期。</p>
+          <p class="mb-3"><strong>均线粘合</strong>：当MA5、MA10、MA20、MA60等多条均线纠缠在一起，距离很近甚至交叉，称为均线粘合。这说明多空双方力量均衡，市场正在酝酿方向选择。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>粘合后的突破方向判断</strong>：</p>
+            <p>1. <strong>看位置</strong>：低位粘合向上突破概率大，高位粘合向下突破概率大。横盘整理时间越长，突破后力度越大（"横有多长，竖有多高"）。</p>
+            <p>2. <strong>看成交量</strong>：粘合末期如果成交量明显放大，且阳线多于阴线，向上突破概率大。</p>
+            <p>3. <strong>看MACD</strong>：粘合时如果MACD在零轴附近走平，一旦DIF上穿DEA且红柱放大，配合突破。</p>
+          </div>
+          <p class="mb-3"><strong>均线发散</strong>：当短期均线和长期均线之间的距离拉大，形成明显的多头排列或空头排列，称为均线发散。发散代表趋势正在进行中。</p>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3 text-sm">
+            <p class="font-medium text-blue-800 mb-1">乖离率（BIAS）</p>
+            <p>乖离率衡量股价与某条均线的偏离程度。当股价远离MA5时，短期回调概率大；当股价远离MA60时，中期回归概率大。</p>
+            <p class="mt-2"><strong>粗略判断</strong>：强势股连续上涨后，股价与MA5的乖离率超过10%通常会有1-3天回调；连续下跌后，股价低于MA5超过10%通常会有技术性反弹。</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">实战纪律</p>
+            <p class="text-sm text-yellow-700">均线粘合时不要急于入场——方向未明时入场等于赌博。正确做法是：等待股价放量突破粘合区上轨，且回踩确认不破，再考虑建仓。粘合区本身也是重要的支撑/压力区域，突破后回踩不破粘合区上沿是最佳买点。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 均线粘合代表什么市场状态？</p>
+              <p>2. 判断粘合后突破方向的三个要素是什么？</p>
+              <p>3. 为什么均线粘合时不应急于入场？</p>
+              <p>4. 乖离率过大时通常会怎样？</p>
             </div>
           </details>
         `
@@ -709,6 +874,35 @@ const learningData = [
             </div>
           </details>
         `
+      },
+      {
+        title: '主力建仓与出货的量能特征',
+        content: `
+          <p class="mb-3">成交量是识别主力资金动向的最直接窗口。主力从建仓到出货，通常会经历<strong>吸筹、洗盘、拉升、出货</strong>四个阶段，每个阶段的量能特征都有明显差异。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>1. 吸筹阶段</strong>：主力在低位悄悄买入，不希望引起市场注意。特征是：股价波动小，成交量温和放大但不突兀，常出现"阳线放量、阴线缩量"的健康结构。K线多以小阳线和十字星为主。此阶段持续1-3个月甚至更久。</p>
+            <p><strong>2. 洗盘阶段</strong>：吸筹完成后，主力会刻意打压股价，吓出不坚定的散户。特征是：快速下跌但成交量萎缩（说明主力没有出货），常跌破重要均线制造恐慌。洗盘时间通常1-2周，结束后迅速拉回。</p>
+            <p><strong>3. 拉升阶段</strong>：主力开始主动拉抬股价。特征是：连续阳线，成交量阶梯式放大，股价突破前期平台。拉升初期量价齐升最健康；拉升末期可能出现"量价背离"（股价新高但成交量未新高），这是见顶预警。</p>
+            <p><strong>4. 出货阶段</strong>：主力在高位派发筹码给散户。特征是：成交量异常放大但股价滞涨，K线出现长上影线或高位十字星，利好消息频现但股价不涨。典型的出货形态是"高位放量阴线"和"M头"。</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">实战演练</p>
+            <p class="text-sm text-blue-700">在同花顺中找一只近期涨幅超过50%的股票，回顾它过去3个月的K线和成交量：1. 能否找到底部的吸筹区？（小阳线+温和放量）2. 拉升过程中成交量是否持续放大？3. 最近是否出现放量滞涨或高位长上影线？判断它目前处于四阶段的哪个阶段。</p>
+          </div>
+          <div class="bg-red-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-red-800 mb-1">新手陷阱</p>
+            <p class="text-sm text-red-700">不要看到放量上涨就认为是主力建仓——也可能是主力对倒诱多。真正的建仓发生在低位且时间较长（1个月以上），高位放量通常是出货而非建仓。记住：位置比形态更重要。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 吸筹阶段的典型K线特征是什么？</p>
+              <p>2. 洗盘阶段成交量的特征是什么？</p>
+              <p>3. 拉升末期的量价背离意味着什么？</p>
+              <p>4. 出货阶段最常见的K线形态是什么？</p>
+            </div>
+          </details>
+        `
       }
     ]
   },
@@ -839,6 +1033,45 @@ const learningData = [
               <p>1. 布林带收口意味着什么？</p>
               <p>2. 筹码低位密集和高位密集分别代表什么？</p>
               <p>3. 布林带突破上轨后是否应该立即卖出？</p>
+            </div>
+          </details>
+        `
+      },
+      {
+        title: '多指标共振实战策略',
+        content: `
+          <p class="mb-3">单一技术指标的成功率通常只有50-60%，但多个指标同时发出同向信号时，成功率可以提升到70%以上。这就是<strong>指标共振</strong>的核心思想——用多个独立的验证维度过滤掉假信号。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>共振组合1：MACD + KDJ + 均线</strong></p>
+            <p>买入条件：日线MACD金叉（DIF上穿DEA）+ KDJ在20以下金叉 + 股价站上MA20。三个条件同时满足时买入，成功率约70%。卖出条件：MACD死叉或股价跌破MA20。</p>
+            <p><strong>共振组合2：均线 + 成交量 + K线形态</strong></p>
+            <p>买入条件：MA5金叉MA20 + 成交量放大到近期2倍 + 出现看涨吞没或早晨之星。这是趋势+量能+形态的三维共振，适合波段操作。</p>
+            <p><strong>共振组合3：布林带 + MACD + RSI</strong></p>
+            <p>买入条件：布林带收口后股价突破中轨 + MACD红柱放大 + RSI从30下方回升到50上方。这是震荡转趋势的经典信号。</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3 text-sm">
+            <p class="font-medium text-blue-800 mb-1">共振策略的筛选清单</p>
+            <p>每次交易前，强制自己回答以下问题，只有当多数答案为"是"时才下单：</p>
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li>大盘是否处于上升趋势或震荡（非单边下跌）？</li>
+              <li>个股所在板块近期是否有资金流入？</li>
+              <li>至少2个技术指标发出同向信号？</li>
+              <li>成交量是否配合（突破放量/回调缩量）？</li>
+              <li>是否有明确的止损位？</li>
+              <li>单笔仓位是否不超过总资金的30%？</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">注意事项</p>
+            <p class="text-sm text-yellow-700">共振不是万能药。在极端行情（如2015年股灾、2024年初流动性危机）中，所有技术指标都会失效。共振策略最适合<strong>震荡市和温和趋势市</strong>，在单边暴跌或暴涨市中应降低仓位或空仓观望。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 指标共振的核心思想是什么？</p>
+              <p>2. MACD+KDJ+均线的买入条件是什么？</p>
+              <p>3. 共振策略在什么市场环境下最容易失效？</p>
+              <p>4. 下单前的筛选清单有几项？</p>
             </div>
           </details>
         `
@@ -973,6 +1206,36 @@ const learningData = [
             </div>
           </details>
         `
+      },
+      {
+        title: '缺口理论与实战应用',
+        content: `
+          <p class="mb-3"><strong>缺口（Gap）</strong>是指股价在快速变动中，某段价格区间内没有任何成交，在K线图上表现为一段空白区域。缺口是技术分析中极具参考价值的信号，因为它代表了市场情绪的突变。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>1. 普通缺口</strong>：出现在横盘整理中，很快会被回补（股价回到缺口区域）。普通缺口没有特殊意义，不需要特别关注。</p>
+            <p><strong>2. 突破缺口</strong>：股价突破重要整理平台或趋势线时形成的缺口。特征是伴随大成交量，且短期内不会被回补。突破缺口是趋势启动的强力信号，突破向上可追，突破向下要跑。</p>
+            <p><strong>3. 持续缺口（测量缺口）</strong>：出现在趋势中段，表示趋势正在加速。持续缺口的出现点通常是趋势的中点——从趋势起点到缺口的距离，约等于从缺口到趋势终点的距离。这个特性可以用来估算目标位。</p>
+            <p><strong>4. 衰竭缺口</strong>：出现在趋势末端，是主力最后的"冲刺"。特征是成交量很大但股价涨幅有限，缺口出现后2-3天内往往被回补。衰竭缺口是趋势即将反转的预警信号。</p>
+          </div>
+          <p class="mb-3"><strong>缺口的支撑与压力</strong>：向上突破缺口形成后，缺口上沿变成重要支撑位；向下突破缺口形成后，缺口下沿变成重要压力位。如果缺口被反向回补，说明突破失败，应及时止损。</p>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">实战演练</p>
+            <p class="text-sm text-blue-700">在K线图中找一只近期有过涨停的股票，观察它涨停当天是否留下跳空缺口：1. 缺口出现的位置（低位、中段还是高位？）。2. 缺口出现时的成交量是否放大？3. 缺口出现后3天内是否被回补？根据这些特征判断这是哪种类型的缺口。</p>
+          </div>
+          <div class="bg-red-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-red-800 mb-1">常见误区</p>
+            <p class="text-sm text-red-700">"缺口必补"是A股流传最广的谬论之一。事实上，突破缺口和持续缺口往往数月甚至数年不被回补。只有普通缺口和衰竭缺口才高概率回补。如果你因为"相信缺口必补"而逆势操作，很容易大亏。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 四种缺口分别是什么？</p>
+              <p>2. 突破缺口的特征是什么？</p>
+              <p>3. 为什么说"缺口必补"是谬论？</p>
+              <p>4. 衰竭缺口出现后通常多久会被回补？</p>
+            </div>
+          </details>
+        `
       }
     ]
   },
@@ -1097,6 +1360,37 @@ const learningData = [
               <p>1. 新能源产业链上中下游分别是什么？</p>
               <p>2. 医药板块最大的政策利空是什么？</p>
               <p>3. 扩张期应该重点配置哪些板块？</p>
+            </div>
+          </details>
+        `
+      },
+      {
+        title: '宏观经济指标解读',
+        content: `
+          <p class="mb-3">股价短期由情绪驱动，中期由资金驱动，长期由经济基本面驱动。理解宏观经济指标，可以帮助你判断A股的大方向，避免在逆周期中重仓操作。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>CPI（居民消费价格指数）</strong>：衡量通胀水平。CPI > 3%表示通胀偏高，央行可能加息收紧流动性，对股市不利；CPI < 1%表示通缩风险，企业盈利承压，也对股市不利。CPI在1-2%的温和区间对股市最有利。</p>
+            <p><strong>PPI（工业生产者出厂价格指数）</strong>：衡量工业品价格。PPI上升说明上游原材料涨价，利好资源股（有色、煤炭、化工）；PPI下降说明成本降低，利好中下游制造业。PPI与CPI的"剪刀差"是判断产业链利润分配的关键。</p>
+            <p><strong>PMI（采购经理人指数）</strong>：衡量制造业景气度。PMI > 50表示扩张，< 50表示收缩。PMI是经济的领先指标，通常提前GDP 1-2个月反映经济走势。PMI连续3个月上升是股市走强的先行信号。</p>
+            <p><strong>利率（LPR/MLF）</strong>：降息周期利好股市（资金成本下降、估值提升），加息周期利空股市。2024年以来央行多次降准降息，是A股企稳的重要支撑。</p>
+            <p><strong>汇率（人民币兑美元）</strong>：人民币贬值利好出口型企业（家电、纺织、机械），但会导致外资流出A股（北向资金撤离）。升值则相反。汇率大幅波动时，股市通常承压。</p>
+            <p><strong>M2（广义货币供应量）</strong>：M2增速代表市场上的钱有多少。M2增速 > 10%说明流动性充裕，利好股市；M2增速 < 8%说明流动性偏紧。注意：M2是滞后指标，通常滞后股市3-6个月。</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">实战演练</p>
+            <p class="text-sm text-blue-700">打开财联社APP或同花顺"宏观数据"页面，查看本月公布的CPI、PPI、PMI数据：1. 三个数据分别是多少？处于什么区间？2. 与上个月相比是改善还是恶化？3. 根据这些数据，你认为当前是适合加仓、持股观望还是减仓的宏观环境？</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">重要提醒</p>
+            <p class="text-sm text-yellow-700">宏观经济指标反映的是"大势"，不能用来指导短期交易。即使PMI在50以下，股市也可能因为政策利好而短期反弹。宏观分析适合判断中长期仓位水平（如牛市重仓、熊市轻仓），而不适合择时。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. CPI在什么区间对股市最有利？</p>
+              <p>2. PMI大于50代表什么？</p>
+              <p>3. 降息周期对股市是利好还是利空？</p>
+              <p>4. M2增速是领先指标还是滞后指标？</p>
             </div>
           </details>
         `
@@ -1240,6 +1534,39 @@ const learningData = [
             </div>
           </details>
         `
+      },
+      {
+        title: '从模拟盘到实盘的心理过渡',
+        content: `
+          <p class="mb-3">很多新手在模拟盘上战绩辉煌，一上实盘就亏损累累。这不是技术问题，而是心理问题。模拟盘和实盘之间，隔着一条名为"真金白银"的巨大鸿沟。</p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>模拟盘与实盘的核心差异</strong>：</p>
+            <p>1. <strong>心理压力</strong>：模拟盘亏损无所谓，实盘亏损1000元就心跳加速。这种压力会导致你违背交易计划，该止损时不止损，该持仓时过早止盈。</p>
+            <p>2. <strong>资金规模效应</strong>：模拟盘通常给50万虚拟资金，实盘可能只投入5万。但奇怪的是，5万实盘的心理负担往往比50万模拟盘更重——因为那是你辛苦赚来的钱。</p>
+            <p>3. <strong>滑点与成交</strong>：模拟盘通常以当前价立即成交，实盘可能因为流动性问题成交在更差的价格，尤其是小盘股和涨停板股票。</p>
+            <p>4. <strong>连续盈利后的膨胀</strong>：实盘连续盈利3-5笔后，很多人会自信心爆棚，开始加大仓位、放松选股标准，这正是亏损的开始。华尔街称之为"新手运气诅咒"。</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3 text-sm">
+            <p class="font-medium text-blue-800 mb-1">从模拟到实盘的过渡方案</p>
+            <p><strong>阶段1：纯模拟盘（1-2个月）</strong>——建立交易系统，验证胜率>50%、盈亏比>1.5。</p>
+            <p><strong>阶段2：微实盘（1个月）</strong>——投入不超过5000元，单笔交易不超过1000元。目标是适应"亏钱的心跳"，而非赚钱。</p>
+            <p><strong>阶段3：小实盘（3个月）</strong>——投入2-5万元，严格执行交易系统的仓位管理和止损规则。不要追求高收益，追求"不犯大错"。</p>
+            <p><strong>阶段4：正常实盘</strong>——当你能在小实盘中连续3个月不违反交易计划时，再逐步加大资金。</p>
+          </div>
+          <div class="bg-red-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-red-800 mb-1">致命陷阱</p>
+            <p class="text-sm text-red-700">永远不要借钱炒股、永远不要配资加杠杆、永远不要用短期内要用的钱（如买房首付、结婚费用）炒股。实盘的第一步不是赚钱，而是确保即使全部亏损，也不会影响你的正常生活。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 模拟盘和实盘最大的区别是什么？</p>
+              <p>2. 为什么连续盈利后反而更容易亏损？</p>
+              <p>3. 从模拟盘到实盘建议分几个阶段过渡？</p>
+              <p>4. 实盘操作的第一原则是什么？</p>
+            </div>
+          </details>
+        `
       }
     ]
   }
@@ -1249,8 +1576,16 @@ let learningProgress = {};
 
 function initLearningProgress() {
   const saved = localStorage.getItem('zfinance_learning');
-  if (saved) learningProgress = JSON.parse(saved);
-  else {
+  if (saved) {
+    learningProgress = JSON.parse(saved);
+    // Migrate old 3-lesson format to 4-lesson format
+    learningData.forEach(l => {
+      const p = learningProgress[l.level];
+      if (p && p.lessons && p.lessons.length < l.lessons.length) {
+        while (p.lessons.length < l.lessons.length) p.lessons.push(false);
+      }
+    });
+  } else {
     learningData.forEach(l => { learningProgress[l.level] = { completed: false, lessons: new Array(l.lessons.length).fill(false) }; });
     saveLearningProgress();
   }

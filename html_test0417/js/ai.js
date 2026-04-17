@@ -1,16 +1,48 @@
-// AI Analysis - 问财 (iwencai) iframe query only
+// AI Analysis - 问财 (iwencai) iframe query with full A-share support
 
 function queryAI() {
   const input = document.getElementById('ai-stock-input').value.trim();
   if (!input) { alert('请输入股票代码或名称'); return; }
-  const code = findStockCode(input);
-  if (!code) { alert('未找到该股票，请尝试输入6位数字代码'); return; }
 
-  const iframe = document.getElementById('ai-iframe');
-  iframe.src = `https://www.iwencai.com/unifiedwap/result?w=${code}`;
+  resolveStockCode(input).then(code => {
+    if (!code) { alert('未找到该股票，请尝试输入6位数字代码'); return; }
+    const iframe = document.getElementById('ai-iframe');
+    iframe.src = `https://www.iwencai.com/unifiedwap/result?w=${code}`;
+  });
 }
 
 function quickAI(code) {
   document.getElementById('ai-stock-input').value = code;
   queryAI();
+}
+
+// Resolve stock code using full A-share list (Eastmoney API) with fallbacks
+async function resolveStockCode(input) {
+  input = input.trim();
+
+  // Direct code formats
+  const lower = input.toLowerCase();
+  if (/^(sh|sz|bj)\d{6}$/.test(lower)) return lower;
+  if (/^\d{6}$/.test(input)) {
+    if (input.startsWith('6') || input.startsWith('68')) return 'sh' + input;
+    return 'sz' + input;
+  }
+
+  // Try full A-share list first
+  let list = allAStockList;
+  if (!list || list.length === 0) {
+    try { list = await loadAllAStockList(); } catch(e) {}
+  }
+
+  if (list && list.length > 0) {
+    // Exact name match
+    const exact = list.find(s => s.name === input);
+    if (exact) return exact.code;
+    // Partial name match
+    const partial = list.find(s => s.name.includes(input));
+    if (partial) return partial.code;
+  }
+
+  // Fallback to existing findStockCode
+  return findStockCode(input);
 }
