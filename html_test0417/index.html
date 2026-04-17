@@ -159,37 +159,60 @@
 
     <!-- 市场行情 -->
     <section id="market" class="page-section hidden">
-      <div class="flex items-center justify-between mb-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
         <h2 class="text-2xl font-bold flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-primary to-blue-400 rounded-full"></span>市场行情</h2>
-        <span class="text-xs text-gray-500 bg-white px-3 py-1 rounded-full shadow-sm border border-gray-100" id="market-update-time">更新中...</span>
+        <div class="flex items-center gap-2">
+          <div class="relative">
+            <input id="market-search" type="text" placeholder="搜索股票名称或代码..."
+              class="w-48 md:w-64 pl-9 pr-3 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+            <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <button id="market-search-btn" class="px-4 py-2 text-sm bg-primary text-white rounded-xl hover:opacity-90 transition">搜索</button>
+          <button id="market-clear-btn" class="px-4 py-2 text-sm text-gray-600 hover:text-primary hidden transition">清除</button>
+          <span class="text-xs text-gray-500 bg-white px-3 py-1 rounded-full shadow-sm border border-gray-100" id="market-update-time">更新中...</span>
+        </div>
       </div>
-      <!-- 行业Tab -->
-      <div class="flex gap-2 overflow-x-auto pb-2 mb-4" id="sector-tabs">
-        <!-- JS生成 -->
-      </div>
-      <!-- 股票列表 -->
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
-        <div class="overflow-x-auto">
-          <div class="flex gap-4 min-w-max" id="stock-cards">
-            <!-- JS生成 -->
+      <!-- 搜索结果 -->
+      <div id="search-results" class="hidden mb-6">
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-800">搜索结果</h3>
+            <span class="text-xs text-gray-500" id="search-result-count"></span>
+          </div>
+          <div class="overflow-x-auto">
+            <div class="flex gap-4 min-w-max" id="search-result-cards"></div>
           </div>
         </div>
       </div>
-      <!-- 涨跌榜 -->
-      <div class="grid md:grid-cols-2 gap-6 mt-6">
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
-          <h3 class="font-bold mb-4 text-up flex items-center gap-2">
-            <span class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg></span>
-            涨幅榜
-          </h3>
-          <div class="space-y-2" id="top-gainers"></div>
+      <!-- 行业Tab -->
+      <div id="sector-tabs-area">
+        <div class="flex gap-2 overflow-x-auto pb-2 mb-4" id="sector-tabs">
+          <!-- JS生成 -->
         </div>
+        <!-- 股票列表 -->
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
-          <h3 class="font-bold mb-4 text-down flex items-center gap-2">
-            <span class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 13a1 1 0 110 2H7a1 1 0 01-1-1V9a1 1 0 112 0v2.586l4.293-4.293a1 1 0 011.414 0L16 9.586V7a1 1 0 112 0v5a1 1 0 01-1 1h-5z" clip-rule="evenodd"/></svg></span>
-            跌幅榜
-          </h3>
-          <div class="space-y-2" id="top-losers"></div>
+          <div class="overflow-x-auto">
+            <div class="flex gap-4 min-w-max" id="stock-cards">
+              <!-- JS生成 -->
+            </div>
+          </div>
+        </div>
+        <!-- 涨跌榜 -->
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <h3 class="font-bold mb-3 text-up flex items-center gap-2">
+              <span class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg></span>
+              涨幅榜
+            </h3>
+            <div class="max-h-[480px] overflow-y-auto space-y-1 pr-1" id="top-gainers"></div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <h3 class="font-bold mb-3 text-down flex items-center gap-2">
+              <span class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 13a1 1 0 110 2H7a1 1 0 01-1-1V9a1 1 0 112 0v2.586l4.293-4.293a1 1 0 011.414 0L16 9.586V7a1 1 0 112 0v5a1 1 0 01-1 1h-5z" clip-rule="evenodd"/></svg></span>
+              跌幅榜
+            </h3>
+            <div class="max-h-[480px] overflow-y-auto space-y-1 pr-1" id="top-losers"></div>
+          </div>
         </div>
       </div>
     </section>

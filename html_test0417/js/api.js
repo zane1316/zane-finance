@@ -149,6 +149,9 @@ let currentSector = 'semiconductor';
 function initMarket() {
   renderSectorTabs();
   updateMarketPage(apiCache);
+  initMarketSearch();
+  // Reset search state when navigating to market
+  clearMarketSearch();
 }
 
 function renderSectorTabs() {
@@ -201,23 +204,117 @@ function updateMarketPage(data) {
       </div>`;
   }).join('');
 
-  // Gainers / losers from all loaded stocks
-  const arr = allStocks.map(s => {
+  // Gainers / losers from CURRENT SECTOR only, top 20 each
+  const sectorArr = sec.stocks.map(s => {
     const d = data[s.c] || apiCache[s.c];
     return d ? { ...d, s } : null;
   }).filter(Boolean);
-  const gainers = [...arr].filter(a => a.changePercent > 0).sort((a,b) => b.changePercent - a.changePercent).slice(0, 5);
-  const losers = [...arr].filter(a => a.changePercent < 0).sort((a,b) => a.changePercent - b.changePercent).slice(0, 5);
+  const gainers = [...sectorArr].filter(a => a.changePercent > 0).sort((a,b) => b.changePercent - a.changePercent).slice(0, 20);
+  const losers = [...sectorArr].filter(a => a.changePercent < 0).sort((a,b) => a.changePercent - b.changePercent).slice(0, 20);
 
-  document.getElementById('top-gainers').innerHTML = gainers.map(d => `
-    <div class="flex justify-between items-center text-sm py-1 border-b last:border-0">
-      <span>${d.s.n} <span class="text-gray-400">${d.s.c}</span></span>
+  document.getElementById('top-gainers').innerHTML = gainers.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i%2===0?'bg-gray-50/50':''} px-2 rounded">
+      <span class="flex items-center gap-2"><span class="w-5 h-5 bg-red-50 text-up text-xs rounded flex items-center justify-center font-medium">${i+1}</span><span class="truncate max-w-[100px]" title="${d.s.n}">${d.s.n}</span><span class="text-gray-400 text-xs">${d.s.c}</span></span>
       <span class="text-up font-medium">+${formatNumber(d.changePercent,2)}%</span>
-    </div>`).join('') || '<p class="text-gray-400 text-sm">暂无上涨股票</p>';
+    </div>`).join('') || '<p class="text-gray-400 text-sm py-4 text-center">暂无上涨股票</p>';
 
-  document.getElementById('top-losers').innerHTML = losers.map(d => `
-    <div class="flex justify-between items-center text-sm py-1 border-b last:border-0">
-      <span>${d.s.n} <span class="text-gray-400">${d.s.c}</span></span>
+  document.getElementById('top-losers').innerHTML = losers.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i%2===0?'bg-gray-50/50':''} px-2 rounded">
+      <span class="flex items-center gap-2"><span class="w-5 h-5 bg-green-50 text-down text-xs rounded flex items-center justify-center font-medium">${i+1}</span><span class="truncate max-w-[100px]" title="${d.s.n}">${d.s.n}</span><span class="text-gray-400 text-xs">${d.s.c}</span></span>
       <span class="text-down font-medium">${formatNumber(d.changePercent,2)}%</span>
-    </div>`).join('') || '<p class="text-gray-400 text-sm">暂无下跌股票</p>';
+    </div>`).join('') || '<p class="text-gray-400 text-sm py-4 text-center">暂无下跌股票</p>';
+}
+
+// Market search
+function initMarketSearch() {
+  const input = document.getElementById('market-search');
+  const btn = document.getElementById('market-search-btn');
+  const clearBtn = document.getElementById('market-clear-btn');
+  if (!input || !btn) return;
+
+  btn.addEventListener('click', () => doMarketSearch(input.value.trim()));
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') doMarketSearch(input.value.trim()); });
+  if (clearBtn) clearBtn.addEventListener('click', clearMarketSearch);
+}
+
+function doMarketSearch(query) {
+  if (!query) return;
+  const code = findStockCode(query);
+  const results = [];
+
+  // Only search within allStocks (our 220-stock universe)
+  if (code) {
+    const stock = allStocks.find(s => s.c === code);
+    if (stock) results.push(stock);
+  }
+  // Always do fuzzy name/code search within allStocks
+  const q = query.toLowerCase();
+  const fuzzy = allStocks.filter(s =>
+    s.n.toLowerCase().includes(q) || s.c.toLowerCase().includes(q)
+  ).slice(0, 10);
+  fuzzy.forEach(s => {
+    if (!results.find(r => r.c === s.c)) results.push(s);
+  });
+
+  const searchArea = document.getElementById('search-results');
+  const sectorArea = document.getElementById('sector-tabs-area');
+  const countEl = document.getElementById('search-result-count');
+  const cardsEl = document.getElementById('search-result-cards');
+  const clearBtn = document.getElementById('market-clear-btn');
+
+  if (results.length === 0) {
+    searchArea.classList.remove('hidden');
+    sectorArea.classList.add('hidden');
+    countEl.textContent = '未找到相关股票';
+    cardsEl.innerHTML = '<p class="text-gray-400 text-sm py-4">未找到匹配的股票，请尝试输入完整代码或名称</p>';
+    if (clearBtn) clearBtn.classList.remove('hidden');
+    return;
+  }
+
+  searchArea.classList.remove('hidden');
+  sectorArea.classList.add('hidden');
+  countEl.textContent = `找到 ${results.length} 只`;
+  if (clearBtn) clearBtn.classList.remove('hidden');
+
+  cardsEl.innerHTML = results.map(s => {
+    const d = apiCache[s.c];
+    if (!d) return `
+      <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3">
+        <p class="font-bold text-sm">${s.n}</p><p class="text-xs text-gray-500">${s.c}</p>
+        <p class="text-gray-400 text-sm mt-2">同步中...</p>
+      </div>`;
+    const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
+    const arrow = d.changePercent >= 0 ? '▲' : '▼';
+    return `
+      <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition">
+        <div class="flex justify-between items-start">
+          <div>
+            <p class="font-bold text-sm">${s.n}</p>
+            <p class="text-xs text-gray-500">${s.c}</p>
+          </div>
+          <span class="text-xs ${color}">${arrow}</span>
+        </div>
+        <p class="text-xl font-bold my-1 ${color}">${formatNumber(d.price,2)}</p>
+        <p class="text-xs ${color}">${d.changePercent>=0?'+':''}${formatNumber(d.changePercent,2)}%</p>
+        <div class="mt-2 pt-2 border-t text-xs text-gray-400 space-y-1">
+          <div class="flex justify-between"><span>换手</span><span>${formatNumber(d.turnover,2)}%</span></div>
+          <div class="flex justify-between"><span>成交</span><span>${formatNumber(d.volumeMoney/10000,2)}亿</span></div>
+          <div class="flex justify-between"><span>市值</span><span>${formatNumber(d.marketCap,2)}亿</span></div>
+        </div>
+        <a href="https://stock.finance.qq.com/sstock/ggcx/${s.c}.shtml" target="_blank" class="block mt-2 text-xs text-primary hover:underline"
+          onclick="event.stopPropagation()"
+        >数据来源：腾讯财经 ↗</a>
+      </div>`;
+  }).join('');
+}
+
+function clearMarketSearch() {
+  const input = document.getElementById('market-search');
+  const searchArea = document.getElementById('search-results');
+  const sectorArea = document.getElementById('sector-tabs-area');
+  const clearBtn = document.getElementById('market-clear-btn');
+  if (input) input.value = '';
+  if (searchArea) searchArea.classList.add('hidden');
+  if (sectorArea) sectorArea.classList.remove('hidden');
+  if (clearBtn) clearBtn.classList.add('hidden');
 }
