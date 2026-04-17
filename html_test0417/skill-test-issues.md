@@ -125,6 +125,44 @@ if (id === 'learning') { renderLevelList(); renderLevelContent(); }
 
 ---
 
+---
+
+## 11. HTTPS mixed-content blocking on GitHub Pages
+
+**Problem:** After deploying to GitHub Pages (HTTPS), the real-time market data stopped loading and all stocks showed "同步中...". The browser's DevTools console showed `Mixed Content` errors. The generated `api.js` used `http://qt.gtimg.cn/q=...`, and modern browsers block HTTP requests from HTTPS pages.
+
+**Fix used:** Changed the API URL to `https://qt.gtimg.cn/q=...`. Tencent's API endpoint already supports HTTPS; only the generated code defaulted to HTTP.
+
+**Skill gap:** Add a deployment-readiness checklist item: "Verify all external API calls use HTTPS when deploying to HTTPS hosts (GitHub Pages, Vercel, Netlify, etc.)."
+
+---
+
+## 12. AI module over-engineering vs. simple iframe embedding
+
+**Problem:** The skill-generated AI analysis module included a full DeepSeek API integration with JSON parsing, structured output rendering, and multiple fallback layers. In practice, the DeepSeek API requires a private key (CORS + auth issues in browser), and the fallback iframe to 同花顺问财 was more reliable and useful.
+
+**Fix used:** Removed all DeepSeek code and kept only a single 问财 iframe query. Increased iframe height from `h-96` (384px) to `70vh` / `min-height: 520px` for better readability.
+
+**Skill gap:** When suggesting AI integrations, the skill should warn that serverless browser-side calls to LLM APIs usually fail due to CORS + API key exposure. Recommend iframe-embedding existing financial tools (问财, 雪球, etc.) as a practical alternative for static sites.
+
+---
+
+## 13. Frontend aesthetics need explicit attention beyond "make it look good"
+
+**Problem:** The initial build produced a functional but visually plain interface — flat white cards, basic borders, minimal visual hierarchy. User feedback explicitly requested beautification while keeping a professional financial look.
+
+**Fix used:**
+- Added a gradient hero section with decorative blur orbs
+- Switched cards from `rounded-xl shadow border` to `rounded-2xl shadow-lg border-gray-100` with hover lifts
+- Added gradient buttons (`bg-gradient-to-r`) with hover scale/shadow
+- Added backdrop-blur to the navbar for a glassmorphism effect
+- Added subtle gradient background to `body` for depth
+- Improved tab pills, inputs with focus rings, and icon accents
+
+**Skill gap:** The skill's design phase should include a "visual polish checklist" with concrete Tailwind patterns: gradients on primary CTAs, larger border-radius (`rounded-2xl` vs `rounded-lg`), hover micro-interactions (`hover:-translate-y-1`, `hover:shadow-xl`), and glassmorphism (`backdrop-blur`, `bg-white/80`).
+
+---
+
 ## Summary
 
 The `omni-web-craft` skill successfully scaffolded the project and provided a solid 6-phase workflow, but it lacked depth in four areas that caused real bugs:
@@ -133,5 +171,10 @@ The `omni-web-craft` skill successfully scaffolded the project and provided a so
 2. **SPA-specific testing patterns** (localStorage seeding, hash routing, async waits)
 3. **Non-standard deployment constraints** (subfolder sites, headless PAT auth)
 4. **Validation of generated string/regex transforms**
+
+**Additional post-deployment issues discovered:**
+5. **HTTPS enforcement** on static hosts breaking HTTP API calls
+6. **AI module pragmatism** — iframe embeds are often more reliable than client-side LLM calls
+7. **Visual polish** needs concrete patterns, not just "make it look good"
 
 Adding targeted subsections for these scenarios would significantly reduce the manual debugging required on future builds.

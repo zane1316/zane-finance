@@ -38,26 +38,26 @@
   </div>
 
   <!-- 顶部导航 -->
-  <header class="bg-white shadow-sm sticky top-8 z-40">
+  <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-8 z-40 border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
-        <a href="#home" class="flex items-center gap-2">
-          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">Z</div>
+        <a href="#home" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:shadow-lg group-hover:scale-105 transition">Z</div>
           <div>
             <h1 class="text-xl font-bold text-gray-900">Zane财经</h1>
             <p class="text-xs text-gray-500">新手炒股第一站</p>
           </div>
         </a>
-        <nav class="hidden md:flex space-x-6 text-sm font-medium">
-          <a href="#home" class="nav-link text-gray-700 hover:text-primary">首页</a>
-          <a href="#market" class="nav-link text-gray-700 hover:text-primary">市场行情</a>
-          <a href="#learning" class="nav-link text-gray-700 hover:text-primary">学习路径</a>
-          <a href="#kline" class="nav-link text-gray-700 hover:text-primary">K线分析</a>
-          <a href="#ai" class="nav-link text-gray-700 hover:text-primary">AI分析</a>
-          <a href="#trading" class="nav-link text-gray-700 hover:text-primary">模拟交易</a>
-          <a href="#calculator" class="nav-link text-gray-700 hover:text-primary">投资计算</a>
-          <a href="#resources" class="nav-link text-gray-700 hover:text-primary">资源库</a>
-          <a href="#contact" class="nav-link text-gray-700 hover:text-primary">联系我们</a>
+        <nav class="hidden md:flex space-x-1 text-sm font-medium">
+          <a href="#home" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">首页</a>
+          <a href="#market" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">市场行情</a>
+          <a href="#learning" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">学习路径</a>
+          <a href="#kline" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">K线分析</a>
+          <a href="#ai" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">AI分析</a>
+          <a href="#trading" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">模拟交易</a>
+          <a href="#calculator" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">投资计算</a>
+          <a href="#resources" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">资源库</a>
+          <a href="#contact" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">联系我们</a>
         </nav>
         <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -92,27 +92,32 @@
 
     <!-- 首页 -->
     <section id="home" class="page-section">
-      <div class="text-center py-12 md:py-20">
-        <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">零基础到实盘实战</h2>
-        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Zane财经为你提供系统化的A股学习路径、实时行情数据、专业的K线技术分析工具，以及50万模拟资金实战演练。</p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="#learning" class="px-8 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-800 transition">开始学习</a>
-          <a href="#trading" class="px-8 py-3 bg-white text-primary border border-primary rounded-lg font-medium hover:bg-blue-50 transition">模拟交易</a>
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-blue-700 to-blue-900 text-white py-16 md:py-24 px-6 mb-10 shadow-2xl">
+        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-48 h-48 bg-blue-400/20 rounded-full blur-3xl"></div>
+        <div class="relative text-center max-w-3xl mx-auto">
+          <p class="text-blue-200 text-sm font-medium tracking-widest uppercase mb-3">A-Share Learning Platform</p>
+          <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">零基础到<br class="md:hidden"><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">实盘实战</span></h2>
+          <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">Zane财经为你提供系统化的A股学习路径、实时行情数据、专业的K线技术分析工具，以及50万模拟资金实战演练。</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#learning" class="px-8 py-4 bg-white text-primary rounded-xl font-bold hover:shadow-xl hover:scale-105 transition shadow-lg">开始学习</a>
+            <a href="#trading" class="px-8 py-4 bg-white/10 text-white border border-white/30 rounded-xl font-medium hover:bg-white/20 hover:scale-105 transition backdrop-blur-sm">模拟交易</a>
+          </div>
         </div>
       </div>
       <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <div class="bg-white p-6 rounded-xl shadow-md border border-border">
-          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-primary text-2xl mb-4">01</div>
+        <div class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-primary rounded-xl flex items-center justify-center text-white text-xl font-bold mb-4 shadow-lg group-hover:scale-110 transition">01</div>
           <h3 class="text-lg font-bold mb-2">系统化课程</h3>
           <p class="text-gray-600 text-sm">Level 1-10 完整学习路径，从开户到建立交易系统，覆盖K线、指标、基本面与风控。</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-md border border-border">
-          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-up text-2xl mb-4">02</div>
+        <div class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-rose-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mb-4 shadow-lg group-hover:scale-110 transition">02</div>
           <h3 class="text-lg font-bold mb-2">实时行情</h3>
           <p class="text-gray-600 text-sm">接入腾讯财经API，覆盖220只热门股票，30秒自动更新，支持11大行业板块切换。</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-md border border-border">
-          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-down text-2xl mb-4">03</div>
+        <div class="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mb-4 shadow-lg group-hover:scale-110 transition">03</div>
           <h3 class="text-lg font-bold mb-2">模拟实战</h3>
           <p class="text-gray-600 text-sm">50万虚拟资金，真实T+1交易规则，完整交割单记录，助你零成本积累实战经验。</p>
         </div>
@@ -120,32 +125,32 @@
       <!-- 五大指数 -->
       <div class="mt-10">
         <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-          <span class="w-1 h-6 bg-primary rounded-full"></span>主要指数
+          <span class="w-1 h-6 bg-gradient-to-b from-primary to-blue-400 rounded-full"></span>主要指数
         </h3>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-4" id="index-cards">
-          <div class="bg-white p-4 rounded-lg shadow border border-border text-center">
+          <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition">
             <p class="text-gray-500 text-sm">上证指数</p>
-            <p class="text-xl font-bold my-1">--</p>
+            <p class="text-2xl font-bold my-1">--</p>
             <p class="text-sm">--</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow border border-border text-center">
+          <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition">
             <p class="text-gray-500 text-sm">深证成指</p>
-            <p class="text-xl font-bold my-1">--</p>
+            <p class="text-2xl font-bold my-1">--</p>
             <p class="text-sm">--</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow border border-border text-center">
+          <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition">
             <p class="text-gray-500 text-sm">创业板指</p>
-            <p class="text-xl font-bold my-1">--</p>
+            <p class="text-2xl font-bold my-1">--</p>
             <p class="text-sm">--</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow border border-border text-center">
+          <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition">
             <p class="text-gray-500 text-sm">科创50</p>
-            <p class="text-xl font-bold my-1">--</p>
+            <p class="text-2xl font-bold my-1">--</p>
             <p class="text-sm">--</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow border border-border text-center">
+          <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg hover:-translate-y-0.5 transition">
             <p class="text-gray-500 text-sm">沪深300</p>
-            <p class="text-xl font-bold my-1">--</p>
+            <p class="text-2xl font-bold my-1">--</p>
             <p class="text-sm">--</p>
           </div>
         </div>
@@ -155,15 +160,15 @@
     <!-- 市场行情 -->
     <section id="market" class="page-section hidden">
       <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold flex items-center gap-2"><span class="w-1 h-6 bg-primary rounded-full"></span>市场行情</h2>
-        <span class="text-xs text-gray-500" id="market-update-time">更新中...</span>
+        <h2 class="text-2xl font-bold flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-primary to-blue-400 rounded-full"></span>市场行情</h2>
+        <span class="text-xs text-gray-500 bg-white px-3 py-1 rounded-full shadow-sm border border-gray-100" id="market-update-time">更新中...</span>
       </div>
       <!-- 行业Tab -->
       <div class="flex gap-2 overflow-x-auto pb-2 mb-4" id="sector-tabs">
         <!-- JS生成 -->
       </div>
       <!-- 股票列表 -->
-      <div class="bg-white rounded-xl shadow border border-border p-4">
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
         <div class="overflow-x-auto">
           <div class="flex gap-4 min-w-max" id="stock-cards">
             <!-- JS生成 -->
@@ -172,16 +177,16 @@
       </div>
       <!-- 涨跌榜 -->
       <div class="grid md:grid-cols-2 gap-6 mt-6">
-        <div class="bg-white rounded-xl shadow border border-border p-4">
-          <h3 class="font-bold mb-3 text-up flex items-center gap-2">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg>
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+          <h3 class="font-bold mb-4 text-up flex items-center gap-2">
+            <span class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg></span>
             涨幅榜
           </h3>
           <div class="space-y-2" id="top-gainers"></div>
         </div>
-        <div class="bg-white rounded-xl shadow border border-border p-4">
-          <h3 class="font-bold mb-3 text-down flex items-center gap-2">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 13a1 1 0 110 2H7a1 1 0 01-1-1V9a1 1 0 112 0v2.586l4.293-4.293a1 1 0 011.414 0L16 9.586V7a1 1 0 112 0v5a1 1 0 01-1 1h-5z" clip-rule="evenodd"/></svg>
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+          <h3 class="font-bold mb-4 text-down flex items-center gap-2">
+            <span class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 13a1 1 0 110 2H7a1 1 0 01-1-1V9a1 1 0 112 0v2.586l4.293-4.293a1 1 0 011.414 0L16 9.586V7a1 1 0 112 0v5a1 1 0 01-1 1h-5z" clip-rule="evenodd"/></svg></span>
             跌幅榜
           </h3>
           <div class="space-y-2" id="top-losers"></div>
@@ -194,24 +199,27 @@
       <div class="flex flex-col lg:flex-row gap-6">
         <!-- 左侧导航 -->
         <aside class="lg:w-64 flex-shrink-0">
-          <div class="bg-white rounded-xl shadow border border-border p-4 sticky top-28">
-            <h3 class="font-bold mb-4">学习进度</h3>
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 sticky top-28">
+            <h3 class="font-bold mb-4 flex items-center gap-2">
+              <span class="w-6 h-6 bg-gradient-to-br from-primary to-blue-500 rounded-lg flex items-center justify-center text-white text-xs">L</span>
+              学习进度
+            </h3>
             <div class="space-y-3" id="level-nav">
               <!-- JS生成 -->
             </div>
-            <div class="mt-4 pt-4 border-t">
+            <div class="mt-4 pt-4 border-t border-gray-100">
               <div class="flex justify-between text-sm mb-1">
                 <span class="text-gray-500">总进度</span>
                 <span class="font-bold text-primary" id="total-progress-text">0%</span>
               </div>
-              <div class="w-full bg-gray-200 rounded-full h-2">
-                <div id="total-progress-bar" class="bg-primary h-2 rounded-full transition-all" style="width:0%"></div>
+              <div class="w-full bg-gray-100 rounded-full h-2.5">
+                <div id="total-progress-bar" class="bg-gradient-to-r from-primary to-blue-500 h-2.5 rounded-full transition-all shadow-sm" style="width:0%"></div>
               </div>
             </div>
           </div>
         </aside>
         <!-- 右侧内容 -->
-        <div class="flex-1 bg-white rounded-xl shadow border border-border p-6" id="level-content">
+        <div class="flex-1 bg-white rounded-2xl shadow-lg border border-gray-100 p-6" id="level-content">
           <!-- JS生成 -->
         </div>
       </div>
@@ -219,108 +227,111 @@
 
     <!-- K线分析 -->
     <section id="kline" class="page-section hidden">
-      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-primary rounded-full"></span>K线技术分析</h2>
-      <div class="flex flex-wrap gap-2 mb-4" id="kline-category-tabs">
-        <button class="kline-tab px-4 py-2 rounded-lg text-sm font-medium bg-primary text-white" data-cat="single">单根形态</button>
-        <button class="kline-tab px-4 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700" data-cat="combo">组合形态</button>
-        <button class="kline-tab px-4 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700" data-cat="trend">趋势形态</button>
-        <button class="kline-tab px-4 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-700" data-cat="indicator">指标叠加</button>
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-primary to-blue-400 rounded-full"></span>K线技术分析</h2>
+      <div class="flex flex-wrap gap-2 mb-5" id="kline-category-tabs">
+        <button class="kline-tab px-5 py-2.5 rounded-xl text-sm font-medium bg-primary text-white shadow-md hover:shadow-lg transition" data-cat="single">单根形态</button>
+        <button class="kline-tab px-5 py-2.5 rounded-xl text-sm font-medium bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary transition" data-cat="combo">组合形态</button>
+        <button class="kline-tab px-5 py-2.5 rounded-xl text-sm font-medium bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary transition" data-cat="trend">趋势形态</button>
+        <button class="kline-tab px-5 py-2.5 rounded-xl text-sm font-medium bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary transition" data-cat="indicator">指标叠加</button>
       </div>
-      <div class="grid md:grid-cols-2 gap-4" id="kline-grid">
+      <div class="grid md:grid-cols-2 gap-5" id="kline-grid">
         <!-- JS生成 -->
       </div>
     </section>
 
     <!-- AI分析 -->
     <section id="ai" class="page-section hidden">
-      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-primary rounded-full"></span>AI股票分析</h2>
-      <div class="bg-white rounded-xl shadow border border-border p-6 max-w-4xl mx-auto">
-        <div class="flex gap-2 mb-4">
-          <input type="text" id="ai-stock-input" placeholder="输入股票代码或名称，如：600519 或 茅台" class="flex-1 border border-border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-          <button onclick="queryAI()" class="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-blue-800">分析</button>
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-primary rounded-full"></span>股票智能查询</h2>
+      <div class="bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-white/50 p-6">
+        <div class="flex flex-col md:flex-row gap-3 mb-4">
+          <input type="text" id="ai-stock-input" placeholder="输入股票代码或名称，如：600519 或 茅台" class="flex-1 border border-gray-200 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition bg-white">
+          <button onclick="queryAI()" class="px-8 py-3 bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl font-medium hover:shadow-lg hover:scale-[1.02] transition">查询</button>
         </div>
-        <div class="flex gap-2 text-xs text-gray-500 mb-4">
-          <span>热门：</span>
-          <button onclick="quickAI('600519')" class="text-primary hover:underline">贵州茅台</button>
-          <button onclick="quickAI('000001')" class="text-primary hover:underline">平安银行</button>
-          <button onclick="quickAI('002594')" class="text-primary hover:underline">比亚迪</button>
-          <button onclick="quickAI('300750')" class="text-primary hover:underline">宁德时代</button>
+        <div class="flex flex-wrap gap-2 text-sm text-gray-500 mb-4">
+          <span class="text-gray-400">热门：</span>
+          <button onclick="quickAI('600519')" class="px-3 py-1 bg-blue-50 text-primary rounded-full hover:bg-blue-100 transition">贵州茅台</button>
+          <button onclick="quickAI('000001')" class="px-3 py-1 bg-blue-50 text-primary rounded-full hover:bg-blue-100 transition">平安银行</button>
+          <button onclick="quickAI('002594')" class="px-3 py-1 bg-blue-50 text-primary rounded-full hover:bg-blue-100 transition">比亚迪</button>
+          <button onclick="quickAI('300750')" class="px-3 py-1 bg-blue-50 text-primary rounded-full hover:bg-blue-100 transition">宁德时代</button>
         </div>
-        <div id="ai-result" class="hidden">
-          <!-- JS填充 -->
+        <div class="rounded-xl overflow-hidden border border-gray-200 shadow-inner bg-white">
+          <iframe id="ai-iframe" class="w-full" style="height: 70vh; min-height: 520px;" src="https://www.iwencai.com/unifiedwap/result?w=sh600519"></iframe>
         </div>
-        <div id="ai-fallback" class="hidden mt-4">
-          <p class="text-sm text-gray-500 mb-2">API受限，已切换至问财查询：</p>
-          <iframe id="ai-iframe" class="w-full h-96 border rounded-lg" src=""></iframe>
-        </div>
-        <p class="text-xs text-gray-400 mt-4">AI分析仅供参考，不构成买卖建议。</p>
+        <p class="text-xs text-gray-400 mt-4 text-center">数据由同花顺问财提供，仅供参考，不构成买卖建议。</p>
       </div>
     </section>
 
     <!-- 模拟交易 -->
     <section id="trading" class="page-section hidden">
-      <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 text-sm text-amber-800 flex items-center gap-2">
-        <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
-        模拟交易，非真实资金。初始资金50万元，遵守T+1交易规则。
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/60 rounded-xl p-4 mb-6 text-sm text-amber-800 flex items-center gap-3 shadow-sm">
+        <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+        </div>
+        <p>模拟交易，非真实资金。初始资金50万元，遵守T+1交易规则。</p>
       </div>
       <div class="grid lg:grid-cols-3 gap-6">
         <!-- 资产面板 -->
         <div class="lg:col-span-1 space-y-4">
-          <div class="bg-white rounded-xl shadow border border-border p-4">
-            <h3 class="font-bold mb-3">资产概览</h3>
-            <div class="space-y-2 text-sm">
-              <div class="flex justify-between"><span class="text-gray-500">总资产</span><span class="font-bold text-lg" id="total-asset">500,000.00</span></div>
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <h3 class="font-bold mb-4 flex items-center gap-2">
+              <span class="w-6 h-6 bg-gradient-to-br from-primary to-blue-500 rounded-lg flex items-center justify-center text-white text-xs">¥</span>
+              资产概览
+            </h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between items-center"><span class="text-gray-500">总资产</span><span class="font-bold text-xl text-gray-900" id="total-asset">500,000.00</span></div>
               <div class="flex justify-between"><span class="text-gray-500">可用资金</span><span id="available-fund">500,000.00</span></div>
               <div class="flex justify-between"><span class="text-gray-500">股票市值</span><span id="stock-value">0.00</span></div>
               <div class="flex justify-between"><span class="text-gray-500">当日盈亏</span><span id="day-pl">0.00</span></div>
               <div class="flex justify-between"><span class="text-gray-500">总盈亏</span><span id="total-pl">0.00</span></div>
               <div class="flex justify-between"><span class="text-gray-500">收益率</span><span id="total-return">0.00%</span></div>
             </div>
-            <button onclick="resetTrading()" class="mt-4 w-full py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-50">重置账户</button>
+            <button onclick="resetTrading()" class="mt-5 w-full py-2.5 border border-gray-200 rounded-xl text-sm hover:bg-gray-50 hover:border-gray-300 transition">重置账户</button>
           </div>
-          <div class="bg-white rounded-xl shadow border border-border p-4">
-            <h3 class="font-bold mb-2">资产走势</h3>
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <h3 class="font-bold mb-3">资产走势</h3>
             <div id="asset-chart" class="h-48"></div>
           </div>
         </div>
         <!-- 交易面板 -->
         <div class="lg:col-span-2 space-y-4">
-          <div class="bg-white rounded-xl shadow border border-border p-4">
-            <div class="flex border-b mb-4">
-              <button onclick="setTradeType('buy')" id="tab-buy" class="trade-type-tab px-4 py-2 font-medium border-b-2 border-primary text-primary">买入</button>
-              <button onclick="setTradeType('sell')" id="tab-sell" class="trade-type-tab px-4 py-2 font-medium border-b-2 border-transparent text-gray-500">卖出</button>
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <div class="flex border-b border-gray-100 mb-5">
+              <button onclick="setTradeType('buy')" id="tab-buy" class="trade-type-tab px-5 py-3 font-medium border-b-2 border-primary text-primary">买入</button>
+              <button onclick="setTradeType('sell')" id="tab-sell" class="trade-type-tab px-5 py-3 font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 transition">卖出</button>
             </div>
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="space-y-3">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div class="space-y-4">
                 <div>
-                  <label class="block text-sm text-gray-500 mb-1">股票代码 / 名称</label>
-                  <input type="text" id="trade-code" oninput="onTradeCodeInput()" placeholder="如 600519" class="w-full border border-border rounded-lg px-3 py-2">
-                  <div id="trade-code-suggest" class="hidden mt-1 bg-white border rounded-lg shadow max-h-32 overflow-y-auto text-sm"></div>
+                  <label class="block text-sm text-gray-500 mb-1.5">股票代码 / 名称</label>
+                  <input type="text" id="trade-code" oninput="onTradeCodeInput()" placeholder="如 600519" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition">
+                  <div id="trade-code-suggest" class="hidden mt-1 bg-white border rounded-xl shadow-lg max-h-32 overflow-y-auto text-sm"></div>
                 </div>
                 <div>
-                  <label class="block text-sm text-gray-500 mb-1">价格</label>
+                  <label class="block text-sm text-gray-500 mb-1.5">价格</label>
                   <div class="flex gap-2">
-                    <input type="number" step="0.01" id="trade-price" class="flex-1 border border-border rounded-lg px-3 py-2">
-                    <button onclick="setLimitPrice('up')" class="px-3 py-2 bg-red-50 text-up text-xs rounded-lg">涨停价</button>
-                    <button onclick="setLimitPrice('down')" class="px-3 py-2 bg-green-50 text-down text-xs rounded-lg">跌停价</button>
+                    <input type="number" step="0.01" id="trade-price" class="flex-1 border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition">
+                    <button onclick="setLimitPrice('up')" class="px-3 py-2 bg-red-50 text-up text-xs rounded-lg hover:bg-red-100 transition font-medium">涨停价</button>
+                    <button onclick="setLimitPrice('down')" class="px-3 py-2 bg-green-50 text-down text-xs rounded-lg hover:bg-green-100 transition font-medium">跌停价</button>
                   </div>
                 </div>
                 <div>
-                  <label class="block text-sm text-gray-500 mb-1">数量</label>
+                  <label class="block text-sm text-gray-500 mb-1.5">数量</label>
                   <div class="flex gap-2">
-                    <input type="number" id="trade-quantity" class="flex-1 border border-border rounded-lg px-3 py-2" placeholder="100股为单位">
-                    <button onclick="setTradeQty('full')" class="px-3 py-2 bg-gray-100 text-xs rounded-lg">全仓</button>
-                    <button onclick="setTradeQty('half')" class="px-3 py-2 bg-gray-100 text-xs rounded-lg">半仓</button>
-                    <button onclick="setTradeQty('third')" class="px-3 py-2 bg-gray-100 text-xs rounded-lg">1/3</button>
+                    <input type="number" id="trade-quantity" class="flex-1 border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" placeholder="100股为单位">
+                    <button onclick="setTradeQty('full')" class="px-3 py-2 bg-gray-100 text-xs rounded-lg hover:bg-gray-200 transition font-medium">全仓</button>
+                    <button onclick="setTradeQty('half')" class="px-3 py-2 bg-gray-100 text-xs rounded-lg hover:bg-gray-200 transition font-medium">半仓</button>
+                    <button onclick="setTradeQty('third')" class="px-3 py-2 bg-gray-100 text-xs rounded-lg hover:bg-gray-200 transition font-medium">1/3</button>
                   </div>
                 </div>
-                <button onclick="submitOrder()" id="trade-submit-btn" class="w-full py-3 bg-up text-white rounded-lg font-medium">买入下单</button>
+                <button onclick="submitOrder()" id="trade-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-up to-red-600 text-white rounded-xl font-bold shadow-md hover:shadow-lg hover:scale-[1.01] transition">买入下单</button>
               </div>
               <div>
-                <h4 class="font-bold mb-2 text-sm">持仓列表</h4>
-                <div class="overflow-auto max-h-64 border rounded-lg">
+                <h4 class="font-bold mb-3 text-sm flex items-center gap-2">
+                  <span class="w-1.5 h-4 bg-primary rounded-full"></span>持仓列表
+                </h4>
+                <div class="overflow-auto max-h-64 border border-gray-100 rounded-xl">
                   <table class="w-full text-sm">
-                    <thead class="bg-gray-50 text-gray-600"><tr><th class="px-3 py-2 text-left">股票</th><th class="px-3 py-2 text-right">成本</th><th class="px-3 py-2 text-right">现价</th><th class="px-3 py-2 text-right">盈亏</th></tr></thead>
+                    <thead class="bg-gray-50 text-gray-600"><tr><th class="px-3 py-2.5 text-left font-medium">股票</th><th class="px-3 py-2.5 text-right font-medium">成本</th><th class="px-3 py-2.5 text-right font-medium">现价</th><th class="px-3 py-2.5 text-right font-medium">盈亏</th></tr></thead>
                     <tbody id="position-list"></tbody>
                   </table>
                 </div>
@@ -328,11 +339,13 @@
             </div>
           </div>
           <!-- 交割单 -->
-          <div class="bg-white rounded-xl shadow border border-border p-4">
-            <h3 class="font-bold mb-2">成交记录</h3>
-            <div class="overflow-auto max-h-48">
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-1.5 h-4 bg-primary rounded-full"></span>成交记录
+            </h3>
+            <div class="overflow-auto max-h-48 border border-gray-100 rounded-xl">
               <table class="w-full text-sm">
-                <thead class="bg-gray-50 text-gray-600"><tr><th class="px-3 py-2 text-left">时间</th><th class="px-3 py-2">方向</th><th class="px-3 py-2 text-right">价格</th><th class="px-3 py-2 text-right">数量</th><th class="px-3 py-2 text-right">金额</th></tr></thead>
+                <thead class="bg-gray-50 text-gray-600"><tr><th class="px-3 py-2.5 text-left font-medium">时间</th><th class="px-3 py-2.5 font-medium">方向</th><th class="px-3 py-2.5 text-right font-medium">价格</th><th class="px-3 py-2.5 text-right font-medium">数量</th><th class="px-3 py-2.5 text-right font-medium">金额</th></tr></thead>
                 <tbody id="trade-history"></tbody>
               </table>
             </div>
@@ -343,59 +356,59 @@
 
     <!-- 投资计算 -->
     <section id="calculator" class="page-section hidden">
-      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-primary rounded-full"></span>投资计算器</h2>
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-primary to-blue-400 rounded-full"></span>投资计算器</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <!-- 盈亏计算 -->
-        <div class="bg-white rounded-xl shadow border border-border p-4">
-          <h3 class="font-bold mb-4">盈亏计算器</h3>
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold mb-4 flex items-center gap-2"><span class="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center text-primary text-xs">¥</span>盈亏计算器</h3>
           <div class="space-y-3 text-sm">
-            <div><label class="text-gray-500">股票代码</label><input type="text" id="calc-code" oninput="calcFetchPrice()" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="600519"></div>
-            <div><label class="text-gray-500">买入价</label><input type="number" step="0.01" id="calc-buy" class="w-full border rounded-lg px-3 py-2 mt-1"></div>
-            <div><label class="text-gray-500">卖出价</label><input type="number" step="0.01" id="calc-sell" class="w-full border rounded-lg px-3 py-2 mt-1"></div>
-            <div><label class="text-gray-500">数量(股)</label><input type="number" id="calc-qty" class="w-full border rounded-lg px-3 py-2 mt-1" value="100"></div>
-            <button onclick="calcPL()" class="w-full py-2 bg-primary text-white rounded-lg">计算</button>
+            <div><label class="text-gray-500 text-xs">股票代码</label><input type="text" id="calc-code" oninput="calcFetchPrice()" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" placeholder="600519"></div>
+            <div><label class="text-gray-500 text-xs">买入价</label><input type="number" step="0.01" id="calc-buy" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition"></div>
+            <div><label class="text-gray-500 text-xs">卖出价</label><input type="number" step="0.01" id="calc-sell" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition"></div>
+            <div><label class="text-gray-500 text-xs">数量(股)</label><input type="number" id="calc-qty" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="100"></div>
+            <button onclick="calcPL()" class="w-full py-2.5 bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl font-medium hover:shadow-md transition">计算</button>
           </div>
-          <div id="calc-pl-result" class="mt-4 hidden pt-4 border-t">
-            <div class="flex justify-between"><span>毛收益</span><span id="pl-gross">--</span></div>
-            <div class="flex justify-between"><span>佣金</span><span id="pl-commission">--</span></div>
-            <div class="flex justify-between"><span>印花税</span><span id="pl-tax">--</span></div>
-            <div class="flex justify-between"><span>过户费</span><span id="pl-transfer">--</span></div>
-            <div class="flex justify-between font-bold mt-2"><span>净收益</span><span id="pl-net">--</span></div>
-            <div class="flex justify-between"><span>收益率</span><span id="pl-rate">--</span></div>
+          <div id="calc-pl-result" class="mt-4 hidden pt-4 border-t border-gray-100">
+            <div class="flex justify-between"><span class="text-gray-500 text-sm">毛收益</span><span id="pl-gross">--</span></div>
+            <div class="flex justify-between"><span class="text-gray-500 text-sm">佣金</span><span id="pl-commission">--</span></div>
+            <div class="flex justify-between"><span class="text-gray-500 text-sm">印花税</span><span id="pl-tax">--</span></div>
+            <div class="flex justify-between"><span class="text-gray-500 text-sm">过户费</span><span id="pl-transfer">--</span></div>
+            <div class="flex justify-between font-bold mt-2 pt-2 border-t border-gray-100"><span>净收益</span><span id="pl-net">--</span></div>
+            <div class="flex justify-between"><span class="text-gray-500 text-sm">收益率</span><span id="pl-rate">--</span></div>
             <div id="pl-chart" class="h-40 mt-3"></div>
           </div>
         </div>
         <!-- 定投计算 -->
-        <div class="bg-white rounded-xl shadow border border-border p-4">
-          <h3 class="font-bold mb-4">定投计算器</h3>
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold mb-4 flex items-center gap-2"><span class="w-6 h-6 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xs">D</span>定投计算器</h3>
           <div class="space-y-3 text-sm">
-            <div><label class="text-gray-500">每月定投(元)</label><input type="number" id="dca-monthly" class="w-full border rounded-lg px-3 py-2 mt-1" value="1000"></div>
-            <div><label class="text-gray-500">定投月数</label><input type="number" id="dca-months" class="w-full border rounded-lg px-3 py-2 mt-1" value="24"></div>
-            <div><label class="text-gray-500">年化收益率(%)</label><input type="number" step="0.1" id="dca-rate" class="w-full border rounded-lg px-3 py-2 mt-1" value="8"></div>
-            <button onclick="calcDCA()" class="w-full py-2 bg-primary text-white rounded-lg">计算</button>
+            <div><label class="text-gray-500 text-xs">每月定投(元)</label><input type="number" id="dca-monthly" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="1000"></div>
+            <div><label class="text-gray-500 text-xs">定投月数</label><input type="number" id="dca-months" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="24"></div>
+            <div><label class="text-gray-500 text-xs">年化收益率(%)</label><input type="number" step="0.1" id="dca-rate" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="8"></div>
+            <button onclick="calcDCA()" class="w-full py-2.5 bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl font-medium hover:shadow-md transition">计算</button>
           </div>
-          <div id="dca-result" class="mt-4 hidden pt-4 border-t text-sm">
-            <div class="flex justify-between"><span>投入本金</span><span id="dca-principal">--</span></div>
-            <div class="flex justify-between"><span>期末总资产</span><span id="dca-total">--</span></div>
-            <div class="flex justify-between font-bold"><span>总收益</span><span id="dca-profit">--</span></div>
+          <div id="dca-result" class="mt-4 hidden pt-4 border-t border-gray-100 text-sm">
+            <div class="flex justify-between"><span class="text-gray-500">投入本金</span><span id="dca-principal">--</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">期末总资产</span><span id="dca-total">--</span></div>
+            <div class="flex justify-between font-bold pt-2 border-t border-gray-100 mt-2"><span>总收益</span><span id="dca-profit">--</span></div>
             <div id="dca-chart" class="h-40 mt-3"></div>
           </div>
         </div>
         <!-- 仓位管理 -->
-        <div class="bg-white rounded-xl shadow border border-border p-4">
-          <h3 class="font-bold mb-4">凯利公式仓位</h3>
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold mb-4 flex items-center gap-2"><span class="w-6 h-6 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xs">K</span>凯利公式仓位</h3>
           <div class="space-y-3 text-sm">
-            <div><label class="text-gray-500">胜率(%)</label><input type="number" id="kelly-win" class="w-full border rounded-lg px-3 py-2 mt-1" value="55"></div>
-            <div><label class="text-gray-500">平均盈利(%)</label><input type="number" step="0.1" id="kelly-gain" class="w-full border rounded-lg px-3 py-2 mt-1" value="10"></div>
-            <div><label class="text-gray-500">平均亏损(%)</label><input type="number" step="0.1" id="kelly-loss" class="w-full border rounded-lg px-3 py-2 mt-1" value="5"></div>
-            <button onclick="calcKelly()" class="w-full py-2 bg-primary text-white rounded-lg">计算</button>
+            <div><label class="text-gray-500 text-xs">胜率(%)</label><input type="number" id="kelly-win" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="55"></div>
+            <div><label class="text-gray-500 text-xs">平均盈利(%)</label><input type="number" step="0.1" id="kelly-gain" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="10"></div>
+            <div><label class="text-gray-500 text-xs">平均亏损(%)</label><input type="number" step="0.1" id="kelly-loss" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="5"></div>
+            <button onclick="calcKelly()" class="w-full py-2.5 bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl font-medium hover:shadow-md transition">计算</button>
           </div>
-          <div id="kelly-result" class="mt-4 hidden pt-4 border-t">
-            <div class="text-center py-4">
-              <div class="text-3xl font-bold text-primary" id="kelly-value">--%</div>
+          <div id="kelly-result" class="mt-4 hidden pt-4 border-t border-gray-100">
+            <div class="text-center py-5 bg-gradient-to-br from-gray-50 to-white rounded-xl">
+              <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600" id="kelly-value">--%</div>
               <div class="text-sm text-gray-500 mt-1">建议仓位比例</div>
             </div>
-            <div class="text-xs text-gray-500 bg-gray-50 p-3 rounded-lg" id="kelly-advice"></div>
+            <div class="text-xs text-gray-500 bg-gray-50 p-3 rounded-xl mt-3" id="kelly-advice"></div>
           </div>
         </div>
       </div>
@@ -403,39 +416,39 @@
 
     <!-- 资源库 -->
     <section id="resources" class="page-section hidden">
-      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-primary rounded-full"></span>外部资源库</h2>
-      <div id="resources-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-primary to-blue-400 rounded-full"></span>外部资源库</h2>
+      <div id="resources-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         <!-- JS生成 -->
       </div>
     </section>
 
     <!-- 联系我们 -->
     <section id="contact" class="page-section hidden">
-      <div class="max-w-2xl mx-auto bg-white rounded-xl shadow border border-border p-8">
-        <h2 class="text-2xl font-bold mb-6 text-center">联系我们</h2>
-        <div class="text-center mb-8">
-          <p class="text-gray-600">有任何建议或问题，欢迎通过以下方式联系：</p>
-          <a href="mailto:1316253069@qq.com" class="inline-flex items-center gap-2 mt-3 text-primary hover:underline text-lg">
+      <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10">
+        <h2 class="text-2xl font-bold mb-2 text-center">联系我们</h2>
+        <p class="text-center text-gray-500 text-sm mb-8">有任何建议或问题，欢迎随时与我们取得联系</p>
+        <div class="text-center mb-8 p-5 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100">
+          <a href="mailto:1316253069@qq.com" class="inline-flex items-center gap-2 text-primary hover:underline text-lg font-medium">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
             1316253069@qq.com
           </a>
         </div>
         <form onsubmit="submitFeedback(event)" class="space-y-4">
           <div>
-            <label class="block text-sm text-gray-500 mb-1">姓名</label>
-            <input type="text" id="contact-name" required class="w-full border border-border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+            <label class="block text-sm text-gray-500 mb-1.5">姓名</label>
+            <input type="text" id="contact-name" required class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-gray-50/50">
           </div>
           <div>
-            <label class="block text-sm text-gray-500 mb-1">邮箱</label>
-            <input type="email" id="contact-email" required class="w-full border border-border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+            <label class="block text-sm text-gray-500 mb-1.5">邮箱</label>
+            <input type="email" id="contact-email" required class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-gray-50/50">
           </div>
           <div>
-            <label class="block text-sm text-gray-500 mb-1">建议内容</label>
-            <textarea id="contact-message" rows="4" required class="w-full border border-border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+            <label class="block text-sm text-gray-500 mb-1.5">建议内容</label>
+            <textarea id="contact-message" rows="4" required class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-gray-50/50"></textarea>
           </div>
-          <button type="submit" class="w-full py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-800">提交反馈</button>
+          <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl font-bold shadow-md hover:shadow-lg hover:scale-[1.01] transition">提交反馈</button>
         </form>
-        <div class="mt-6 p-4 bg-gray-50 rounded-lg text-xs text-gray-500">
+        <div class="mt-6 p-4 bg-gray-50 rounded-xl text-xs text-gray-500">
           <p class="font-bold mb-1">免责声明</p>
           <p>本网站仅供学习交流，不构成投资建议。股市有风险，入市需谨慎。用户模拟交易数据仅存储在本地浏览器中，不会上传至任何服务器。</p>
         </div>
@@ -445,16 +458,30 @@
   </main>
 
   <!-- 页脚 -->
-  <footer class="bg-white border-t mt-12">
-    <div class="max-w-7xl mx-auto px-4 py-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-        <div><a href="#home" class="text-gray-600 hover:text-primary block py-1">首页</a><a href="#market" class="text-gray-600 hover:text-primary block py-1">市场行情</a><a href="#learning" class="text-gray-600 hover:text-primary block py-1">学习路径</a></div>
-        <div><a href="#kline" class="text-gray-600 hover:text-primary block py-1">K线分析</a><a href="#ai" class="text-gray-600 hover:text-primary block py-1">AI分析</a><a href="#trading" class="text-gray-600 hover:text-primary block py-1">模拟交易</a></div>
-        <div><a href="#calculator" class="text-gray-600 hover:text-primary block py-1">投资计算</a><a href="#resources" class="text-gray-600 hover:text-primary block py-1">资源库</a><a href="#contact" class="text-gray-600 hover:text-primary block py-1">联系我们</a></div>
-        <div class="text-gray-500 text-xs">
-          <p>&copy; 2025 Zane财经</p>
-          <p class="mt-1">股市有风险，入市需谨慎。</p>
+  <footer class="bg-gradient-to-b from-gray-50 to-white border-t border-gray-100 mt-16">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md">Z</div>
+          <div>
+            <p class="font-bold text-gray-900">Zane财经</p>
+            <p class="text-xs text-gray-500">新手炒股第一站</p>
+          </div>
         </div>
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+          <a href="#home" class="text-gray-600 hover:text-primary transition">首页</a>
+          <a href="#market" class="text-gray-600 hover:text-primary transition">市场行情</a>
+          <a href="#learning" class="text-gray-600 hover:text-primary transition">学习路径</a>
+          <a href="#kline" class="text-gray-600 hover:text-primary transition">K线分析</a>
+          <a href="#ai" class="text-gray-600 hover:text-primary transition">AI分析</a>
+          <a href="#trading" class="text-gray-600 hover:text-primary transition">模拟交易</a>
+          <a href="#calculator" class="text-gray-600 hover:text-primary transition">投资计算</a>
+          <a href="#resources" class="text-gray-600 hover:text-primary transition">资源库</a>
+          <a href="#contact" class="text-gray-600 hover:text-primary transition">联系我们</a>
+        </div>
+      </div>
+      <div class="border-t border-gray-100 mt-8 pt-6 text-center text-xs text-gray-400">
+        <p>&copy; 2025 Zane财经 | 股市有风险，入市需谨慎 | 本网站仅供学习交流，不构成投资建议</p>
       </div>
     </div>
   </footer>

@@ -5,7 +5,7 @@ let apiScriptId = 0;
 
 function loadTencentAPI(codes, callback) {
   const id = 'tencent_api_' + (++apiScriptId);
-  const url = 'http://qt.gtimg.cn/q=' + codes.join(',');
+  const url = 'https://qt.gtimg.cn/q=' + codes.join(',');
   const script = document.createElement('script');
   script.id = id;
   script.src = url;
