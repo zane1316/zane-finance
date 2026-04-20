@@ -153,7 +153,64 @@ const glossaryData = [
   { term: '自由现金流', pinyin: 'ziyouxianjinliu', category: '财务分析', definition: '企业经营活动产生的现金流量扣除维持运营所需的资本支出后，可自由分配给股东和债权人的现金。', example: '自由现金流持续为正且稳定增长的公司通常财务状况健康。' },
   { term: '应收账款', pinyin: 'yingshouzhangkuan', category: '财务分析', definition: '企业已交付商品或提供服务但尚未收回的款项，反映企业的回款能力和下游议价力。', example: '应收账款大幅增长但营收未同步增长，可能意味着回款困难。' },
   { term: '存货周转率', pinyin: 'cunhuozhuanlulv', category: '财务分析', definition: '营业成本除以平均存货，衡量企业存货变现速度和管理效率。', example: '存货周转率越高，说明商品卖得越快，资金占用越少。' },
-  { term: '杜邦分析法', pinyin: 'dubangfenxi', category: '财务分析', definition: '将净资产收益率（ROE）分解为销售净利率、资产周转率和权益乘数三个因素的财务分析框架。', example: '通过杜邦分析可以判断ROE提升是来自盈利改善还是杠杆增加。' }
+  { term: '杜邦分析法', pinyin: 'dubangfenxi', category: '财务分析', definition: '将净资产收益率（ROE）分解为销售净利率、资产周转率和权益乘数三个因素的财务分析框架。', example: '通过杜邦分析可以判断ROE提升是来自盈利改善还是杠杆增加。' },
+
+  // 基金术语（补充）
+  { term: 'MOM', pinyin: 'mom', category: '基金术语', definition: '管理人的管理人基金，通过筛选和委托多个优秀投资管理人进行投资，实现多元策略配置。', example: 'MOM模式将资金分配给不同的基金经理，各自负责擅长的策略领域。' },
+  { term: 'ETF联接基金', pinyin: 'etflijiiejijin', category: '基金术语', definition: '主要投资于目标ETF基金份额的基金，让无法在场内交易ETF的投资者也能间接参与。', example: '某沪深300ETF联接基金90%以上资产投资于对应的ETF。' },
+  { term: '增强指数基金', pinyin: 'zengqiangzhishujijin', category: '基金术语', definition: '以跟踪指数为主，同时通过主动选股、量化策略等方式力求获得超越指数的额外收益。', example: '某沪深300增强基金目标是在跟踪误差可控前提下跑赢沪深300指数。' },
+  { term: '巨额赎回', pinyin: 'jueshuhui', category: '基金术语', definition: '单个开放日基金净赎回申请超过基金总份额10%的情形，基金管理人有权延期或部分延期办理。', example: '市场大跌时，投资者集中赎回可能导致基金触发巨额赎回条款。' },
+  { term: '基金清盘', pinyin: 'jinjinqingpan', category: '基金术语', definition: '基金因规模过小（如连续60日低于5000万元）或合同到期等原因终止运作，将剩余资产变现后分配给投资者。', example: '迷你基金因长期规模不足触发清盘条件，投资者将收到清算款项。' },
+  { term: '基金转型', pinyin: 'jinjinzhuanxing', category: '基金术语', definition: '基金在运作过程中因市场环境变化或合同约定，改变投资目标、策略或类型的行为，需经持有人大会表决。', example: '某保本基金因资管新规要求转型为偏债混合基金。' },
+  { term: '定开基金', pinyin: 'dingkaijijin', category: '基金术语', definition: '定期开放型基金，在封闭期内不接受申赎，仅在固定的开放期内办理，帮助基金经理减少流动性干扰。', example: '某定开基金每3个月开放一次申赎，其余时间封闭运作。' },
+  { term: '持有期基金', pinyin: 'chiyouqijijin', category: '基金术语', definition: '投资者买入后必须持有满一定期限（如6个月、1年）才能赎回的基金，旨在引导长期投资。', example: '持有期基金帮助投资者克制频繁申赎的冲动。' },
+  { term: '微笑曲线', pinyin: 'weixiaoquxian', category: '基金术语', definition: '定投理论中的理想走势：市场先下跌再上涨，定投者在低位积累更多份额，最终收益优于一次性投资。', example: '定投过程中经历下跌无需恐慌，微笑曲线正是利用低点多买。' },
+  { term: '分级基金', pinyin: 'fenjijijin', category: '基金术语', definition: '将基金份额分为不同风险收益等级的子份额（如稳健级A和进取级B），目前A股市场已逐步清退。', example: '分级B具有杠杆效应，涨跌幅可能大于母基金。' },
+  { term: '主动型基金', pinyin: 'zhudongxingjijin', category: '基金术语', definition: '由基金经理主动选股、择时，力求超越业绩比较基准的基金，管理费和换手率通常较高。', example: '偏股混合基金和灵活配置基金多属于主动型基金。' },
+  { term: '被动型基金', pinyin: 'beidongxingjijin', category: '基金术语', definition: '以跟踪特定指数为目标的基金，不主动选股，管理费率低，透明度高，如ETF和普通指数基金。', example: '沪深300ETF是典型的被动型基金，完全复制指数成分股。' },
+  { term: '前端收费', pinyin: 'qianduanshoufei', category: '基金术语', definition: '基金申购时一次性扣除申购费，持有时间越长越划算，适合长期投资者。', example: '前端申购费1.5%，买入1万元实际确认份额为9850元对应份额。' },
+  { term: '后端收费', pinyin: 'houdaanshoufei', category: '基金术语', definition: '基金申购时不收费，赎回时根据持有时间收取申购费，持有时间越长费率越低甚至为零。', example: '某基金后端收费持有满3年后赎回免收申购费。' },
+  { term: '红利再投资', pinyin: 'honglizaitouzi', category: '基金术语', definition: '基金分红时将分得的红利自动转换为基金份额继续投资，享受复利效应，通常免收申购费。', example: '选择红利再投资可以让分红资金继续参与市场增长。' },
+
+  // 交易规则（补充）
+  { term: '量化交易', pinyin: 'lianghuajiaoyi', category: '交易规则', definition: '利用数学模型和计算机程序自动执行交易决策的投资方式，强调纪律性和系统性。', example: '量化策略可能基于均线突破、均值回归等规则自动买卖。' },
+  { term: '程序化交易', pinyin: 'chengxuhuajiaoyi', category: '交易规则', definition: '通过预先编写的计算机程序自动下单的交易方式，是量化交易的实现手段之一。', example: '程序化交易可以在毫秒级别完成行情分析和下单。' },
+  { term: '网格交易', pinyin: 'wanggejiaoyi', category: '交易规则', definition: '在设定的价格区间内划分若干网格，价格每跌一格买入、每涨一格卖出，赚取震荡行情中的差价。', example: '某股在10-12元区间设置网格，每0.5元为一格进行低买高卖。' },
+  { term: '条件单', pinyin: 'tiaojiandan', category: '交易规则', definition: '投资者预设触发条件和委托指令，当行情满足条件时系统自动提交委托，无需实时盯盘。', example: '设置股价跌破20元时自动卖出1000股的条件单。' },
+  { term: '一键打新', pinyin: 'yijiandaxin', category: '交易规则', definition: '交易软件提供的便捷功能，一次性批量申购当日所有可申购的新股/新债，提高操作效率。', example: '每天早上打开APP，点击一键打新即可参与所有新股申购。' },
+  { term: '涨停板', pinyin: 'zhangtingban', category: '交易规则', definition: '股票价格达到当日涨幅上限后停止上涨，主板为±10%，创业板/科创板为±20%，北交所为±30%。', example: '利好刺激下，某股开盘即封涨停板，买盘远大于卖盘。' },
+  { term: '跌停板', pinyin: 'dietingban', category: '交易规则', definition: '股票价格达到当日跌幅下限后停止下跌，卖出委托远大于买入委托时常见。', example: '利空消息导致某股连续跌停，投资者难以卖出。' },
+  { term: '一字板', pinyin: 'yiziban', category: '交易规则', definition: '股票以涨停或跌停价开盘并全天维持，K线呈一字形，说明多空力量极度失衡。', example: '重大重组公告后，某股连续多个一字涨停板。' },
+
+  // 风险相关（补充）
+  { term: '黑天鹅事件', pinyin: 'heitiane', category: '风险相关', definition: '极其罕见、难以预测但一旦发生影响巨大的负面事件，如突发战争、重大疫情、金融海啸等。', example: '2020年新冠疫情爆发是典型的黑天鹅事件，全球股市短期内暴跌。' },
+  { term: '灰犀牛', pinyin: 'huixiniu', category: '风险相关', definition: '大概率会发生、预警信号明显但被忽视的高风险事件，与黑天鹅的突发性相对。', example: '房地产泡沫、地方债务问题是许多经济学家警告的灰犀牛。' },
+  { term: '风险溢价', pinyin: 'fengxianyijia', category: '风险相关', definition: '投资者因承担额外风险而要求的超额回报，高风险资产必须提供更高的预期收益才能吸引投资。', example: '股票的长期收益高于债券，高出的部分就是股权风险溢价。' },
+  { term: '流动性风险', pinyin: 'liudongxingfengxian', category: '风险相关', definition: '资产无法在短时间内以合理价格变现的风险，市场恐慌时流动性风险显著上升。', example: '中小盘股在熊市中可能因缺乏买盘而难以卖出。' },
+  { term: '道德风险', pinyin: 'daodefengxian', category: '风险相关', definition: '因信息不对称，一方在获得保护后采取更冒险行为而损害另一方利益的风险。', example: '刚性兑付环境下，投资者不关注产品风险，机构倾向于发行高风险产品。' },
+
+  // 近年热点（补充）
+  { term: 'REITs', pinyin: 'reits', category: '基础概念', definition: '不动产投资信托基金，通过证券化方式将不动产资产转化为可交易的基金份额，投资者可分享租金和增值收益。', example: '基础设施REITs涵盖高速公路、产业园、仓储物流等资产。' },
+  { term: 'ESG投资', pinyin: 'esgtouzi', category: '基础概念', definition: '综合考虑环境（Environmental）、社会（Social）和治理（Governance）因素的投资理念，追求可持续发展。', example: 'ESG评分高的企业通常在长期经营中更具韧性。' },
+  { term: '碳中和概念', pinyin: 'tanzhonghe', category: '基础概念', definition: '与实现碳达峰、碳中和目标相关的产业和企业，包括新能源、储能、节能减排、碳捕集等领域。', example: '光伏、风电、新能源汽车是碳中和概念的核心赛道。' },
+  { term: '北向资金', pinyin: 'beixiangzijin', category: '基础概念', definition: '通过沪深港通机制从香港流入A股市场的外资，因地理方位（香港在南部）而得名。', example: '北向资金单日净流入超百亿通常被视为外资看好A股的信号。' },
+  { term: '南向资金', pinyin: 'nanxiangzijin', category: '基础概念', definition: '通过沪深港通机制从内地流入港股市场的资金，与北向资金方向相反。', example: '内地投资者通过港股通买入腾讯、美团等港股标的属于南向资金。' },
+  { term: '互联互通', pinyin: 'hulianhutong', category: '基础概念', definition: '沪港通、深港通等机制的统称，允许内地与香港投资者相互买卖对方市场的股票。', example: '互联互通机制大幅提升了A股市场的国际化程度。' },
+  { term: '注册制', pinyin: 'zhucezhi', category: '基础概念', definition: '证券发行制度，企业只要符合信息披露要求即可注册上市，由市场判断投资价值，区别于核准制。', example: '科创板和创业板已实行注册制，主板也于2023年全面实行注册制。' },
+  { term: '全面注册制', pinyin: 'quanmianzhucezhi', category: '基础概念', definition: '2023年中国资本市场改革的重要举措，A股所有板块统一实行注册制，简化上市流程，强化信息披露。', example: '全面注册制下，新股发行更加市场化，壳资源价值大幅下降。' },
+  { term: '做市商', pinyin: 'zuoshishang', category: '交易规则', definition: '具备做市资格的券商，在市场中同时报出买入和卖出价格，为市场提供流动性，常见于科创板和北交所。', example: '做市商通过买卖价差获利，同时稳定市场交易价格。' },
+  { term: '中特估', pinyin: 'zhongtegu', category: '基础概念', definition: '中国特色估值体系的简称，指重新审视和评估央企、国企等传统行业股票的估值逻辑，关注分红和稳健经营。', example: '2023年中特估概念引发市场对低估值国企的重新关注。' },
+  { term: '新质生产力', pinyin: 'xinzhi', category: '基础概念', definition: '以科技创新为驱动、摆脱传统增长方式的先进生产力形态，涵盖人工智能、生物医药、新能源、高端装备等领域。', example: '发展新质生产力是近年来产业政策的重要方向。' },
+  { term: '专精特新', pinyin: 'zhuanjingtexin', category: '基础概念', definition: '专业化、精细化、特色化、新颖化的简称，指具有核心技术和市场竞争力的中小企业，是政策支持的重点对象。', example: '专精特新小巨人企业在细分领域往往具有全球竞争力。' },
+
+  // 基础概念（补充）
+  { term: '熔断机制', pinyin: 'rongduan', category: '基础概念', definition: '当股指跌幅达到预设阈值时暂停交易的制度，旨在给市场冷静期。A股2016年曾短暂实施，后暂停。', example: '美股实行三级熔断机制，分别对应7%、13%和20%的跌幅阈值。' },
+  { term: '股权质押', pinyin: 'guquanzhiya', category: '基础概念', definition: '股东将持有的股票作为担保物向金融机构借款的融资方式，质押比例过高存在平仓风险。', example: '大股东高比例质押后，若股价大幅下跌可能面临强制平仓。' },
+  { term: '减持', pinyin: 'jianchi', category: '基础概念', definition: '上市公司大股东、董监高等特定股东出售所持有的股票，通常受法律法规的严格限制和披露要求。', example: '大股东计划减持超过1%的股份需要提前公告。' },
+  { term: '高送转', pinyin: 'gaosongzhuan', category: '基础概念', definition: '上市公司大比例送红股或转增股本的行为（如10送10），虽增加股数但降低每股价值，实质为数字游戏。', example: '高送转后股价除权降低，但总市值不变，常被市场炒作。' },
+  { term: '借壳上市', pinyin: 'jieke', category: '基础概念', definition: '非上市公司通过收购、资产置换等方式取得已上市公司的控股权，从而间接实现上市。', example: '某新能源企业通过借壳ST公司快速登陆A股市场。' },
+  { term: '股权激励', pinyin: 'guquanjili', category: '基础概念', definition: '上市公司以股票或期权为工具激励高管和核心员工，使其利益与公司长期发展绑定。', example: '股权激励计划通常设置业绩考核目标，达标后员工方可行权。' },
+  { term: '回购', pinyin: 'huigou', category: '基础概念', definition: '上市公司用自有资金从二级市场购回本公司股票，通常用于注销（提升每股价值）或用于员工持股计划。', example: '某公司宣布回购不超过10亿元股份，传递管理层看好公司的信号。' }
 ];
 
 function initGlossary() {

@@ -97,8 +97,17 @@ function switchFundCategory(cat) {
 
 function getFilteredFunds() {
   const query = (document.getElementById('fund-search')?.value || '').trim().toLowerCase();
-  // Use expanded pool when searching, otherwise show curated funds
-  let list = (query && typeof allFunds !== 'undefined' && Array.isArray(allFunds)) ? allFunds : curatedFunds;
+  // Use full pool when searching, sampled pool for default display
+  let list = curatedFunds;
+  if (query) {
+    if (typeof allFundsFull !== 'undefined' && Array.isArray(allFundsFull)) {
+      list = allFundsFull;
+    } else if (typeof allFunds !== 'undefined' && Array.isArray(allFunds)) {
+      list = allFunds;
+    }
+  } else if (typeof allFunds !== 'undefined' && Array.isArray(allFunds)) {
+    list = allFunds;
+  }
   if (currentFundCategory !== '全部') {
     list = list.filter(f => f.category === currentFundCategory);
   }
@@ -143,8 +152,8 @@ function renderFundCards() {
           </div>
         </div>
         <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-100">
-          <span>基金经理: ${f.manager}</span>
-          <span>成立: ${f.since.split('-')[0]}</span>
+          <span>${f.manager ? '基金经理: ' + f.manager : ''}</span>
+          <span>${f.since ? '成立: ' + f.since.split('-')[0] : ''}</span>
         </div>
       </div>
     `;

@@ -1875,7 +1875,7 @@ const fundLearningData = [
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 完整的基金投资计划包含哪六个要素？</p><p>2. 如何根据自己的目标确定投资期限？</p></div></details>
         `,
         videos: [
-          { title: '上交所投教：基金投资规划', url: 'http://edu.sse.com.cn', platform: 'web' }
+          { title: 'B站：基金投资体系与资产配置', url: 'https://search.bilibili.com/all?keyword=基金投资体系+资产配置', platform: 'bilibili' }
         ]
       },
       {
@@ -1896,7 +1896,7 @@ const fundLearningData = [
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 从基金过渡到股票时，应该注意什么？</p><p>2. 为什么基金应该作为"压舱石"长期保留？</p></div></details>
         `,
         videos: [
-          { title: '深交所投教：投资者进阶', url: 'http://investor.szse.cn', platform: 'web' }
+          { title: 'B站：从基金到股票的进阶路径', url: 'https://search.bilibili.com/all?keyword=基金进阶+股票投资', platform: 'bilibili' }
         ]
       }
     ]
