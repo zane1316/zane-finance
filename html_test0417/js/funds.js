@@ -2,6 +2,8 @@
 const fundCategories = ['全部', '股票型', '混合型', '债券型', '指数型', 'QDII', '货币型'];
 let currentFundCategory = '全部';
 let fundQuoteCache = {};
+let allFundsFullCache = null;
+let allFundsFullPromise = null;
 
 const curatedFunds = [
   // 股票型
@@ -77,6 +79,7 @@ function initFunds() {
   renderFundTabs();
   renderFundCards();
   loadFundQuotes();
+  renderFundRankings();
 }
 
 function renderFundTabs() {
@@ -93,21 +96,45 @@ function switchFundCategory(cat) {
   renderFundTabs();
   renderFundCards();
   loadFundQuotes();
+  renderFundRankings();
+}
+
+function getAllFundsFull() {
+  if (allFundsFullCache) return Promise.resolve(allFundsFullCache);
+  if (allFundsFullPromise) return allFundsFullPromise;
+
+  allFundsFullPromise = fetch('./js/all-funds-full.json')
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(data => {
+      allFundsFullCache = data;
+      console.log('Loaded full fund list:', data.length);
+      return data;
+    })
+    .catch(err => {
+      console.warn('Failed to load full fund list:', err);
+      allFundsFullPromise = null;
+      return null;
+    });
+  return allFundsFullPromise;
 }
 
 function getFilteredFunds() {
   const query = (document.getElementById('fund-search')?.value || '').trim().toLowerCase();
-  // Use full pool when searching, sampled pool for default display
+  // Default: show only curated funds (lightweight)
   let list = curatedFunds;
+
   if (query) {
-    if (typeof allFundsFull !== 'undefined' && Array.isArray(allFundsFull)) {
-      list = allFundsFull;
+    // Search mode: prefer full list if cached, fallback to sampled allFunds
+    if (allFundsFullCache) {
+      list = allFundsFullCache;
     } else if (typeof allFunds !== 'undefined' && Array.isArray(allFunds)) {
       list = allFunds;
     }
-  } else if (typeof allFunds !== 'undefined' && Array.isArray(allFunds)) {
-    list = allFunds;
   }
+
   if (currentFundCategory !== '全部') {
     list = list.filter(f => f.category === currentFundCategory);
   }
@@ -175,7 +202,8 @@ function getCategoryBadgeClass(cat) {
 function loadFundQuotes() {
   const funds = getFilteredFunds();
   if (funds.length === 0) return;
-  const codes = funds.map(f => f.code);
+  // Limit quote fetches to prevent API overload
+  const codes = funds.slice(0, 80).map(f => f.code);
   const chunkSize = 40;
   for (let i = 0; i < codes.length; i += chunkSize) {
     const chunk = codes.slice(i, i + chunkSize);
@@ -245,6 +273,20 @@ function renderRankingRow(f, rank, isUp) {
 }
 
 function doFundSearch() {
+  const query = (document.getElementById('fund-search')?.value || '').trim().toLowerCase();
+  if (query && !allFundsFullCache && !allFundsFullPromise) {
+    // First search: lazy-load full fund list
+    const container = document.getElementById('fund-cards');
+    if (container) {
+      container.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400"><p class="text-lg mb-2">正在加载全市场基金数据...</p><p class="text-sm">首次搜索约需1-2秒，请稍候</p></div>`;
+    }
+    getAllFundsFull().then(() => {
+      renderFundCards();
+      loadFundQuotes();
+      renderFundRankings();
+    });
+    return;
+  }
   renderFundCards();
   loadFundQuotes();
   renderFundRankings();
