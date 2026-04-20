@@ -43,6 +43,51 @@ const learningData = [
         `
       },
       {
+        title: '基金投资：新手的最佳起点',
+        content: `
+          <p class="mb-3">很多新手一开户就急着想买股票，但<strong>基金才是大多数新手最应该开始的理财工具</strong>。基金的本质是"把钱交给专业的人，让他帮你买股票/债券"。你不需要研究个股，不需要盯盘，就能获得市场平均收益。</p>
+          <p class="mb-3"><strong>为什么新手应该从基金开始？</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>门槛低</strong>：10元就能买，不像股票最少要买100股（一手）</li>
+            <li><strong>分散风险</strong>：一只基金通常持有几十甚至上百只股票，单只股票暴雷对整体影响很小</li>
+            <li><strong>专业管理</strong>：基金经理和投研团队全职研究市场，普通散户很难匹敌</li>
+            <li><strong>省时省力</strong>：不需要盯盘、不需要看财报、不需要研究K线</li>
+            <li><strong>心态友好</strong>：基金波动通常小于个股，新手不容易因剧烈波动而恐慌操作</li>
+          </ul>
+          <p class="mb-3"><strong>常见基金类型速览：</strong></p>
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-gray-100"><th class="text-left p-2 rounded-tl-lg">类型</th><th class="text-left p-2">特点</th><th class="text-left p-2">风险</th><th class="text-left p-2 rounded-tr-lg">适合</th></tr></thead>
+              <tbody class="bg-white">
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">货币型</td><td class="p-2">余额宝类产品，随存随取</td><td class="p-2 text-green-600">极低</td><td class="p-2">活期理财</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">债券型</td><td class="p-2">主要投资国债、企业债</td><td class="p-2 text-green-600">低</td><td class="p-2">稳健保值</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">指数型</td><td class="p-2">跟踪沪深300等指数</td><td class="p-2 text-amber-600">中</td><td class="p-2">新手首选</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">混合型</td><td class="p-2">股票+债券灵活配置</td><td class="p-2 text-amber-600">中高</td><td class="p-2">长期持有</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">股票型</td><td class="p-2">80%以上仓位买股票</td><td class="p-2 text-red-600">高</td><td class="p-2">能承受波动</td></tr>
+                <tr><td class="p-2 font-medium rounded-bl-lg">QDII</td><td class="p-2">投资海外 markets</td><td class="p-2 text-amber-600">中</td><td class="p-2 rounded-br-lg">分散A股风险</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">新手路径建议</p>
+            <p class="text-sm text-blue-700"><strong>第一步</strong>：用货币基金（如余额宝）存放日常备用金。<br><strong>第二步</strong>：每月定投沪深300指数基金，金额不用多，500-1000元即可，目的是"先上车"。<br><strong>第三步</strong>：在定投的同时，用本站模拟盘学习个股操作，但实盘资金不超过总资产的20%。<br><strong>记住</strong>：基金让你"睡得着觉"，股票让你"学得快"。两者结合，才是新手最优解。</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">重要提醒</p>
+            <p class="text-sm text-yellow-700">基金≠稳赚。2020-2021年大量新手在高点买入明星基金，随后市场回调，很多基金净值回撤超过30%。基金投资同样需要择时和纪律，定投是最适合新手的入场方式，因为它天然实现了"低位多买、高位少买"的效果。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 基金和股票相比，最大的优势是什么？</p>
+              <p>2. 为什么指数基金被称为"新手首选"？</p>
+              <p>3. 新手建议的理财三步路径是什么？</p>
+              <p>4. 定投为什么能天然实现"低位多买、高位少买"？</p>
+            </div>
+          </details>
+        `
+      },
+      {
         title: '开户全流程实战',
         content: `
           <p class="mb-3">炒股第一步是开立证券账户。目前开户全部可以在线上完成，只需要身份证和银行卡，15分钟即可搞定。以下是详细步骤：</p>
@@ -1544,6 +1589,60 @@ const learningData = [
               <p>1. 完整的交易系统包含哪五个要素？</p>
               <p>2. 健康的交易系统应该满足哪四个指标？</p>
               <p>3. "计划你的交易，交易你的计划"是什么意思？</p>
+            </div>
+          </details>
+        `
+      },
+      {
+        title: '基金组合配置与定投策略',
+        content: `
+          <p class="mb-3">当你已经掌握了股票交易的精髓，不要忘记基金仍然是资产配置的重要工具。一个成熟的投资者，应该同时运用股票和基金构建"攻防兼备"的投资组合。</p>
+          <p class="mb-3"><strong>资产配置金字塔：</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>第一层（地基）——货币基金</strong></p>
+            <p>存放3-6个月的生活备用金，追求绝对安全和高流动性。占投资组合的10-20%。推荐：天弘余额宝、易方达货币A。</p>
+            <p><strong>第二层（稳健层）——债券基金</strong></p>
+            <p>作为组合的"压舱石"，股市大跌时债券通常上涨，起到对冲作用。占投资组合的20-30%。推荐：易方达稳健收益、招商产业债券。</p>
+            <p><strong>第三层（核心层）——宽基指数基金</strong></p>
+            <p>沪深300ETF + 中证500ETF 是A股的核心配置，长期持有分享经济增长红利。占投资组合的30-40%。</p>
+            <p><strong>第四层（卫星层）——行业主题基金/股票</strong></p>
+            <p>在核心配置基础上，用20-30%资金配置看好的行业（如新能源、半导体、消费），追求超额收益。</p>
+          </div>
+          <p class="mb-3"><strong>核心-卫星策略详解：</strong></p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 text-sm">
+            <div class="bg-blue-50 p-3 rounded">
+              <p class="font-medium text-blue-800">核心（60-70%）</p>
+              <p class="text-gray-600">宽基指数（沪深300+中证500）+ 债券基金。目标是获取市场平均收益，降低波动。</p>
+            </div>
+            <div class="bg-purple-50 p-3 rounded">
+              <p class="font-medium text-purple-800">卫星（30-40%）</p>
+              <p class="text-gray-600">行业ETF + 个股。目标是通过主动判断获取超额收益。卫星可以调整，核心长期不动。</p>
+            </div>
+          </div>
+          <p class="mb-3"><strong>定投策略进阶：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1 text-sm">
+            <li><strong>定期定额</strong>：每月固定日期投入固定金额。最简单，适合完全没时间的上班族。</li>
+            <li><strong>定期不定额（智能定投）</strong>：高位少买、低位多买。例如：沪深300PE低于12倍时定投2000元，PE高于18倍时定投500元。</li>
+            <li><strong>估值定投法</strong>：只在指数估值处于历史30%分位以下时加倍定投，70%分位以上时停止定投或逐步止盈。</li>
+            <li><strong>股债再平衡</strong>：每半年检查一次股债比例，如果股票涨幅过大导致占比超过预设上限，卖出部分股票买入债券，恢复目标比例。</li>
+          </ul>
+          <div class="bg-green-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-green-800 mb-1">实操示例</p>
+            <p class="text-sm text-green-700">假设你有10万元可投资资金，年龄25岁，风险承受能力较高：</p>
+            <p class="text-sm text-green-700">- 货币基金：1万（10%，应急备用）</p>
+            <p class="text-sm text-green-700">- 债券基金：2万（20%，稳健打底）</p>
+            <p class="text-sm text-green-700">- 沪深300ETF：3万（30%，核心配置）</p>
+            <p class="text-sm text-green-700">- 中证500ETF：2万（20%，中小盘补充）</p>
+            <p class="text-sm text-green-700">- 行业ETF+个股：2万（20%，卫星进攻）</p>
+            <p class="text-sm text-green-700 mt-1">每半年再平衡一次，确保各资产比例不偏离目标超过5%。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 资产配置金字塔从下到上分别是哪四层？</p>
+              <p>2. 核心-卫星策略中，核心和卫星的目标分别是什么？</p>
+              <p>3. 估值定投法的基本原则是什么？</p>
+              <p>4. 为什么要定期做股债再平衡？</p>
             </div>
           </details>
         `

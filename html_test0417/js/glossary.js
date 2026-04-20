@@ -110,7 +110,50 @@ const glossaryData = [
   { term: '流动比率', pinyin: 'liudongbilv', category: '财务分析', definition: '流动资产 / 流动负债，衡量企业短期偿债能力。', example: '流动比率>2通常认为短期偿债能力较强。' },
   { term: '速动比率', pinyin: 'sudongbilv', category: '财务分析', definition: '（流动资产 - 存货）/ 流动负债，更严格地衡量短期偿债能力。', example: '存货变现能力弱，扣除后更真实反映偿债能力。' },
   { term: '营收增长率', pinyin: 'yingshouzengzhang', category: '财务分析', definition: '本期营业收入相对上期的增长百分比，反映业务扩张速度。', example: '营收连续增长说明公司在扩张。' },
-  { term: '净利润增长率', pinyin: 'jinglirunzengzhang', category: '财务分析', definition: '本期净利润相对上期的增长百分比，反映盈利能力提升速度。', example: '净利润增速高于营收增速说明盈利能力在改善。' }
+  { term: '净利润增长率', pinyin: 'jinglirunzengzhang', category: '财务分析', definition: '本期净利润相对上期的增长百分比，反映盈利能力提升速度。', example: '净利润增速高于营收增速说明盈利能力在改善。' },
+
+  // 基金术语（补充）
+  { term: '认购', pinyin: 'rengou', category: '基金术语', definition: '基金首次发行募集期间购买基金份额的行为，通常费率低于申购。', example: '新基金发行期间通过认购买入，封闭期结束后才能赎回。' },
+  { term: '费率', pinyin: 'feilv', category: '基金术语', definition: '投资基金所需支付的各项费用总和，包括申购费、管理费、托管费、赎回费等。', example: 'A类基金申购费1.5%，管理费1%/年，托管费0.2%/年。' },
+  { term: '申购费', pinyin: 'shengoufei', category: '基金术语', definition: '购买基金份额时支付的手续费，通常为认购金额的0.1%-1.5%。', example: '申购10万元基金，申购费率0.15%，需支付150元申购费。' },
+  { term: '赎回费', pinyin: 'shuhuifei', category: '基金术语', definition: '卖出基金份额时支付的手续费，持有时间越长费率越低，通常持有超过2年免收。', example: '持有不满7天赎回，赎回费率高达1.5%，旨在惩罚短线交易。' },
+  { term: '管理费', pinyin: 'guanlifei', category: '基金术语', definition: '基金公司每年按基金资产净值的一定比例收取的报酬，用于支付投研和运营开支。', example: '管理费1%/年意味着每年从基金资产中扣除1%作为报酬。' },
+  { term: '托管费', pinyin: 'tuoguanfei', category: '基金术语', definition: '银行作为基金资产托管方收取的费用，保障资金安全。通常为0.1%-0.25%/年。', example: '托管费每日计提，直接从基金净值中扣除。' },
+  { term: '销售服务费', pinyin: 'xiaoshoufuwufei', category: '基金术语', definition: 'C类份额基金按日计提的费用，代替申购费，适合短期持有。', example: 'C类基金无申购费，但每年收取0.4%-0.8%的销售服务费。' },
+  { term: '基金转换', pinyin: 'jinjinzhuanhuan', category: '基金术语', definition: '在同一基金公司内部，将持有的某只基金份额直接转换为另一只，省去赎回再申购的时间和费用。', example: '将持有的华夏成长混合转换为华夏沪深300ETF联接。' },
+  { term: '分红方式', pinyin: 'fenhongfangshi', category: '基金术语', definition: '基金分红的两种形式：现金分红（直接拿到现金）和红利再投资（自动转为基金份额）。', example: '长期投资者建议选择红利再投资，复利效果更好。' },
+  { term: '基金评级', pinyin: 'jinjipingji', category: '基金术语', definition: '第三方机构（如晨星、银河证券）对基金历史业绩和风险调整后收益的综合评价，通常分为1-5星。', example: '晨星5星基金代表同类型中风险调整后收益排名前10%。' },
+  { term: '风格漂移', pinyin: 'fenggepiaoyi', category: '基金术语', definition: '基金经理偏离基金合同约定的投资风格和投资范围的现象。', example: '某价值型基金在市场热点时大量买入成长股，即风格漂移。' },
+  { term: '封闭期', pinyin: 'fengbiqi', category: '基金术语', definition: '新基金成立后的一段时间内（通常3个月），投资者不能申购也不能赎回。', example: '封闭期内基金经理可以不受赎回压力地逐步建仓。' },
+  { term: '建仓期', pinyin: 'jianzangqi', category: '基金术语', definition: '新基金成立后3-6个月内，基金经理按照投资策略逐步买入股票/债券的过程。', example: '建仓期内基金仓位可能从0%逐步提升到80%以上。' },
+  { term: '重仓股', pinyin: 'zhongcanggu', category: '基金术语', definition: '基金持仓中占资产净值比例最高的几只股票，通常前十大重仓股占基金净值的50%-70%。', example: '查看基金季报可以了解基金经理的最新重仓股变化。' },
+  { term: '持仓集中度', pinyin: 'chicangjizhongdu', category: '基金术语', definition: '前十大重仓股占基金净资产的比例，反映基金投资的分散程度。', example: '持仓集中度越高，基金业绩波动越大，但超额收益潜力也越大。' },
+
+  // 交易规则（补充）
+  { term: '龙虎榜', pinyin: 'longhufbang', category: '交易规则', definition: '交易所每日公布的涨跌幅/换手率异常股票的交易公开信息，可查看买入/卖出前五席位。', example: '某股涨停后登上龙虎榜，显示机构专用席位大量买入。' },
+  { term: '大宗交易', pinyin: 'dazongjiaoyi', category: '交易规则', definition: '单笔交易数量或金额达到规定标准（如A股单笔>=30万股或>=200万元）的场外协议交易。', example: '大股东减持通常通过大宗交易进行，价格可协商折扣。' },
+  { term: '停牌', pinyin: 'tingpai', category: '交易规则', definition: '股票因重大事项（如重组、发布重要公告）暂时停止在交易所交易。', example: '某公司筹划重大资产重组，申请停牌以避免股价异常波动。' },
+  { term: '复牌', pinyin: 'fupai', category: '交易规则', definition: '停牌股票在重大事项公告或完成后，恢复在交易所正常交易。', example: '重组成功后复牌，股价可能连续涨停或跌停。' },
+  { term: '除权', pinyin: 'chuquan', category: '交易规则', definition: '因送转股、配股导致股本增加，股价按比例下调以保持总市值不变。', example: '10送10后，股价从20元调整为10元，持股数量翻倍。' },
+  { term: '填权', pinyin: 'tianquan', category: '交易规则', definition: '除权后股价上涨，逐渐回到除权前的价格水平。', example: '某公司除权后业绩超预期，股价迅速填权甚至超过除权前高点。' },
+  { term: '贴权', pinyin: 'tiequan', category: '交易规则', definition: '除权后股价继续下跌，未能回到除权前价格。', example: '市场整体低迷，除权后股价持续下跌形成贴权。' },
+  { term: '轧空', pinyin: 'zhakong', category: '交易规则', definition: '空头投资者被迫在股价上涨时高价买回股票平仓，进一步推动股价上涨。', example: '某股被大量融券做空，突发利好导致空头被迫轧空回补。' },
+
+  // 基础概念（补充）
+  { term: '蓝筹股', pinyin: 'lanchougu', category: '基础概念', definition: '业绩稳定、规模庞大、在行业内具有领导地位的优质公司股票，通常市值大、分红稳定。', example: '工商银行、中国平安、贵州茅台都属于蓝筹股。' },
+  { term: '白马股', pinyin: 'baimagu', category: '基础概念', definition: '业绩优良、成长性好、回报率高且具有较高投资价值的股票，是A股中的"优等生"。', example: '茅台、五粮液、恒瑞医药等长期业绩优异的股票被称为白马股。' },
+  { term: '概念股', pinyin: 'gainiangu', category: '基础概念', definition: '因某种特定题材/概念（如人工智能、碳中和）受到市场关注，股价脱离基本面上涨的股票。', example: 'ChatGPT热潮中，多只AI概念股短期内翻倍。' },
+  { term: '妖股', pinyin: 'yaogu', category: '基础概念', definition: '股价走势异常、大幅偏离基本面、暴涨暴跌的股票，通常由游资炒作驱动。', example: '某股连续10个涨停，与公司基本面完全不符，即为妖股。' },
+  { term: '主力', pinyin: 'zhuli', category: '基础概念', definition: '市场中资金实力雄厚、能够影响股价走势的机构投资者或大户。', example: '龙虎榜上的机构专用席位和知名游资营业部即为主力。' },
+  { term: '散户', pinyin: 'sanhu', category: '基础概念', definition: '资金量较小、以个人身份参与股市交易的普通投资者，与机构投资者相对。', example: 'A股散户数量超过2亿，但资金占比不到30%。' },
+  { term: '游资', pinyin: 'youzi', category: '基础概念', definition: '以短期投机为目的、快进快出的活跃资金，通常偏好小市值题材股的短线操作。', example: '游资常在涨停板附近进出，推动题材股短期暴涨。' },
+
+  // 财务分析（补充）
+  { term: 'EBITDA', pinyin: 'ebitda', category: '财务分析', definition: '税息折旧及摊销前利润，衡量企业主营业务的盈利能力，不受资本结构和税收政策影响。', example: 'EBITDA利润率越高，说明企业核心盈利能力越强。' },
+  { term: '自由现金流', pinyin: 'ziyouxianjinliu', category: '财务分析', definition: '企业经营活动产生的现金流量扣除维持运营所需的资本支出后，可自由分配给股东和债权人的现金。', example: '自由现金流持续为正且稳定增长的公司通常财务状况健康。' },
+  { term: '应收账款', pinyin: 'yingshouzhangkuan', category: '财务分析', definition: '企业已交付商品或提供服务但尚未收回的款项，反映企业的回款能力和下游议价力。', example: '应收账款大幅增长但营收未同步增长，可能意味着回款困难。' },
+  { term: '存货周转率', pinyin: 'cunhuozhuanlulv', category: '财务分析', definition: '营业成本除以平均存货，衡量企业存货变现速度和管理效率。', example: '存货周转率越高，说明商品卖得越快，资金占用越少。' },
+  { term: '杜邦分析法', pinyin: 'dubangfenxi', category: '财务分析', definition: '将净资产收益率（ROE）分解为销售净利率、资产周转率和权益乘数三个因素的财务分析框架。', example: '通过杜邦分析可以判断ROE提升是来自盈利改善还是杠杆增加。' }
 ];
 
 function initGlossary() {

@@ -94,6 +94,14 @@ function refreshAllQuotes() {
   if (currentSector === 'allmarket') {
     refreshAllMarketView();
   }
+
+  // Refresh search results if visible
+  const searchResultsEl = document.getElementById('search-results');
+  const searchCardsEl = document.getElementById('search-result-cards');
+  if (currentSearchCodes.length > 0 && searchResultsEl && !searchResultsEl.classList.contains('hidden') && searchCardsEl) {
+    const refreshed = currentSearchCodes.map(c => ({ c, n: resolveStockName(c) || c }));
+    renderSearchResultCards(refreshed, searchCardsEl);
+  }
 }
 
 function getStockData(code) {
@@ -436,6 +444,7 @@ function resolveStockName(code) {
 
 // ==================== Market Search ====================
 let searchAutocompleteTimer = null;
+let currentSearchCodes = [];
 
 function initMarketSearch() {
   const input = document.getElementById('market-search');
@@ -455,7 +464,8 @@ function initMarketSearch() {
     if (e.key === 'Escape') hideSearchAutocomplete();
   });
   // Real-time autocomplete
-  input.addEventListener('input', () => {
+  input.addEventListener('input', (e) => {
+    if (e.isComposing) return; // Skip IME composition events
     clearTimeout(searchAutocompleteTimer);
     const val = input.value.trim();
     if (val.length < 1) { hideSearchAutocomplete(); return; }
@@ -525,9 +535,9 @@ function hideSearchAutocomplete() {
 
 function selectSearchResult(code, name) {
   const input = document.getElementById('market-search');
-  if (input) input.value = name;
+  if (input) input.value = name + ' (' + code + ')';
   hideSearchAutocomplete();
-  doMarketSearch(name);
+  doMarketSearch(code);
 }
 
 function doMarketSearch(query) {
@@ -591,10 +601,13 @@ function doMarketSearch(query) {
 
   // Fallback to existing 220-stock list if no full list loaded
   if (results.length === 0 && list.length === 0) {
-    const code = findStockCode(query);
-    if (code) {
-      const stock = allStocks.find(s => s.c === code);
-      if (stock) results.push(stock);
+    // Only use findStockCode if query looks like a code (not pure Chinese name)
+    if (/^\d/.test(query.trim()) || /^(sh|sz|bj)/i.test(query.trim())) {
+      const code = findStockCode(query);
+      if (code) {
+        const stock = allStocks.find(s => s.c === code);
+        if (stock) results.push(stock);
+      }
     }
     const fallbackFuzzy = allStocks.filter(s =>
       s.n.toLowerCase().includes(q) || s.c.toLowerCase().includes(q)
@@ -630,6 +643,9 @@ function doMarketSearch(query) {
   sectorArea.classList.add('hidden');
   countEl.textContent = `找到 ${results.length} 只`;
   if (clearBtn) clearBtn.classList.remove('hidden');
+
+  // Save current search state for real-time refresh
+  currentSearchCodes = results.map(r => r.c);
 
   // Fetch real-time data for results via Tencent API
   const codesToFetch = results.map(r => r.c);
@@ -687,4 +703,5 @@ function clearMarketSearch() {
   if (sectorArea) sectorArea.classList.remove('hidden');
   if (clearBtn) clearBtn.classList.add('hidden');
   hideSearchAutocomplete();
+  currentSearchCodes = [];
 }
