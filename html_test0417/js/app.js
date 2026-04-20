@@ -20,7 +20,7 @@ function showSection(id) {
   // Trigger section init
   if (id === 'market') initMarket();
   if (id === 'funds') initFunds();
-  if (id === 'learning') { renderLevelList(); renderLevelContent(); }
+  if (id === 'learning') { switchLearningPath(currentLearningPath || 'stock'); }
   if (id === 'kline') initKlineGallery();
   if (id === 'trading') updateTradingUI();
   if (id === 'calculator') initCalculator();

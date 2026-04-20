@@ -97,7 +97,8 @@ function switchFundCategory(cat) {
 
 function getFilteredFunds() {
   const query = (document.getElementById('fund-search')?.value || '').trim().toLowerCase();
-  let list = curatedFunds;
+  // Use expanded pool when searching, otherwise show curated funds
+  let list = (query && typeof allFunds !== 'undefined' && Array.isArray(allFunds)) ? allFunds : curatedFunds;
   if (currentFundCategory !== '全部') {
     list = list.filter(f => f.category === currentFundCategory);
   }
@@ -184,16 +185,18 @@ function loadFundQuotes() {
 function renderFundRankings() {
   const container = document.getElementById('fund-rankings');
   if (!container) return;
+  const RANKING_COUNT = 20;
+  const pool = (typeof allFunds !== 'undefined' && Array.isArray(allFunds)) ? allFunds : curatedFunds;
   const funds = currentFundCategory === '全部'
-    ? curatedFunds.filter(f => f.category !== '货币型')
-    : curatedFunds.filter(f => f.category === currentFundCategory);
+    ? pool.filter(f => f.category !== '货币型')
+    : pool.filter(f => f.category === currentFundCategory);
   const withQuotes = funds.map(f => {
     const q = fundQuoteCache[f.code];
     return { ...f, changePercent: q ? q.changePercent : null };
   }).filter(f => f.changePercent !== null);
   const sorted = withQuotes.sort((a, b) => b.changePercent - a.changePercent);
-  const top5 = sorted.slice(0, 5);
-  const bottom5 = sorted.slice(-5).reverse();
+  const topGainers = sorted.slice(0, RANKING_COUNT);
+  const topLosers = sorted.slice(-RANKING_COUNT).reverse();
 
   container.innerHTML = `
     <div class="grid md:grid-cols-2 gap-6">
@@ -202,14 +205,14 @@ function renderFundRankings() {
           <span class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg></span>
           ${currentFundCategory === '全部' ? '基金' : currentFundCategory}涨幅榜
         </h3>
-        <div class="space-y-2">${top5.map((f, i) => renderRankingRow(f, i + 1, true)).join('')}</div>
+        <div class="space-y-2 max-h-[500px] overflow-y-auto pr-1">${topGainers.map((f, i) => renderRankingRow(f, i + 1, true)).join('')}</div>
       </div>
       <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
         <h3 class="font-bold mb-3 text-down flex items-center gap-2">
           <span class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 13a1 1 0 110 2H7a1 1 0 01-1-1V9a1 1 0 112 0v2.586l4.293-4.293a1 1 0 011.414 0L16 9.586V7a1 1 0 112 0v5a1 1 0 01-1 1h-5z" clip-rule="evenodd"/></svg></span>
           ${currentFundCategory === '全部' ? '基金' : currentFundCategory}跌幅榜
         </h3>
-        <div class="space-y-2">${bottom5.map((f, i) => renderRankingRow(f, i + 1, false)).join('')}</div>
+        <div class="space-y-2 max-h-[500px] overflow-y-auto pr-1">${topLosers.map((f, i) => renderRankingRow(f, i + 1, false)).join('')}</div>
       </div>
     </div>
   `;

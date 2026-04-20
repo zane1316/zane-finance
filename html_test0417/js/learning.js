@@ -43,51 +43,6 @@ const learningData = [
         `
       },
       {
-        title: '基金投资：新手的最佳起点',
-        content: `
-          <p class="mb-3">很多新手一开户就急着想买股票，但<strong>基金才是大多数新手最应该开始的理财工具</strong>。基金的本质是"把钱交给专业的人，让他帮你买股票/债券"。你不需要研究个股，不需要盯盘，就能获得市场平均收益。</p>
-          <p class="mb-3"><strong>为什么新手应该从基金开始？</strong></p>
-          <ul class="list-disc list-inside mb-3 space-y-1">
-            <li><strong>门槛低</strong>：10元就能买，不像股票最少要买100股（一手）</li>
-            <li><strong>分散风险</strong>：一只基金通常持有几十甚至上百只股票，单只股票暴雷对整体影响很小</li>
-            <li><strong>专业管理</strong>：基金经理和投研团队全职研究市场，普通散户很难匹敌</li>
-            <li><strong>省时省力</strong>：不需要盯盘、不需要看财报、不需要研究K线</li>
-            <li><strong>心态友好</strong>：基金波动通常小于个股，新手不容易因剧烈波动而恐慌操作</li>
-          </ul>
-          <p class="mb-3"><strong>常见基金类型速览：</strong></p>
-          <div class="overflow-x-auto mb-3">
-            <table class="w-full text-sm border-collapse">
-              <thead><tr class="bg-gray-100"><th class="text-left p-2 rounded-tl-lg">类型</th><th class="text-left p-2">特点</th><th class="text-left p-2">风险</th><th class="text-left p-2 rounded-tr-lg">适合</th></tr></thead>
-              <tbody class="bg-white">
-                <tr class="border-b border-gray-100"><td class="p-2 font-medium">货币型</td><td class="p-2">余额宝类产品，随存随取</td><td class="p-2 text-green-600">极低</td><td class="p-2">活期理财</td></tr>
-                <tr class="border-b border-gray-100"><td class="p-2 font-medium">债券型</td><td class="p-2">主要投资国债、企业债</td><td class="p-2 text-green-600">低</td><td class="p-2">稳健保值</td></tr>
-                <tr class="border-b border-gray-100"><td class="p-2 font-medium">指数型</td><td class="p-2">跟踪沪深300等指数</td><td class="p-2 text-amber-600">中</td><td class="p-2">新手首选</td></tr>
-                <tr class="border-b border-gray-100"><td class="p-2 font-medium">混合型</td><td class="p-2">股票+债券灵活配置</td><td class="p-2 text-amber-600">中高</td><td class="p-2">长期持有</td></tr>
-                <tr class="border-b border-gray-100"><td class="p-2 font-medium">股票型</td><td class="p-2">80%以上仓位买股票</td><td class="p-2 text-red-600">高</td><td class="p-2">能承受波动</td></tr>
-                <tr><td class="p-2 font-medium rounded-bl-lg">QDII</td><td class="p-2">投资海外 markets</td><td class="p-2 text-amber-600">中</td><td class="p-2 rounded-br-lg">分散A股风险</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="bg-blue-50 p-4 rounded-lg mb-3">
-            <p class="font-medium text-blue-800 mb-1">新手路径建议</p>
-            <p class="text-sm text-blue-700"><strong>第一步</strong>：用货币基金（如余额宝）存放日常备用金。<br><strong>第二步</strong>：每月定投沪深300指数基金，金额不用多，500-1000元即可，目的是"先上车"。<br><strong>第三步</strong>：在定投的同时，用本站模拟盘学习个股操作，但实盘资金不超过总资产的20%。<br><strong>记住</strong>：基金让你"睡得着觉"，股票让你"学得快"。两者结合，才是新手最优解。</p>
-          </div>
-          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
-            <p class="font-medium text-yellow-800 mb-1">重要提醒</p>
-            <p class="text-sm text-yellow-700">基金≠稳赚。2020-2021年大量新手在高点买入明星基金，随后市场回调，很多基金净值回撤超过30%。基金投资同样需要择时和纪律，定投是最适合新手的入场方式，因为它天然实现了"低位多买、高位少买"的效果。</p>
-          </div>
-          <details class="bg-gray-50 rounded-lg p-3 mt-3">
-            <summary class="font-medium cursor-pointer">自测题</summary>
-            <div class="mt-2 text-sm space-y-2">
-              <p>1. 基金和股票相比，最大的优势是什么？</p>
-              <p>2. 为什么指数基金被称为"新手首选"？</p>
-              <p>3. 新手建议的理财三步路径是什么？</p>
-              <p>4. 定投为什么能天然实现"低位多买、高位少买"？</p>
-            </div>
-          </details>
-        `
-      },
-      {
         title: '开户全流程实战',
         content: `
           <p class="mb-3">炒股第一步是开立证券账户。目前开户全部可以在线上完成，只需要身份证和银行卡，15分钟即可搞定。以下是详细步骤：</p>
@@ -1594,60 +1549,6 @@ const learningData = [
         `
       },
       {
-        title: '基金组合配置与定投策略',
-        content: `
-          <p class="mb-3">当你已经掌握了股票交易的精髓，不要忘记基金仍然是资产配置的重要工具。一个成熟的投资者，应该同时运用股票和基金构建"攻防兼备"的投资组合。</p>
-          <p class="mb-3"><strong>资产配置金字塔：</strong></p>
-          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
-            <p><strong>第一层（地基）——货币基金</strong></p>
-            <p>存放3-6个月的生活备用金，追求绝对安全和高流动性。占投资组合的10-20%。推荐：天弘余额宝、易方达货币A。</p>
-            <p><strong>第二层（稳健层）——债券基金</strong></p>
-            <p>作为组合的"压舱石"，股市大跌时债券通常上涨，起到对冲作用。占投资组合的20-30%。推荐：易方达稳健收益、招商产业债券。</p>
-            <p><strong>第三层（核心层）——宽基指数基金</strong></p>
-            <p>沪深300ETF + 中证500ETF 是A股的核心配置，长期持有分享经济增长红利。占投资组合的30-40%。</p>
-            <p><strong>第四层（卫星层）——行业主题基金/股票</strong></p>
-            <p>在核心配置基础上，用20-30%资金配置看好的行业（如新能源、半导体、消费），追求超额收益。</p>
-          </div>
-          <p class="mb-3"><strong>核心-卫星策略详解：</strong></p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 text-sm">
-            <div class="bg-blue-50 p-3 rounded">
-              <p class="font-medium text-blue-800">核心（60-70%）</p>
-              <p class="text-gray-600">宽基指数（沪深300+中证500）+ 债券基金。目标是获取市场平均收益，降低波动。</p>
-            </div>
-            <div class="bg-purple-50 p-3 rounded">
-              <p class="font-medium text-purple-800">卫星（30-40%）</p>
-              <p class="text-gray-600">行业ETF + 个股。目标是通过主动判断获取超额收益。卫星可以调整，核心长期不动。</p>
-            </div>
-          </div>
-          <p class="mb-3"><strong>定投策略进阶：</strong></p>
-          <ul class="list-disc list-inside mb-3 space-y-1 text-sm">
-            <li><strong>定期定额</strong>：每月固定日期投入固定金额。最简单，适合完全没时间的上班族。</li>
-            <li><strong>定期不定额（智能定投）</strong>：高位少买、低位多买。例如：沪深300PE低于12倍时定投2000元，PE高于18倍时定投500元。</li>
-            <li><strong>估值定投法</strong>：只在指数估值处于历史30%分位以下时加倍定投，70%分位以上时停止定投或逐步止盈。</li>
-            <li><strong>股债再平衡</strong>：每半年检查一次股债比例，如果股票涨幅过大导致占比超过预设上限，卖出部分股票买入债券，恢复目标比例。</li>
-          </ul>
-          <div class="bg-green-50 p-4 rounded-lg mb-3">
-            <p class="font-medium text-green-800 mb-1">实操示例</p>
-            <p class="text-sm text-green-700">假设你有10万元可投资资金，年龄25岁，风险承受能力较高：</p>
-            <p class="text-sm text-green-700">- 货币基金：1万（10%，应急备用）</p>
-            <p class="text-sm text-green-700">- 债券基金：2万（20%，稳健打底）</p>
-            <p class="text-sm text-green-700">- 沪深300ETF：3万（30%，核心配置）</p>
-            <p class="text-sm text-green-700">- 中证500ETF：2万（20%，中小盘补充）</p>
-            <p class="text-sm text-green-700">- 行业ETF+个股：2万（20%，卫星进攻）</p>
-            <p class="text-sm text-green-700 mt-1">每半年再平衡一次，确保各资产比例不偏离目标超过5%。</p>
-          </div>
-          <details class="bg-gray-50 rounded-lg p-3 mt-3">
-            <summary class="font-medium cursor-pointer">自测题</summary>
-            <div class="mt-2 text-sm space-y-2">
-              <p>1. 资产配置金字塔从下到上分别是哪四层？</p>
-              <p>2. 核心-卫星策略中，核心和卫星的目标分别是什么？</p>
-              <p>3. 估值定投法的基本原则是什么？</p>
-              <p>4. 为什么要定期做股债再平衡？</p>
-            </div>
-          </details>
-        `
-      },
-      {
         title: '从模拟盘到实盘的心理过渡',
         content: `
           <p class="mb-3">很多新手在模拟盘上战绩辉煌，一上实盘就亏损累累。这不是技术问题，而是心理问题。模拟盘和实盘之间，隔着一条名为"真金白银"的巨大鸿沟。</p>
@@ -1684,36 +1585,401 @@ const learningData = [
   }
 ];
 
-let learningProgress = {};
+// ==================== Fund Learning Path ====================
+const fundLearningData = [
+  {
+    level: 1, title: '基金入门（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '什么是基金？为什么新手应该从基金开始',
+        content: `
+          <p class="mb-3"><strong>基金</strong>的本质是"把钱交给专业的人，让他帮你买股票/债券"。你不需要研究个股，不需要盯盘，就能获得市场平均收益。对于新手来说，基金是最好的入门工具。</p>
+          <p class="mb-3"><strong>为什么新手应该从基金开始？</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>门槛低</strong>：10元就能买，不像股票最少要买100股</li>
+            <li><strong>分散风险</strong>：一只基金通常持有几十甚至上百只股票，单只股票暴雷对整体影响很小</li>
+            <li><strong>专业管理</strong>：基金经理和投研团队全职研究市场</li>
+            <li><strong>省时省力</strong>：不需要盯盘、不需要看财报</li>
+          </ul>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">新手路径建议</p>
+            <p class="text-sm text-blue-700">第一步：用货币基金存放日常备用金。第二步：每月定投沪深300指数基金500-1000元。第三步：在定投的同时学习股票知识，但实盘资金不超过总资产的20%。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 基金和股票相比最大的优势是什么？</p><p>2. 为什么指数基金被称为"新手首选"？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：基金入门必修课', url: 'https://www.bilibili.com/video/BV1S54y1G7FR', platform: 'bilibili' }
+        ]
+      },
+      {
+        title: '常见基金类型速览',
+        content: `
+          <p class="mb-3"><strong>常见基金类型速览：</strong></p>
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-gray-100"><th class="text-left p-2 rounded-tl-lg">类型</th><th class="text-left p-2">特点</th><th class="text-left p-2">风险</th><th class="text-left p-2 rounded-tr-lg">适合</th></tr></thead>
+              <tbody class="bg-white">
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">货币型</td><td class="p-2">余额宝类产品，随存随取</td><td class="p-2 text-green-600">极低</td><td class="p-2">活期理财</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">债券型</td><td class="p-2">主要投资国债、企业债</td><td class="p-2 text-green-600">低</td><td class="p-2">稳健保值</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">指数型</td><td class="p-2">跟踪沪深300等指数</td><td class="p-2 text-amber-600">中</td><td class="p-2">新手首选</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">混合型</td><td class="p-2">股票+债券灵活配置</td><td class="p-2 text-amber-600">中高</td><td class="p-2">长期持有</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">股票型</td><td class="p-2">80%以上仓位买股票</td><td class="p-2 text-red-600">高</td><td class="p-2">能承受波动</td></tr>
+                <tr><td class="p-2 font-medium rounded-bl-lg">QDII</td><td class="p-2">投资海外市场</td><td class="p-2 text-amber-600">中</td><td class="p-2 rounded-br-lg">分散A股风险</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 货币型基金和股票型基金的风险差异有多大？</p><p>2. 为什么指数型基金适合新手？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：基金类型全解析', url: 'https://www.bilibili.com/video/BV1ov41157EL', platform: 'bilibili' }
+        ]
+      }
+    ]
+  },
+  {
+    level: 2, title: '指数基金精讲（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '什么是指数基金？指数估值方法',
+        content: `
+          <p class="mb-3"><strong>指数基金</strong>的目标是复制某个指数的表现，而不是试图打败市场。它不买个股，而是按照指数成分股的权重，买入所有成分股。长期来看，超过80%的主动型基金跑不赢指数基金。</p>
+          <p class="mb-3"><strong>常见A股指数：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>沪深300</strong>：A股市值最大的300家公司，代表大盘蓝筹</li>
+            <li><strong>中证500</strong>：市值排名301-800的公司，代表中小盘成长</li>
+            <li><strong>创业板指</strong>：创业板中市值大、流动性好的100家公司</li>
+            <li><strong>科创50</strong>：科创板中市值最大、流动性最好的50家公司</li>
+          </ul>
+          <p class="mb-3"><strong>估值方法（PE/PB）：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>PE（市盈率）</strong>：股价/每股收益。PE越低，说明越便宜</li>
+            <li><strong>PB（市净率）</strong>：股价/每股净资产。PB越低，安全边际越高</li>
+            <li><strong>历史分位</strong>：当前估值在过去10年中的位置。30%分位以下=便宜，70%分位以上=贵</li>
+          </ul>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 为什么指数基金被称为"被动投资"？</p><p>2. 沪深300和中证500分别代表什么？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：指数基金从入门到精通', url: 'https://www.bilibili.com/video/BV1aA411b7kz', platform: 'bilibili' }
+        ]
+      },
+      {
+        title: '主流指数基金解析与选择',
+        content: `
+          <p class="mb-3"><strong>如何选择指数基金？</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>规模</strong>：规模越大越好，通常10亿以上比较安全</li>
+            <li><strong>费率</strong>：管理费+托管费越低越好，ETF通常0.6%/年以下</li>
+            <li><strong>跟踪误差</strong>：越小越好，说明基金和指数的贴合度高</li>
+            <li><strong>成立时间</strong>：越长越好，经历过牛熊周期的基金更可靠</li>
+          </ul>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">推荐新手组合</p>
+            <p class="text-sm text-blue-700">沪深300ETF（核心）+ 中证500ETF（补充）+ 一只债券基金（稳健）。比例可以根据年龄调整：股票比例 = 100 - 你的年龄。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 选择指数基金的四个标准是什么？</p><p>2. "100-年龄"法则是什么意思？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：如何挑选指数基金', url: 'https://www.bilibili.com/video/BV1C54y1L7XL', platform: 'bilibili' }
+        ]
+      }
+    ]
+  },
+  {
+    level: 3, title: '基金定投实战（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '定投原理与常见误区',
+        content: `
+          <p class="mb-3"><strong>定投（DCA，Dollar Cost Averaging）</strong>的核心原理：在固定时间投入固定金额，高位自动少买、低位自动多买，从而平滑持仓成本。</p>
+          <p class="mb-3"><strong>为什么定投有效？</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li>市场长期向上，短期波动。定投让你始终在场，不错过上涨</li>
+            <li>不需要择时，克服"抄底"和"追高"的人性弱点</li>
+            <li>强制储蓄，培养投资纪律</li>
+          </ul>
+          <p class="mb-3"><strong>常见误区：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>误区1</strong>：定投一定能赚钱 → 错！定投需要长期持有（至少3-5年）</li>
+            <li><strong>误区2</strong>：下跌了就停止定投 → 错！下跌时更应该坚持，同样的钱能买更多份额</li>
+            <li><strong>误区3</strong>：选了很多只基金定投 → 错！2-3只足够，太多反而分散收益</li>
+          </ul>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 定投为什么能自动实现"高位少买、低位多买"？</p><p>2. 定投最常见的三个误区是什么？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：基金定投的真相', url: 'https://www.bilibili.com/video/BV1HK4y1C7HL', platform: 'bilibili' }
+        ]
+      },
+      {
+        title: '智能定投与止盈策略',
+        content: `
+          <p class="mb-3"><strong>智能定投（定期不定额）</strong>：在普通定投的基础上，根据市场估值动态调整金额。估值低时多投，估值高时少投。</p>
+          <p class="mb-3"><strong>止盈策略：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>目标止盈法</strong>：设定目标收益率（如20%），达到后分批卖出</li>
+            <li><strong>回撤止盈法</strong>：从最高点回撤10%时止盈，适合牛市后期</li>
+            <li><strong>估值止盈法</strong>：当指数PE超过历史70%分位时，逐步减仓</li>
+          </ul>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">重要提醒</p>
+            <p class="text-sm text-yellow-700">会买的是徒弟，会卖的是师傅。定投不止盈，收益可能归零。务必在开始前就设定好止盈目标。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 智能定投和普通定投的区别是什么？</p><p>2. 三种止盈策略分别适用于什么场景？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：定投止盈实战技巧', url: 'https://www.bilibili.com/video/BV1Fy4y1q7qD', platform: 'bilibili' }
+        ]
+      }
+    ]
+  },
+  {
+    level: 4, title: '主动基金选择（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '如何挑选主动型基金',
+        content: `
+          <p class="mb-3">与指数基金不同，<strong>主动型基金</strong>依赖基金经理的选股和择时能力。好的主动基金可以大幅跑赢市场，但差的会大幅跑输。</p>
+          <p class="mb-3"><strong>挑选主动基金的五个维度：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>基金经理</strong>：从业年限5年以上，经历过完整牛熊周期</li>
+            <li><strong>历史业绩</strong>：看3年、5年、10年业绩，而不是只看最近1年</li>
+            <li><strong>最大回撤</strong>：在熊市中最多跌了多少。回撤控制好的基金更适合长期持有</li>
+            <li><strong>夏普比率</strong>：衡量"每承担一单位风险，获得多少收益"。越高越好</li>
+            <li><strong>规模</strong>：主动基金并非越大越好，50-200亿是较舒适的区间</li>
+          </ul>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 挑选主动基金的五个维度是什么？</p><p>2. 为什么基金经理的从业年限很重要？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：如何挑选主动基金', url: 'https://www.bilibili.com/video/BV1wK4y1e7Zg', platform: 'bilibili' }
+        ]
+      },
+      {
+        title: '基金费率解析与评级体系',
+        content: `
+          <p class="mb-3"><strong>基金费用</strong>是隐形杀手。长期看，费率差异会显著影响最终收益。</p>
+          <p class="mb-3"><strong>常见费用：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>申购费</strong>：购买时支付，通常0.1%-1.5%，第三方平台常有1折</li>
+            <li><strong>管理费</strong>：每年从净值中扣除，主动基金通常1.5%，指数基金0.5%</li>
+            <li><strong>托管费</strong>：银行托管资产的费用，约0.25%/年</li>
+            <li><strong>赎回费</strong>：卖出时支付，持有时间越长费率越低，通常7天内1.5%</li>
+          </ul>
+          <p class="mb-3"><strong>基金评级：</strong>晨星评级（1-5星）、银河评级、海通评级。3年以上有评级的基金更值得关注。</p>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 基金费用包括哪几项？</p><p>2. 为什么C类份额更适合短期持有？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：基金费率全解析', url: 'https://www.bilibili.com/video/BV1gz4y1y7nV', platform: 'bilibili' }
+        ]
+      }
+    ]
+  },
+  {
+    level: 5, title: '资产配置与组合（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '资产配置金字塔与股债配比',
+        content: `
+          <p class="mb-3"><strong>资产配置</strong>是决定长期收益的最重要因素，比选股和择时更重要。诺贝尔经济学奖得主马科维茨说过："资产配置是投资市场上唯一的免费午餐。"</p>
+          <p class="mb-3"><strong>资产配置金字塔（从下到上）：</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>第一层（地基）——货币基金</strong>：存放3-6个月生活备用金，占10-20%</p>
+            <p><strong>第二层（稳健层）——债券基金</strong>：压舱石，股市大跌时对冲，占20-30%</p>
+            <p><strong>第三层（核心层）——宽基指数基金</strong>：沪深300+中证500，长期持有，占30-40%</p>
+            <p><strong>第四层（卫星层）——行业主题基金</strong>：追求超额收益，占10-20%</p>
+          </div>
+          <p class="mb-3"><strong>股债配比模型：</strong>股票比例 = 100 - 你的年龄。25岁可以配75%股票，55岁应降至45%。</p>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 资产配置金字塔有哪四层？</p><p>2. "100-年龄"法则怎么应用？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：资产配置入门', url: 'https://www.bilibili.com/video/BV1F54y1L7XK', platform: 'bilibili' }
+        ]
+      },
+      {
+        title: '核心-卫星策略与再平衡',
+        content: `
+          <p class="mb-3"><strong>核心-卫星策略</strong>：将大部分资金配置在宽基指数（核心），用少量资金配置行业主题（卫星）。核心提供稳定收益，卫星追求超额收益。</p>
+          <p class="mb-3"><strong>再平衡操作：</strong>每半年或一年检查一次各资产比例，如果偏离目标超过5%，就卖出超出部分、买入不足部分，恢复目标比例。</p>
+          <div class="bg-green-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-green-800 mb-1">实操示例</p>
+            <p class="text-sm text-green-700">假设目标比例：沪深300（40%）+ 中证500（20%）+ 债券（30%）+ 行业（10%）。半年后，股市大涨导致股票占比达到75%，此时应卖出部分股票、买入债券，使比例回归目标。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 核心-卫星策略的优势是什么？</p><p>2. 为什么要定期做再平衡？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：再平衡操作详解', url: 'https://www.bilibili.com/video/BV1G54y1L7XJ', platform: 'bilibili' }
+        ]
+      }
+    ]
+  },
+  {
+    level: 6, title: '基金定投进阶（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '估值定投法与大额资金入场',
+        content: `
+          <p class="mb-3"><strong>估值定投法</strong>：只在指数估值处于历史低位时加倍定投，高位时减少或停止。这比无脑定投收益更高，但需要一定的估值判断能力。</p>
+          <p class="mb-3"><strong>大额资金入场策略：</strong>如果你有一笔大额资金（如10万），不要一次性投入。建议分6-12个月分批入场，降低择时风险。</p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>方法一</strong>：每月固定投入一笔，12个月投完</li>
+            <li><strong>方法二</strong>：根据估值动态调整，低位多投、高位少投</li>
+            <li><strong>方法三</strong>：股债平衡法，先买债券基金，再逐步转换到股票基金</li>
+          </ul>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 估值定投法和普通定投法的区别？</p><p>2. 大额资金为什么不建议一次性投入？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：估值定投实战', url: 'https://www.bilibili.com/video/BV1Uy4y1q7qE', platform: 'bilibili' }
+        ]
+      },
+      {
+        title: '定投心态管理与常见陷阱',
+        content: `
+          <p class="mb-3"><strong>定投最大的敌人不是市场，是自己的心态。</strong></p>
+          <p class="mb-3"><strong>心态管理要点：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li>不要因为短期亏损而停止定投。熊市坚持定投，才能在牛市收获</li>
+            <li>不要因为别人赚钱就追涨。每个人的风险承受能力和资金状况不同</li>
+            <li>设定好计划后，减少看账户的频率。每个月看一次足够了</li>
+          </ul>
+          <p class="mb-3"><strong>常见陷阱：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>陷阱1</strong>：追逐明星基金。去年的冠军，今年往往表现平庸</li>
+            <li><strong>陷阱2</strong>：频繁更换基金。持有期太短，手续费会侵蚀收益</li>
+            <li><strong>陷阱3</strong>：把基金当股票炒。基金不适合短线操作</li>
+          </ul>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 定投中最重要的三个心态是什么？</p><p>2. 基金投资的三个常见陷阱是什么？</p></div></details>
+        `,
+        videos: [
+          { title: 'B站：定投心态管理', url: 'https://www.bilibili.com/video/BV1tA411j7GZ', platform: 'bilibili' }
+        ]
+      }
+    ]
+  },
+  {
+    level: 7, title: '基金投资体系（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '建立个人基金投资计划',
+        content: `
+          <p class="mb-3">一个完整的基金投资计划应该包括以下要素：</p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>投资目标</strong>：买房？养老？子女教育？目标决定了投资期限和风险偏好</li>
+            <li><strong>风险承受能力</strong>：你能接受的最大回撤是多少？20%？30%？</li>
+            <li><strong>资金规划</strong>：每月可投资金额是多少？是否有大额资金待入场？</li>
+            <li><strong>资产配置方案</strong>：股债比例、核心卫星比例、具体基金选择</li>
+            <li><strong>定投计划</strong>：定投日期、金额、止盈目标</li>
+            <li><strong>复盘机制</strong>：每季度复盘一次，检查是否需要调整</li>
+          </ul>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">计划模板</p>
+            <p class="text-sm text-blue-700">投资目标：5年后买房首付（50万）\n每月定投：3000元\n资产配置：沪深300（40%）+ 中证500（20%）+ 债券（30%）+ 行业（10%）\n止盈目标：年化收益8-10%，达到后分批止盈\n复盘频率：每季度一次</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 完整的基金投资计划包含哪六个要素？</p><p>2. 如何根据自己的目标确定投资期限？</p></div></details>
+        `,
+        videos: [
+          { title: '上交所投教：基金投资规划', url: 'http://edu.sse.com.cn', platform: 'web' }
+        ]
+      },
+      {
+        title: '从基金到股票的过渡',
+        content: `
+          <p class="mb-3">当你通过基金投资积累了足够的经验和资金后，可以逐步学习股票投资。但请记住：<strong>基金和股票不是非此即彼的关系</strong>，而是相辅相成的工具。</p>
+          <p class="mb-3"><strong>过渡建议：</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li>保持基金定投不变，作为"压舱石"</li>
+            <li>用不超过总资产的20%学习股票操作</li>
+            <li>先通过模拟盘练习，再投入实盘</li>
+            <li>股票投资需要更多时间投入（研究财报、跟踪行业、学习技术分析）</li>
+          </ul>
+          <div class="bg-green-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-green-800 mb-1">恭喜你！</p>
+            <p class="text-sm text-green-700">完成基金学院全部课程后，你已经具备了独立进行基金投资的能力。记住：投资是一辈子的事，保持学习、保持纪律、保持耐心。祝你在投资路上收获财富与成长！</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 从基金过渡到股票时，应该注意什么？</p><p>2. 为什么基金应该作为"压舱石"长期保留？</p></div></details>
+        `,
+        videos: [
+          { title: '深交所投教：投资者进阶', url: 'http://investor.szse.cn', platform: 'web' }
+        ]
+      }
+    ]
+  }
+];
+
+// ==================== Dual-path learning state ====================
+let currentLearningPath = 'stock';
+let learningProgressV2 = { version: 2, stock: {}, fund: {}, lastVisited: { stock: { level: 1 }, fund: { level: 1 } } };
+
+function getActiveLearningData() {
+  return currentLearningPath === 'stock' ? learningData : fundLearningData;
+}
 
 function initLearningProgress() {
-  const saved = localStorage.getItem('zfinance_learning');
-  if (saved) {
-    learningProgress = JSON.parse(saved);
-    // Migrate old 3-lesson format to 4-lesson format
+  const savedV2 = localStorage.getItem('zfinance_learning_v2');
+  if (savedV2) {
+    learningProgressV2 = JSON.parse(savedV2);
+    // Migrate if old format
+    if (!learningProgressV2.stock) learningProgressV2.stock = {};
+    if (!learningProgressV2.fund) learningProgressV2.fund = {};
+    if (!learningProgressV2.lastVisited) learningProgressV2.lastVisited = { stock: { level: 1 }, fund: { level: 1 } };
+    return;
+  }
+  // Migrate from legacy v1
+  const savedV1 = localStorage.getItem('zfinance_learning');
+  if (savedV1) {
+    const v1 = JSON.parse(savedV1);
+    learningProgressV2.stock = v1;
+    // Pad legacy lessons if needed
     learningData.forEach(l => {
-      const p = learningProgress[l.level];
+      const p = learningProgressV2.stock[l.level];
       if (p && p.lessons && p.lessons.length < l.lessons.length) {
         while (p.lessons.length < l.lessons.length) p.lessons.push(false);
       }
     });
-  } else {
-    learningData.forEach(l => { learningProgress[l.level] = { completed: false, lessons: new Array(l.lessons.length).fill(false) }; });
-    saveLearningProgress();
   }
+  // Initialize any missing paths
+  [learningData, fundLearningData].forEach((data, idx) => {
+    const key = idx === 0 ? 'stock' : 'fund';
+    data.forEach(l => {
+      if (!learningProgressV2[key][l.level]) {
+        learningProgressV2[key][l.level] = { completed: false, lessons: new Array(l.lessons.length).fill(false) };
+      }
+    });
+  });
+  saveLearningProgress();
 }
 
 function saveLearningProgress() {
-  localStorage.setItem('zfinance_learning', JSON.stringify(learningProgress));
+  localStorage.setItem('zfinance_learning_v2', JSON.stringify(learningProgressV2));
 }
 
 let currentLevel = 1;
 
+function switchLearningPath(path) {
+  currentLearningPath = path;
+  // Restore last visited level for this path
+  currentLevel = learningProgressV2.lastVisited?.[path]?.level || 1;
+  // Update tab UI
+  const stockTab = document.getElementById('tab-stock');
+  const fundTab = document.getElementById('tab-fund');
+  if (stockTab) {
+    stockTab.className = path === 'stock'
+      ? 'px-5 py-2.5 rounded-xl text-sm font-bold bg-primary text-white shadow-md transition'
+      : 'px-5 py-2.5 rounded-xl text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary transition';
+  }
+  if (fundTab) {
+    fundTab.className = path === 'fund'
+      ? 'px-5 py-2.5 rounded-xl text-sm font-bold bg-primary text-white shadow-md transition'
+      : 'px-5 py-2.5 rounded-xl text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary transition';
+  }
+  renderLevelList();
+  renderLevelContent();
+}
+
 function renderLevelList() {
   const nav = document.getElementById('level-nav');
   if (!nav) return;
-  nav.innerHTML = learningData.map(l => {
-    const p = learningProgress[l.level];
+  const data = getActiveLearningData();
+  const progressMap = learningProgressV2[currentLearningPath] || {};
+  nav.innerHTML = data.map(l => {
+    const p = progressMap[l.level];
     const completedLessons = p ? p.lessons.filter(Boolean).length : 0;
     const pct = Math.round((completedLessons / l.lessons.length) * 100);
     const active = l.level === currentLevel ? 'bg-blue-50 border-primary' : 'bg-white border-transparent';
@@ -1731,27 +1997,31 @@ function renderLevelList() {
   }).join('');
 
   let totalLessons = 0, completedTotal = 0;
-  learningData.forEach(l => {
+  data.forEach(l => {
     totalLessons += l.lessons.length;
-    const p = learningProgress[l.level];
+    const p = progressMap[l.level];
     if (p) completedTotal += p.lessons.filter(Boolean).length;
   });
-  const totalPct = Math.round((completedTotal / totalLessons) * 100);
+  const totalPct = totalLessons > 0 ? Math.round((completedTotal / totalLessons) * 100) : 0;
   document.getElementById('total-progress-text').textContent = totalPct + '%';
   document.getElementById('total-progress-bar').style.width = totalPct + '%';
 }
 
 function switchLevel(lv) {
   currentLevel = lv;
+  learningProgressV2.lastVisited = learningProgressV2.lastVisited || {};
+  learningProgressV2.lastVisited[currentLearningPath] = { level: lv };
+  saveLearningProgress();
   renderLevelList();
   renderLevelContent();
 }
 
 function renderLevelContent() {
   const container = document.getElementById('level-content');
-  const data = learningData.find(l => l.level === currentLevel);
+  const data = getActiveLearningData().find(l => l.level === currentLevel);
   if (!container || !data) return;
-  const p = learningProgress[data.level];
+  const progressMap = learningProgressV2[currentLearningPath] || {};
+  const p = progressMap[data.level];
   container.innerHTML = `
     <div class="mb-4">
       <h2 class="text-2xl font-bold">Level ${data.level}: ${data.title}</h2>
@@ -1769,9 +2039,38 @@ function renderLevelContent() {
           </button>
           <div id="les-body-${idx}" class="px-4 py-4 text-sm leading-relaxed text-gray-700 ${idx===0?'':'hidden'}">
             ${les.content}
+            ${renderVideoLinks(les.videos)}
           </div>
         </div>
       `).join('')}
+    </div>
+  `;
+}
+
+function renderVideoLinks(videos) {
+  if (!videos || !videos.length) return '';
+  const platformColors = {
+    bilibili: 'bg-red-50 text-red-700 border-red-100 hover:bg-red-100',
+    qq: 'bg-blue-50 text-blue-700 border-blue-100 hover:bg-blue-100',
+    web: 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+  };
+  const platformLabels = {
+    bilibili: 'B站',
+    qq: '腾讯课堂',
+    web: '官网'
+  };
+  return `
+    <div class="mt-4 pt-4 border-t border-gray-100">
+      <h4 class="font-medium text-sm text-gray-500 mb-2">推荐视频</h4>
+      <div class="flex flex-wrap gap-2">
+        ${videos.map(v => `
+          <a href="${v.url}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs transition border ${platformColors[v.platform] || platformColors.web}">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+            ${platformLabels[v.platform] || '视频'}：${v.title}
+          </a>
+        `).join('')}
+      </div>
     </div>
   `;
 }
@@ -1785,7 +2084,9 @@ function toggleLesson(idx) {
 }
 
 function toggleLessonComplete(idx) {
-  const p = learningProgress[currentLevel];
+  const progressMap = learningProgressV2[currentLearningPath];
+  if (!progressMap) return;
+  const p = progressMap[currentLevel];
   if (!p) return;
   p.lessons[idx] = !p.lessons[idx];
   saveLearningProgress();

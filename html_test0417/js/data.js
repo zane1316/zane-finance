@@ -178,3 +178,41 @@ function findStockCode(input) {
   }
   return null;
 }
+
+// Sector keyword expansion for full A-share matching
+const sectorKeywords = {
+  semiconductor: ['半导体', '芯片', '集成电路', '晶圆', '光刻', '存储', '硅', '微', '芯', '电子'],
+  ai: ['智能', 'AI', '人工智能', '算力', '算法', '数据', '云', '软件', '信息', '科技'],
+  newenergy: ['新能源', '光伏', '锂电', '储能', '电池', '太阳能', '风能', '氢能', '能源', '电力设备'],
+  robot: ['机器人', '自动化', '智能装备', '机械', '精密', '传动', '减速器', '伺服', '控制'],
+  pharma: ['医药', '生物', '制药', '医疗', '健康', '疫苗', '基因', '诊断', '器械', '药'],
+  metal: ['有色', '金属', '稀土', '锂', '钴', '镍', '铜', '铝', '黄金', '矿业'],
+  power: ['电力', '能源', '核电', '水电', '火电', '风电', '光伏', '电网', '发电'],
+  rareearth: ['稀土', '磁材', '永磁', '磁性', '钨', '钼', '锆', '钛', '稀有金属'],
+  military: ['军工', '国防', '航空', '航天', '船舶', '兵器', '雷达', '导弹', '军用'],
+  lowaltitude: ['低空', '无人机', '通航', '飞行', '航空', '直升机', '卫星', '导航'],
+  aerospace: ['航天', '卫星', '火箭', '航空', '宇航', '空间', '北斗', '导航', '通信']
+};
+
+const sectorExpandedCache = {};
+function getExpandedSectorStocks(sectorKey) {
+  if (sectorExpandedCache[sectorKey]) return sectorExpandedCache[sectorKey];
+  const keywords = sectorKeywords[sectorKey];
+  if (!keywords || typeof allAStockListLocal === 'undefined' || !Array.isArray(allAStockListLocal)) return [];
+  const sector = sectors.find(s => s.key === sectorKey);
+  const existingCodes = new Set((sector?.stocks || []).map(s => s.c));
+  const matched = allAStockListLocal.filter(stock => {
+    if (existingCodes.has(stock.code)) return false;
+    return keywords.some(kw => stock.name.includes(kw));
+  });
+  const seen = new Set();
+  const result = [];
+  for (const s of matched) {
+    if (!seen.has(s.code)) {
+      seen.add(s.code);
+      result.push({ c: s.code, n: s.name });
+    }
+  }
+  sectorExpandedCache[sectorKey] = result;
+  return result;
+}

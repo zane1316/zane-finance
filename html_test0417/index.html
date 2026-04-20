@@ -254,6 +254,10 @@
 
     <!-- 学习路径 -->
     <section id="learning" class="page-section hidden">
+      <div class="flex gap-3 mb-5" id="learning-tabs">
+        <button onclick="switchLearningPath('stock')" id="tab-stock" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-primary text-white shadow-md transition">股票学院</button>
+        <button onclick="switchLearningPath('fund')" id="tab-fund" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-gray-600 border border-gray-200 hover:text-primary hover:border-primary transition">基金学院</button>
+      </div>
       <div class="flex flex-col lg:flex-row gap-6">
         <!-- 左侧导航 -->
         <aside class="lg:w-64 flex-shrink-0">
@@ -605,6 +609,7 @@
   <script src="./js/ai.js"></script>
   <script src="./js/learning.js"></script>
   <script src="./js/resources.js"></script>
+  <script src="./js/all-funds.js"></script>
   <script src="./js/funds.js"></script>
   <script src="./js/glossary.js"></script>
   <script src="./js/app.js"></script>
