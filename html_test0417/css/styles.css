@@ -2,10 +2,13 @@
 
 :root {
   --primary: #1E40AF;
+  --primary-light: #3B82F6;
   --up: #DC2626;
   --down: #16A34A;
   --bg: #F9FAFB;
   --border: #E5E7EB;
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.5);
 }
 
 * { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
@@ -14,8 +17,9 @@
 
 body {
   font-family: 'Noto Sans SC', sans-serif;
-  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 50%, #F0F9FF 100%);
+  background: linear-gradient(135deg, #F0F4F8 0%, #E8F0FE 30%, #F5F3FF 70%, #FFF7ED 100%);
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 /* Ticker tape animation */
@@ -38,6 +42,37 @@ body {
 .text-down { color: var(--down) !important; }
 .bg-up { background-color: var(--up) !important; }
 .bg-down { background-color: var(--down) !important; }
+
+/* Enhanced card styles */
+.card-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 30px -10px rgba(30, 64, 175, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-gradient:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(30, 64, 175, 0.15), 0 0 0 1px rgba(30, 64, 175, 0.08);
+}
+
+/* Top border accent for cards */
+.card-accent-red {
+  border-top: 3px solid var(--up);
+}
+.card-accent-green {
+  border-top: 3px solid var(--down);
+}
+.card-accent-blue {
+  border-top: 3px solid var(--primary-light);
+}
+
+/* Glow effects */
+.glow-up {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.15);
+}
+.glow-down {
+  box-shadow: 0 0 20px rgba(22, 163, 74, 0.15);
+}
 
 /* Nav active state */
 .nav-link.active {
@@ -120,9 +155,71 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Glass card effect */
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+}
+
+/* Live indicator pulse */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+.live-indicator {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Tab active indicator animation */
+.tab-indicator {
+  position: relative;
+}
+.tab-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.tab-indicator:hover::after,
+.tab-indicator.active::after {
+  width: 80%;
+}
+
+/* Enhanced button styles */
+.btn-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  box-shadow: 0 4px 14px rgba(30, 64, 175, 0.25);
+  transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Number counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.count-up {
+  animation: countUp 0.5s ease-out;
 }
 
 /* Gradient text utility */
@@ -164,9 +261,57 @@ input, textarea, select {
 
 /* Stock cards in market */
 #stock-cards > div {
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1rem;
 }
 #stock-cards > div:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px -12px rgba(30, 64, 175, 0.15);
+}
+
+/* Search result cards highlight */
+#search-result-cards > div {
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+#search-result-cards > div:hover {
+  border-left: 3px solid var(--primary-light);
+}
+
+/* Section entrance animation */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient border effect */
+.gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--primary-light), #8B5CF6, #EC4899);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gradient-border:hover::before {
+  opacity: 0.5;
 }

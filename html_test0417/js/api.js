@@ -145,22 +145,40 @@ function updateIndexCards(data) {
 // ==================== Eastmoney API Integration ====================
 let allAStockList = null;
 let eastmoneyRankingCache = { gainers: [], losers: [] };
+const EASTMONEY_UT = 'bd1d9ddb04089700cf9c27f6f7426281';
+
+// Get correct exchange prefix for A-share code
+function getStockPrefix(rawCode) {
+  if (!rawCode || rawCode.length !== 6) return 'sz';
+  const first = rawCode[0];
+  const firstTwo = rawCode.substring(0, 2);
+  if (first === '6' || firstTwo === '68' || firstTwo === '69') return 'sh';
+  if (first === '8' || first === '4') return 'bj';
+  return 'sz';
+}
 
 function loadAllAStockList() {
-  if (allAStockList) return Promise.resolve(allAStockList);
-  return fetch('https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&fltt=2&invt=2&fid=f12&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=f12,f14')
+  if (allAStockList !== null) return Promise.resolve(allAStockList);
+  const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f12&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=f12,f14`;
+  return fetch(url)
     .then(r => r.json())
     .then(data => {
-      if (!data.data || !data.data.diff) return [];
+      if (!data || !data.data || !data.data.diff) {
+        console.warn('Eastmoney API returned invalid data structure:', data);
+        allAStockList = [];
+        return allAStockList;
+      }
       allAStockList = data.data.diff.map(item => {
         const rawCode = item.f12;
-        const prefix = rawCode.startsWith('6') ? 'sh' : 'sz';
+        const prefix = getStockPrefix(rawCode);
         return { rawCode, code: prefix + rawCode, name: item.f14 };
       });
+      console.log(`Loaded ${allAStockList.length} A-share stocks from Eastmoney`);
       return allAStockList;
     })
     .catch(err => {
       console.warn('Failed to load all A-stock list:', err);
+      allAStockList = null; // Allow retry on next call
       return [];
     });
 }
@@ -169,26 +187,32 @@ function loadEastmoneyRanking(direction, count = 20) {
   const po = direction === 'desc' ? 1 : 0;
   const fid = 'f3';
   const fields = 'f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f18,f20,f21';
-  return fetch(`https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=${count}&po=${po}&np=1&fltt=2&invt=2&fid=${fid}&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=${fields}`)
+  const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=${count}&po=${po}&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=${fid}&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=${fields}`;
+  return fetch(url)
     .then(r => r.json())
     .then(data => {
-      if (!data.data || !data.data.diff) return [];
-      return data.data.diff.map(item => ({
-        code: (item.f12.startsWith('6') ? 'sh' : 'sz') + item.f12,
-        rawCode: item.f12,
-        name: item.f14,
-        price: item.f2,
-        changePercent: item.f3,
-        changeAmount: item.f4,
-        volume: item.f5,
-        volumeMoney: item.f6 ? item.f6 / 10000 : 0,
-        amplitude: item.f7,
-        turnover: item.f8,
-        pe: item.f9,
-        prevClose: item.f18,
-        marketCap: item.f20 ? item.f20 / 100000000 : 0,
-        floatCap: item.f21 ? item.f21 / 100000000 : 0
-      }));
+      if (!data || !data.data || !data.data.diff) return [];
+      return data.data.diff.map(item => {
+        const rawCode = item.f12;
+        const prefix = getStockPrefix(rawCode);
+        const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
+        return {
+          code: prefix + rawCode,
+          rawCode: rawCode,
+          name: item.f14,
+          price: price,
+          changePercent: parseFloat(item.f3) || 0,
+          changeAmount: parseFloat(item.f4) || 0,
+          volume: item.f5 || 0,
+          volumeMoney: item.f6 ? item.f6 / 10000 : 0,
+          amplitude: parseFloat(item.f7) || 0,
+          turnover: parseFloat(item.f8) || 0,
+          pe: parseFloat(item.f9) || 0,
+          prevClose: item.f18 === '-' ? 0 : (parseFloat(item.f18) || 0),
+          marketCap: item.f20 ? item.f20 / 100000000 : 0,
+          floatCap: item.f21 ? item.f21 / 100000000 : 0
+        };
+      });
     })
     .catch(err => {
       console.warn('Eastmoney ranking failed:', err);
@@ -202,15 +226,22 @@ function refreshAllMarketView() {
   const losersEl = document.getElementById('top-losers');
   if (!container || !gainersEl || !losersEl) return;
 
-  // Show loading state
-  if (eastmoneyRankingCache.gainers.length === 0) {
-    container.innerHTML = '<div class="text-gray-400 text-sm py-4">正在加载沪深全市场数据...</div>';
-  }
+  // Always show loading state when explicitly refreshing
+  container.innerHTML = '<div class="text-gray-400 text-sm py-4 flex items-center gap-2"><span class="inline-block w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></span>正在加载沪深全市场数据...</div>';
+  gainersEl.innerHTML = '<div class="text-gray-400 text-sm py-4 text-center">加载中...</div>';
+  losersEl.innerHTML = '<div class="text-gray-400 text-sm py-4 text-center">加载中...</div>';
 
   Promise.all([
     loadEastmoneyRanking('desc', 20),
     loadEastmoneyRanking('asc', 20)
   ]).then(([gainers, losers]) => {
+    if (!gainers.length && !losers.length) {
+      container.innerHTML = '<div class="text-gray-400 text-sm py-4">暂无全市场数据（可能为非交易时间）</div>';
+      gainersEl.innerHTML = '<p class="text-gray-400 text-sm py-4 text-center">暂无数据</p>';
+      losersEl.innerHTML = '<p class="text-gray-400 text-sm py-4 text-center">暂无数据</p>';
+      return;
+    }
+
     eastmoneyRankingCache = { gainers, losers };
 
     // Render top 10 gainers as cards
@@ -227,7 +258,7 @@ function refreshAllMarketView() {
             </div>
             <span class="text-xs ${color}">${arrow}</span>
           </div>
-          <p class="text-xl font-bold my-1 ${color}">${formatNumber(d.price,2)}</p>
+          <p class="text-xl font-bold my-1 ${color}">${d.price > 0 ? formatNumber(d.price,2) : '--'}</p>
           <p class="text-xs ${color}">${d.changePercent>=0?'+':''}${formatNumber(d.changePercent,2)}%</p>
           <div class="mt-2 pt-2 border-t text-xs text-gray-400 space-y-1">
             <div class="flex justify-between"><span>换手</span><span>${formatNumber(d.turnover,2)}%</span></div>
@@ -245,17 +276,19 @@ function refreshAllMarketView() {
       <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i%2===0?'bg-gray-50/50':''} px-2 rounded">
         <span class="flex items-center gap-2"><span class="w-5 h-5 bg-red-50 text-up text-xs rounded flex items-center justify-center font-medium">${i+1}</span><span class="truncate max-w-[100px]" title="${d.name}">${d.name}</span><span class="text-gray-400 text-xs">${d.code}</span></span>
         <span class="text-up font-medium">+${formatNumber(d.changePercent,2)}%</span>
-      </div>`).join('');
+      </div>`).join('') || '<p class="text-gray-400 text-sm py-4 text-center">暂无上涨股票</p>';
 
     // Render losers list
     losersEl.innerHTML = losers.map((d, i) => `
       <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i%2===0?'bg-gray-50/50':''} px-2 rounded">
         <span class="flex items-center gap-2"><span class="w-5 h-5 bg-green-50 text-down text-xs rounded flex items-center justify-center font-medium">${i+1}</span><span class="truncate max-w-[100px]" title="${d.name}">${d.name}</span><span class="text-gray-400 text-xs">${d.code}</span></span>
         <span class="text-down font-medium">${formatNumber(d.changePercent,2)}%</span>
-      </div>`).join('');
+      </div>`).join('') || '<p class="text-gray-400 text-sm py-4 text-center">暂无下跌股票</p>';
   }).catch(err => {
     console.warn('All-market view refresh failed:', err);
-    container.innerHTML = '<div class="text-gray-400 text-sm py-4">全市场数据加载失败，请稍后重试</div>';
+    container.innerHTML = '<div class="text-gray-400 text-sm py-4">全市场数据加载失败，请稍后重试 <button onclick="refreshAllMarketView()" class="text-primary underline ml-2">重试</button></div>';
+    gainersEl.innerHTML = '<p class="text-gray-400 text-sm py-4 text-center">加载失败</p>';
+    losersEl.innerHTML = '<p class="text-gray-400 text-sm py-4 text-center">加载失败</p>';
   });
 }
 
@@ -373,17 +406,36 @@ function doMarketSearch(query) {
   if (/^(sh|sz|bj)\d{6}$/.test(q)) {
     directCode = q;
   } else if (/^\d{6}$/.test(q)) {
-    directCode = (q.startsWith('6') || q.startsWith('68')) ? 'sh' + q : 'sz' + q;
+    directCode = getStockPrefix(q) + q;
   }
 
   // Search in full A-share list (preferred)
   const list = allAStockList && allAStockList.length > 0 ? allAStockList : [];
+
+  // If list never loaded, trigger async load and show loading state
+  if (allAStockList === null) {
+    const searchArea = document.getElementById('search-results');
+    const sectorArea = document.getElementById('sector-tabs-area');
+    const cardsEl = document.getElementById('search-result-cards');
+    const clearBtn = document.getElementById('market-clear-btn');
+    if (searchArea) searchArea.classList.remove('hidden');
+    if (sectorArea) sectorArea.classList.add('hidden');
+    if (cardsEl) cardsEl.innerHTML = '<div class="text-gray-400 text-sm py-4 flex items-center gap-2"><span class="inline-block w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></span>正在加载全市场股票列表...</div>';
+    if (clearBtn) clearBtn.classList.remove('hidden');
+
+    loadAllAStockList().then(() => {
+      // Retry search once data is loaded
+      doMarketSearch(query);
+    });
+    return;
+  }
+
   if (list.length > 0) {
     const exact = list.find(s => s.name === query.trim());
     if (exact && !directCode) directCode = exact.code;
 
     const fuzzy = list.filter(s =>
-      s.name.includes(query.trim()) ||
+      s.name.toLowerCase().includes(q) ||
       s.rawCode.includes(q) ||
       s.code.toLowerCase().includes(q)
     ).slice(0, 10);

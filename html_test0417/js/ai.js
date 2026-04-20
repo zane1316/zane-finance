@@ -24,8 +24,7 @@ async function resolveStockCode(input) {
   const lower = input.toLowerCase();
   if (/^(sh|sz|bj)\d{6}$/.test(lower)) return lower;
   if (/^\d{6}$/.test(input)) {
-    if (input.startsWith('6') || input.startsWith('68')) return 'sh' + input;
-    return 'sz' + input;
+    return getStockPrefix(input) + input;
   }
 
   // Try full A-share list first
@@ -38,8 +37,8 @@ async function resolveStockCode(input) {
     // Exact name match
     const exact = list.find(s => s.name === input);
     if (exact) return exact.code;
-    // Partial name match
-    const partial = list.find(s => s.name.includes(input));
+    // Partial name match (case-insensitive)
+    const partial = list.find(s => s.name.toLowerCase().includes(lower));
     if (partial) return partial.code;
   }
 
