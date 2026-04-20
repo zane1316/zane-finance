@@ -1,5 +1,5 @@
 // SPA Router & Common Utilities
-const sections = ['home','market','learning','kline','ai','trading','calculator','resources','contact'];
+const sections = ['home','market','funds','learning','kline','ai','trading','calculator','glossary','resources','contact'];
 
 function showSection(id) {
   sections.forEach(s => {
@@ -19,10 +19,12 @@ function showSection(id) {
   document.getElementById('mobile-menu').classList.add('hidden');
   // Trigger section init
   if (id === 'market') initMarket();
+  if (id === 'funds') initFunds();
   if (id === 'learning') { renderLevelList(); renderLevelContent(); }
   if (id === 'kline') initKlineGallery();
   if (id === 'trading') updateTradingUI();
   if (id === 'calculator') initCalculator();
+  if (id === 'glossary') initGlossary();
   if (id === 'resources') renderResources();
 }
 

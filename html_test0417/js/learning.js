@@ -18,7 +18,20 @@ const learningData = [
             <p class="font-medium text-blue-800 mb-1">新手必读</p>
             <p class="text-sm text-blue-700">不要把炒股当成"快速致富"的工具。股市中"七亏二平一赚"的规律长期有效。先把学习放在第一位，用模拟盘练手，再投入真金白银。</p>
           </div>
-          <p class="mb-3"><strong>股票 vs 基金 vs 债券：</strong>股票波动最大但长期收益最高；基金是委托专业人士帮你买股票，适合没时间研究的人；债券是借钱给国家或企业，收益固定但较低。新手建议从指数基金开始，同时用少量资金学习个股操作。</p>
+          <p class="mb-3"><strong>股票 vs 基金 vs 债券：</strong></p>
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-gray-100"><th class="text-left p-2 rounded-tl-lg">对比项</th><th class="text-left p-2">股票</th><th class="text-left p-2">基金</th><th class="text-left p-2 rounded-tr-lg">债券</th></tr></thead>
+              <tbody class="bg-white">
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">风险</td><td class="p-2 text-red-600">高</td><td class="p-2 text-amber-600">中</td><td class="p-2 text-green-600">低</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">收益潜力</td><td class="p-2 text-up">高</td><td class="p-2 text-primary">中高</td><td class="p-2 text-down">较低</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">时间投入</td><td class="p-2">多</td><td class="p-2">少</td><td class="p-2">极少</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">门槛</td><td class="p-2">100股起</td><td class="p-2">10元起</td><td class="p-2">1000元起</td></tr>
+                <tr><td class="p-2 font-medium rounded-bl-lg">适合谁</td><td class="p-2">愿意研究</td><td class="p-2">新手/上班族</td><td class="p-2 rounded-br-lg">保守型</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mb-3"><strong>新手建议：</strong>从<strong>指数基金定投</strong>开始，同时用少量资金（不超过总资产的20%）学习个股操作。基金波动相对较小，能让你先熟悉市场节奏；等积累了一定经验再逐步增加股票比例。</p>
           <details class="bg-gray-50 rounded-lg p-3 mt-3">
             <summary class="font-medium cursor-pointer">自测题</summary>
             <div class="mt-2 text-sm space-y-2">

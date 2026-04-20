@@ -96,6 +96,23 @@ const resourceCategories = [
     ]
   },
   {
+    title: '基金平台',
+    links: [
+      { name: '天天基金网', url: 'https://fund.eastmoney.com' },
+      { name: '蚂蚁财富', url: 'https://www.antfortune.com' },
+      { name: '且慢', url: 'https://www.qieman.com' },
+      { name: '蛋卷基金', url: 'https://danjuanfunds.com' },
+      { name: '盈米基金', url: 'https://www.yingmi.cn' },
+      { name: '好买基金', url: 'https://www.howbuy.com' },
+      { name: '晨星网', url: 'https://www.morningstar.cn' },
+      { name: '中证指数', url: 'https://www.csindex.com.cn' },
+      { name: '韭圈儿', url: 'https://www.jiucaishuo.com' },
+      { name: '基金豆', url: 'https://www.jijindou.com' },
+      { name: '支付宝理财', url: 'https://www.alipay.com' },
+      { name: '招商银行App', url: 'https://www.cmbchina.com' }
+    ]
+  },
+  {
     title: '投研社区',
     links: [
       { name: '雪球', url: 'https://xueqiu.com' },

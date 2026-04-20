@@ -146,6 +146,8 @@ function updateIndexCards(data) {
 let allAStockList = null;
 let eastmoneyRankingCache = { gainers: [], losers: [] };
 const EASTMONEY_UT = 'bd1d9ddb04089700cf9c27f6f7426281';
+const STOCK_CACHE_KEY = 'zfinance_allstocks_v2';
+const STOCK_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
 // Get correct exchange prefix for A-share code
 function getStockPrefix(rawCode) {
@@ -157,15 +159,48 @@ function getStockPrefix(rawCode) {
   return 'sz';
 }
 
+function loadAllAStockListFromCache() {
+  try {
+    const cached = localStorage.getItem(STOCK_CACHE_KEY);
+    if (!cached) return null;
+    const { data, timestamp } = JSON.parse(cached);
+    if (!data || !Array.isArray(data)) return null;
+    if (Date.now() - timestamp > STOCK_CACHE_TTL) {
+      console.log('Stock cache expired, will refresh from API');
+      return null;
+    }
+    console.log(`Loaded ${data.length} stocks from local cache`);
+    return data;
+  } catch (e) {
+    console.warn('Failed to load stock cache:', e);
+    return null;
+  }
+}
+
+function saveAllAStockListToCache(data) {
+  try {
+    localStorage.setItem(STOCK_CACHE_KEY, JSON.stringify({ data, timestamp: Date.now() }));
+  } catch (e) {
+    console.warn('Failed to save stock cache:', e);
+  }
+}
+
 function loadAllAStockList() {
   if (allAStockList !== null) return Promise.resolve(allAStockList);
+
+  // Try cache first
+  const cached = loadAllAStockListFromCache();
+  if (cached) {
+    allAStockList = cached;
+  }
+
   const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f12&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=f12,f14`;
   return fetch(url)
     .then(r => r.json())
     .then(data => {
       if (!data || !data.data || !data.data.diff) {
         console.warn('Eastmoney API returned invalid data structure:', data);
-        allAStockList = [];
+        if (!allAStockList) allAStockList = [];
         return allAStockList;
       }
       allAStockList = data.data.diff.map(item => {
@@ -173,13 +208,17 @@ function loadAllAStockList() {
         const prefix = getStockPrefix(rawCode);
         return { rawCode, code: prefix + rawCode, name: item.f14 };
       });
+      saveAllAStockListToCache(allAStockList);
       console.log(`Loaded ${allAStockList.length} A-share stocks from Eastmoney`);
       return allAStockList;
     })
     .catch(err => {
-      console.warn('Failed to load all A-stock list:', err);
-      allAStockList = null; // Allow retry on next call
-      return [];
+      console.warn('Failed to load all A-stock list from API:', err);
+      if (!allAStockList) {
+        allAStockList = null; // Allow retry on next call
+        return [];
+      }
+      return allAStockList; // Return cached data even if API fails
     });
 }
 
@@ -384,16 +423,111 @@ function updateMarketPage(data) {
     </div>`).join('') || '<p class="text-gray-400 text-sm py-4 text-center">暂无下跌股票</p>';
 }
 
+// Resolve stock name from allAStockList or apiCache
+function resolveStockName(code) {
+  if (allAStockList && allAStockList.length > 0) {
+    const found = allAStockList.find(s => s.code === code);
+    if (found) return found.name;
+  }
+  const cached = apiCache[code];
+  if (cached && cached.name) return cached.name;
+  return null;
+}
+
 // ==================== Market Search ====================
+let searchAutocompleteTimer = null;
+
 function initMarketSearch() {
   const input = document.getElementById('market-search');
   const btn = document.getElementById('market-search-btn');
   const clearBtn = document.getElementById('market-clear-btn');
   if (!input || !btn) return;
 
-  btn.addEventListener('click', () => doMarketSearch(input.value.trim()));
-  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') doMarketSearch(input.value.trim()); });
+  btn.addEventListener('click', () => {
+    hideSearchAutocomplete();
+    doMarketSearch(input.value.trim());
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      hideSearchAutocomplete();
+      doMarketSearch(input.value.trim());
+    }
+    if (e.key === 'Escape') hideSearchAutocomplete();
+  });
+  // Real-time autocomplete
+  input.addEventListener('input', () => {
+    clearTimeout(searchAutocompleteTimer);
+    const val = input.value.trim();
+    if (val.length < 1) { hideSearchAutocomplete(); return; }
+    searchAutocompleteTimer = setTimeout(() => renderSearchAutocomplete(val), 150);
+  });
+  // Hide autocomplete on blur (with delay to allow click)
+  input.addEventListener('blur', () => {
+    setTimeout(hideSearchAutocomplete, 200);
+  });
   if (clearBtn) clearBtn.addEventListener('click', clearMarketSearch);
+}
+
+function renderSearchAutocomplete(query) {
+  const q = query.toLowerCase().trim();
+  if (!q) return;
+  const list = allAStockList && allAStockList.length > 0 ? allAStockList : [];
+  if (!list.length) return;
+
+  // Find top 8 matches sorted by relevance
+  const matches = list
+    .map(s => {
+      const nameL = s.name.toLowerCase();
+      let score = 0;
+      if (s.name === query) score = 100;
+      else if (nameL === q) score = 95;
+      else if (nameL.startsWith(q)) score = 80;
+      else if (s.rawCode === query) score = 90;
+      else if (s.code.toLowerCase() === q) score = 85;
+      else if (nameL.includes(q)) score = 60 + (nameL.indexOf(q) === 0 ? 10 : 0);
+      else if (s.rawCode.includes(query)) score = 50;
+      else if (s.code.toLowerCase().includes(q)) score = 45;
+      return { ...s, score };
+    })
+    .filter(s => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 8);
+
+  if (!matches.length) { hideSearchAutocomplete(); return; }
+
+  let dropdown = document.getElementById('market-search-dropdown');
+  if (!dropdown) {
+    const input = document.getElementById('market-search');
+    const wrap = input.closest('.relative') || input.parentElement;
+    dropdown = document.createElement('div');
+    dropdown.id = 'market-search-dropdown';
+    dropdown.className = 'absolute left-0 right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-100 z-50 max-h-64 overflow-y-auto';
+    wrap.style.position = 'relative';
+    wrap.appendChild(dropdown);
+  }
+
+  dropdown.innerHTML = matches.map(s => `
+    <div class="px-4 py-2.5 hover:bg-blue-50 cursor-pointer flex items-center justify-between border-b border-gray-50 last:border-0" onclick="selectSearchResult('${s.code}', '${s.name.replace(/'/g, "\\'")}')">
+      <div class="flex items-center gap-2">
+        <span class="font-medium text-sm text-gray-800">${s.name}</span>
+        <span class="text-xs text-gray-400">${s.code}</span>
+      </div>
+      <span class="text-xs text-primary">选择</span>
+    </div>
+  `).join('');
+  dropdown.classList.remove('hidden');
+}
+
+function hideSearchAutocomplete() {
+  const dropdown = document.getElementById('market-search-dropdown');
+  if (dropdown) dropdown.classList.add('hidden');
+}
+
+function selectSearchResult(code, name) {
+  const input = document.getElementById('market-search');
+  if (input) input.value = name;
+  hideSearchAutocomplete();
+  doMarketSearch(name);
 }
 
 function doMarketSearch(query) {
@@ -424,22 +558,31 @@ function doMarketSearch(query) {
     if (clearBtn) clearBtn.classList.remove('hidden');
 
     loadAllAStockList().then(() => {
-      // Retry search once data is loaded
       doMarketSearch(query);
     });
     return;
   }
 
   if (list.length > 0) {
-    const exact = list.find(s => s.name === query.trim());
-    if (exact && !directCode) directCode = exact.code;
+    const scored = list
+      .map(s => {
+        const nameL = s.name.toLowerCase();
+        let score = 0;
+        if (s.name === query.trim()) score = 100;
+        else if (nameL === q) score = 95;
+        else if (nameL.startsWith(q)) score = 80;
+        else if (s.rawCode === query.trim()) score = 90;
+        else if (s.code.toLowerCase() === q) score = 85;
+        else if (nameL.includes(q)) score = 60;
+        else if (s.rawCode.includes(query.trim())) score = 50;
+        else if (s.code.toLowerCase().includes(q)) score = 45;
+        return { ...s, score };
+      })
+      .filter(s => s.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 50);
 
-    const fuzzy = list.filter(s =>
-      s.name.toLowerCase().includes(q) ||
-      s.rawCode.includes(q) ||
-      s.code.toLowerCase().includes(q)
-    ).slice(0, 10);
-    fuzzy.forEach(s => {
+    scored.forEach(s => {
       if (!results.find(r => r.c === s.code)) {
         results.push({ c: s.code, n: s.name });
       }
@@ -455,7 +598,7 @@ function doMarketSearch(query) {
     }
     const fallbackFuzzy = allStocks.filter(s =>
       s.n.toLowerCase().includes(q) || s.c.toLowerCase().includes(q)
-    ).slice(0, 10);
+    ).slice(0, 20);
     fallbackFuzzy.forEach(s => {
       if (!results.find(r => r.c === s.c)) results.push(s);
     });
@@ -464,7 +607,8 @@ function doMarketSearch(query) {
   // Add direct code as first result if not already present
   if (directCode && !results.find(r => r.c === directCode)) {
     const named = list.find(s => s.code === directCode);
-    results.unshift({ c: directCode, n: named ? named.name : directCode });
+    const displayName = named ? named.name : (resolveStockName(directCode) || directCode);
+    results.unshift({ c: directCode, n: displayName });
   }
 
   const searchArea = document.getElementById('search-results');
@@ -497,10 +641,15 @@ function doMarketSearch(query) {
 
 function renderSearchResultCards(results, container) {
   container.innerHTML = results.map(s => {
+    // Resolve name from allAStockList or apiCache
+    let displayName = s.n;
+    if (!displayName || displayName === s.c) {
+      displayName = resolveStockName(s.c) || '未知股票';
+    }
     const d = apiCache[s.c];
     if (!d) return `
       <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3">
-        <p class="font-bold text-sm">${s.n}</p><p class="text-xs text-gray-500">${s.c}</p>
+        <p class="font-bold text-sm">${displayName}</p><p class="text-xs text-gray-500">${s.c}</p>
         <p class="text-gray-400 text-sm mt-2">同步中...</p>
       </div>`;
     const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
@@ -509,7 +658,7 @@ function renderSearchResultCards(results, container) {
       <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition">
         <div class="flex justify-between items-start">
           <div>
-            <p class="font-bold text-sm">${s.n}</p>
+            <p class="font-bold text-sm">${displayName}</p>
             <p class="text-xs text-gray-500">${s.c}</p>
           </div>
           <span class="text-xs ${color}">${arrow}</span>
@@ -537,4 +686,5 @@ function clearMarketSearch() {
   if (searchArea) searchArea.classList.add('hidden');
   if (sectorArea) sectorArea.classList.remove('hidden');
   if (clearBtn) clearBtn.classList.add('hidden');
+  hideSearchAutocomplete();
 }

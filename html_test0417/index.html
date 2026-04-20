@@ -51,11 +51,13 @@
         <nav class="hidden md:flex space-x-1 text-sm font-medium">
           <a href="#home" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">首页</a>
           <a href="#market" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">市场行情</a>
+          <a href="#funds" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">基金</a>
           <a href="#learning" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">学习路径</a>
           <a href="#kline" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">K线分析</a>
           <a href="#ai" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">AI分析</a>
           <a href="#trading" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">模拟交易</a>
           <a href="#calculator" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">投资计算</a>
+          <a href="#glossary" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">术语词典</a>
           <a href="#resources" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">资源库</a>
           <a href="#contact" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">联系我们</a>
         </nav>
@@ -69,11 +71,13 @@
       <div class="px-2 pt-2 pb-3 space-y-1 text-sm">
         <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">首页</a>
         <a href="#market" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">市场行情</a>
+        <a href="#funds" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">基金</a>
         <a href="#learning" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">学习路径</a>
         <a href="#kline" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">K线分析</a>
         <a href="#ai" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">AI分析</a>
         <a href="#trading" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">模拟交易</a>
         <a href="#calculator" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">投资计算</a>
+        <a href="#glossary" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">术语词典</a>
         <a href="#resources" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">资源库</a>
         <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">联系我们</a>
       </div>
@@ -106,7 +110,7 @@
           </div>
         </div>
       </div>
-      <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="grid md:grid-cols-4 gap-6 mt-8">
         <div class="group card-gradient card-accent-blue p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
           <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-primary rounded-xl flex items-center justify-center text-white text-xl font-bold mb-4 shadow-lg group-hover:scale-110 transition">01</div>
           <h3 class="text-lg font-bold mb-2">系统化课程</h3>
@@ -121,6 +125,11 @@
           <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mb-4 shadow-lg group-hover:scale-110 transition">03</div>
           <h3 class="text-lg font-bold mb-2">模拟实战</h3>
           <p class="text-gray-600 text-sm">50万虚拟资金，真实T+1交易规则，完整交割单记录，助你零成本积累实战经验。</p>
+        </div>
+        <div class="group card-gradient card-accent-blue p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mb-4 shadow-lg group-hover:scale-110 transition">04</div>
+          <h3 class="text-lg font-bold mb-2">基金投资</h3>
+          <p class="text-gray-600 text-sm">精选60+只优质基金，覆盖股票型、混合型、指数型、QDII等六大类别，新手入门首选。</p>
         </div>
       </div>
       <!-- 五大指数 -->
@@ -215,6 +224,31 @@
             <div class="max-h-[480px] overflow-y-auto space-y-1 pr-1" id="top-losers"></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 基金 -->
+    <section id="funds" class="page-section hidden">
+      <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+        <h2 class="text-2xl font-bold flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-violet-500 to-purple-400 rounded-full"></span>基金精选</h2>
+        <div class="flex items-center gap-2">
+          <div class="relative">
+            <input id="fund-search" type="text" placeholder="搜索基金名称或代码..."
+              class="w-48 md:w-64 pl-9 pr-3 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition shadow-sm bg-white"
+              oninput="doFundSearch()">
+            <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <span class="text-xs text-gray-500 bg-white px-3 py-1 rounded-full shadow-sm border border-gray-100 flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-green-500 rounded-full live-indicator"></span>实时净值</span>
+        </div>
+      </div>
+      <div class="flex gap-2 overflow-x-auto pb-2 mb-4" id="fund-tabs">
+        <!-- JS生成 -->
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="fund-cards">
+        <!-- JS生成 -->
+      </div>
+      <div class="mt-8" id="fund-rankings">
+        <!-- JS生成 -->
       </div>
     </section>
 
@@ -384,7 +418,7 @@
     <!-- 投资计算 -->
     <section id="calculator" class="page-section hidden">
       <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-primary to-blue-400 rounded-full"></span>投资计算器</h2>
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- 盈亏计算 -->
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 hover:shadow-xl transition duration-300">
           <h3 class="font-bold mb-4 flex items-center gap-2"><span class="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center text-primary text-xs">¥</span>盈亏计算器</h3>
@@ -421,6 +455,23 @@
             <div id="dca-chart" class="h-40 mt-3"></div>
           </div>
         </div>
+        <!-- 止损止盈 -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold mb-4 flex items-center gap-2"><span class="w-6 h-6 bg-red-100 rounded-lg flex items-center justify-center text-red-600 text-xs">S</span>止损止盈</h3>
+          <div class="space-y-3 text-sm">
+            <div><label class="text-gray-500 text-xs">持仓成本(元)</label><input type="number" step="0.01" id="stop-cost" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="50"></div>
+            <div><label class="text-gray-500 text-xs">当前价格(元)</label><input type="number" step="0.01" id="stop-current" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="48"></div>
+            <div><label class="text-gray-500 text-xs">止损比例(%)</label><input type="number" step="0.1" id="stop-loss" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="8"></div>
+            <div><label class="text-gray-500 text-xs">止盈比例(%)</label><input type="number" step="0.1" id="stop-gain" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 mt-1 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition" value="15"></div>
+            <button onclick="calcStopLoss()" class="w-full py-2.5 btn-gradient text-white rounded-xl font-medium hover:shadow-md transition">计算</button>
+          </div>
+          <div id="stop-result" class="mt-4 hidden pt-4 border-t border-gray-100 text-sm">
+            <div class="flex justify-between"><span class="text-gray-500">止损价格</span><span id="stop-price" class="font-bold text-down">--</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">止盈价格</span><span id="gain-price" class="font-bold text-up">--</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">当前盈亏</span><span id="current-pl">--</span></div>
+            <div class="text-xs text-gray-500 bg-gray-50 p-3 rounded-xl mt-3" id="stop-advice"></div>
+          </div>
+        </div>
         <!-- 仓位管理 -->
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 hover:shadow-xl transition duration-300">
           <h3 class="font-bold mb-4 flex items-center gap-2"><span class="w-6 h-6 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xs">K</span>凯利公式仓位</h3>
@@ -438,6 +489,25 @@
             <div class="text-xs text-gray-500 bg-gray-50 p-3 rounded-xl mt-3" id="kelly-advice"></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 术语词典 -->
+    <section id="glossary" class="page-section hidden">
+      <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+        <h2 class="text-2xl font-bold flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-cyan-500 to-blue-400 rounded-full"></span>术语词典</h2>
+        <div class="relative">
+          <input id="glossary-search" type="text" placeholder="搜索术语、拼音..."
+            class="w-48 md:w-64 pl-9 pr-3 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition shadow-sm bg-white"
+            oninput="doGlossarySearch()">
+          <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+      </div>
+      <div class="flex gap-2 overflow-x-auto pb-2 mb-4" id="glossary-tabs">
+        <!-- JS生成 -->
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="glossary-cards">
+        <!-- JS生成 -->
       </div>
     </section>
 
@@ -498,11 +568,13 @@
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
           <a href="#home" class="text-gray-600 hover:text-primary transition">首页</a>
           <a href="#market" class="text-gray-600 hover:text-primary transition">市场行情</a>
+          <a href="#funds" class="text-gray-600 hover:text-primary transition">基金</a>
           <a href="#learning" class="text-gray-600 hover:text-primary transition">学习路径</a>
           <a href="#kline" class="text-gray-600 hover:text-primary transition">K线分析</a>
           <a href="#ai" class="text-gray-600 hover:text-primary transition">AI分析</a>
           <a href="#trading" class="text-gray-600 hover:text-primary transition">模拟交易</a>
           <a href="#calculator" class="text-gray-600 hover:text-primary transition">投资计算</a>
+          <a href="#glossary" class="text-gray-600 hover:text-primary transition">术语词典</a>
           <a href="#resources" class="text-gray-600 hover:text-primary transition">资源库</a>
           <a href="#contact" class="text-gray-600 hover:text-primary transition">联系我们</a>
         </div>
@@ -532,6 +604,8 @@
   <script src="./js/ai.js"></script>
   <script src="./js/learning.js"></script>
   <script src="./js/resources.js"></script>
+  <script src="./js/funds.js"></script>
+  <script src="./js/glossary.js"></script>
   <script src="./js/app.js"></script>
 </body>
 </html>

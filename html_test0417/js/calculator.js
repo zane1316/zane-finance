@@ -111,6 +111,36 @@ function calcKelly() {
   document.getElementById('kelly-advice').textContent = advice;
 }
 
+function calcStopLoss() {
+  const cost = parseFloat(document.getElementById('stop-cost').value) || 0;
+  const current = parseFloat(document.getElementById('stop-current').value) || 0;
+  const lossPct = parseFloat(document.getElementById('stop-loss').value) || 0;
+  const gainPct = parseFloat(document.getElementById('stop-gain').value) || 0;
+  if (!cost || !current) { alert('请填写完整信息'); return; }
+
+  const stopPrice = cost * (1 - lossPct / 100);
+  const gainPrice = cost * (1 + gainPct / 100);
+  const currentPct = ((current - cost) / cost) * 100;
+
+  document.getElementById('stop-price').textContent = formatNumber(stopPrice, 2);
+  document.getElementById('gain-price').textContent = formatNumber(gainPrice, 2);
+  document.getElementById('current-pl').textContent = (currentPct >= 0 ? '+' : '') + formatNumber(currentPct, 2) + '%';
+  document.getElementById('current-pl').className = currentPct >= 0 ? 'font-bold text-up' : 'font-bold text-down';
+  document.getElementById('stop-result').classList.remove('hidden');
+
+  let advice = '';
+  if (current <= stopPrice) {
+    advice = `当前价格已触及或跌破止损价 ${formatNumber(stopPrice, 2)} 元，建议严格执行止损，避免更大亏损。`;
+  } else if (current >= gainPrice) {
+    advice = `当前价格已达到止盈目标 ${formatNumber(gainPrice, 2)} 元，可考虑分批止盈或设置移动止盈。`;
+  } else if (currentPct < 0) {
+    advice = `当前浮亏 ${formatNumber(Math.abs(currentPct), 2)}%，距离止损价 ${formatNumber(stopPrice, 2)} 元还有 ${formatNumber(((current - stopPrice) / current * 100), 2)}% 空间。`;
+  } else {
+    advice = `当前浮盈 ${formatNumber(currentPct, 2)}%，距离止盈目标 ${formatNumber(gainPrice, 2)} 元还有 ${formatNumber(((gainPrice - current) / current * 100), 2)}% 空间。`;
+  }
+  document.getElementById('stop-advice').textContent = advice;
+}
+
 function initCalculator() {
   // placeholder for any calculator init
 }
