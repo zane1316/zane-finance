@@ -202,6 +202,12 @@ function loadAllAStockList() {
     allAStockList = cached;
   }
 
+  // Fallback to bundled local list if no cache (Eastmoney API often blocked by corp proxy)
+  if (!allAStockList && typeof allAStockListLocal !== 'undefined' && Array.isArray(allAStockListLocal)) {
+    allAStockList = allAStockListLocal;
+    console.log(`Loaded ${allAStockList.length} A-share stocks from local bundle`);
+  }
+
   const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f12&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=f12,f14`;
   return fetch(url)
     .then(r => r.json())
@@ -223,10 +229,16 @@ function loadAllAStockList() {
     .catch(err => {
       console.warn('Failed to load all A-stock list from API:', err);
       if (!allAStockList) {
+        // Use local bundle as last resort if available
+        if (typeof allAStockListLocal !== 'undefined' && Array.isArray(allAStockListLocal)) {
+          allAStockList = allAStockListLocal;
+          console.log(`Fallback: loaded ${allAStockList.length} stocks from local bundle`);
+          return allAStockList;
+        }
         allAStockList = null; // Allow retry on next call
         return [];
       }
-      return allAStockList; // Return cached data even if API fails
+      return allAStockList; // Return cached/local data even if API fails
     });
 }
 

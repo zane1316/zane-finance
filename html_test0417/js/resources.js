@@ -37,7 +37,12 @@ const resourceCategories = [
       { name: '平安证券', url: 'https://stock.pingan.com' },
       { name: '兴业证券', url: 'https://www.xyzq.com.cn' },
       { name: '光大证券', url: 'https://www.ebscn.com' },
-      { name: '安信证券', url: 'http://www.essence.com.cn' }
+      { name: '安信证券', url: 'http://www.essence.com.cn' },
+      { name: '国信证券', url: 'https://www.guosen.com.cn' },
+      { name: '东方证券', url: 'https://www.dfzq.com.cn' },
+      { name: '浙商证券', url: 'https://www.stocke.com.cn' },
+      { name: '长江证券', url: 'https://www.95579.com' },
+      { name: '方正证券', url: 'https://www.foundersc.com' }
     ]
   },
   {
@@ -92,7 +97,12 @@ const resourceCategories = [
       { name: '优矿Uqer', url: 'https://uqer.io' },
       { name: '米筐Ricequant', url: 'https://www.ricequant.com' },
       { name: 'BigQuant', url: 'https://bigquant.com' },
-      { name: '宽邦科技', url: 'https://www.kuanbangtech.com' }
+      { name: '宽邦科技', url: 'https://www.kuanbangtech.com' },
+      { name: 'CHOICE金融终端', url: 'https://choice.eastmoney.com' },
+      { name: '雪球组合', url: 'https://xueqiu.com' },
+      { name: '乐咕乐股', url: 'https://www.legulegu.com' },
+      { name: '果仁网', url: 'https://guorn.com' },
+      { name: '且慢估值', url: 'https://www.qieman.com/idx-eval' }
     ]
   },
   {
@@ -109,7 +119,13 @@ const resourceCategories = [
       { name: '韭圈儿', url: 'https://www.jiucaishuo.com' },
       { name: '基金豆', url: 'https://www.jijindou.com' },
       { name: '支付宝理财', url: 'https://www.alipay.com' },
-      { name: '招商银行App', url: 'https://www.cmbchina.com' }
+      { name: '招商银行App', url: 'https://www.cmbchina.com' },
+      { name: '南方基金', url: 'https://www.nffund.com' },
+      { name: '易方达基金', url: 'https://www.efunds.com.cn' },
+      { name: '华夏基金', url: 'https://www.chinaamc.com' },
+      { name: '广发基金', url: 'https://www.gffunds.com.cn' },
+      { name: '富国基金', url: 'https://www.fullgoal.com.cn' },
+      { name: '嘉实基金', url: 'https://www.jsfund.cn' }
     ]
   },
   {
@@ -150,6 +166,79 @@ const resourceCategories = [
       { name: '世界经理人', url: 'http://www.ceconline.com' },
       { name: '哈佛商业评论中文', url: 'https://www.hbrchina.org' },
       { name: '财新通', url: 'https://www.caixin.com' }
+    ]
+  },
+  {
+    title: '上市公司',
+    links: [
+      { name: '巨潮资讯网', url: 'http://www.cninfo.com.cn' },
+      { name: '上交所公告', url: 'http://www.sse.com.cn/disclosure/listedinfo/announcement' },
+      { name: '深交所公告', url: 'http://www.szse.cn/disclosure/listed/notice' },
+      { name: '北交所公告', url: 'https://www.bse.cn/disclosure/disciplinary_ann.html' },
+      { name: '披露易(港股)', url: 'https://www.hkexnews.hk' },
+      { name: '荣大二郎神', url: 'https://www.rongdashen.com' },
+      { name: '见微数据', url: 'https://www.jianweidata.com' },
+      { name: '企查查', url: 'https://www.qcc.com' },
+      { name: '天眼查', url: 'https://www.tianyancha.com' },
+      { name: '国家企业信用信息公示', url: 'http://www.gsxt.gov.cn' }
+    ]
+  },
+  {
+    title: '宏观经济',
+    links: [
+      { name: '国家统计局', url: 'http://www.stats.gov.cn' },
+      { name: '中国人民银行数据', url: 'http://www.pbc.gov.cn/diaochatongjisi' },
+      { name: '财政部', url: 'http://www.mof.gov.cn' },
+      { name: '海关总署', url: 'http://www.customs.gov.cn' },
+      { name: '世界银行中国', url: 'https://data.worldbank.org/country/CN' },
+      { name: 'IMF数据', url: 'https://data.imf.org' },
+      { name: 'OECD数据', url: 'https://data.oecd.org' },
+      { name: 'CEIC中国数据库', url: 'https://www.ceicdata.com/zh-hans' },
+      { name: '万得宏观', url: 'https://www.wind.com.cn' },
+      { name: '生意社', url: 'https://www.100ppi.com' }
+    ]
+  },
+  {
+    title: '期货与衍生品',
+    links: [
+      { name: '上海期货交易所', url: 'http://www.shfe.com.cn' },
+      { name: '大连商品交易所', url: 'http://www.dce.com.cn' },
+      { name: '郑州商品交易所', url: 'http://www.czce.com.cn' },
+      { name: '广州期货交易所', url: 'http://www.gfex.com.cn' },
+      { name: '中国金融期货交易所', url: 'http://www.cffex.com.cn' },
+      { name: '上海能源交易所', url: 'http://www.ine.cn' },
+      { name: '期货保证金监控中心', url: 'http://www.cfmmc.com' },
+      { name: '文华财经', url: 'https://www.wenhua.com.cn' },
+      { name: '博易大师', url: 'https://www.boyinews.com' },
+      { name: '期权世界', url: 'https://www.optionworld.com.cn' }
+    ]
+  },
+  {
+    title: '债券与固收',
+    links: [
+      { name: '中国债券信息网', url: 'https://www.chinabond.com.cn' },
+      { name: '上海清算所', url: 'http://www.shclearing.com' },
+      { name: '银行间市场交易商协会', url: 'http://www.nafmii.org.cn' },
+      { name: '国债收益率曲线', url: 'https://yield.chinabond.com.cn' },
+      { name: '企业预警通', url: 'https://www.qyyjt.com' },
+      { name: 'DM查债通', url: 'https://www.dmzhai.com' },
+      { name: '招商固收研究', url: 'https://www.cmschina.com/research' },
+      { name: '中金固收', url: 'https://www.cicc.com/research' }
+    ]
+  },
+  {
+    title: '国际财经',
+    links: [
+      { name: 'Bloomberg', url: 'https://www.bloomberg.com' },
+      { name: 'Reuters', url: 'https://www.reuters.com' },
+      { name: 'CNBC', url: 'https://www.cnbc.com' },
+      { name: 'Financial Times', url: 'https://www.ft.com' },
+      { name: 'MarketWatch', url: 'https://www.marketwatch.com' },
+      { name: 'Yahoo Finance', url: 'https://finance.yahoo.com' },
+      { name: 'Seeking Alpha', url: 'https://seekingalpha.com' },
+      { name: 'The Economist', url: 'https://www.economist.com' },
+      { name: '华尔街日报', url: 'https://cn.wsj.com' },
+      { name: '美股之家', url: 'https://www.usstock.com' }
     ]
   }
 ];
