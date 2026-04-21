@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Zane Finance - Custom Styles */
 
 :root {
@@ -16,7 +20,7 @@
 *::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
 
 body {
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Segoe UI", Roboto, sans-serif;
   background: linear-gradient(135deg, #F0F4F8 0%, #E8F0FE 30%, #F5F3FF 70%, #FFF7ED 100%);
   background-attachment: fixed;
   min-height: 100vh;

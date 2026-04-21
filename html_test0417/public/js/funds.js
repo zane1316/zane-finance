@@ -4,6 +4,8 @@ let currentFundCategory = '全部';
 let fundQuoteCache = {};
 let allFundsFullCache = null;
 let allFundsFullPromise = null;
+const FUND_PAGE_SIZE = 40;
+let fundCurrentPage = 1;
 
 const curatedFunds = [
   // 股票型
@@ -93,6 +95,7 @@ function renderFundTabs() {
 
 function switchFundCategory(cat) {
   currentFundCategory = cat;
+  fundCurrentPage = 1;
   renderFundTabs();
   renderFundCards();
   loadFundQuotes();
@@ -147,12 +150,14 @@ function getFilteredFunds() {
 function renderFundCards() {
   const container = document.getElementById('fund-cards');
   if (!container) return;
-  const funds = getFilteredFunds();
-  if (funds.length === 0) {
+  const allFunds = getFilteredFunds();
+  if (allFunds.length === 0) {
     container.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400"><p class="text-lg mb-2">未找到匹配的基金</p><p class="text-sm">请尝试其他关键词或分类</p></div>`;
     return;
   }
-  container.innerHTML = funds.map((f, i) => {
+  const totalPages = Math.ceil(allFunds.length / FUND_PAGE_SIZE);
+  const funds = allFunds.slice(0, fundCurrentPage * FUND_PAGE_SIZE);
+  let html = funds.map((f, i) => {
     const q = fundQuoteCache[f.code];
     const price = q ? formatNumber(q.price, 4) : '--';
     const change = q ? q.changePercent : null;
@@ -185,6 +190,18 @@ function renderFundCards() {
       </div>
     `;
   }).join('');
+
+  if (fundCurrentPage < totalPages) {
+    html += `
+      <div class="col-span-full flex justify-center py-4">
+        <button onclick="loadMoreFunds()" class="px-6 py-2.5 bg-white border border-gray-200 rounded-xl text-sm font-medium text-gray-600 hover:text-primary hover:border-primary hover:bg-blue-50 transition shadow-sm">
+          加载更多 (${funds.length} / ${allFunds.length})
+        </button>
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
 }
 
 function getCategoryBadgeClass(cat) {
@@ -202,8 +219,9 @@ function getCategoryBadgeClass(cat) {
 function loadFundQuotes() {
   const funds = getFilteredFunds();
   if (funds.length === 0) return;
-  // Limit quote fetches to prevent API overload
-  const codes = funds.slice(0, 80).map(f => f.code);
+  // Only fetch quotes for currently visible funds
+  const visibleCount = Math.min(funds.length, fundCurrentPage * FUND_PAGE_SIZE);
+  const codes = funds.slice(0, visibleCount).map(f => f.code);
   const chunkSize = 40;
   for (let i = 0; i < codes.length; i += chunkSize) {
     const chunk = codes.slice(i, i + chunkSize);
@@ -272,7 +290,14 @@ function renderRankingRow(f, rank, isUp) {
   `;
 }
 
+function loadMoreFunds() {
+  fundCurrentPage++;
+  renderFundCards();
+  loadFundQuotes();
+}
+
 function doFundSearch() {
+  fundCurrentPage = 1;
   const query = (document.getElementById('fund-search')?.value || '').trim().toLowerCase();
   if (query && !allFundsFullCache && !allFundsFullPromise) {
     // First search: lazy-load full fund list

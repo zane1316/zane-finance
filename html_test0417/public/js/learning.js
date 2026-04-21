@@ -1948,6 +1948,9 @@ function initLearningProgress() {
 
 function saveLearningProgress() {
   localStorage.setItem('zfinance_learning_v2', JSON.stringify(learningProgressV2));
+  if (typeof window.autoSyncLearning === 'function') {
+    window.autoSyncLearning(learningProgressV2);
+  }
 }
 
 let currentLevel = 1;

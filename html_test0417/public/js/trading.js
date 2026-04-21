@@ -25,6 +25,9 @@ function resetTrading() {
 
 function saveAccount() {
   localStorage.setItem('zfinance_trading', JSON.stringify(account));
+  if (typeof window.autoSyncTrading === 'function') {
+    window.autoSyncTrading(account);
+  }
 }
 
 function todayStr() {
