@@ -8,15 +8,47 @@ const SUPABASE_ANON_KEY = import.meta.env?.VITE_SUPABASE_ANON_KEY || ''
 
 let supabase = null
 let syncEnabled = false
+let authProviders = { email: false, github: false }
+let supabaseStatus = 'unconfigured' // unconfigured | connecting | ready | error
 
 if (SUPABASE_URL && SUPABASE_ANON_KEY) {
   try {
     supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
     syncEnabled = true
+    supabaseStatus = 'ready'
+    authProviders = { email: true, github: false }
     console.log('[Sync] Supabase initialized')
+    // Detect available auth providers (async confirmation)
+    detectAuthProviders()
   } catch (e) {
+    supabaseStatus = 'error'
     console.warn('[Sync] Supabase init failed:', e)
   }
+}
+
+async function detectAuthProviders() {
+  try {
+    const { data, error } = await supabase.auth.getSession()
+    if (error) throw error
+    // Check providers via settings endpoint
+    const resp = await fetch(`${SUPABASE_URL}/auth/v1/settings`, {
+      headers: { 'apikey': SUPABASE_ANON_KEY }
+    })
+    if (resp.ok) {
+      const settings = await resp.json()
+      authProviders.email = settings.external?.email === true
+      authProviders.github = settings.external?.github === true
+      supabaseStatus = 'ready'
+      console.log('[Sync] Auth providers:', authProviders)
+    }
+  } catch (e) {
+    console.warn('[Sync] Failed to detect auth providers:', e)
+    supabaseStatus = 'error'
+  }
+}
+
+export function getSupabaseStatus() {
+  return { status: supabaseStatus, providers: authProviders, enabled: syncEnabled }
 }
 
 // ---------- Auth ----------

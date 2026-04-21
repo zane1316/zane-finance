@@ -31,7 +31,9 @@ function loadTencentAPI(codes, callback) {
         apiCache[originalCode] = result[originalCode];
         try { delete window[varName]; } catch(e) {}
       } else {
-        result[originalCode] = apiCache[originalCode] || null;
+        // API returned but this code's data is missing - mark so UI doesn't show "syncing" forever
+        if (!apiCache[originalCode]) apiCache[originalCode] = { _missing: true };
+        result[originalCode] = apiCache[originalCode];
       }
     });
     callback(null, result);
@@ -459,11 +461,14 @@ function switchSector(key) {
 }
 
 function renderStockCard(s, d) {
-  if (!d) return `
-    <div class="min-w-[160px] bg-white rounded-lg shadow border border-border p-3">
-      <p class="font-bold">${s.n}</p><p class="text-xs text-gray-500">${s.c}</p>
-      <p class="text-gray-400 text-sm mt-2">同步中...</p>
-    </div>`;
+  if (!d || d._failed || d._missing) {
+    const msg = d && (d._failed || d._missing) ? '暂无实时数据' : '同步中...';
+    return `
+      <div class="min-w-[160px] bg-white rounded-lg shadow border border-border p-3">
+        <p class="font-bold">${s.n}</p><p class="text-xs text-gray-500">${s.c}</p>
+        <p class="text-gray-400 text-sm mt-2">${msg}</p>
+      </div>`;
+  }
   const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
   const arrow = d.changePercent >= 0 ? '▲' : '▼';
   return `
@@ -774,13 +779,13 @@ function renderSearchResultCards(results, container) {
       displayName = resolveStockName(s.c) || '未知股票';
     }
     const d = apiCache[s.c];
-    if (!d || d._failed) {
-      const isFailed = d && d._failed;
+    const isFailed = !d || (d && (d._failed || d._missing));
+    if (isFailed) {
       return `
         <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3">
           <p class="font-bold text-sm">${displayName}</p><p class="text-xs text-gray-500">${s.c}</p>
-          <p class="text-gray-400 text-sm mt-2">${isFailed ? '暂无实时数据' : '同步中...'}</p>
-          ${isFailed ? `<button onclick="refreshSearchResults()" class="mt-2 text-xs text-primary hover:underline">点击刷新</button>` : ''}
+          <p class="text-gray-400 text-sm mt-2">暂无实时数据</p>
+          <button onclick="refreshSearchResults()" class="mt-2 text-xs text-primary hover:underline">点击刷新</button>
         </div>`;
     }
     const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
@@ -810,9 +815,9 @@ function renderSearchResultCards(results, container) {
 
 function refreshSearchResults() {
   if (currentSearchCodes.length === 0) return;
-  // Clear failed marks
+  // Clear failed / missing marks
   currentSearchCodes.forEach(c => {
-    if (apiCache[c] && apiCache[c]._failed) delete apiCache[c];
+    if (apiCache[c] && (apiCache[c]._failed || apiCache[c]._missing)) delete apiCache[c];
   });
   const cardsEl = document.getElementById('search-result-cards');
   const results = currentSearchCodes.map(c => ({ c, n: resolveStockName(c) || c }));
