@@ -68,12 +68,29 @@ function initAuthUI() {
     statusEl.className += ' bg-green-50 text-green-700'
     statusEl.textContent = '云端同步服务正常，登录后数据自动同步。'
   }
+
+  // Localhost warning & Supabase config note
+  const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  const configNote = document.createElement('div')
+  configNote.id = 'auth-config-note'
+  configNote.className = 'mb-3 text-xs px-3 py-2 rounded-lg bg-blue-50 text-blue-700'
+  if (isLocalhost) {
+    configNote.innerHTML = '当前为本地开发环境，邮箱验证链接会指向 localhost，无法从其他设备打开。请在部署后的线上网站进行登录测试。'
+  } else {
+    configNote.innerHTML = '如邮箱验证链接跳转失败（例如跳转到 localhost），请前往 Supabase 后台 → Authentication → URL Configuration，将 Site URL 和 Redirect URLs 更新为当前网站地址。'
+  }
+
   const modalContent = authModal.querySelector('.bg-white')
   if (modalContent) {
-    const existing = modalContent.querySelector('#auth-status-bar')
-    if (existing) existing.remove()
+    const existingStatus = modalContent.querySelector('#auth-status-bar')
+    if (existingStatus) existingStatus.remove()
+    const existingNote = modalContent.querySelector('#auth-config-note')
+    if (existingNote) existingNote.remove()
     const desc = modalContent.querySelector('p.text-gray-500')
-    if (desc) desc.after(statusEl)
+    if (desc) {
+      desc.after(statusEl)
+      statusEl.after(configNote)
+    }
   }
 
   function updateAuthButton(user) {

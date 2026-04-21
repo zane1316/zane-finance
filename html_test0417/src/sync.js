@@ -62,18 +62,20 @@ export async function getCurrentUser() {
 
 export async function signInWithEmail(email) {
   if (!supabase) return { error: new Error('云端同步服务暂未配置，不登录不影响正常使用') }
+  const redirectTo = window.location.hostname === 'localhost' ? 'http://localhost:3000' : window.location.href
   const { error } = await supabase.auth.signInWithOtp({
     email,
-    options: { emailRedirectTo: window.location.origin }
+    options: { emailRedirectTo: redirectTo }
   })
   return { error }
 }
 
 export async function signInWithOAuth(provider) {
   if (!supabase) return { error: new Error('云端同步服务暂未配置，不登录不影响正常使用') }
+  const redirectTo = window.location.hostname === 'localhost' ? 'http://localhost:3000' : window.location.href
   const { error } = await supabase.auth.signInWithOAuth({
     provider,
-    options: { redirectTo: window.location.origin }
+    options: { redirectTo }
   })
   return { error }
 }

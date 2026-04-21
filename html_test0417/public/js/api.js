@@ -202,12 +202,21 @@ const STOCK_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
 // Get correct exchange prefix for A-share code
 function getStockPrefix(rawCode) {
-  if (!rawCode || rawCode.length !== 6) return 'sz';
-  const first = rawCode[0];
-  const firstTwo = rawCode.substring(0, 2);
+  if (!rawCode) return 'sz';
+  const digits = rawCode.replace(/^(sh|sz|bj)/, '');
+  if (digits.length !== 6) return 'sz';
+  const first = digits[0];
+  const firstTwo = digits.substring(0, 2);
   if (first === '6' || firstTwo === '68' || firstTwo === '69') return 'sh';
-  if (first === '8' || first === '4') return 'bj';
+  if (first === '8' || first === '4' || firstTwo === '82' || firstTwo === '83' || firstTwo === '87' || firstTwo === '88' || firstTwo === '89' || firstTwo === '92' || firstTwo === '93') return 'bj';
   return 'sz';
+}
+
+// Normalize stock entry from local bundle (fixes malformed codes like szsh600519)
+function normalizeStockEntry(s) {
+  const rawCode = (s.rawCode || s.code || '').replace(/^(sh|sz|bj)/, '');
+  const prefix = getStockPrefix(rawCode);
+  return { ...s, rawCode, code: prefix + rawCode };
 }
 
 function loadAllAStockListFromCache() {
@@ -247,8 +256,9 @@ function loadAllAStockList() {
 
   // Fallback to bundled local list if no cache (Eastmoney API often blocked by corp proxy)
   if (!allAStockList && typeof allAStockListLocal !== 'undefined' && Array.isArray(allAStockListLocal)) {
-    allAStockList = allAStockListLocal;
-    console.log(`Loaded ${allAStockList.length} A-share stocks from local bundle`);
+    // Local bundle may have malformed codes (e.g. szsh600519) — normalize them
+    allAStockList = allAStockListLocal.map(normalizeStockEntry);
+    console.log(`Loaded ${allAStockList.length} A-share stocks from local bundle (normalized)`);
   }
 
   // If we already have data from cache or local bundle, return immediately
@@ -303,8 +313,8 @@ function loadAllAStockList() {
       clearTimeout(timeoutId);
       console.warn('Failed to load all A-stock list from API:', err);
       if (typeof allAStockListLocal !== 'undefined' && Array.isArray(allAStockListLocal)) {
-        allAStockList = allAStockListLocal;
-        console.log(`Fallback: loaded ${allAStockList.length} stocks from local bundle`);
+        allAStockList = allAStockListLocal.map(normalizeStockEntry);
+        console.log(`Fallback: loaded ${allAStockList.length} stocks from local bundle (normalized)`);
         return allAStockList;
       }
       allAStockList = [];
