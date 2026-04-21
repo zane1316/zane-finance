@@ -29,7 +29,7 @@ export async function getCurrentUser() {
 }
 
 export async function signInWithEmail(email) {
-  if (!supabase) return { error: new Error('Supabase not configured') }
+  if (!supabase) return { error: new Error('云端同步服务暂未配置，不登录不影响正常使用') }
   const { error } = await supabase.auth.signInWithOtp({
     email,
     options: { emailRedirectTo: window.location.origin }
@@ -38,7 +38,7 @@ export async function signInWithEmail(email) {
 }
 
 export async function signInWithOAuth(provider) {
-  if (!supabase) return { error: new Error('Supabase not configured') }
+  if (!supabase) return { error: new Error('云端同步服务暂未配置，不登录不影响正常使用') }
   const { error } = await supabase.auth.signInWithOAuth({
     provider,
     options: { redirectTo: window.location.origin }
@@ -47,7 +47,7 @@ export async function signInWithOAuth(provider) {
 }
 
 export async function signOut() {
-  if (!supabase) return { error: new Error('Supabase not configured') }
+  if (!supabase) return { error: new Error('云端同步服务暂未配置') }
   const { error } = await supabase.auth.signOut()
   return { error }
 }

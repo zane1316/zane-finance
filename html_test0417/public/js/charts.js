@@ -72,7 +72,7 @@ function renderKlineTabs() {
 
 function renderKlineGrid() {
   // Cleanup old charts
-  klineCharts.forEach(c => c.remove());
+  klineCharts.forEach(({ chart }) => { try { chart.remove(); } catch(e) {} });
   klineCharts = [];
   const container = document.getElementById('kline-grid');
   const items = klinePatterns[currentKlineCat];
@@ -94,27 +94,32 @@ function renderKlineGrid() {
   `).join('');
 
   // Render charts after DOM update
-  setTimeout(() => {
+  requestAnimationFrame(() => {
     items.forEach((p, idx) => {
       const el = document.getElementById(`kline-chart-${idx}`);
       if (!el) return;
-      const chart = LightweightCharts.createChart(el, {
-        width: el.clientWidth,
-        height: 220,
-        layout: { background: { color: '#f8fafc' }, textColor: '#374151' },
-        grid: { vertLines: { color: '#e2e8f0' }, horzLines: { color: '#e2e8f0' } },
-        crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
-        rightPriceScale: { borderColor: '#e2e8f0' },
-        timeScale: { borderColor: '#e2e8f0', timeVisible: true }
-      });
-      const series = chart.addCandlestickSeries({
-        upColor: '#DC2626', downColor: '#16A34A', borderVisible: false,
-        wickUpColor: '#DC2626', wickDownColor: '#16A34A'
-      });
-      series.setData(generatePatternData(p.id, p.bullish));
-      klineCharts.push(chart);
+      try {
+        const chart = LightweightCharts.createChart(el, {
+          width: el.clientWidth,
+          height: 220,
+          layout: { background: { color: '#f8fafc' }, textColor: '#374151' },
+          grid: { vertLines: { color: '#e2e8f0' }, horzLines: { color: '#e2e8f0' } },
+          rightPriceScale: { borderColor: '#e2e8f0' },
+          timeScale: { borderColor: '#e2e8f0', timeVisible: true }
+        });
+        const seriesOptions = {
+          upColor: '#DC2626', downColor: '#16A34A', borderVisible: false,
+          wickUpColor: '#DC2626', wickDownColor: '#16A34A'
+        };
+        const series = chart.addSeries(LightweightCharts.CandlestickSeries, seriesOptions);
+        series.setData(generatePatternData(p.id, p.bullish));
+        klineCharts.push({ chart, container: el });
+      } catch (err) {
+        console.warn(`Kline chart render failed for ${p.name}:`, err);
+        el.innerHTML = '<div class="flex items-center justify-center h-full text-gray-400 text-sm">图表加载失败</div>';
+      }
     });
-  }, 50);
+  });
 }
 
 function generatePatternData(patternId, bullish) {
@@ -296,5 +301,7 @@ function makeCandle(date, open, close, high, low, up) {
 }
 
 window.addEventListener('resize', () => {
-  klineCharts.forEach(c => c.applyOptions({ width: c.chartElement().clientWidth }));
+  klineCharts.forEach(({ chart, container }) => {
+    try { chart.resize(container.clientWidth, 220); } catch(e) {}
+  });
 });

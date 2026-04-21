@@ -84,7 +84,7 @@ function initAuthUI() {
       authMsg.classList.remove('hidden')
       const { error } = await signInWithEmail(email)
       if (error) {
-        authMsg.innerHTML = `<span class="text-red-500">发送失败: ${error.message}</span>`
+        authMsg.innerHTML = `<span class="text-amber-600">${error.message}</span>`
       } else {
         authMsg.innerHTML = '<span class="text-green-600">登录链接已发送到邮箱，请查收后点击链接完成登录</span>'
         authEmail.value = ''
@@ -94,9 +94,11 @@ function initAuthUI() {
 
   if (authGithub) {
     authGithub.addEventListener('click', async () => {
+      authMsg.innerHTML = '<span class="text-primary">正在跳转 GitHub 授权页面...</span>'
+      authMsg.classList.remove('hidden')
       const { error } = await signInWithOAuth('github')
       if (error) {
-        authMsg.innerHTML = `<span class="text-red-500">登录失败: ${error.message}</span>`
+        authMsg.innerHTML = `<span class="text-amber-600">${error.message}</span>`
         authMsg.classList.remove('hidden')
       }
     })

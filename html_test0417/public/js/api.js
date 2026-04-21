@@ -13,6 +13,7 @@ function loadTencentAPI(codes, callback) {
   script.src = url;
   script.onerror = () => {
     cleanup(id);
+    codes.forEach(c => { if (!apiCache[c]) apiCache[c] = { _failed: true }; });
     callback(new Error('API load failed'), null);
   };
   script.onload = () => {
@@ -38,8 +39,13 @@ function loadTencentAPI(codes, callback) {
   document.head.appendChild(script);
   setTimeout(() => {
     const s = document.getElementById(id);
-    if (s) { cleanup(id); callback(new Error('API timeout'), null); }
-  }, 10000);
+    if (s) {
+      cleanup(id);
+      // Mark all requested codes as failed so UI doesn't show "syncing" forever
+      codes.forEach(c => { if (!apiCache[c]) apiCache[c] = { _failed: true }; });
+      callback(new Error('API timeout'), null);
+    }
+  }, 6000);
 }
 
 function cleanup(id) {
@@ -768,11 +774,15 @@ function renderSearchResultCards(results, container) {
       displayName = resolveStockName(s.c) || '未知股票';
     }
     const d = apiCache[s.c];
-    if (!d) return `
-      <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3">
-        <p class="font-bold text-sm">${displayName}</p><p class="text-xs text-gray-500">${s.c}</p>
-        <p class="text-gray-400 text-sm mt-2">同步中...</p>
-      </div>`;
+    if (!d || d._failed) {
+      const isFailed = d && d._failed;
+      return `
+        <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3">
+          <p class="font-bold text-sm">${displayName}</p><p class="text-xs text-gray-500">${s.c}</p>
+          <p class="text-gray-400 text-sm mt-2">${isFailed ? '暂无实时数据' : '同步中...'}</p>
+          ${isFailed ? `<button onclick="refreshSearchResults()" class="mt-2 text-xs text-primary hover:underline">点击刷新</button>` : ''}
+        </div>`;
+    }
     const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
     const arrow = d.changePercent >= 0 ? '▲' : '▼';
     return `
@@ -796,6 +806,20 @@ function renderSearchResultCards(results, container) {
         >数据来源：腾讯财经 ↗</a>
       </div>`;
   }).join('');
+}
+
+function refreshSearchResults() {
+  if (currentSearchCodes.length === 0) return;
+  // Clear failed marks
+  currentSearchCodes.forEach(c => {
+    if (apiCache[c] && apiCache[c]._failed) delete apiCache[c];
+  });
+  const cardsEl = document.getElementById('search-result-cards');
+  const results = currentSearchCodes.map(c => ({ c, n: resolveStockName(c) || c }));
+  loadTencentAPI(currentSearchCodes, (err, data) => {
+    if (!err) Object.assign(apiCache, data);
+    renderSearchResultCards(results, cardsEl);
+  });
 }
 
 function clearMarketSearch() {
