@@ -251,13 +251,43 @@ function loadAllAStockList() {
     console.log(`Loaded ${allAStockList.length} A-share stocks from local bundle`);
   }
 
+  // If we already have data from cache or local bundle, return immediately
+  // and refresh from API in the background so search is never blocked.
+  if (allAStockList) {
+    const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f12&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=f12,f14`;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    fetch(url, { signal: controller.signal })
+      .then(r => r.json())
+      .then(data => {
+        clearTimeout(timeoutId);
+        if (!data || !data.data || !data.data.diff) return;
+        allAStockList = data.data.diff.map(item => {
+          const rawCode = item.f12;
+          const prefix = getStockPrefix(rawCode);
+          return { rawCode, code: prefix + rawCode, name: item.f14 };
+        });
+        saveAllAStockListToCache(allAStockList);
+        console.log(`Background refreshed ${allAStockList.length} A-share stocks from Eastmoney`);
+      })
+      .catch(err => {
+        clearTimeout(timeoutId);
+        console.warn('Background refresh of A-stock list failed:', err);
+      });
+    return Promise.resolve(allAStockList);
+  }
+
+  // No data at all — must fetch with timeout so Promise always resolves
   const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f12&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=f12,f14`;
-  return fetch(url)
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000);
+  return fetch(url, { signal: controller.signal })
     .then(r => r.json())
     .then(data => {
+      clearTimeout(timeoutId);
       if (!data || !data.data || !data.data.diff) {
         console.warn('Eastmoney API returned invalid data structure:', data);
-        if (!allAStockList) allAStockList = [];
+        allAStockList = [];
         return allAStockList;
       }
       allAStockList = data.data.diff.map(item => {
@@ -270,18 +300,15 @@ function loadAllAStockList() {
       return allAStockList;
     })
     .catch(err => {
+      clearTimeout(timeoutId);
       console.warn('Failed to load all A-stock list from API:', err);
-      if (!allAStockList) {
-        // Use local bundle as last resort if available
-        if (typeof allAStockListLocal !== 'undefined' && Array.isArray(allAStockListLocal)) {
-          allAStockList = allAStockListLocal;
-          console.log(`Fallback: loaded ${allAStockList.length} stocks from local bundle`);
-          return allAStockList;
-        }
-        allAStockList = null; // Allow retry on next call
-        return [];
+      if (typeof allAStockListLocal !== 'undefined' && Array.isArray(allAStockListLocal)) {
+        allAStockList = allAStockListLocal;
+        console.log(`Fallback: loaded ${allAStockList.length} stocks from local bundle`);
+        return allAStockList;
       }
-      return allAStockList; // Return cached/local data even if API fails
+      allAStockList = [];
+      return allAStockList;
     });
 }
 
@@ -561,37 +588,122 @@ function resolveStockName(code) {
 // ==================== Market Search ====================
 let searchAutocompleteTimer = null;
 let currentSearchCodes = [];
+const SEARCH_HISTORY_KEY = 'zfinance_search_history';
+const SEARCH_HISTORY_MAX = 8;
+
+function loadSearchHistory() {
+  try {
+    const raw = localStorage.getItem(SEARCH_HISTORY_KEY);
+    if (!raw) return [];
+    const list = JSON.parse(raw);
+    return Array.isArray(list) ? list : [];
+  } catch (e) { return []; }
+}
+
+function saveSearchHistory(query) {
+  if (!query) return;
+  let list = loadSearchHistory();
+  list = list.filter(item => item !== query);
+  list.unshift(query);
+  if (list.length > SEARCH_HISTORY_MAX) list = list.slice(0, SEARCH_HISTORY_MAX);
+  try { localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(list)); } catch (e) {}
+}
+
+function clearSearchHistory() {
+  try { localStorage.removeItem(SEARCH_HISTORY_KEY); } catch (e) {}
+  renderSearchHistory();
+}
+
+function renderSearchHistory() {
+  const dropdown = document.getElementById('search-history-dropdown');
+  const listEl = document.getElementById('search-history-list');
+  const footer = document.getElementById('search-history-footer');
+  const input = document.getElementById('market-search');
+  if (!dropdown || !listEl || !input) return;
+
+  const list = loadSearchHistory();
+  if (!list.length) {
+    dropdown.classList.add('hidden');
+    return;
+  }
+
+  listEl.innerHTML = list.map((q, i) => `
+    <div class="px-4 py-2.5 hover:bg-blue-50 cursor-pointer flex items-center justify-between border-b border-gray-50 last:border-0"
+         onclick="selectSearchHistory('${q.replace(/'/g, "\\'")}')"
+         data-idx="${i}"
+    >
+      <div class="flex items-center gap-2">
+        <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="text-sm text-gray-700">${q}</span>
+      </div>
+    </div>
+  `).join('');
+
+  footer.classList.remove('hidden');
+  dropdown.classList.remove('hidden');
+}
+
+function hideSearchHistory() {
+  const dropdown = document.getElementById('search-history-dropdown');
+  if (dropdown) dropdown.classList.add('hidden');
+}
+
+function selectSearchHistory(query) {
+  const input = document.getElementById('market-search');
+  if (input) input.value = query;
+  hideSearchHistory();
+  hideSearchAutocomplete();
+  doMarketSearch(query);
+}
 
 function initMarketSearch() {
   const input = document.getElementById('market-search');
   const btn = document.getElementById('market-search-btn');
   const clearBtn = document.getElementById('market-clear-btn');
+  const historyClearBtn = document.getElementById('search-history-clear');
   if (!input || !btn) return;
 
   btn.addEventListener('click', () => {
     hideSearchAutocomplete();
+    hideSearchHistory();
     doMarketSearch(input.value.trim());
   });
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       hideSearchAutocomplete();
+      hideSearchHistory();
       doMarketSearch(input.value.trim());
     }
-    if (e.key === 'Escape') hideSearchAutocomplete();
+    if (e.key === 'Escape') { hideSearchAutocomplete(); hideSearchHistory(); }
   });
   // Real-time autocomplete
   input.addEventListener('input', (e) => {
     if (e.isComposing) return; // Skip IME composition events
     clearTimeout(searchAutocompleteTimer);
+    hideSearchHistory();
     const val = input.value.trim();
     if (val.length < 1) { hideSearchAutocomplete(); return; }
     searchAutocompleteTimer = setTimeout(() => renderSearchAutocomplete(val), 150);
   });
-  // Hide autocomplete on blur (with delay to allow click)
+  // Show history on focus when empty, hide on blur
+  input.addEventListener('focus', () => {
+    if (!input.value.trim()) {
+      hideSearchAutocomplete();
+      renderSearchHistory();
+    }
+  });
   input.addEventListener('blur', () => {
-    setTimeout(hideSearchAutocomplete, 200);
+    setTimeout(() => {
+      hideSearchAutocomplete();
+      hideSearchHistory();
+    }, 200);
   });
   if (clearBtn) clearBtn.addEventListener('click', clearMarketSearch);
+  if (historyClearBtn) historyClearBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    clearSearchHistory();
+  });
 }
 
 function renderSearchAutocomplete(query) {
@@ -759,6 +871,9 @@ function doMarketSearch(query) {
   sectorArea.classList.add('hidden');
   countEl.textContent = `找到 ${results.length} 只`;
   if (clearBtn) clearBtn.classList.remove('hidden');
+
+  // Save search history
+  saveSearchHistory(query.trim());
 
   // Save current search state for real-time refresh
   currentSearchCodes = results.map(r => r.c);
