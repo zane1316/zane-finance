@@ -3,7 +3,18 @@ let apiCache = {};
 let apiCallbacks = {};
 let apiScriptId = 0;
 
+// Request deduplication for Tencent API
+const tencentPendingRequests = new Map();
+
 function loadTencentAPI(codes, callback) {
+  // Deduplicate: same code set in flight → queue callback
+  const key = codes.slice().sort().join(',');
+  if (tencentPendingRequests.has(key)) {
+    tencentPendingRequests.get(key).push(callback);
+    return;
+  }
+  tencentPendingRequests.set(key, [callback]);
+
   const id = 'tencent_api_' + (++apiScriptId);
   // Transform of-prefixed fund codes to jj prefix for Tencent API
   const apiCodes = codes.map(c => c.startsWith('of') ? c.replace(/^of/, 'jj') : c);
@@ -11,13 +22,19 @@ function loadTencentAPI(codes, callback) {
   const script = document.createElement('script');
   script.id = id;
   script.src = url;
-  script.onerror = () => {
+
+  function finish(err, result) {
     cleanup(id);
+    const cbs = tencentPendingRequests.get(key) || [];
+    tencentPendingRequests.delete(key);
+    cbs.forEach(cb => cb(err, result));
+  }
+
+  script.onerror = () => {
     codes.forEach(c => { if (!apiCache[c]) apiCache[c] = { _failed: true }; });
-    callback(new Error('API load failed'), null);
+    finish(new Error('API load failed'), null);
   };
   script.onload = () => {
-    cleanup(id);
     const result = {};
     codes.forEach((originalCode, idx) => {
       const apiCode = apiCodes[idx];
@@ -36,16 +53,15 @@ function loadTencentAPI(codes, callback) {
         result[originalCode] = apiCache[originalCode];
       }
     });
-    callback(null, result);
+    finish(null, result);
   };
   document.head.appendChild(script);
   setTimeout(() => {
     const s = document.getElementById(id);
     if (s) {
-      cleanup(id);
       // Mark all requested codes as failed so UI doesn't show "syncing" forever
       codes.forEach(c => { if (!apiCache[c]) apiCache[c] = { _failed: true }; });
-      callback(new Error('API timeout'), null);
+      finish(new Error('API timeout'), null);
     }
   }, 6000);
 }
@@ -100,9 +116,20 @@ function parseTencentFundData(raw) {
   };
 }
 
+let quoteRefreshInterval = null;
+
 function initAPI() {
   refreshAllQuotes();
-  setInterval(refreshAllQuotes, 30000);
+  quoteRefreshInterval = setInterval(refreshAllQuotes, 30000);
+  // Pause refresh when tab is hidden to save battery / reduce load
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (quoteRefreshInterval) { clearInterval(quoteRefreshInterval); quoteRefreshInterval = null; }
+    } else {
+      refreshAllQuotes();
+      quoteRefreshInterval = setInterval(refreshAllQuotes, 30000);
+    }
+  });
 }
 
 function refreshAllQuotes() {
@@ -385,30 +412,7 @@ function refreshAllMarketView() {
 
     // Render top 10 gainers as cards
     const topCards = gainers.slice(0, 10);
-    container.innerHTML = topCards.map(d => {
-      const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
-      const arrow = d.changePercent >= 0 ? '▲' : '▼';
-      return `
-        <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition">
-          <div class="flex justify-between items-start">
-            <div>
-              <p class="font-bold text-sm">${d.name}</p>
-              <p class="text-xs text-gray-500">${d.code}</p>
-            </div>
-            <span class="text-xs ${color}">${arrow}</span>
-          </div>
-          <p class="text-xl font-bold my-1 ${color}">${d.price > 0 ? formatNumber(d.price,2) : '--'}</p>
-          <p class="text-xs ${color}">${d.changePercent>=0?'+':''}${formatNumber(d.changePercent,2)}%</p>
-          <div class="mt-2 pt-2 border-t text-xs text-gray-400 space-y-1">
-            <div class="flex justify-between"><span>换手</span><span>${formatNumber(d.turnover,2)}%</span></div>
-            <div class="flex justify-between"><span>成交</span><span>${formatNumber(d.volumeMoney/10000,2)}亿</span></div>
-            <div class="flex justify-between"><span>市值</span><span>${formatNumber(d.marketCap,2)}亿</span></div>
-          </div>
-          <a href="https://stock.finance.qq.com/sstock/ggcx/${d.code}.shtml" target="_blank" class="block mt-2 text-xs text-primary hover:underline"
-            onclick="event.stopPropagation()"
-          >数据来源：腾讯财经 ↗</a>
-        </div>`;
-    }).join('');
+    container.innerHTML = topCards.map(d => renderStockCard(d, d)).join('');
 
     // Render gainers list
     gainersEl.innerHTML = gainers.map((d, i) => `
@@ -497,34 +501,43 @@ function switchSector(key) {
   updateMarketPage(apiCache);
 }
 
-function renderStockCard(s, d) {
-  if (!d || d._failed || d._missing) {
-    const msg = d && (d._failed || d._missing) ? '暂无实时数据' : '同步中...';
+// Unified stock card renderer. `stock` can have {n,c} or {name,code}; `data` is apiCache entry.
+function renderStockCard(stock, data, opts = {}) {
+  const name = stock.name || stock.n || '未知股票';
+  const code = stock.code || stock.c || '';
+  const showRefresh = opts.showRefresh || false;
+  const minWidth = opts.minWidth || '180px';
+
+  if (!data || data._failed || data._missing) {
+    const msg = data && (data._failed || data._missing) ? '暂无实时数据' : '同步中...';
+    const refreshBtn = showRefresh ? `<button onclick="refreshSearchResults()" class="mt-2 text-xs text-primary hover:underline">点击刷新</button>` : '';
     return `
-      <div class="min-w-[160px] bg-white rounded-lg shadow border border-border p-3">
-        <p class="font-bold">${s.n}</p><p class="text-xs text-gray-500">${s.c}</p>
+      <div class="min-w-[${minWidth}] bg-white rounded-lg shadow border border-border p-3">
+        <p class="font-bold text-sm">${name}</p><p class="text-xs text-gray-500">${code}</p>
         <p class="text-gray-400 text-sm mt-2">${msg}</p>
+        ${refreshBtn}
       </div>`;
   }
-  const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
-  const arrow = d.changePercent >= 0 ? '▲' : '▼';
+  const color = data.changePercent >= 0 ? 'text-up' : 'text-down';
+  const arrow = data.changePercent >= 0 ? '▲' : '▼';
+  const price = data.price > 0 ? formatNumber(data.price,2) : '--';
   return `
-    <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition">
+    <div class="min-w-[${minWidth}] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition">
       <div class="flex justify-between items-start">
         <div>
-          <p class="font-bold text-sm">${s.n}</p>
-          <p class="text-xs text-gray-500">${s.c}</p>
+          <p class="font-bold text-sm">${name}</p>
+          <p class="text-xs text-gray-500">${code}</p>
         </div>
         <span class="text-xs ${color}">${arrow}</span>
       </div>
-      <p class="text-xl font-bold my-1 ${color}">${formatNumber(d.price,2)}</p>
-      <p class="text-xs ${color}">${d.changePercent>=0?'+':''}${formatNumber(d.changePercent,2)}%</p>
+      <p class="text-xl font-bold my-1 ${color}">${price}</p>
+      <p class="text-xs ${color}">${data.changePercent>=0?'+':''}${formatNumber(data.changePercent,2)}%</p>
       <div class="mt-2 pt-2 border-t text-xs text-gray-400 space-y-1">
-        <div class="flex justify-between"><span>换手</span><span>${formatNumber(d.turnover,2)}%</span></div>
-        <div class="flex justify-between"><span>成交</span><span>${formatNumber(d.volumeMoney/10000,2)}亿</span></div>
-        <div class="flex justify-between"><span>市值</span><span>${formatNumber(d.marketCap,2)}亿</span></div>
+        <div class="flex justify-between"><span>换手</span><span>${formatNumber(data.turnover,2)}%</span></div>
+        <div class="flex justify-between"><span>成交</span><span>${formatNumber(data.volumeMoney/10000,2)}亿</span></div>
+        <div class="flex justify-between"><span>市值</span><span>${formatNumber(data.marketCap,2)}亿</span></div>
       </div>
-      <a href="https://stock.finance.qq.com/sstock/ggcx/${s.c}.shtml" target="_blank" class="block mt-2 text-xs text-primary hover:underline"
+      <a href="https://stock.finance.qq.com/sstock/ggcx/${code}.shtml" target="_blank" class="block mt-2 text-xs text-primary hover:underline"
         onclick="event.stopPropagation()"
       >数据来源：腾讯财经 ↗</a>
     </div>`;
@@ -903,38 +916,8 @@ function renderSearchResultCards(results, container) {
     if (!displayName || displayName === s.c) {
       displayName = resolveStockName(s.c) || '未知股票';
     }
-    const d = apiCache[s.c];
-    const isFailed = !d || (d && (d._failed || d._missing));
-    if (isFailed) {
-      return `
-        <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3">
-          <p class="font-bold text-sm">${displayName}</p><p class="text-xs text-gray-500">${s.c}</p>
-          <p class="text-gray-400 text-sm mt-2">暂无实时数据</p>
-          <button onclick="refreshSearchResults()" class="mt-2 text-xs text-primary hover:underline">点击刷新</button>
-        </div>`;
-    }
-    const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
-    const arrow = d.changePercent >= 0 ? '▲' : '▼';
-    return `
-      <div class="min-w-[180px] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition">
-        <div class="flex justify-between items-start">
-          <div>
-            <p class="font-bold text-sm">${displayName}</p>
-            <p class="text-xs text-gray-500">${s.c}</p>
-          </div>
-          <span class="text-xs ${color}">${arrow}</span>
-        </div>
-        <p class="text-xl font-bold my-1 ${color}">${formatNumber(d.price,2)}</p>
-        <p class="text-xs ${color}">${d.changePercent>=0?'+':''}${formatNumber(d.changePercent,2)}%</p>
-        <div class="mt-2 pt-2 border-t text-xs text-gray-400 space-y-1">
-          <div class="flex justify-between"><span>换手</span><span>${formatNumber(d.turnover,2)}%</span></div>
-          <div class="flex justify-between"><span>成交</span><span>${formatNumber(d.volumeMoney/10000,2)}亿</span></div>
-          <div class="flex justify-between"><span>市值</span><span>${formatNumber(d.marketCap,2)}亿</span></div>
-        </div>
-        <a href="https://stock.finance.qq.com/sstock/ggcx/${s.c}.shtml" target="_blank" class="block mt-2 text-xs text-primary hover:underline"
-          onclick="event.stopPropagation()"
-        >数据来源：腾讯财经 ↗</a>
-      </div>`;
+    const stock = { n: displayName, c: s.c };
+    return renderStockCard(stock, apiCache[s.c], { showRefresh: true });
   }).join('');
 }
 

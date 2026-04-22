@@ -275,7 +275,7 @@ const learningData = [
           <p class="mb-3"><strong>填权与贴权</strong>：除权后股价重新涨回除权前的价格叫"填权"，说明市场看好；除权后股价继续下跌叫"贴权"，说明市场看淡。高分红、低估值的白马股填权概率较高。</p>
           <div class="bg-yellow-50 p-4 rounded-lg mb-3">
             <p class="font-medium text-yellow-800 mb-1">实操提醒</p>
-            <p class="text-sm text-yellow-700">1. 持股不到一个月卖出，分红要缴20%个人所得税；持股1个月到1年缴10%；持股超过1年免税。2. 不要为了"抢权"（股权登记日前买入博分红）而买入，因为除权后价格会下调，短期卖出还要缴税，往往得不偿失。3. 停牌股复牌首日通常波动极大，新手不建议首日参与。</p>
+            <p class="text-sm text-yellow-700">1. 持股不到一个月卖出，分红要缴20%个人所得税；持股1个月到1年缴10%；持股超过1年免税（详见下节课《股息红利税详解》）。2. 不要为了"抢权"（股权登记日前买入博分红）而买入，因为除权后价格会下调，短期卖出还要缴税，往往得不偿失。3. 停牌股复牌首日通常波动极大，新手不建议首日参与。</p>
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3">
             <summary class="font-medium cursor-pointer">自测题</summary>
@@ -284,6 +284,79 @@ const learningData = [
               <p>2. 除权除息后你的总资产会变吗？</p>
               <p>3. 持股多久分红可以免税？</p>
               <p>4. 什么是填权和贴权？</p>
+            </div>
+          </details>
+        `
+      },
+      {
+        title: '股息红利税详解',
+        content: `
+          <p class="mb-3">拿到上市公司分红，投资者需要缴纳<strong>股息红利个人所得税</strong>。这是国家针对股票分红收益征收的税种，由券商在卖出时自动代扣代缴，不需要你自行申报。理解它的规则，能帮你避免"分红越多、亏损越多"的陷阱。</p>
+          <p class="mb-3"><strong>什么是股息红利税</strong>：当你持有的股票进行现金分红或送股后，如果后续卖出，税务部门会根据你的<strong>持股时间</strong>对分红收益征收个人所得税。注意：这个税只在<strong>卖出时</strong>才计算和扣缴，持股期间不扣税。</p>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3 text-sm">
+            <p class="font-medium text-blue-800 mb-2">三档税率（按先进先出法计算持股时间）</p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-blue-100">
+                    <th class="p-2 border border-blue-200">持股期限</th>
+                    <th class="p-2 border border-blue-200">适用税率</th>
+                    <th class="p-2 border border-blue-200">计税方式</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="p-2 border border-blue-200"><span class="text-red-600 font-medium">≤ 1个月</span></td>
+                    <td class="p-2 border border-blue-200"><strong>20%</strong></td>
+                    <td class="p-2 border border-blue-200">分红金额 × 20%</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="p-2 border border-blue-200"><span class="text-yellow-700 font-medium">1个月 ~ 1年（含）</span></td>
+                    <td class="p-2 border border-blue-200"><strong>10%</strong></td>
+                    <td class="p-2 border border-blue-200">分红金额 × 10%</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 border border-blue-200"><span class="text-green-700 font-medium">> 1年</span></td>
+                    <td class="p-2 border border-blue-200"><strong class="text-green-700">免税</strong></td>
+                    <td class="p-2 border border-blue-200">无需缴纳</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-2 text-blue-700"><strong>先进先出法</strong>：如果你分多次买入同一只股票，卖出时按最早买入的批次计算持股时间。</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 text-sm">
+            <p class="font-medium mb-2">计算示例：持有10,000股，每股分红0.5元，分红总额5,000元</p>
+            <div class="space-y-2">
+              <p><strong>场景A：持股20天后卖出</strong>（税率20%）</p>
+              <p class="pl-4 text-gray-700">应纳税 = 5,000 × 20% = <span class="text-red-600 font-medium">1,000元</span>，税后实得 = 4,000元</p>
+              <p><strong>场景B：持股6个月后卖出</strong>（税率10%）</p>
+              <p class="pl-4 text-gray-700">应纳税 = 5,000 × 10% = <span class="text-yellow-700 font-medium">500元</span>，税后实得 = 4,500元</p>
+              <p><strong>场景C：持股超过1年后卖出</strong>（免税）</p>
+              <p class="pl-4 text-gray-700">应纳税 = <span class="text-green-700 font-medium">0元</span>，税后实得 = 5,000元</p>
+            </div>
+          </div>
+          <p class="mb-3"><strong>除息后填权的税务影响</strong>：分红后股价会进行<strong>除息</strong>调整（股价下降约等于分红金额），这意味着分红当天你的总资产其实没有变化——你只是从左口袋（股价）拿到了右口袋（现金）。如果除息后股价没有涨回除息前（即没有"填权"），你实际上还亏了。</p>
+          <div class="bg-red-50 p-4 rounded-lg mb-3 border border-red-200">
+            <p class="font-medium text-red-800 mb-1">⚠️ 抢分红陷阱警告</p>
+            <p class="text-sm text-red-700">很多新手在股权登记日前买入股票"抢分红"，结果除息后股价下跌，短期内又卖出，不仅没赚到分红，还要缴纳20%的税。</p>
+            <p class="text-sm text-red-700 mt-2"><strong>举例</strong>：股价20元，每股分红0.5元。你在登记日前买入，除息后股价变为19.5元。如果一个月内卖出，拿到0.5元分红但要缴0.1元税，实际到手0.4元，但股价跌了0.5元，<strong>净亏0.1元/股</strong>。如果股价没有填权，亏损更大。</p>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-green-800 mb-1">节税实操策略</p>
+            <div class="text-sm text-green-700 space-y-2">
+              <p>1. <strong>长期持有优先</strong>：如果你看好一只股票，尽量持有超过1年，分红免税还能享受复利增长。</p>
+              <p>2. <strong>分红前不突击买入</strong>：不要为了分红而短期买入，除息+缴税双重损耗下大概率亏损。</p>
+              <p>3. <strong>规划卖出时点</strong>：如果已持有20多天，不妨再等10天过1个月门槛，税率从20%降到10%；如果已持有10个月，可考虑拿满1年享受免税。</p>
+              <p>4. <strong>关注高送转的"假分红"</strong>：送股虽然也要缴税，但你没拿到真金白银，卖出时却要为"账面增值"交税，实际很吃亏。</p>
+            </div>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3">
+            <summary class="font-medium cursor-pointer">自测题</summary>
+            <div class="mt-2 text-sm space-y-2">
+              <p>1. 持股8个月后卖出，分红10,000元，需要缴纳多少税？</p>
+              <p>2. 为什么除息当天你的总资产没有变化？</p>
+              <p>3. 如果你持股25天，距离满1个月还差5天，从节税角度应该怎么做？</p>
             </div>
           </details>
         `
@@ -2040,7 +2113,7 @@ function renderLevelContent() {
               <svg id="les-chevron-${idx}" class="w-5 h-5 text-gray-400 transform transition ${idx===0?'rotate-180':''}" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
             </span>
           </button>
-          <div id="les-body-${idx}" class="px-4 py-4 text-sm leading-relaxed text-gray-700 ${idx===0?'':'hidden'}">
+          <div id="les-body-${idx}" class="px-4 py-5 text-sm leading-loose text-gray-700 ${idx===0?'':'hidden'}">
             ${les.content}
             ${renderVideoLinks(les.videos)}
           </div>
@@ -2062,18 +2135,33 @@ function renderVideoLinks(videos) {
     qq: '腾讯课堂',
     web: '官网'
   };
+  // Detect search-links (not direct video links) and build fallback search URL
+  function fallbackSearchUrl(v) {
+    if (v.url.includes('search.bilibili.com')) {
+      return v.url
+    }
+    return 'https://search.bilibili.com/all?keyword=' + encodeURIComponent(v.title.replace(/^(B站[：:])?\s*/, ''))
+  }
   return `
     <div class="mt-4 pt-4 border-t border-gray-100">
       <h4 class="font-medium text-sm text-gray-500 mb-2">推荐视频</h4>
       <div class="flex flex-wrap gap-2">
         ${videos.map(v => `
-          <a href="${v.url}" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs transition border ${platformColors[v.platform] || platformColors.web}">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
-            ${platformLabels[v.platform] || '视频'}：${v.title}
-          </a>
+          <div class="group relative inline-flex items-center gap-1.5">
+            <a href="${v.url}" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs transition border ${platformColors[v.platform] || platformColors.web}">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+              ${platformLabels[v.platform] || '视频'}：${v.title}
+            </a>
+            <a href="${fallbackSearchUrl(v)}" target="_blank" rel="noopener"
+               title="如果原链接失效，点此搜索"
+               class="hidden group-hover:inline-flex text-[10px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 hover:bg-gray-200 transition">
+              搜索
+            </a>
+          </div>
         `).join('')}
       </div>
+      <p class="text-[10px] text-gray-400 mt-1.5">提示：如视频链接失效，可悬停点击「搜索」在B站查找同名内容</p>
     </div>
   `;
 }

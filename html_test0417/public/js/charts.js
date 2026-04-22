@@ -71,8 +71,12 @@ function renderKlineTabs() {
 }
 
 function renderKlineGrid() {
-  // Cleanup old charts
-  klineCharts.forEach(({ chart }) => { try { chart.remove(); } catch(e) {} });
+  // Cleanup old charts thoroughly
+  klineCharts.forEach(({ chart }) => {
+    try {
+      chart.remove();
+    } catch(e) {}
+  });
   klineCharts = [];
   const container = document.getElementById('kline-grid');
   const items = klinePatterns[currentKlineCat];
@@ -302,6 +306,7 @@ function makeCandle(date, open, close, high, low, up) {
 
 window.addEventListener('resize', () => {
   klineCharts.forEach(({ chart, container }) => {
+    if (!chart || chart._removed) return;
     try { chart.resize(container.clientWidth, 220); } catch(e) {}
   });
 });

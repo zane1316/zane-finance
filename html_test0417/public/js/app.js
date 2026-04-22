@@ -1,5 +1,5 @@
 // SPA Router & Common Utilities
-const sections = ['home','market','funds','learning','kline','ai','trading','calculator','glossary','resources','contact'];
+const sections = ['home','market','funds','learning','kline','ai','trading','calculator','news','glossary','resources','contact'];
 
 const pageMeta = {
   home: { title: 'Zane财经 - 新手炒股第一站 | 零基础到实盘实战', desc: 'Zane财经是专业的A股新手学习平台，提供实时行情、K线教学、模拟交易、AI分析等一站式炒股学习服务。' },
@@ -10,6 +10,7 @@ const pageMeta = {
   ai: { title: '股票智能查询 - Zane财经', desc: 'AI驱动的股票智能分析，接入同花顺问财，支持自然语言查询。' },
   trading: { title: '模拟交易 - Zane财经', desc: '50万虚拟资金模拟炒股，真实T+1交易规则，完整交割单记录。' },
   calculator: { title: '投资计算器 - Zane财经', desc: '盈亏计算、定投计算、止损止盈、凯利公式仓位管理等投资工具。' },
+  news: { title: '财经资讯 - Zane财经', desc: '7×24市场快讯、板块热点、个股公告与要闻导航，一站式财经资讯中心。' },
   glossary: { title: '股票术语词典 - Zane财经', desc: '200+金融术语详解，涵盖基础概念、交易规则、技术分析、基金术语等七大分类。' },
   resources: { title: '外部资源库 - Zane财经', desc: '精选财经网站、数据平台、学习资源与工具推荐。' },
   contact: { title: '联系我们 - Zane财经', desc: '有任何建议或问题，欢迎随时与Zane财经团队取得联系。' }
@@ -47,6 +48,7 @@ function showSection(id) {
   if (id === 'kline') initKlineGallery();
   if (id === 'trading') updateTradingUI();
   if (id === 'calculator') initCalculator();
+  if (id === 'news') initNewsPage();
   if (id === 'glossary') initGlossary();
   if (id === 'resources') renderResources();
 }

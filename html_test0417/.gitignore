@@ -6,3 +6,8 @@ Thumbs.db
 
 .vercel
 dist/
+
+# Secrets
+.env
+.env.local
+.env.*.local

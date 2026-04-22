@@ -49,6 +49,7 @@
           <a href="#ai" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">AI分析</a>
           <a href="#trading" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">模拟交易</a>
           <a href="#calculator" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">投资计算</a>
+          <a href="#news" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">资讯</a>
           <a href="#glossary" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">术语词典</a>
           <a href="#resources" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">资源库</a>
           <a href="#contact" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-blue-50 transition">联系我们</a>
@@ -73,6 +74,7 @@
         <a href="#trading" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">模拟交易</a>
         <a href="#calculator" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">投资计算</a>
         <a href="#glossary" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">术语词典</a>
+        <a href="#news" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">资讯</a>
         <a href="#resources" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">资源库</a>
         <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50">联系我们</a>
       </div>
@@ -499,6 +501,203 @@
       </div>
     </section>
 
+    <!-- 资讯 -->
+    <section id="news" class="page-section hidden">
+      <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+        <div>
+          <h2 class="text-2xl font-bold flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-primary to-blue-400 rounded-full"></span>财经资讯</h2>
+          <p class="text-sm text-gray-500 mt-1">7×24 市场快讯 · 实时板块热点 · 个股公告</p>
+        </div>
+        <span class="text-xs text-gray-500 bg-white px-3 py-1 rounded-full shadow-sm border border-gray-100 flex items-center gap-1.5" id="news-update-time"><span class="w-1.5 h-1.5 bg-green-500 rounded-full live-indicator"></span>更新中...</span>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-6">
+        <!-- 左侧：Tab 内容 -->
+        <div class="lg:w-2/3 flex flex-col gap-4">
+          <!-- Tab 导航 -->
+          <div class="flex gap-2 overflow-x-auto pb-2" id="news-tabs">
+            <button data-tab="hotspot" class="news-tab px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap bg-primary text-white shadow-md transition">市场热点</button>
+            <button data-tab="telegraph" class="news-tab px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary transition">7×24快讯</button>
+            <button data-tab="announcement" class="news-tab px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary transition">个股公告</button>
+            <button data-tab="nav" class="news-tab px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary transition">要闻导航</button>
+          </div>
+          <!-- Tab 内容区 -->
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 min-h-[480px]">
+            <!-- 市场热点 -->
+            <div id="news-panel-hotspot" class="news-panel">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-gray-800 flex items-center gap-2">
+                  <span class="w-6 h-6 bg-red-50 rounded-lg flex items-center justify-center text-red-500 text-xs">H</span>
+                  板块涨跌排行
+                </h3>
+                <span class="text-xs text-gray-400">数据来自东方财富</span>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="text-sm font-medium text-up mb-2 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>领涨板块</h4>
+                  <div id="news-sector-gainers" class="space-y-1.5 max-h-[360px] overflow-y-auto pr-1">
+                    <div class="text-gray-400 text-sm py-4 text-center">加载中...</div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium text-down mb-2 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>领跌板块</h4>
+                  <div id="news-sector-losers" class="space-y-1.5 max-h-[360px] overflow-y-auto pr-1">
+                    <div class="text-gray-400 text-sm py-4 text-center">加载中...</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 pt-4 border-t border-gray-100">
+                <h4 class="text-sm font-medium text-primary mb-2 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>热门概念</h4>
+                <div id="news-concept-hot" class="flex flex-wrap gap-2">
+                  <span class="text-gray-400 text-sm">加载中...</span>
+                </div>
+              </div>
+            </div>
+            <!-- 7×24快讯 -->
+            <div id="news-panel-telegraph" class="news-panel hidden">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-gray-800 flex items-center gap-2">
+                  <span class="w-6 h-6 bg-blue-50 rounded-lg flex items-center justify-center text-primary text-xs">T</span>
+                  7×24快讯
+                </h3>
+                <a href="https://www.cls.cn/telegraph" target="_blank" class="text-xs text-primary hover:underline">前往财联社 ↗</a>
+              </div>
+              <div id="news-telegraph-frame-wrap" class="rounded-xl overflow-hidden border border-gray-200/60 shadow-inner bg-white">
+                <iframe id="news-telegraph-frame" class="w-full" style="height: 520px;" src="https://www.cls.cn/telegraph" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+              </div>
+              <div id="news-telegraph-fallback" class="hidden">
+                <div class="text-center py-16 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100">
+                  <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  </div>
+                  <h4 class="font-bold text-gray-800 mb-2">财联社 7×24 快讯</h4>
+                  <p class="text-sm text-gray-500 mb-6 max-w-sm mx-auto">由于浏览器安全限制，无法直接嵌入财联社页面。点击下方按钮前往查看实时快讯。</p>
+                  <a href="https://www.cls.cn/telegraph" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 btn-gradient text-white rounded-xl font-medium hover:shadow-lg transition">前往财联社查看 7×24 快讯 ↗</a>
+                </div>
+              </div>
+            </div>
+            <!-- 个股公告 -->
+            <div id="news-panel-announcement" class="news-panel hidden">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-gray-800 flex items-center gap-2">
+                  <span class="w-6 h-6 bg-amber-50 rounded-lg flex items-center justify-center text-amber-600 text-xs">A</span>
+                  个股公告查询
+                </h3>
+              </div>
+              <div class="flex gap-2 mb-4">
+                <div class="relative flex-1">
+                  <input id="news-announce-input" type="text" placeholder="输入股票代码，如 600519"
+                    class="w-full pl-9 pr-3 py-2.5 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition shadow-sm bg-white"
+                    onkeydown="if(event.key==='Enter')searchAnnouncements()">
+                  <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <button onclick="searchAnnouncements()" class="px-5 py-2.5 text-sm btn-gradient text-white rounded-xl hover:shadow-lg transition">查询</button>
+              </div>
+              <div id="news-announce-results" class="space-y-2 max-h-[480px] overflow-y-auto pr-1">
+                <div class="text-center py-12 bg-gray-50 rounded-xl">
+                  <p class="text-gray-400 text-sm">输入股票代码查询最新公告</p>
+                </div>
+              </div>
+            </div>
+            <!-- 要闻导航 -->
+            <div id="news-panel-nav" class="news-panel hidden">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-gray-800 flex items-center gap-2">
+                  <span class="w-6 h-6 bg-green-50 rounded-lg flex items-center justify-center text-green-600 text-xs">N</span>
+                  要闻导航
+                </h3>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4" id="news-nav-cards">
+                <a href="https://finance.sina.com.cn/" target="_blank" class="group flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition bg-white">
+                  <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 group-hover:text-primary transition">新浪财经</h4>
+                    <p class="text-xs text-gray-500 mt-0.5">全面的财经新闻与市场数据</p>
+                  </div>
+                </a>
+                <a href="https://www.eastmoney.com/" target="_blank" class="group flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition bg-white">
+                  <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 group-hover:text-primary transition">东方财富</h4>
+                    <p class="text-xs text-gray-500 mt-0.5">A股数据、研报与社区</p>
+                  </div>
+                </a>
+                <a href="https://www.cls.cn/" target="_blank" class="group flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition bg-white">
+                  <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 group-hover:text-primary transition">财联社</h4>
+                    <p class="text-xs text-gray-500 mt-0.5">7×24 电报快讯与深度报道</p>
+                  </div>
+                </a>
+                <a href="https://xueqiu.com/" target="_blank" class="group flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition bg-white">
+                  <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 group-hover:text-primary transition">雪球</h4>
+                    <p class="text-xs text-gray-500 mt-0.5">投资者社区与组合分享</p>
+                  </div>
+                </a>
+                <a href="https://www.cls.cn/depth" target="_blank" class="group flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition bg-white">
+                  <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 group-hover:text-primary transition">财联社深度</h4>
+                    <p class="text-xs text-gray-500 mt-0.5">深度调研与行业分析</p>
+                  </div>
+                </a>
+                <a href="https://data.eastmoney.com/report/" target="_blank" class="group flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition bg-white">
+                  <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 group-hover:text-primary transition">东方财富研报</h4>
+                    <p class="text-xs text-gray-500 mt-0.5">券商研报与机构观点</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 右侧：侧边栏 -->
+        <div class="lg:w-1/3 space-y-4">
+          <!-- 热门板块涨幅榜 -->
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-1.5 h-4 bg-red-500 rounded-full"></span>热门板块涨幅榜
+            </h3>
+            <div id="news-sidebar-sectors" class="space-y-1.5">
+              <div class="text-gray-400 text-sm py-2 text-center">加载中...</div>
+            </div>
+          </div>
+          <!-- 热门概念 -->
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-1.5 h-4 bg-primary rounded-full"></span>热门概念
+            </h3>
+            <div id="news-sidebar-concepts" class="space-y-1.5">
+              <div class="text-gray-400 text-sm py-2 text-center">加载中...</div>
+            </div>
+          </div>
+          <!-- 大盘指数 -->
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5">
+            <h3 class="font-bold mb-3 flex items-center gap-2">
+              <span class="w-1.5 h-4 bg-blue-500 rounded-full"></span>大盘指数
+            </h3>
+            <div id="news-sidebar-index" class="space-y-2">
+              <div class="text-gray-400 text-sm py-2 text-center">加载中...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 术语词典 -->
     <section id="glossary" class="page-section hidden">
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
@@ -583,6 +782,7 @@
           <a href="#calculator" class="text-gray-600 hover:text-primary transition">投资计算</a>
           <a href="#glossary" class="text-gray-600 hover:text-primary transition">术语词典</a>
           <a href="#resources" class="text-gray-600 hover:text-primary transition">资源库</a>
+          <a href="#news" class="text-gray-600 hover:text-primary transition">资讯</a>
           <a href="#contact" class="text-gray-600 hover:text-primary transition">联系我们</a>
         </div>
       </div>
@@ -657,6 +857,7 @@
   <script src="./js/all-funds.js"></script>
   <script src="./js/funds.js"></script>
   <script src="./js/glossary.js"></script>
+  <script src="./js/news.js"></script>
   <script src="./js/app.js"></script>
 </body>
 </html>
