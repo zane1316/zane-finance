@@ -3,19 +3,12 @@ let newsRefreshInterval = null;
 let currentNewsTab = 'hotspot';
 let newsSectorCache = { gainers: [], losers: [] };
 let newsConceptCache = [];
-let newsTelegraphBlocked = false;
 
 function initNewsPage() {
-  // Setup tab switching
   setupNewsTabs();
-
-  // Load data immediately
   refreshNewsData();
-
-  // Handle telegraph iframe load error (X-Frame-Options)
   setupTelegraphFallback();
 
-  // Start auto-refresh when visible
   if (newsRefreshInterval) clearInterval(newsRefreshInterval);
   newsRefreshInterval = setInterval(() => {
     if (!document.getElementById('news').classList.contains('hidden')) {
@@ -25,19 +18,13 @@ function initNewsPage() {
 }
 
 function setupNewsTabs() {
-  const tabs = document.querySelectorAll('.news-tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const key = tab.dataset.tab;
-      switchNewsTab(key);
-    });
+  document.querySelectorAll('.news-tab').forEach(tab => {
+    tab.addEventListener('click', () => switchNewsTab(tab.dataset.tab));
   });
 }
 
 function switchNewsTab(key) {
   currentNewsTab = key;
-
-  // Update tab styles
   document.querySelectorAll('.news-tab').forEach(tab => {
     const isActive = tab.dataset.tab === key;
     tab.classList.toggle('bg-primary', isActive);
@@ -48,13 +35,58 @@ function switchNewsTab(key) {
     tab.classList.toggle('border', !isActive);
     tab.classList.toggle('border-gray-200', !isActive);
   });
+  document.querySelectorAll('.news-panel').forEach(p => p.classList.add('hidden'));
+  const active = document.getElementById('news-panel-' + key);
+  if (active) active.classList.remove('hidden');
+}
 
-  // Show/hide panels
-  document.querySelectorAll('.news-panel').forEach(panel => {
-    panel.classList.add('hidden');
+// JSONP helper for Eastmoney APIs (bypasses CORS and corp proxies)
+function jsonpFetch(url, timeoutMs) {
+  return new Promise((resolve, reject) => {
+    const cbName = 'em_cb_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
+    const sep = url.includes('?') ? '&' : '?';
+    const script = document.createElement('script');
+    script.src = url + sep + 'cb=' + cbName;
+
+    window[cbName] = function(data) {
+      cleanup();
+      resolve(data);
+    };
+
+    script.onerror = function() {
+      cleanup();
+      reject(new Error('JSONP load failed'));
+    };
+
+    const timeoutId = setTimeout(() => {
+      cleanup();
+      reject(new Error('JSONP timeout'));
+    }, timeoutMs || 6000);
+
+    function cleanup() {
+      clearTimeout(timeoutId);
+      try { delete window[cbName]; } catch(e) {}
+      if (script.parentNode) script.parentNode.removeChild(script);
+    }
+
+    document.head.appendChild(script);
   });
-  const activePanel = document.getElementById('news-panel-' + key);
-  if (activePanel) activePanel.classList.remove('hidden');
+}
+
+// Fetch with AbortController timeout (for APIs that support CORS)
+function fetchJSON(url, timeoutMs) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs || 6000);
+  return fetch(url, { signal: controller.signal })
+    .then(r => {
+      clearTimeout(timeoutId);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .catch(err => {
+      clearTimeout(timeoutId);
+      throw err;
+    });
 }
 
 function refreshNewsData() {
@@ -68,21 +100,22 @@ function refreshNewsData() {
   }
 }
 
-// ==================== Sector Ranking (Eastmoney) ====================
+// ==================== Sector Ranking (Eastmoney JSONP) ====================
 function loadNewsSectorRanking() {
   const fields = 'f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f18,f20,f21';
-  const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=20&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f3&fs=m:90+t:2&fields=${fields}`;
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=20&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=m:90+t:2&fields=' + fields;
 
-  fetch(url)
-    .then(r => r.json())
+  jsonpFetch(url, 6000)
     .then(data => {
-      if (!data || !data.data || !data.data.diff) return;
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid sector data');
+      }
       const items = data.data.diff.map(item => {
-        const rawCode = item.f12;
+        const rawCode = item.f12 || '';
         const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
         return {
           code: rawCode,
-          name: item.f14,
+          name: item.f14 || rawCode,
           price: price,
           changePercent: parseFloat(item.f3) || 0,
           changeAmount: parseFloat(item.f4) || 0,
@@ -101,7 +134,15 @@ function loadNewsSectorRanking() {
     })
     .catch(err => {
       console.warn('News sector ranking failed:', err);
+      setNewsError('news-sector-gainers', '板块涨幅榜加载失败');
+      setNewsError('news-sector-losers', '板块跌幅榜加载失败');
+      setNewsError('news-sidebar-sectors', '暂无数据');
     });
+}
+
+function setNewsError(elementId, msg) {
+  const el = document.getElementById(elementId);
+  if (el) el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">' + msg + '</p>';
 }
 
 function renderNewsSectorGainers(list) {
@@ -155,21 +196,22 @@ function renderNewsSidebarSectors(list) {
     </div>`).join('');
 }
 
-// ==================== Concept Ranking (Eastmoney) ====================
+// ==================== Concept Ranking (Eastmoney JSONP) ====================
 function loadNewsConceptRanking() {
   const fields = 'f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f18,f20,f21';
-  const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=20&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f3&fs=m:90+t:3&fields=${fields}`;
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=20&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=m:90+t:3&fields=' + fields;
 
-  fetch(url)
-    .then(r => r.json())
+  jsonpFetch(url, 6000)
     .then(data => {
-      if (!data || !data.data || !data.data.diff) return;
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid concept data');
+      }
       const items = data.data.diff.map(item => {
-        const rawCode = item.f12;
+        const rawCode = item.f12 || '';
         const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
         return {
           code: rawCode,
-          name: item.f14,
+          name: item.f14 || rawCode,
           price: price,
           changePercent: parseFloat(item.f3) || 0,
           changeAmount: parseFloat(item.f4) || 0,
@@ -184,6 +226,8 @@ function loadNewsConceptRanking() {
     })
     .catch(err => {
       console.warn('News concept ranking failed:', err);
+      setNewsError('news-concept-hot', '暂无热门概念');
+      setNewsError('news-sidebar-concepts', '暂无数据');
     });
 }
 
@@ -221,6 +265,11 @@ function renderNewsSidebarConcepts(list) {
 function updateNewsSidebarIndex() {
   const el = document.getElementById('news-sidebar-index');
   if (!el) return;
+  const hasData = indexList.some(idx => apiCache[idx.code]);
+  if (!hasData) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">指数数据加载中...</p>';
+    return;
+  }
   el.innerHTML = indexList.map(idx => {
     const d = apiCache[idx.code];
     if (!d) return `
@@ -240,50 +289,8 @@ function updateNewsSidebarIndex() {
   }).join('');
 }
 
-// ==================== Telegraph Fallback ====================
+// ==================== Telegraph: direct fallback (iframe blocked by X-Frame-Options) ====================
 function setupTelegraphFallback() {
-  const iframe = document.getElementById('news-telegraph-frame');
-  const wrap = document.getElementById('news-telegraph-frame-wrap');
-  const fallback = document.getElementById('news-telegraph-fallback');
-  if (!iframe || !wrap || !fallback) return;
-
-  // If iframe fails to load (e.g. X-Frame-Options), show fallback after timeout
-  iframe.addEventListener('load', () => {
-    // Check if iframe loaded but is empty/blocked
-    try {
-      const doc = iframe.contentDocument || iframe.contentWindow.document;
-      if (!doc || doc.body.innerHTML === '') {
-        showTelegraphFallback();
-      }
-    } catch (e) {
-      // Cross-origin error means it's likely blocked
-      showTelegraphFallback();
-    }
-  });
-
-  iframe.addEventListener('error', () => {
-    showTelegraphFallback();
-  });
-
-  // Fallback timeout: if iframe hasn't loaded meaningful content in 5s, show fallback
-  setTimeout(() => {
-    if (!newsTelegraphBlocked) {
-      // Try to detect if iframe is usable
-      try {
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        if (!doc || doc.body.innerHTML === '' || doc.body.children.length === 0) {
-          showTelegraphFallback();
-        }
-      } catch (e) {
-        showTelegraphFallback();
-      }
-    }
-  }, 5000);
-}
-
-function showTelegraphFallback() {
-  if (newsTelegraphBlocked) return;
-  newsTelegraphBlocked = true;
   const wrap = document.getElementById('news-telegraph-frame-wrap');
   const fallback = document.getElementById('news-telegraph-fallback');
   if (wrap) wrap.classList.add('hidden');
@@ -304,10 +311,9 @@ function searchAnnouncements() {
 
   resultsEl.innerHTML = '<div class="text-center py-8"><span class="inline-block w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></span><span class="text-gray-400 text-sm ml-2">查询中...</span></div>';
 
-  const url = `https://np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=20&page_index=1&ann_type=A&client_source=web&stock_list=${code}`;
+  const url = 'https://np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=20&page_index=1&ann_type=A&client_source=web&stock_list=' + code;
 
-  fetch(url)
-    .then(r => r.json())
+  fetchJSON(url, 8000)
     .then(data => {
       if (!data || !data.data || !Array.isArray(data.data)) {
         resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">未找到公告数据</p></div>';
@@ -318,7 +324,7 @@ function searchAnnouncements() {
         resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">该股票暂无公告</p></div>';
         return;
       }
-      const stockName = list[0]?.codes?.[0]?.stock_name || code;
+      const stockName = list[0] && list[0].codes && list[0].codes[0] ? list[0].codes[0].stock_name : code;
       resultsEl.innerHTML = `
         <div class="mb-3 flex items-center justify-between">
           <span class="text-sm font-medium text-gray-700">${stockName} (${code})</span>
@@ -329,7 +335,7 @@ function searchAnnouncements() {
             const title = item.title || '无标题';
             const date = item.notice_date ? new Date(item.notice_date).toLocaleDateString('zh-CN') : '';
             const artCode = item.art_code;
-            const href = artCode ? `https://data.eastmoney.com/notices/detail/${code}/${artCode}.html` : '#';
+            const href = artCode ? 'https://data.eastmoney.com/notices/detail/' + code + '/' + artCode + '.html' : '#';
             return `
               <a href="${href}" target="_blank" class="block p-3 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm hover:bg-blue-50/30 transition">
                 <p class="text-sm text-gray-800 line-clamp-2">${title}</p>
