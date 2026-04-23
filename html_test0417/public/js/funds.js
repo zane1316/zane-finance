@@ -315,11 +315,23 @@ function doFundSearch() {
   renderFundCards();
   loadFundQuotes();
   renderFundRankings();
+  startFundRefresh();
 }
 
-// Auto refresh fund quotes every 60s
-setInterval(() => {
-  if (!document.getElementById('funds').classList.contains('hidden')) {
-    loadFundQuotes();
+let fundRefreshInterval = null;
+
+function startFundRefresh() {
+  if (fundRefreshInterval) clearInterval(fundRefreshInterval);
+  fundRefreshInterval = setInterval(() => {
+    if (!document.getElementById('funds').classList.contains('hidden')) {
+      loadFundQuotes();
+    }
+  }, 60000);
+}
+
+function stopFundRefresh() {
+  if (fundRefreshInterval) {
+    clearInterval(fundRefreshInterval);
+    fundRefreshInterval = null;
   }
-}, 60000);
+}

@@ -1680,9 +1680,6 @@ const fundLearningData = [
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 基金和股票相比最大的优势是什么？</p><p>2. 为什么指数基金被称为"新手首选"？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：基金入门必修课', url: 'https://www.bilibili.com/video/BV1S54y1G7FR', platform: 'bilibili' }
-        ]
       },
       {
         title: '常见基金类型速览',
@@ -1703,9 +1700,6 @@ const fundLearningData = [
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 货币型基金和股票型基金的风险差异有多大？</p><p>2. 为什么指数型基金适合新手？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：基金类型全解析', url: 'https://www.bilibili.com/video/BV1ov41157EL', platform: 'bilibili' }
-        ]
       }
     ]
   },
@@ -1731,9 +1725,6 @@ const fundLearningData = [
           </ul>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 为什么指数基金被称为"被动投资"？</p><p>2. 沪深300和中证500分别代表什么？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：指数基金从入门到精通', url: 'https://www.bilibili.com/video/BV1aA411b7kz', platform: 'bilibili' }
-        ]
       },
       {
         title: '主流指数基金解析与选择',
@@ -1751,9 +1742,6 @@ const fundLearningData = [
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 选择指数基金的四个标准是什么？</p><p>2. "100-年龄"法则是什么意思？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：如何挑选指数基金', url: 'https://www.bilibili.com/video/BV1C54y1L7XL', platform: 'bilibili' }
-        ]
       }
     ]
   },
@@ -1778,9 +1766,6 @@ const fundLearningData = [
           </ul>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 定投为什么能自动实现"高位少买、低位多买"？</p><p>2. 定投最常见的三个误区是什么？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：基金定投的真相', url: 'https://www.bilibili.com/video/BV1HK4y1C7HL', platform: 'bilibili' }
-        ]
       },
       {
         title: '智能定投与止盈策略',
@@ -1798,9 +1783,6 @@ const fundLearningData = [
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 智能定投和普通定投的区别是什么？</p><p>2. 三种止盈策略分别适用于什么场景？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：定投止盈实战技巧', url: 'https://www.bilibili.com/video/BV1Fy4y1q7qD', platform: 'bilibili' }
-        ]
       }
     ]
   },
@@ -1821,9 +1803,6 @@ const fundLearningData = [
           </ul>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 挑选主动基金的五个维度是什么？</p><p>2. 为什么基金经理的从业年限很重要？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：如何挑选主动基金', url: 'https://www.bilibili.com/video/BV1wK4y1e7Zg', platform: 'bilibili' }
-        ]
       },
       {
         title: '基金费率解析与评级体系',
@@ -1839,9 +1818,6 @@ const fundLearningData = [
           <p class="mb-3"><strong>基金评级：</strong>晨星评级（1-5星）、银河评级、海通评级。3年以上有评级的基金更值得关注。</p>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 基金费用包括哪几项？</p><p>2. 为什么C类份额更适合短期持有？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：基金费率全解析', url: 'https://www.bilibili.com/video/BV1gz4y1y7nV', platform: 'bilibili' }
-        ]
       }
     ]
   },
@@ -1862,9 +1838,6 @@ const fundLearningData = [
           <p class="mb-3"><strong>股债配比模型：</strong>股票比例 = 100 - 你的年龄。25岁可以配75%股票，55岁应降至45%。</p>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 资产配置金字塔有哪四层？</p><p>2. "100-年龄"法则怎么应用？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：资产配置入门', url: 'https://www.bilibili.com/video/BV1F54y1L7XK', platform: 'bilibili' }
-        ]
       },
       {
         title: '核心-卫星策略与再平衡',
@@ -1877,9 +1850,6 @@ const fundLearningData = [
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 核心-卫星策略的优势是什么？</p><p>2. 为什么要定期做再平衡？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：再平衡操作详解', url: 'https://www.bilibili.com/video/BV1G54y1L7XJ', platform: 'bilibili' }
-        ]
       }
     ]
   },
@@ -1898,9 +1868,6 @@ const fundLearningData = [
           </ul>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 估值定投法和普通定投法的区别？</p><p>2. 大额资金为什么不建议一次性投入？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：估值定投实战', url: 'https://www.bilibili.com/video/BV1Uy4y1q7qE', platform: 'bilibili' }
-        ]
       },
       {
         title: '定投心态管理与常见陷阱',
@@ -1920,9 +1887,6 @@ const fundLearningData = [
           </ul>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 定投中最重要的三个心态是什么？</p><p>2. 基金投资的三个常见陷阱是什么？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：定投心态管理', url: 'https://www.bilibili.com/video/BV1tA411j7GZ', platform: 'bilibili' }
-        ]
       }
     ]
   },
@@ -1947,9 +1911,6 @@ const fundLearningData = [
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 完整的基金投资计划包含哪六个要素？</p><p>2. 如何根据自己的目标确定投资期限？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：基金投资体系与资产配置', url: 'https://search.bilibili.com/all?keyword=基金投资体系+资产配置', platform: 'bilibili' }
-        ]
       },
       {
         title: '从基金到股票的过渡',
@@ -1968,12 +1929,27 @@ const fundLearningData = [
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 从基金过渡到股票时，应该注意什么？</p><p>2. 为什么基金应该作为"压舱石"长期保留？</p></div></details>
         `,
-        videos: [
-          { title: 'B站：从基金到股票的进阶路径', url: 'https://search.bilibili.com/all?keyword=基金进阶+股票投资', platform: 'bilibili' }
-        ]
       }
     ]
   }
+];
+
+// ==================== Independent Video Library ====================
+const learningVideos = [
+  { category: '基金入门', title: '基金入门必修课', url: 'https://www.bilibili.com/video/BV1S54y1G7FR', platform: 'bilibili' },
+  { category: '基金入门', title: '基金类型全解析', url: 'https://www.bilibili.com/video/BV1ov41157EL', platform: 'bilibili' },
+  { category: '指数基金', title: '指数基金从入门到精通', url: 'https://www.bilibili.com/video/BV1aA411b7kz', platform: 'bilibili' },
+  { category: '指数基金', title: '如何挑选指数基金', url: 'https://www.bilibili.com/video/BV1C54y1L7XL', platform: 'bilibili' },
+  { category: '定投策略', title: '基金定投的真相', url: 'https://www.bilibili.com/video/BV1HK4y1C7HL', platform: 'bilibili' },
+  { category: '定投策略', title: '定投止盈实战技巧', url: 'https://www.bilibili.com/video/BV1Fy4y1q7qD', platform: 'bilibili' },
+  { category: '主动基金', title: '如何挑选主动基金', url: 'https://www.bilibili.com/video/BV1wK4y1e7Zg', platform: 'bilibili' },
+  { category: '主动基金', title: '基金费率全解析', url: 'https://www.bilibili.com/video/BV1gz4y1y7nV', platform: 'bilibili' },
+  { category: '资产配置', title: '资产配置入门', url: 'https://www.bilibili.com/video/BV1F54y1L7XK', platform: 'bilibili' },
+  { category: '资产配置', title: '再平衡操作详解', url: 'https://www.bilibili.com/video/BV1G54y1L7XJ', platform: 'bilibili' },
+  { category: '进阶技巧', title: '估值定投实战', url: 'https://www.bilibili.com/video/BV1Uy4y1q7qE', platform: 'bilibili' },
+  { category: '进阶技巧', title: '定投心态管理', url: 'https://www.bilibili.com/video/BV1tA411j7GZ', platform: 'bilibili' },
+  { category: '投资体系', title: '基金投资体系与资产配置', url: 'https://search.bilibili.com/all?keyword=基金投资体系+资产配置', platform: 'bilibili' },
+  { category: '投资体系', title: '从基金到股票的进阶路径', url: 'https://search.bilibili.com/all?keyword=基金进阶+股票投资', platform: 'bilibili' }
 ];
 
 // ==================== Dual-path learning state ====================
@@ -2032,21 +2008,13 @@ function switchLearningPath(path) {
   currentLearningPath = path;
   // Restore last visited level for this path
   currentLevel = learningProgressV2.lastVisited?.[path]?.level || 1;
-  // Update tab UI
-  const stockTab = document.getElementById('tab-stock');
-  const fundTab = document.getElementById('tab-fund');
-  if (stockTab) {
-    stockTab.className = path === 'stock'
-      ? 'px-5 py-2.5 rounded-xl text-sm font-bold bg-primary text-white shadow-md transition'
-      : 'px-5 py-2.5 rounded-xl text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary transition';
-  }
-  if (fundTab) {
-    fundTab.className = path === 'fund'
-      ? 'px-5 py-2.5 rounded-xl text-sm font-bold bg-primary text-white shadow-md transition'
-      : 'px-5 py-2.5 rounded-xl text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary transition';
-  }
   renderLevelList();
   renderLevelContent();
+  // Render independent video library
+  const videoContainer = document.getElementById('learning-video-section');
+  if (videoContainer) {
+    videoContainer.innerHTML = renderVideoSection();
+  }
 }
 
 function renderLevelList() {
@@ -2164,6 +2132,81 @@ function renderVideoLinks(videos) {
       <p class="text-[10px] text-gray-400 mt-1.5">提示：如视频链接失效，可悬停点击「搜索」在B站查找同名内容</p>
     </div>
   `;
+}
+
+function renderVideoSection() {
+  const platformColors = {
+    bilibili: 'bg-red-50 text-red-700 border-red-100 hover:bg-red-100',
+    qq: 'bg-blue-50 text-blue-700 border-blue-100 hover:bg-blue-100',
+    web: 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+  };
+  const platformLabels = {
+    bilibili: 'B站',
+    qq: '腾讯课堂',
+    web: '网页'
+  };
+  const platformIcons = {
+    bilibili: '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>',
+    qq: '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>',
+    web: '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>'
+  };
+  function fallbackSearchUrl(v) {
+    if (v.url.includes('search.bilibili.com')) return v.url;
+    return 'https://search.bilibili.com/all?keyword=' + encodeURIComponent(v.title);
+  }
+  // Group by category
+  const groups = {};
+  learningVideos.forEach(v => {
+    if (!groups[v.category]) groups[v.category] = [];
+    groups[v.category].push(v);
+  });
+  const categories = Object.keys(groups);
+  return `
+    <div class="mt-8 bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
+      <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+        <span class="w-7 h-7 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center text-white text-xs">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+        </span>
+        视频课程
+      </h3>
+      <div class="space-y-3">
+        ${categories.map(cat => `
+          <div class="border border-gray-100 rounded-xl overflow-hidden">
+            <button onclick="toggleVideoCategory(this)" class="w-full flex items-center justify-between px-4 py-3 bg-gray-50 hover:bg-gray-100 transition text-left">
+              <span class="font-medium text-sm text-gray-700">${cat}</span>
+              <span class="text-xs text-gray-400 bg-white px-2 py-0.5 rounded-full border border-gray-200">${groups[cat].length} 个视频</span>
+            </button>
+            <div class="hidden px-4 py-3 bg-white">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                ${groups[cat].map(v => `
+                  <div class="group flex items-start gap-3 p-3 rounded-lg border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition">
+                    <div class="w-10 h-10 rounded-lg ${platformColors[v.platform].split(' ')[0]} flex items-center justify-center flex-shrink-0">
+                      ${platformIcons[v.platform] || platformIcons.web}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <a href="${v.url}" target="_blank" rel="noopener" class="text-sm font-medium text-gray-800 hover:text-primary transition line-clamp-2">${v.title}</a>
+                      <div class="flex items-center gap-2 mt-1.5">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] border ${platformColors[v.platform] || platformColors.web}">
+                          ${platformLabels[v.platform] || '视频'}
+                        </span>
+                        <a href="${fallbackSearchUrl(v)}" target="_blank" rel="noopener" class="text-[10px] text-gray-400 hover:text-gray-600 transition">失效搜索</a>
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function toggleVideoCategory(btn) {
+  const panel = btn.nextElementSibling;
+  if (!panel) return;
+  panel.classList.toggle('hidden');
 }
 
 function toggleLesson(idx) {

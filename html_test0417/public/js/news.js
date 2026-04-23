@@ -8,13 +8,28 @@ function initNewsPage() {
   setupNewsTabs();
   refreshNewsData();
   setupTelegraphFallback();
+  startNewsRefresh();
+  const announceInput = document.getElementById('news-announce-input');
+  announceInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') searchAnnouncements();
+  });
+  document.getElementById('news-search-btn')?.addEventListener('click', searchAnnouncements);
+}
 
+function startNewsRefresh() {
   if (newsRefreshInterval) clearInterval(newsRefreshInterval);
   newsRefreshInterval = setInterval(() => {
     if (!document.getElementById('news').classList.contains('hidden')) {
       refreshNewsData();
     }
   }, 60000);
+}
+
+function stopNewsRefresh() {
+  if (newsRefreshInterval) {
+    clearInterval(newsRefreshInterval);
+    newsRefreshInterval = null;
+  }
 }
 
 function setupNewsTabs() {
@@ -93,6 +108,9 @@ function refreshNewsData() {
   loadNewsSectorRanking();
   loadNewsConceptRanking();
   updateNewsSidebarIndex();
+  loadMarketRadar();
+  loadGlobalMarkets();
+  loadCapitalFlow();
 
   const t = document.getElementById('news-update-time');
   if (t) {
@@ -287,6 +305,210 @@ function updateNewsSidebarIndex() {
         </div>
       </div>`;
   }).join('');
+}
+
+// ==================== Market Radar (Limit Up / Down / Volume Surge) ====================
+function loadMarketRadar() {
+  const fields = 'f12,f14,f2,f3,f4,f5,f6,f7,f8';
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=m:0+t:6&fields=' + fields;
+
+  jsonpFetch(url, 6000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid radar data');
+      }
+      const items = data.data.diff.map(item => {
+        const rawCode = item.f12 || '';
+        const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
+        return {
+          code: rawCode,
+          name: item.f14 || rawCode,
+          price: price,
+          changePercent: parseFloat(item.f3) || 0,
+          volumeMoney: item.f6 ? item.f6 / 10000 : 0,
+          turnover: parseFloat(item.f8) || 0
+        };
+      });
+      const limitUp = items.filter(i => i.changePercent >= 9.5).sort((a, b) => b.changePercent - a.changePercent).slice(0, 15);
+      const limitDown = items.filter(i => i.changePercent <= -9.5).sort((a, b) => a.changePercent - b.changePercent).slice(0, 15);
+      const volumeSurge = items.filter(i => i.turnover > 5).sort((a, b) => b.volumeMoney - a.volumeMoney).slice(0, 15);
+      renderRadarLimitUp(limitUp);
+      renderRadarLimitDown(limitDown);
+      renderRadarVolume(volumeSurge);
+    })
+    .catch(err => {
+      console.warn('Market radar failed:', err);
+      setNewsError('news-radar-limitup', '数据加载失败');
+      setNewsError('news-radar-limitdown', '数据加载失败');
+      setNewsError('news-radar-volume', '数据加载失败');
+    });
+}
+
+function renderRadarLimitUp(list) {
+  const el = document.getElementById('news-radar-limitup');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-4 text-center">暂无涨停股</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-red-50/30'} px-2 rounded">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 bg-red-100 text-red-700 text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate max-w-[100px]" title="${d.name}">${d.name}</span>
+        <span class="text-[10px] text-gray-400">${d.code}</span>
+      </span>
+      <span class="text-up font-medium">+${formatNumber(d.changePercent, 2)}%</span>
+    </div>`).join('');
+}
+
+function renderRadarLimitDown(list) {
+  const el = document.getElementById('news-radar-limitdown');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-4 text-center">暂无跌停股</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-green-50/30'} px-2 rounded">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 bg-green-100 text-green-700 text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate max-w-[100px]" title="${d.name}">${d.name}</span>
+        <span class="text-[10px] text-gray-400">${d.code}</span>
+      </span>
+      <span class="text-down font-medium">${formatNumber(d.changePercent, 2)}%</span>
+    </div>`).join('');
+}
+
+function renderRadarVolume(list) {
+  const el = document.getElementById('news-radar-volume');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-4 text-center">暂无放量异动</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-amber-50/30'} px-2 rounded">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 bg-amber-100 text-amber-700 text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate max-w-[100px]" title="${d.name}">${d.name}</span>
+      </span>
+      <div class="text-right">
+        <span class="text-up font-medium">+${formatNumber(d.changePercent, 2)}%</span>
+        <span class="text-[10px] text-gray-400 ml-1">换手 ${formatNumber(d.turnover, 2)}%</span>
+      </div>
+    </div>`).join('');
+}
+
+// ==================== Global Markets (US / HK via Tencent) ====================
+const globalIndexMap = {
+  'usINX': { name: '纳斯达克', code: 'usINX' },
+  'usDJI': { name: '道琼斯', code: 'usDJI' },
+  'hkHSI': { name: '恒生指数', code: 'hkHSI' },
+  'hkHSCEI': { name: '恒生国企', code: 'hkHSCEI' }
+};
+
+function loadGlobalMarkets() {
+  const codes = Object.keys(globalIndexMap).join(',');
+  const url = 'https://qt.gtimg.cn/q=' + codes;
+  fetch(url, { cache: 'no-store' })
+    .then(r => r.text())
+    .then(text => {
+      const lines = text.trim().split(';').filter(Boolean);
+      const data = {};
+      lines.forEach(line => {
+        const match = line.match(/v_(\w+)="([^"]+)"/);
+        if (!match) return;
+        const code = match[1];
+        const parts = match[2].split('~');
+        if (parts.length < 5) return;
+        const name = parts[1] || globalIndexMap[code]?.name || code;
+        const price = parseFloat(parts[3]) || 0;
+        const changePercent = parseFloat(parts[5]) || 0;
+        data[code] = { name, price, changePercent };
+      });
+      renderGlobalMarkets(data);
+    })
+    .catch(err => {
+      console.warn('Global markets failed:', err);
+      setNewsError('news-sidebar-global', '数据加载失败');
+    });
+}
+
+function renderGlobalMarkets(data) {
+  const el = document.getElementById('news-sidebar-global');
+  if (!el) return;
+  const codes = Object.keys(globalIndexMap);
+  if (!codes.some(c => data[c])) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">数据加载中...</p>';
+    return;
+  }
+  el.innerHTML = codes.map(code => {
+    const d = data[code];
+    if (!d) return `
+      <div class="flex justify-between items-center text-sm py-2 border-b last:border-0">
+        <span class="text-gray-600">${globalIndexMap[code].name}</span>
+        <span class="text-gray-400">--</span>
+      </div>`;
+    const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
+    return `
+      <div class="flex justify-between items-center text-sm py-2 border-b last:border-0">
+        <span class="text-gray-600">${d.name}</span>
+        <div class="text-right">
+          <span class="font-medium ${color}">${formatNumber(d.price, 2)}</span>
+          <span class="text-xs ${color} ml-1">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ==================== Capital Flow (Eastmoney) ====================
+function loadCapitalFlow() {
+  const fields = 'f12,f14,f2,f3,f62';
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=10&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f62&fs=m:0+t:6&fields=' + fields;
+
+  jsonpFetch(url, 6000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid flow data');
+      }
+      const items = data.data.diff.map(item => {
+        const rawCode = item.f12 || '';
+        const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
+        return {
+          code: rawCode,
+          name: item.f14 || rawCode,
+          price: price,
+          changePercent: parseFloat(item.f3) || 0,
+          netInflow: (parseFloat(item.f62) || 0) / 10000 // 万元 -> 亿元
+        };
+      });
+      renderCapitalFlow(items);
+    })
+    .catch(err => {
+      console.warn('Capital flow failed:', err);
+      setNewsError('news-sidebar-flow', '数据加载失败');
+    });
+}
+
+function renderCapitalFlow(list) {
+  const el = document.getElementById('news-sidebar-flow');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">暂无数据</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 px-2 rounded hover:bg-gray-50 transition">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 bg-emerald-50 text-emerald-700 text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate" title="${d.name}">${d.name}</span>
+      </span>
+      <div class="text-right">
+        <span class="text-emerald-600 font-medium">+${formatNumber(d.netInflow, 2)}亿</span>
+        <span class="text-xs ${d.changePercent >= 0 ? 'text-up' : 'text-down'} ml-1">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
+      </div>
+    </div>`).join('');
 }
 
 // ==================== Telegraph: direct fallback (iframe blocked by X-Frame-Options) ====================

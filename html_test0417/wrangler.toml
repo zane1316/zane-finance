@@ -1,0 +1,4 @@
+name = "zane-finance"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-04-21"
+# account_id is set via WRANGLER_ACCOUNT_ID env var or `wrangler login`

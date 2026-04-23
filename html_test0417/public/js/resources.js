@@ -264,12 +264,22 @@ function renderResources() {
     </div>
   `).join('');
 
-  // Lazy link check (best-effort due to CORS)
-  setTimeout(() => {
+  // Manual link check button (previously auto-fired 20+ HEAD requests on load)
+  const checkBtn = document.createElement('button');
+  checkBtn.className = 'mb-6 px-4 py-2 text-sm btn-gradient text-white rounded-xl shadow hover:shadow-lg transition';
+  checkBtn.textContent = '检查链接可用性';
+  checkBtn.addEventListener('click', () => {
+    checkBtn.disabled = true;
+    checkBtn.textContent = '检查中...';
     document.querySelectorAll('.resource-link').forEach(a => {
       checkLinkStatus(a.getAttribute('data-url'), a.querySelector('.status-dot'));
     });
-  }, 500);
+    setTimeout(() => {
+      checkBtn.disabled = false;
+      checkBtn.textContent = '检查链接可用性';
+    }, 3000);
+  });
+  container.prepend(checkBtn);
 }
 
 function checkLinkStatus(url, dot) {

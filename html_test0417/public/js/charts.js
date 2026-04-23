@@ -55,6 +55,7 @@ const klinePatterns = {
 
 let currentKlineCat = 'single';
 let klineCharts = [];
+let klineResizeHandler = null;
 
 function initKlineGallery() {
   renderKlineTabs();
@@ -78,6 +79,10 @@ function renderKlineGrid() {
     } catch(e) {}
   });
   klineCharts = [];
+  if (klineResizeHandler) {
+    window.removeEventListener('resize', klineResizeHandler);
+    klineResizeHandler = null;
+  }
   const container = document.getElementById('kline-grid');
   const items = klinePatterns[currentKlineCat];
   container.innerHTML = items.map((p, idx) => `
@@ -304,9 +309,10 @@ function makeCandle(date, open, close, high, low, up) {
   return { time: d, open: Number(open.toFixed(2)), close: Number(close.toFixed(2)), high: Number(high.toFixed(2)), low: Number(low.toFixed(2)) };
 }
 
-window.addEventListener('resize', () => {
+klineResizeHandler = () => {
   klineCharts.forEach(({ chart, container }) => {
     if (!chart || chart._removed) return;
     try { chart.resize(container.clientWidth, 220); } catch(e) {}
   });
-});
+};
+window.addEventListener('resize', klineResizeHandler);

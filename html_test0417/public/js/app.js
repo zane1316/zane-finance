@@ -1,6 +1,32 @@
 // SPA Router & Common Utilities
 const sections = ['home','market','funds','learning','kline','ai','trading','calculator','news','glossary','resources','contact'];
 
+// Lazy-load large data modules on first section visit
+const lazyModules = {
+  'market':  () => loadScript('./js/all-stocks.js'),
+  'funds':   () => loadScript('./js/all-funds.js'),
+  'learning':() => loadScript('./js/learning.js')
+};
+const loadedModules = new Set();
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = src;
+    s.defer = true;
+    s.onload = resolve;
+    s.onerror = () => reject(new Error('Failed to load ' + src));
+    document.body.appendChild(s);
+  });
+}
+
+async function ensureLazyModule(sectionId) {
+  if (lazyModules[sectionId] && !loadedModules.has(sectionId)) {
+    loadedModules.add(sectionId);
+    await lazyModules[sectionId]();
+  }
+}
+
 const pageMeta = {
   home: { title: 'Zane财经 - 新手炒股第一站 | 零基础到实盘实战', desc: 'Zane财经是专业的A股新手学习平台，提供实时行情、K线教学、模拟交易、AI分析等一站式炒股学习服务。' },
   market: { title: 'A股实时行情 - Zane财经', desc: '全市场A股实时行情数据，沪深京交易所全覆盖，支持行业板块与全市场排名。' },
@@ -23,7 +49,7 @@ function updatePageMeta(id) {
   if (descEl) descEl.setAttribute('content', meta.desc);
 }
 
-function showSection(id) {
+async function showSection(id) {
   sections.forEach(s => {
     const el = document.getElementById(s);
     if (el) el.classList.add('hidden');
@@ -41,6 +67,10 @@ function showSection(id) {
   document.getElementById('mobile-menu').classList.add('hidden');
   // Update meta
   updatePageMeta(id);
+
+  // Lazy-load heavy data modules before init
+  await ensureLazyModule(id);
+
   // Trigger section init
   if (id === 'market') initMarket();
   if (id === 'funds') initFunds();
@@ -51,6 +81,11 @@ function showSection(id) {
   if (id === 'news') initNewsPage();
   if (id === 'glossary') initGlossary();
   if (id === 'resources') renderResources();
+
+  // Cleanup intervals/listeners when leaving sections
+  if (id !== 'funds' && typeof stopFundRefresh === 'function') stopFundRefresh();
+  if (id !== 'news' && typeof stopNewsRefresh === 'function') stopNewsRefresh();
+  if (id !== 'market' && typeof stopQuoteRefresh === 'function') stopQuoteRefresh();
 }
 
 function handleRoute() {
@@ -60,10 +95,10 @@ function handleRoute() {
 
 window.addEventListener('hashchange', handleRoute);
 window.addEventListener('load', () => {
-  handleRoute();
   initAPI();
-  initLearningProgress();
-  initTrading();
+  if (typeof initLearningProgress === 'function') initLearningProgress();
+  if (typeof initTrading === 'function') initTrading();
+  handleRoute();
   // Onboarding
   if (!localStorage.getItem('zfinance_onboarding')) {
     setTimeout(() => document.getElementById('onboarding').classList.remove('hidden'), 800);
@@ -72,6 +107,18 @@ window.addEventListener('load', () => {
 
 document.getElementById('mobile-menu-btn').addEventListener('click', () => {
   document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// Batch replace inline event handlers with addEventListener
+document.getElementById('risk-banner-close')?.addEventListener('click', () => {
+  document.getElementById('risk-banner').style.display = 'none';
+});
+
+document.getElementById('onboarding-close')?.addEventListener('click', closeOnboarding);
+document.getElementById('contact-form')?.addEventListener('submit', submitFeedback);
+document.getElementById('ai-query-btn')?.addEventListener('click', queryAI);
+document.querySelectorAll('.ai-quick-btn').forEach(btn => {
+  btn.addEventListener('click', () => quickAI(btn.dataset.aiCode));
 });
 
 function closeOnboarding() {

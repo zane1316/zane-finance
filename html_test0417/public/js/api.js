@@ -117,22 +117,71 @@ function parseTencentFundData(raw) {
 }
 
 let quoteRefreshInterval = null;
+const QUOTE_CACHE_KEY = 'zfinance_quote_cache';
+const QUOTE_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+function loadQuoteCache() {
+  try {
+    const raw = localStorage.getItem(QUOTE_CACHE_KEY);
+    if (!raw) return;
+    const { data, timestamp } = JSON.parse(raw);
+    if (Date.now() - timestamp < QUOTE_CACHE_TTL) {
+      Object.assign(apiCache, data);
+      console.log('[API] Restored quote cache from localStorage');
+    }
+  } catch (e) { /* ignore corrupt cache */ }
+}
+
+function saveQuoteCache() {
+  try {
+    localStorage.setItem(QUOTE_CACHE_KEY, JSON.stringify({
+      data: apiCache,
+      timestamp: Date.now()
+    }));
+  } catch (e) { /* ignore quota exceeded */ }
+}
+
+function isMarketOpen() {
+  const now = new Date();
+  const shTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }));
+  const day = shTime.getDay();
+  if (day === 0 || day === 6) return false;
+  const hours = shTime.getHours();
+  const minutes = shTime.getMinutes();
+  const time = hours * 60 + minutes;
+  // 9:30-11:30 (570-690), 13:00-15:00 (780-900)
+  return (time >= 570 && time <= 690) || (time >= 780 && time <= 900);
+}
+
+function stopQuoteRefresh() {
+  if (quoteRefreshInterval) {
+    clearInterval(quoteRefreshInterval);
+    quoteRefreshInterval = null;
+  }
+}
 
 function initAPI() {
-  refreshAllQuotes();
-  quoteRefreshInterval = setInterval(refreshAllQuotes, 30000);
+  loadQuoteCache();
+  refreshAllQuotes(true);
+  quoteRefreshInterval = setInterval(() => refreshAllQuotes(), 30000);
   // Pause refresh when tab is hidden to save battery / reduce load
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-      if (quoteRefreshInterval) { clearInterval(quoteRefreshInterval); quoteRefreshInterval = null; }
+      stopQuoteRefresh();
     } else {
       refreshAllQuotes();
-      quoteRefreshInterval = setInterval(refreshAllQuotes, 30000);
+      if (!quoteRefreshInterval) {
+        quoteRefreshInterval = setInterval(() => refreshAllQuotes(), 30000);
+      }
     }
   });
 }
 
-function refreshAllQuotes() {
+function refreshAllQuotes(force = false) {
+  if (!force && !isMarketOpen()) {
+    console.log('[API] Market closed, skipping quote refresh');
+    return;
+  }
   const allCodes = indexList.map(i => i.code).concat(allStocks.map(s => s.c));
   const chunkSize = 60;
   for (let i = 0; i < allCodes.length; i += chunkSize) {
@@ -143,6 +192,7 @@ function refreshAllQuotes() {
         return;
       }
       Object.assign(apiCache, data);
+      saveQuoteCache();
       updateTicker(data);
       updateIndexCards(data);
       if (!document.getElementById('market').classList.contains('hidden')) {
@@ -200,7 +250,7 @@ function updateTicker(data) {
 
 function renderTickerItem(name, d) {
   const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
-  const arrow = d.changePercent >= 0 ? '▲' : '▼';
+  const arrow = d.changePercent >= 0 ? '▲ 涨' : '▼ 跌';
   return `<span class="${color}">${name} ${formatNumber(d.price,2)} ${arrow}${d.changePercent>=0?'+':''}${formatNumber(d.changePercent,2)}%</span>`;
 }
 
@@ -211,11 +261,12 @@ function updateIndexCards(data) {
     const d = data[idx.code] || apiCache[idx.code];
     if (!d) return `<div class="bg-white p-4 rounded-lg shadow border border-border text-center"><p class="text-gray-500 text-sm">${idx.name}</p><p class="text-xl font-bold my-1">--</p><p class="text-sm">--</p></div>`;
     const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
+    const label = d.changePercent >= 0 ? '▲ 涨' : '▼ 跌';
     return `
       <div class="bg-white p-4 rounded-lg shadow border border-border text-center">
         <p class="text-gray-500 text-sm">${idx.name}</p>
         <p class="text-xl font-bold my-1 ${color}">${formatNumber(d.price,2)}</p>
-        <p class="text-sm ${color}">${d.changePercent>=0?'+':''}${formatNumber(d.changePercent,2)}%</p>
+        <p class="text-sm ${color}">${label} ${d.changePercent>=0?'+':''}${formatNumber(d.changePercent,2)}%</p>
       </div>`;
   }).join('');
 }
@@ -350,12 +401,17 @@ function loadAllAStockList() {
 }
 
 function loadEastmoneyRanking(direction, count = 20) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000);
   const po = direction === 'desc' ? 1 : 0;
   const fid = 'f3';
   const fields = 'f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f18,f20,f21';
   const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=${count}&po=${po}&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=${fid}&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=${fields}`;
-  return fetch(url)
-    .then(r => r.json())
+  return fetch(url, { signal: controller.signal })
+    .then(r => {
+      clearTimeout(timeoutId);
+      return r.json();
+    })
     .then(data => {
       if (!data || !data.data || !data.data.diff) return [];
       return data.data.diff.map(item => {
@@ -381,7 +437,8 @@ function loadEastmoneyRanking(direction, count = 20) {
       });
     })
     .catch(err => {
-      console.warn('Eastmoney ranking failed:', err);
+      clearTimeout(timeoutId);
+      console.warn('[API] Eastmoney ranking failed:', err);
       return [];
     });
 }

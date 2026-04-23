@@ -2,6 +2,7 @@
 // Falls back gracefully to localStorage when not logged in or offline
 
 import { createClient } from '@supabase/supabase-js'
+import { debounce } from './utils.js'
 
 const SUPABASE_URL = import.meta.env?.VITE_SUPABASE_URL || ''
 const SUPABASE_ANON_KEY = import.meta.env?.VITE_SUPABASE_ANON_KEY || ''
@@ -181,14 +182,7 @@ export async function restoreFromCloud() {
     localStorage.setItem('zfinance_trading', JSON.stringify(account))
   }
 
-  // Learning
-  for (const path of ['stock', 'fund']) {
-    const cloudLearning = await loadFromCloud('learning_progress')
-    // Note: learning_progress table doesn't filter by path_type in loadFromCloud.
-    // We need to load both records. For simplicity we query all and merge.
-  }
-
-  // Better approach: load all learning records at once
+  // Learning: load all records at once (avoids N+1 redundant queries)
   const user = await getCurrentUser()
   if (user) {
     const { data: learnings } = await supabase
@@ -215,18 +209,35 @@ export async function restoreFromCloud() {
   }
 }
 
+// ---------- Debounced cloud sync ----------
+
+const debouncedSyncTrading = debounce((account) => {
+  syncToCloud('trading_accounts', {
+    cash: account.cash,
+    positions: account.positions,
+    history: account.history,
+    asset_curve: account.assetCurve || account.asset_curve || []
+  })
+}, 2000)
+
+const debouncedSyncLearningPath = debounce((path, p) => {
+  syncToCloud('learning_progress', {
+    path_type: path,
+    current_level: p.currentLevel || 1,
+    completed_lessons: p.completedLessons || [],
+    quiz_scores: p.quizScores || {}
+  })
+}, 2000)
+
+const debouncedSyncSettings = debounce((payload) => {
+  syncToCloud('user_settings', payload)
+}, 2000)
+
 // ---------- Auto-sync wrappers ----------
 
 export function autoSyncTrading(account) {
   localStorage.setItem('zfinance_trading', JSON.stringify(account))
-  if (syncEnabled) {
-    syncToCloud('trading_accounts', {
-      cash: account.cash,
-      positions: account.positions,
-      history: account.history,
-      asset_curve: account.assetCurve || account.asset_curve || []
-    })
-  }
+  if (syncEnabled) debouncedSyncTrading(account)
 }
 
 export function autoSyncLearning(progress) {
@@ -234,21 +245,12 @@ export function autoSyncLearning(progress) {
   if (syncEnabled) {
     for (const path of ['stock', 'fund']) {
       const p = progress[path]
-      if (p) {
-        syncToCloud('learning_progress', {
-          path_type: path,
-          current_level: p.currentLevel || 1,
-          completed_lessons: p.completedLessons || [],
-          quiz_scores: p.quizScores || {}
-        })
-      }
+      if (p) debouncedSyncLearningPath(path, p)
     }
   }
 }
 
 export function autoSyncOnboarding() {
   localStorage.setItem('zfinance_onboarding', '1')
-  if (syncEnabled) {
-    syncToCloud('user_settings', { onboarding_seen: true })
-  }
+  if (syncEnabled) debouncedSyncSettings({ onboarding_seen: true })
 }

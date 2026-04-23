@@ -10,6 +10,17 @@ function initTrading() {
   } else {
     resetTrading();
   }
+  // Bind events (replaces inline handlers removed from HTML)
+  document.getElementById('reset-trading-btn')?.addEventListener('click', resetTrading);
+  document.getElementById('tab-buy')?.addEventListener('click', () => setTradeType('buy'));
+  document.getElementById('tab-sell')?.addEventListener('click', () => setTradeType('sell'));
+  document.getElementById('trade-code')?.addEventListener('input', onTradeCodeInput);
+  document.getElementById('limit-price-up')?.addEventListener('click', () => setLimitPrice('up'));
+  document.getElementById('limit-price-down')?.addEventListener('click', () => setLimitPrice('down'));
+  document.getElementById('trade-qty-full')?.addEventListener('click', () => setTradeQty('full'));
+  document.getElementById('trade-qty-half')?.addEventListener('click', () => setTradeQty('half'));
+  document.getElementById('trade-qty-third')?.addEventListener('click', () => setTradeQty('third'));
+  document.getElementById('trade-submit-btn')?.addEventListener('click', submitOrder);
 }
 
 function resetTrading() {

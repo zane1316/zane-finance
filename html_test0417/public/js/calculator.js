@@ -142,5 +142,9 @@ function calcStopLoss() {
 }
 
 function initCalculator() {
-  // placeholder for any calculator init
+  document.getElementById('calc-code')?.addEventListener('input', calcFetchPrice);
+  document.getElementById('calc-pl-btn')?.addEventListener('click', calcPL);
+  document.getElementById('calc-dca-btn')?.addEventListener('click', calcDCA);
+  document.getElementById('calc-stop-btn')?.addEventListener('click', calcStopLoss);
+  document.getElementById('calc-kelly-btn')?.addEventListener('click', calcKelly);
 }

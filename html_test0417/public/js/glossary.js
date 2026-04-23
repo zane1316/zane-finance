@@ -216,6 +216,11 @@ const glossaryData = [
 function initGlossary() {
   renderGlossaryTabs();
   renderGlossaryCards();
+  document.getElementById('glossary-search')?.addEventListener('input', doGlossarySearch);
+  document.getElementById('glossary-tabs')?.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-glossary-cat]');
+    if (btn) switchGlossaryCategory(btn.dataset.glossaryCat);
+  });
 }
 
 function renderGlossaryTabs() {
@@ -223,7 +228,7 @@ function renderGlossaryTabs() {
   if (!container) return;
   container.innerHTML = glossaryCategories.map(cat => {
     const active = cat === currentGlossaryCategory ? 'bg-primary text-white shadow-md' : 'bg-white text-gray-600 hover:text-primary hover:border-primary border border-gray-200';
-    return `<button onclick="switchGlossaryCategory('${cat}')" class="px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition ${active}">${cat}</button>`;
+    return `<button data-glossary-cat="${cat}" class="px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition ${active}">${cat}</button>`;
   }).join('');
 }
 

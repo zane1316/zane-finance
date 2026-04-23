@@ -42,10 +42,10 @@ body {
 .stock-scroll::-webkit-scrollbar { height: 4px; }
 
 /* Price colors */
-.text-up { color: var(--up) !important; }
-.text-down { color: var(--down) !important; }
-.bg-up { background-color: var(--up) !important; }
-.bg-down { background-color: var(--down) !important; }
+.text-up { color: var(--up); }
+.text-down { color: var(--down); }
+.bg-up { background-color: var(--up); }
+.bg-down { background-color: var(--down); }
 
 /* Enhanced card styles */
 .card-gradient {

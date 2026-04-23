@@ -1,6 +1,7 @@
 // Zane Finance v8 - Vite entry point
 // Imports charting libraries and exposes them globally for legacy scripts
 
+import Alpine from 'alpinejs'
 import * as LightweightCharts from 'lightweight-charts'
 import * as echarts from 'echarts'
 import {
@@ -22,6 +23,9 @@ window.echarts = echarts
 window.autoSyncTrading = autoSyncTrading
 window.autoSyncLearning = autoSyncLearning
 window.autoSyncOnboarding = autoSyncOnboarding
+
+window.Alpine = Alpine
+Alpine.start()
 
 // ---------- Auth UI ----------
 
@@ -123,6 +127,15 @@ function initAuthUI() {
 
   authBtn.addEventListener('click', () => {
     authModal.classList.remove('hidden')
+    const focusable = authModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    focusable[0]?.focus()
+  })
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !authModal.classList.contains('hidden')) {
+      authModal.classList.add('hidden')
+      authBtn.focus()
+    }
   })
 
   if (authClose) {
