@@ -6,6 +6,8 @@ let newsConceptCache = [];
 
 function initNewsPage() {
   setupNewsTabs();
+  // Try to restore cached data immediately for Edge/proxy compatibility
+  restoreNewsFromCache();
   refreshNewsData();
   setupTelegraphFallback();
   startNewsRefresh();
@@ -109,7 +111,6 @@ function refreshNewsData() {
   loadNewsConceptRanking();
   updateNewsSidebarIndex();
   loadMarketRadar();
-  loadGlobalMarkets();
   loadCapitalFlow();
 
   const t = document.getElementById('news-update-time');
@@ -146,15 +147,31 @@ function loadNewsSectorRanking() {
       const gainers = items.filter(i => i.changePercent > 0).sort((a, b) => b.changePercent - a.changePercent);
       const losers = items.filter(i => i.changePercent < 0).sort((a, b) => a.changePercent - b.changePercent);
       newsSectorCache = { gainers, losers };
-      renderNewsSectorGainers(gainers.slice(0, 10));
-      renderNewsSectorLosers(losers.slice(0, 10));
-      renderNewsSidebarSectors(gainers.slice(0, 5));
+      const topGainers = gainers.slice(0, 10);
+      const topLosers = losers.slice(0, 10);
+      const sidebarSectors = gainers.slice(0, 5);
+      renderNewsSectorGainers(topGainers);
+      renderNewsSectorLosers(topLosers);
+      renderNewsSidebarSectors(sidebarSectors);
+      const cache = loadNewsCache() || {};
+      cache.sectorGainers = topGainers;
+      cache.sectorLosers = topLosers;
+      cache.sidebarSectors = sidebarSectors;
+      saveNewsCache(cache);
     })
     .catch(err => {
       console.warn('News sector ranking failed:', err);
-      setNewsError('news-sector-gainers', '板块涨幅榜加载失败');
-      setNewsError('news-sector-losers', '板块跌幅榜加载失败');
-      setNewsError('news-sidebar-sectors', '暂无数据');
+      const cache = loadNewsCache();
+      if (cache && cache.sectorGainers) {
+        renderNewsSectorGainers(cache.sectorGainers);
+        renderNewsSectorLosers(cache.sectorLosers);
+        renderNewsSidebarSectors(cache.sidebarSectors);
+        renderNewsCacheIndicator();
+      } else {
+        setNewsError('news-sector-gainers', '板块涨幅榜加载失败（请检查网络代理设置）');
+        setNewsError('news-sector-losers', '板块跌幅榜加载失败（请检查网络代理设置）');
+        setNewsError('news-sidebar-sectors', '暂无数据');
+      }
     });
 }
 
@@ -239,13 +256,26 @@ function loadNewsConceptRanking() {
         };
       });
       newsConceptCache = items;
-      renderNewsConceptHot(items.filter(i => i.changePercent > 0).slice(0, 12));
-      renderNewsSidebarConcepts(items.filter(i => i.changePercent > 0).slice(0, 5));
+      const hotConcepts = items.filter(i => i.changePercent > 0).slice(0, 12);
+      const sidebarConcepts = items.filter(i => i.changePercent > 0).slice(0, 5);
+      renderNewsConceptHot(hotConcepts);
+      renderNewsSidebarConcepts(sidebarConcepts);
+      const cache = loadNewsCache() || {};
+      cache.concepts = hotConcepts;
+      cache.sidebarConcepts = sidebarConcepts;
+      saveNewsCache(cache);
     })
     .catch(err => {
       console.warn('News concept ranking failed:', err);
-      setNewsError('news-concept-hot', '暂无热门概念');
-      setNewsError('news-sidebar-concepts', '暂无数据');
+      const cache = loadNewsCache();
+      if (cache && cache.concepts) {
+        renderNewsConceptHot(cache.concepts);
+        renderNewsSidebarConcepts(cache.sidebarConcepts);
+        renderNewsCacheIndicator();
+      } else {
+        setNewsError('news-concept-hot', '暂无热门概念（请检查网络代理设置）');
+        setNewsError('news-sidebar-concepts', '暂无数据');
+      }
     });
 }
 
@@ -335,12 +365,25 @@ function loadMarketRadar() {
       renderRadarLimitUp(limitUp);
       renderRadarLimitDown(limitDown);
       renderRadarVolume(volumeSurge);
+      const cache = loadNewsCache() || {};
+      cache.radarLimitUp = limitUp;
+      cache.radarLimitDown = limitDown;
+      cache.radarVolume = volumeSurge;
+      saveNewsCache(cache);
     })
     .catch(err => {
       console.warn('Market radar failed:', err);
-      setNewsError('news-radar-limitup', '数据加载失败');
-      setNewsError('news-radar-limitdown', '数据加载失败');
-      setNewsError('news-radar-volume', '数据加载失败');
+      const cache = loadNewsCache();
+      if (cache && cache.radarLimitUp) {
+        renderRadarLimitUp(cache.radarLimitUp);
+        renderRadarLimitDown(cache.radarLimitDown);
+        renderRadarVolume(cache.radarVolume);
+        renderNewsCacheIndicator();
+      } else {
+        setNewsError('news-radar-limitup', '数据加载失败（请检查网络代理设置）');
+        setNewsError('news-radar-limitdown', '数据加载失败（请检查网络代理设置）');
+        setNewsError('news-radar-volume', '数据加载失败（请检查网络代理设置）');
+      }
     });
 }
 
@@ -400,66 +443,52 @@ function renderRadarVolume(list) {
     </div>`).join('');
 }
 
-// ==================== Global Markets (US / HK via Tencent) ====================
-const globalIndexMap = {
-  'usINX': { name: '纳斯达克', code: 'usINX' },
-  'usDJI': { name: '道琼斯', code: 'usDJI' },
-  'hkHSI': { name: '恒生指数', code: 'hkHSI' },
-  'hkHSCEI': { name: '恒生国企', code: 'hkHSCEI' }
-};
+// ==================== News Data Cache (for Edge / proxy compatibility) ====================
+const NEWS_CACHE_KEY = 'zfinance_news_cache';
+const NEWS_CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
 
-function loadGlobalMarkets() {
-  const codes = Object.keys(globalIndexMap).join(',');
-  const url = 'https://qt.gtimg.cn/q=' + codes;
-  fetch(url, { cache: 'no-store' })
-    .then(r => r.text())
-    .then(text => {
-      const lines = text.trim().split(';').filter(Boolean);
-      const data = {};
-      lines.forEach(line => {
-        const match = line.match(/v_(\w+)="([^"]+)"/);
-        if (!match) return;
-        const code = match[1];
-        const parts = match[2].split('~');
-        if (parts.length < 5) return;
-        const name = parts[1] || globalIndexMap[code]?.name || code;
-        const price = parseFloat(parts[3]) || 0;
-        const changePercent = parseFloat(parts[5]) || 0;
-        data[code] = { name, price, changePercent };
-      });
-      renderGlobalMarkets(data);
-    })
-    .catch(err => {
-      console.warn('Global markets failed:', err);
-      setNewsError('news-sidebar-global', '数据加载失败');
-    });
+function loadNewsCache() {
+  try {
+    const raw = localStorage.getItem(NEWS_CACHE_KEY);
+    if (!raw) return null;
+    const cache = JSON.parse(raw);
+    if (Date.now() - cache.timestamp > NEWS_CACHE_TTL_MS) return null;
+    return cache;
+  } catch (e) {
+    return null;
+  }
 }
 
-function renderGlobalMarkets(data) {
-  const el = document.getElementById('news-sidebar-global');
-  if (!el) return;
-  const codes = Object.keys(globalIndexMap);
-  if (!codes.some(c => data[c])) {
-    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">数据加载中...</p>';
-    return;
+function saveNewsCache(data) {
+  try {
+    localStorage.setItem(NEWS_CACHE_KEY, JSON.stringify({
+      timestamp: Date.now(),
+      ...data
+    }));
+  } catch (e) {}
+}
+
+function renderNewsCacheIndicator() {
+  const t = document.getElementById('news-update-time');
+  if (t && t.textContent.includes('缓存')) return;
+  if (t) {
+    t.innerHTML = '<span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span><span class="text-amber-600">显示缓存数据（实时数据加载失败，请检查网络代理设置）</span>';
   }
-  el.innerHTML = codes.map(code => {
-    const d = data[code];
-    if (!d) return `
-      <div class="flex justify-between items-center text-sm py-2 border-b last:border-0">
-        <span class="text-gray-600">${globalIndexMap[code].name}</span>
-        <span class="text-gray-400">--</span>
-      </div>`;
-    const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
-    return `
-      <div class="flex justify-between items-center text-sm py-2 border-b last:border-0">
-        <span class="text-gray-600">${d.name}</span>
-        <div class="text-right">
-          <span class="font-medium ${color}">${formatNumber(d.price, 2)}</span>
-          <span class="text-xs ${color} ml-1">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
-        </div>
-      </div>`;
-  }).join('');
+}
+
+function restoreNewsFromCache() {
+  const cache = loadNewsCache();
+  if (!cache) return;
+  if (cache.sectorGainers) renderNewsSectorGainers(cache.sectorGainers);
+  if (cache.sectorLosers) renderNewsSectorLosers(cache.sectorLosers);
+  if (cache.sidebarSectors) renderNewsSidebarSectors(cache.sidebarSectors);
+  if (cache.concepts) renderNewsConceptHot(cache.concepts);
+  if (cache.sidebarConcepts) renderNewsSidebarConcepts(cache.sidebarConcepts);
+  if (cache.radarLimitUp) renderRadarLimitUp(cache.radarLimitUp);
+  if (cache.radarLimitDown) renderRadarLimitDown(cache.radarLimitDown);
+  if (cache.radarVolume) renderRadarVolume(cache.radarVolume);
+  if (cache.capitalFlow) renderCapitalFlow(cache.capitalFlow);
+  renderNewsCacheIndicator();
 }
 
 // ==================== Capital Flow (Eastmoney) ====================
@@ -484,10 +513,19 @@ function loadCapitalFlow() {
         };
       });
       renderCapitalFlow(items);
+      const cache = loadNewsCache() || {};
+      cache.capitalFlow = items;
+      saveNewsCache(cache);
     })
     .catch(err => {
       console.warn('Capital flow failed:', err);
-      setNewsError('news-sidebar-flow', '数据加载失败');
+      const cache = loadNewsCache();
+      if (cache && cache.capitalFlow) {
+        renderCapitalFlow(cache.capitalFlow);
+        renderNewsCacheIndicator();
+      } else {
+        setNewsError('news-sidebar-flow', '数据加载失败（请检查网络代理设置）');
+      }
     });
 }
 

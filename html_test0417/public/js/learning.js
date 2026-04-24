@@ -1935,21 +1935,106 @@ const fundLearningData = [
 ];
 
 // ==================== Independent Video Library ====================
+// All links point to official institutional investor education platforms
 const learningVideos = [
-  { category: '基金入门', title: '基金入门必修课', url: 'https://www.bilibili.com/video/BV1S54y1G7FR', platform: 'bilibili' },
-  { category: '基金入门', title: '基金类型全解析', url: 'https://www.bilibili.com/video/BV1ov41157EL', platform: 'bilibili' },
-  { category: '指数基金', title: '指数基金从入门到精通', url: 'https://www.bilibili.com/video/BV1aA411b7kz', platform: 'bilibili' },
-  { category: '指数基金', title: '如何挑选指数基金', url: 'https://www.bilibili.com/video/BV1C54y1L7XL', platform: 'bilibili' },
-  { category: '定投策略', title: '基金定投的真相', url: 'https://www.bilibili.com/video/BV1HK4y1C7HL', platform: 'bilibili' },
-  { category: '定投策略', title: '定投止盈实战技巧', url: 'https://www.bilibili.com/video/BV1Fy4y1q7qD', platform: 'bilibili' },
-  { category: '主动基金', title: '如何挑选主动基金', url: 'https://www.bilibili.com/video/BV1wK4y1e7Zg', platform: 'bilibili' },
-  { category: '主动基金', title: '基金费率全解析', url: 'https://www.bilibili.com/video/BV1gz4y1y7nV', platform: 'bilibili' },
-  { category: '资产配置', title: '资产配置入门', url: 'https://www.bilibili.com/video/BV1F54y1L7XK', platform: 'bilibili' },
-  { category: '资产配置', title: '再平衡操作详解', url: 'https://www.bilibili.com/video/BV1G54y1L7XJ', platform: 'bilibili' },
-  { category: '进阶技巧', title: '估值定投实战', url: 'https://www.bilibili.com/video/BV1Uy4y1q7qE', platform: 'bilibili' },
-  { category: '进阶技巧', title: '定投心态管理', url: 'https://www.bilibili.com/video/BV1tA411j7GZ', platform: 'bilibili' },
-  { category: '投资体系', title: '基金投资体系与资产配置', url: 'https://search.bilibili.com/all?keyword=基金投资体系+资产配置', platform: 'bilibili' },
-  { category: '投资体系', title: '从基金到股票的进阶路径', url: 'https://search.bilibili.com/all?keyword=基金进阶+股票投资', platform: 'bilibili' }
+  {
+    category: '基金入门',
+    title: '中国投资者网 · 基金投资者课堂',
+    url: 'https://www.investor.org.cn/xxzx/tzzkt/jj/',
+    platform: 'web',
+    desc: '中证中小投资者服务中心官方基金知识课堂，涵盖基金基础、风险提示与权益保护'
+  },
+  {
+    category: '基金入门',
+    title: '上海证券交易所 · 证券学院',
+    url: 'https://edu.sse.com.cn/college/required/basicinfo/',
+    platform: 'web',
+    desc: '上交所官方证券基础知识专题课程，含基金与衍生产品投资分析'
+  },
+  {
+    category: '指数基金',
+    title: '上海证券交易所 · 股市新手村',
+    url: 'https://edu.sse.com.cn/',
+    platform: 'web',
+    desc: '上交所面向新手的动画投教系列，含指数投资"躺赢"之路专题'
+  },
+  {
+    category: '指数基金',
+    title: '深圳证券交易所 · ETF专题',
+    url: 'https://investor.szse.cn/',
+    platform: 'web',
+    desc: '深交所投资者教育专区，ETF交易规则与产品逻辑详解'
+  },
+  {
+    category: '定投策略',
+    title: '中国证券投资基金业协会 · 投资者教育',
+    url: 'https://www.amac.org.cn/',
+    platform: 'web',
+    desc: '基金业协会官方投教园地，含基金定投基础知识与适当性管理'
+  },
+  {
+    category: '定投策略',
+    title: '北京基金小镇 · 投资者教育基地',
+    url: 'https://toujiao.beijingfundtown.com/',
+    platform: 'web',
+    desc: '证监会授牌国家级投教基地，基金入门、避坑指南与风险警示案例'
+  },
+  {
+    category: '主动基金',
+    title: '中国投资者网 · 基金风险揭示',
+    url: 'https://www.investor.org.cn/xxzx/tzzkt/jj/',
+    platform: 'web',
+    desc: '官方基金投资风险提示与投资者权益保护指南'
+  },
+  {
+    category: '主动基金',
+    title: '上海证券交易所 · 股票期权ABC',
+    url: 'http://edu.sse.com.cn/college/optional/option/option1/',
+    platform: 'web',
+    desc: '上交所期权入门动画课程，帮助理解衍生品与主动管理策略'
+  },
+  {
+    category: '资产配置',
+    title: '中国投资者网 · 学习中心',
+    url: 'https://www.investor.org.cn/xxzx/xxzx/',
+    platform: 'web',
+    desc: '投服中心系统化的投资者学习资源库，含资产配置基础课程'
+  },
+  {
+    category: '资产配置',
+    title: '上海证券交易所 · 投资者适当性管理',
+    url: 'https://edu.sse.com.cn/',
+    platform: 'web',
+    desc: '上交所官方适当性管理与投资者权益保护专题'
+  },
+  {
+    category: '进阶技巧',
+    title: '中国证监会 · 投资者保护局',
+    url: 'https://www.csrc.gov.cn/csrc/c100211/common_list.shtml',
+    platform: 'web',
+    desc: '证监会官方投资者保护系列制度规则与科普视频'
+  },
+  {
+    category: '进阶技巧',
+    title: '上海证券交易所 · 5·15投保宣传',
+    url: 'http://edu.sse.com.cn/theme/investors/publicity/',
+    platform: 'web',
+    desc: '上交所全国投资者保护宣传日专题，含理性投资与防非宣传'
+  },
+  {
+    category: '投资体系',
+    title: '中国投资者网 · 权益服务',
+    url: 'https://www.investor.org.cn/qyfw/qyfw/',
+    platform: 'web',
+    desc: '投服中心纠纷调解、维权支持与代表人诉讼服务指南'
+  },
+  {
+    category: '投资体系',
+    title: '上海证券交易所 · 投资者网络学院',
+    url: 'https://edu.sse.com.cn/',
+    platform: 'web',
+    desc: '上交所倾力打造的专业投教课程体系，近2000分钟视频课程'
+  }
 ];
 
 // ==================== Dual-path learning state ====================
@@ -2143,7 +2228,7 @@ function renderVideoSection() {
   const platformLabels = {
     bilibili: 'B站',
     qq: '腾讯课堂',
-    web: '网页'
+    web: '官方'
   };
   const platformIcons = {
     bilibili: '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>',
@@ -2185,11 +2270,11 @@ function renderVideoSection() {
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="${v.url}" target="_blank" rel="noopener" class="text-sm font-medium text-gray-800 hover:text-primary transition line-clamp-2">${v.title}</a>
+                      <p class="text-[11px] text-gray-400 mt-1 line-clamp-2">${v.desc || ''}</p>
                       <div class="flex items-center gap-2 mt-1.5">
                         <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] border ${platformColors[v.platform] || platformColors.web}">
                           ${platformLabels[v.platform] || '视频'}
                         </span>
-                        <a href="${fallbackSearchUrl(v)}" target="_blank" rel="noopener" class="text-[10px] text-gray-400 hover:text-gray-600 transition">失效搜索</a>
                       </div>
                     </div>
                   </div>
