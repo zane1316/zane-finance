@@ -1740,6 +1740,16 @@ const fundLearningData = [
             <p class="font-medium text-blue-800 mb-1">推荐新手组合</p>
             <p class="text-sm text-blue-700">沪深300ETF（核心）+ 中证500ETF（补充）+ 一只债券基金（稳健）。比例可以根据年龄调整：股票比例 = 100 - 你的年龄。</p>
           </div>
+          <div class="bg-green-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-green-800 mb-1">指数估值查询工具推荐</p>
+            <p class="text-sm text-green-700">日常查询指数估值，推荐以下免费工具：</p>
+            <ul class="list-disc list-inside mt-1 text-sm text-green-700 space-y-1">
+              <li><strong>理杏仁</strong>（www.lixinger.com）：数据最全面，PE/PB分位、股债性价比一目了然</li>
+              <li><strong>蛋卷基金</strong>（danjuan.com）：每日更新指数估值表，适合手机查看</li>
+              <li><strong>且慢</strong>（qieman.com）：提供每日估值红绿灯，直观判断高低估</li>
+              <li><strong>中证指数官网</strong>（www.csindex.com.cn）：官方数据源，权威可靠</li>
+            </ul>
+          </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 选择指数基金的四个标准是什么？</p><p>2. "100-年龄"法则是什么意思？</p></div></details>
         `,
       }
@@ -1781,6 +1791,22 @@ const fundLearningData = [
             <p class="font-medium text-yellow-800 mb-1">重要提醒</p>
             <p class="text-sm text-yellow-700">会买的是徒弟，会卖的是师傅。定投不止盈，收益可能归零。务必在开始前就设定好止盈目标。</p>
           </div>
+          <div class="bg-green-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-green-800 mb-1">定投收益计算示例</p>
+            <p class="text-sm text-green-700">假设每月定投1000元，年化收益8%，不同期限的结果：</p>
+            <div class="overflow-x-auto mt-2">
+              <table class="w-full text-sm border-collapse">
+                <thead><tr class="bg-green-100"><th class="text-left p-1.5">定投年限</th><th class="text-left p-1.5">累计投入</th><th class="text-left p-1.5">预计总资产</th><th class="text-left p-1.5">总收益</th></tr></thead>
+                <tbody>
+                  <tr class="border-b border-green-100"><td class="p-1.5">3年</td><td class="p-1.5">3.6万</td><td class="p-1.5">约4.0万</td><td class="p-1.5">+11%</td></tr>
+                  <tr class="border-b border-green-100"><td class="p-1.5">5年</td><td class="p-1.5">6.0万</td><td class="p-1.5">约7.4万</td><td class="p-1.5">+23%</td></tr>
+                  <tr class="border-b border-green-100"><td class="p-1.5">10年</td><td class="p-1.5">12.0万</td><td class="p-1.5">约18.3万</td><td class="p-1.5">+53%</td></tr>
+                  <tr><td class="p-1.5">20年</td><td class="p-1.5">24.0万</td><td class="p-1.5">约59.1万</td><td class="p-1.5">+146%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-xs text-green-600 mt-2">*以上为复利计算示例，实际收益受市场波动影响，不保证收益。</p>
+          </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 智能定投和普通定投的区别是什么？</p><p>2. 三种止盈策略分别适用于什么场景？</p></div></details>
         `,
       }
@@ -1801,6 +1827,17 @@ const fundLearningData = [
             <li><strong>夏普比率</strong>：衡量"每承担一单位风险，获得多少收益"。越高越好</li>
             <li><strong>规模</strong>：主动基金并非越大越好，50-200亿是较舒适的区间</li>
           </ul>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">基金经理调研报告怎么看？</p>
+            <p class="text-sm text-blue-700">基金季报/半年报/年报中隐藏着重要信息，重点关注：</p>
+            <ul class="list-disc list-inside mt-1 text-sm text-blue-700 space-y-1">
+              <li><strong>持仓集中度</strong>：前十大重仓股占比。集中度高（>60%）说明基金经理信心强，但波动也大</li>
+              <li><strong>持仓变动</strong>：新进和退出的股票，反映基金经理的最新判断</li>
+              <li><strong>基金经理观点</strong>："报告期内基金投资策略和运作分析"部分，通常在第一页</li>
+              <li><strong>机构持有比例</strong>：机构投资者占比高（>30%），说明专业资金认可</li>
+              <li><strong>员工持有比例</strong>：基金公司员工自购比例高，说明"内部人"看好</li>
+            </ul>
+          </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 挑选主动基金的五个维度是什么？</p><p>2. 为什么基金经理的从业年限很重要？</p></div></details>
         `,
       },
@@ -1847,6 +1884,17 @@ const fundLearningData = [
           <div class="bg-green-50 p-4 rounded-lg mb-3">
             <p class="font-medium text-green-800 mb-1">实操示例</p>
             <p class="text-sm text-green-700">假设目标比例：沪深300（40%）+ 中证500（20%）+ 债券（30%）+ 行业（10%）。半年后，股市大涨导致股票占比达到75%，此时应卖出部分股票、买入债券，使比例回归目标。</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">再平衡操作日历</p>
+            <p class="text-sm text-blue-700">建议将以下日期加入手机日历提醒：</p>
+            <ul class="list-disc list-inside mt-1 text-sm text-blue-700 space-y-1">
+              <li><strong>每年1月第一个周末</strong>：年度复盘，检查资产配置比例，调整股债配比</li>
+              <li><strong>每年4月底</strong>：基金年报披露完毕，评估基金经理是否更换、风格是否漂移</li>
+              <li><strong>每年7月第一个周末</strong>：半年度检查，微调核心-卫星比例</li>
+              <li><strong>每年10月底</strong>：三季度报披露后，检查行业主题基金是否仍符合投资逻辑</li>
+              <li><strong>每月定投日</strong>：记录定投金额、当前估值分位、市场情绪</li>
+            </ul>
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 核心-卫星策略的优势是什么？</p><p>2. 为什么要定期做再平衡？</p></div></details>
         `,
@@ -1909,6 +1957,18 @@ const fundLearningData = [
             <p class="font-medium text-blue-800 mb-1">计划模板</p>
             <p class="text-sm text-blue-700">投资目标：5年后买房首付（50万）\n每月定投：3000元\n资产配置：沪深300（40%）+ 中证500（20%）+ 债券（30%）+ 行业（10%）\n止盈目标：年化收益8-10%，达到后分批止盈\n复盘频率：每季度一次</p>
           </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">投资日记模板</p>
+            <p class="text-sm text-yellow-700">每次买入/卖出时记录以下内容，坚持写投资日记是提升投资水平最有效的方法：</p>
+            <ul class="list-disc list-inside mt-1 text-sm text-yellow-700 space-y-1">
+              <li><strong>日期与操作</strong>：买入/卖出、基金名称、金额/份额</li>
+              <li><strong>操作理由</strong>：为什么此时买入/卖出？符合策略吗？</li>
+              <li><strong>当前估值</strong>：目标指数的PE/PB分位是多少？</li>
+              <li><strong>市场情绪</strong>：身边人在谈股票吗？新基金发行火爆吗？</li>
+              <li><strong>心态记录</strong>：操作时紧张吗？贪婪还是恐惧？</li>
+              <li><strong>事后复盘</strong>：3个月后回看这次操作，判断正确吗？</li>
+            </ul>
+          </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 完整的基金投资计划包含哪六个要素？</p><p>2. 如何根据自己的目标确定投资期限？</p></div></details>
         `,
       },
@@ -1928,6 +1988,223 @@ const fundLearningData = [
             <p class="text-sm text-green-700">完成基金学院全部课程后，你已经具备了独立进行基金投资的能力。记住：投资是一辈子的事，保持学习、保持纪律、保持耐心。祝你在投资路上收获财富与成长！</p>
           </div>
           <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 从基金过渡到股票时，应该注意什么？</p><p>2. 为什么基金应该作为"压舱石"长期保留？</p></div></details>
+        `,
+      }
+    ]
+  },
+  {
+    level: 8, title: '基金买卖时机（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '什么时候该买入基金？',
+        content: `
+          <p class="mb-3"><strong>买得好不如买得巧。</strong>同样的基金，在不同时间点买入，收益可能相差数倍。掌握买入时机，是基金投资的核心技能之一。</p>
+          <p class="mb-3"><strong>一、估值低位信号（最可靠）</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>PE（市盈率）历史分位 &lt; 30%</strong>：指数被低估，安全边际高。例如沪深300的PE在10倍左右时，历史分位通常在20%以下，是较好的买入区间。</p>
+            <p><strong>PB（市净率）历史分位 &lt; 30%</strong>：适用于银行、地产等重资产行业指数。</p>
+            <p><strong>股债性价比（ERP）&gt; 5%</strong>：沪深300股息率减去10年期国债收益率。差值越大，说明股票相对于债券越便宜。</p>
+          </div>
+          <p class="mb-3"><strong>二、市场情绪信号（辅助判断）</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>新基金发行冰点</strong>：当股票型基金单月发行份额低于100亿份时，市场通常处于底部区域</li>
+            <li><strong>成交量萎缩</strong>：两市成交额持续低于6000亿，说明情绪极度低迷，往往是底部信号</li>
+            <li><strong>身边没人谈股票</strong>：当同事、朋友、亲戚都不关心股市时，往往是买入好时机</li>
+            <li><strong>北向资金连续流入</strong>：外资持续抄底，说明专业投资者看好当前估值</li>
+          </ul>
+          <p class="mb-3"><strong>三、定投启动的最佳时机</strong></p>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">最佳启动窗口</p>
+            <p class="text-sm text-blue-700">熊市中后期开始定投 > 震荡市开始 > 牛市开始。不要在牛市高点启动定投——同样的金额，高位买入的份额远少于低位。</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">新手误区</p>
+            <p class="text-sm text-yellow-700">很多人想"等跌到底再买"，试图精准抄底。事实是：底部是一个区域，不是一个点。估值处于低位时分批买入，比等待"最低点"更实际。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. PE历史分位低于多少时被认为是低估区域？</p><p>2. 为什么说"身边没人谈股票"是买入信号？</p><p>3. 为什么不建议在牛市高点启动定投？</p></div></details>
+        `,
+      },
+      {
+        title: '什么时候该卖出基金？',
+        content: `
+          <p class="mb-3"><strong>会买的是徒弟，会卖的是师傅。</strong>很多投资者买入时很谨慎，卖出时却很随意，导致收益大幅回吐甚至亏损。</p>
+          <p class="mb-3"><strong>一、估值高位信号（止盈核心依据）</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>PE/PB历史分位 &gt; 70%</strong>：指数进入高估区域，应考虑逐步减仓。若分位 &gt; 90%，属于极度高估，应大幅减仓甚至清仓。</p>
+            <p><strong>股债性价比（ERP）&lt; 2%</strong>：股票相对于债券的吸引力大幅下降，资金可能转向债券市场。</p>
+            <p><strong>新基金发行火爆</strong>：单月股票型基金发行超1000亿份，说明散户情绪狂热，往往是市场顶部信号。</p>
+          </div>
+          <p class="mb-3"><strong>二、三种止盈策略实操</strong></p>
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-gray-100"><th class="text-left p-2 rounded-tl-lg">策略</th><th class="text-left p-2">操作方法</th><th class="text-left p-2">适用场景</th><th class="text-left p-2 rounded-tr-lg">优缺点</th></tr></thead>
+              <tbody class="bg-white">
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">目标止盈法</td><td class="p-2">设定目标收益率（如20%），达到后卖出50%，剩余继续涨再卖</td><td class="p-2">震荡市、定投</td><td class="p-2">简单明确，但可能错过大牛市</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">回撤止盈法</td><td class="p-2">从最高点回撤10%时止盈，锁定利润</td><td class="p-2">牛市后期</td><td class="p-2">能吃到大部分涨幅，但10%回撤可能较大</td></tr>
+                <tr><td class="p-2 font-medium rounded-bl-lg">估值止盈法</td><td class="p-2">PE超过历史70%分位时逐步减仓，90%分位清仓</td><td class="p-2">指数基金</td><td class="p-2">最科学，但需要估值数据支持</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mb-3"><strong>三、必须卖出的情况（止损/调仓）</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>基金经理更换</strong>：特别是明星基金经理离职，新任经理风格可能完全不同</li>
+            <li><strong>基金规模暴增</strong>：主动基金规模从50亿突增至200亿以上，操作灵活性大幅下降</li>
+            <li><strong>风格漂移</strong>：原本的价值型基金开始大量买入成长股，说明基金经理在追热点</li>
+            <li><strong>急需大额资金</strong>：投资前提是有3-5年不用的闲钱，若突然需要买房、治病，必须卖出</li>
+            <li><strong>风险承受能力变化</strong>：如失业、退休、家庭变故，应降低权益仓位</li>
+          </ul>
+          <div class="bg-red-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-red-800 mb-1">血泪教训</p>
+            <p class="text-sm text-red-700">2021年初，沪深300的PE超过17倍（历史90%分位以上），新基金单月发行超3000亿份，市场一片狂热。当时止盈的投资者，躲过了随后3年的下跌。而当时"再涨一点就卖"的投资者，收益全部回吐。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 三种止盈策略分别适用于什么场景？</p><p>2. 基金规模暴增为什么需要警惕？</p><p>3. 2021年初的市场有哪些见顶信号？</p></div></details>
+        `,
+      }
+    ]
+  },
+  {
+    level: 9, title: '基金投资策略（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '四大经典基金策略',
+        content: `
+          <p class="mb-3">掌握了买卖时机，还需要系统的投资策略来指导操作。以下是经过市场验证的四大经典基金策略。</p>
+          <p class="mb-3"><strong>一、估值策略（推荐指数基金）</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>核心逻辑</strong>：低估时多买，高估时少买或不买，极度高估时卖出。</p>
+            <p><strong>操作方法</strong>：每月查看沪深300的PE分位。&lt;30%时定投金额的2倍；30%-70%时正常定投；&gt;70%时减半或暂停；&gt;90%时分批卖出。</p>
+            <p><strong>适合人群</strong>：有耐心、能长期坚持的投资者。估值策略在3-5年维度上效果显著，但短期可能失效。</p>
+          </div>
+          <p class="mb-3"><strong>二、趋势策略（适合有一定经验的投资者）</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>核心逻辑</strong>：上涨趋势中持有，下跌趋势中空仓或减仓。</p>
+            <p><strong>判断方法</strong>：沪深300指数在20日均线之上 = 多头趋势，继续持有；跌破20日均线 = 趋势转弱，减仓；跌破60日均线 = 趋势走坏，大幅减仓。</p>
+            <p><strong>注意事项</strong>：趋势策略在震荡市会反复打脸（刚卖出就反弹），建议结合估值策略使用。</p>
+          </div>
+          <p class="mb-3"><strong>三、股债平衡策略（适合稳健型投资者）</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>核心逻辑</strong>：根据市场估值动态调整股票基金和债券基金的比例。</p>
+            <p><strong>操作方法</strong>：用"股债性价比"判断。ERP &gt; 5%时，股票仓位80%、债券20%；ERP 3%-5%时，股债各50%；ERP &lt; 3%时，股票20%、债券80%。每季度调整一次。</p>
+            <p><strong>优势</strong>：自动实现"低买高卖"，无需预测市场方向。</p>
+          </div>
+          <p class="mb-3"><strong>四、行业轮动策略（进阶，风险较高）</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>核心逻辑</strong>：不同行业在经济周期的不同阶段表现不同。配置当前强势行业，避开弱势行业。</p>
+            <p><strong>跟踪指标</strong>：北向资金行业流向、主力资金行业净流入、行业指数20日涨幅排名。</p>
+            <p><strong>风险提示</strong>：行业轮动策略对时效性要求高，普通投资者建议通过"行业主题基金"小仓位（&lt;20%）参与，不要全仓押注单一行业。</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">策略选择建议</p>
+            <p class="text-sm text-blue-700">新手建议：估值策略 + 股债平衡。有2年以上经验：可加入趋势策略。3年以上且风险承受能力高：可小仓位尝试行业轮动。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 估值策略在不同PE分位应如何调整定投金额？</p><p>2. 股债平衡策略的核心优势是什么？</p><p>3. 为什么不建议新手全仓押注单一行业？</p></div></details>
+        `,
+      },
+      {
+        title: '策略验证与常见陷阱',
+        content: `
+          <p class="mb-3"><strong>任何策略在投入实盘前，都需要验证。</strong>不要轻信"这个策略很赚钱"的说法，要用数据说话。</p>
+          <p class="mb-3"><strong>一、如何验证一个策略是否有效</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>步骤1：回测历史数据</strong>：至少看3-5年数据，最好包含一轮完整的牛熊周期（如2019-2024年）。可以在理杏仁、蛋卷基金等网站查看历史估值和收益率。</p>
+            <p><strong>步骤2：看最大回撤</strong>：策略在历史最大熊市中跌了多少？你能接受这个跌幅吗？</p>
+            <p><strong>步骤3：看胜率</strong>：策略在多少月份/季度是盈利的？胜率低于50%的策略，执行起来心理压力很大。</p>
+            <p><strong>步骤4：小额实盘验证</strong>：回测通过后，先用不超过总资产10%的资金实盘运行6个月，确认能严格执行再加大投入。</p>
+          </div>
+          <p class="mb-3"><strong>二、策略失效的常见场景</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>小盘因子失效</strong>：2017年以前小盘股长期跑赢大盘，但2017年后大盘股持续占优，坚持小盘策略的投资者损失惨重</li>
+            <li><strong>低估值陷阱</strong>：银行、地产PE长期很低，但股价就是不涨，因为行业基本面在恶化</li>
+            <li><strong>趋势策略在震荡市反复打脸</strong>：2022-2023年市场反复震荡，趋势策略可能连续多次"卖出就涨、买入就跌"</li>
+            <li><strong>行业轮动的滞后性</strong>：等你看到某个行业涨了很多再追进去，往往已经晚了</li>
+          </ul>
+          <p class="mb-3"><strong>三、策略执行的纪律</strong></p>
+          <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-yellow-800 mb-1">最关键的一条</p>
+            <p class="text-sm text-yellow-700">策略在回测中有效，但在实盘中失效，90%的原因是"没有严格执行"。看到市场大涨就追高、看到大跌就割肉，再好的策略也会被破坏。建议在投资前写下你的策略规则，贴在显眼处，每次操作前对照检查。</p>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-green-800 mb-1">实操检查清单</p>
+            <p class="text-sm text-green-700">每次买入前问自己：① 这次买入符合我的策略吗？② 如果明天跌10%，我能接受吗？③ 这笔资金3年内不会用到吗？三个答案都是"是"，再下单。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 验证策略需要看至少多少年的历史数据？</p><p>2. 什么是"低估值陷阱"？举例说明。</p><p>3. 为什么策略在回测中有效，实盘却失效？</p></div></details>
+        `,
+      }
+    ]
+  },
+  {
+    level: 10, title: '走势分析实战（2天）', duration: '2天',
+    lessons: [
+      {
+        title: '看懂基金净值曲线',
+        content: `
+          <p class="mb-3">基金净值曲线不只是"涨了多少"的可视化，里面隐藏着基金经理的投资风格、风险特征和策略逻辑。</p>
+          <p class="mb-3"><strong>一、三种净值的区别</strong></p>
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-gray-100"><th class="text-left p-2 rounded-tl-lg">净值类型</th><th class="text-left p-2">含义</th><th class="text-left p-2 rounded-tr-lg">用途</th></tr></thead>
+              <tbody class="bg-white">
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">单位净值</td><td class="p-2">每份基金的当前价值</td><td class="p-2">计算持有份额</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">累计净值</td><td class="p-2">单位净值 + 历史分红</td><td class="p-2">看基金真实业绩</td></tr>
+                <tr><td class="p-2 font-medium rounded-bl-lg">复权净值</td><td class="p-2">考虑分红再投资的累计收益</td><td class="p-2">最准确的业绩比较基准</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mb-3"><strong>二、从净值曲线识别投资风格</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>价值风格</strong>：净值曲线相对平滑，熊市跌得少，牛市涨得也慢。典型如深度价值型基金。</p>
+            <p><strong>成长风格</strong>：净值波动大，牛市涨幅惊人，熊市跌幅也大。典型如科技、医药主题基金。</p>
+            <p><strong>均衡风格</strong>：介于价值和成长之间，长期曲线最稳健，适合大多数人持有。</p>
+            <p><strong>量化风格</strong>：净值曲线可能出现与大盘背离的走势，因为量化策略与市场主流逻辑不同。</p>
+          </div>
+          <p class="mb-3"><strong>三、关键指标解读</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>年化收益率</strong>：看3年、5年、10年，不要只看最近1年。1年业绩好可能是运气，5年业绩好才是实力</li>
+            <li><strong>最大回撤</strong>：历史上最多跌了多少。回撤30%的基金，你需要涨43%才能回本。你能接受多大回撤？</li>
+            <li><strong>夏普比率</strong>：每承担一单位风险，获得多少收益。&gt;1算优秀，&gt;1.5非常优秀</li>
+            <li><strong>卡玛比率</strong>：年化收益 / 最大回撤。&gt;2说明基金经理风控能力很强</li>
+          </ul>
+          <div class="bg-blue-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-blue-800 mb-1">实战练习</p>
+            <p class="text-sm text-blue-700">打开天天基金网，搜索一只你感兴趣的基金。查看其近5年净值曲线：最大回撤发生在什么时候？当时的市场环境如何？基金经理是如何控制回撤的？</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 为什么看基金业绩要看5年而不是1年？</p><p>2. 最大回撤30%需要涨多少才能回本？</p><p>3. 夏普比率和卡玛比率分别衡量什么？</p></div></details>
+        `,
+      },
+      {
+        title: '宏观经济与基金投资',
+        content: `
+          <p class="mb-3">宏观经济是影响所有基金的"大气候"。理解经济周期和政策方向，能帮助你在大方向上做出正确决策。</p>
+          <p class="mb-3"><strong>一、货币政策对基金的影响</strong></p>
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-gray-100"><th class="text-left p-2 rounded-tl-lg">政策方向</th><th class="text-left p-2">对股市影响</th><th class="text-left p-2">对债券影响</th><th class="text-left p-2 rounded-tr-lg">基金操作</th></tr></thead>
+              <tbody class="bg-white">
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">降息周期</td><td class="p-2 text-up">利好</td><td class="p-2 text-up">利好</td><td class="p-2">增配股票和债券基金</td></tr>
+                <tr class="border-b border-gray-100"><td class="p-2 font-medium">加息周期</td><td class="p-2 text-down">利空</td><td class="p-2 text-down">利空</td><td class="p-2">减仓权益，增配货币基金</td></tr>
+                <tr><td class="p-2 font-medium rounded-bl-lg">降准</td><td class="p-2 text-up">利好</td><td class="p-2 text-up">利好</td><td class="p-2">短期利好，中期看经济基本面</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mb-3"><strong>二、经济周期与基金配置（美林时钟简版）</strong></p>
+          <div class="bg-gray-50 p-4 rounded-lg mb-3 space-y-2 text-sm">
+            <p><strong>复苏期</strong>（经济↑，通胀↓）：股票基金表现最好，特别是周期型行业（金融、地产、基建）</p>
+            <p><strong>过热期</strong>（经济↑，通胀↑）：大宗商品相关基金表现突出，股票基金仍有表现但波动加大</p>
+            <p><strong>滞胀期</strong>（经济↓，通胀↑）：现金为王，货币基金和短债基金最安全</p>
+            <p><strong>衰退期</strong>（经济↓，通胀↓）：债券基金表现最好，股票基金继续承压</p>
+          </div>
+          <p class="mb-3"><strong>三、如何利用资讯页跟踪宏观信号</strong></p>
+          <ul class="list-disc list-inside mb-3 space-y-1">
+            <li><strong>央行公开市场操作</strong>：每日逆回购、MLF投放量，反映流动性松紧</li>
+            <li><strong>北向资金流向</strong>：连续大幅流入 = 外资看好A股；连续流出 = 警惕风险</li>
+            <li><strong>板块涨跌幅排名</strong>：领涨板块反映当前市场主线（如科技、消费、周期）</li>
+            <li><strong>10年期国债收益率</strong>：上升 = 利空股市；下降 = 利好股市</li>
+          </ul>
+          <div class="bg-green-50 p-4 rounded-lg mb-3">
+            <p class="font-medium text-green-800 mb-1">恭喜你完成全部课程！</p>
+            <p class="text-sm text-green-700">从基金入门到投资体系建立，从买卖时机到宏观分析，你已经掌握了系统的基金投资知识。记住：知识只是第一步，实践和纪律才是盈利的关键。建议先用模拟盘或小资金验证所学，逐步建立属于自己的投资体系。</p>
+          </div>
+          <details class="bg-gray-50 rounded-lg p-3 mt-3"><summary class="font-medium cursor-pointer">自测题</summary><div class="mt-2 text-sm space-y-2"><p>1. 降息周期对股票基金和债券基金分别有什么影响？</p><p>2. 经济衰退期应该配置什么类型的基金？</p><p>3. 10年期国债收益率上升对股市意味着什么？</p></div></details>
         `,
       }
     ]
@@ -2037,6 +2314,171 @@ const learningVideos = [
   }
 ];
 
+// ==================== Stock Picking Statement Library ====================
+// Curated from iWencai SkillHub - classic stock screening statements
+const stockPickingStatements = [
+  {
+    category: '技术指标选股',
+    title: 'MACD金叉选股',
+    statement: 'MACD金叉，DIFF上穿DEA，收盘价大于20日均线',
+    logic: 'MACD金叉代表短期动能转强，配合股价站上20日均线确认中期趋势向上，过滤掉弱势反弹',
+    difficulty: '入门',
+    source: '问财SkillHub'
+  },
+  {
+    category: '技术指标选股',
+    title: '均线多头排列',
+    statement: '5日均线大于10日均线，10日均线大于20日均线，20日均线大于60日均线',
+    logic: '短期、中期、长期均线依次向上排列，说明股价处于稳健的上升趋势中，各周期资金共识向上',
+    difficulty: '入门',
+    source: '问财SkillHub'
+  },
+  {
+    category: '技术指标选股',
+    title: 'KDJ低位金叉',
+    statement: 'KDJ金叉，K值小于30，D值小于30，换手率大于3%',
+    logic: 'K值和D值均低于30处于超卖区，此时金叉说明短期反弹概率大，换手率大于3%确保有资金关注',
+    difficulty: '入门',
+    source: '问财SkillHub'
+  },
+  {
+    category: '技术指标选股',
+    title: 'BOLL通道突破',
+    statement: '股价突破布林带上轨，成交量大于昨日2倍，MACD红柱',
+    logic: '突破布林带上轨说明股价脱离常态波动区间，成交量放大确认突破有效性，MACD红柱配合趋势',
+    difficulty: '进阶',
+    source: '问财SkillHub'
+  },
+  {
+    category: '技术指标选股',
+    title: '量价齐升',
+    statement: '今日涨幅大于5%，成交量大于5日均量2倍，换手率大于5%',
+    logic: '大涨配合明显放量，说明资金大量涌入。换手率大于5%排除庄股，确保流动性充足',
+    difficulty: '入门',
+    source: '问财SkillHub'
+  },
+  {
+    category: '财务指标选股',
+    title: '高ROE白马股',
+    statement: 'ROE大于15%，市盈率小于30，营业收入增长率大于10%，净利润增长率大于10%',
+    logic: 'ROE>15%代表公司盈利能力强，PE<30确保估值合理，营收和利润双增长确认基本面健康',
+    difficulty: '入门',
+    source: '问财SkillHub'
+  },
+  {
+    category: '财务指标选股',
+    title: '低估值高股息',
+    statement: '市盈率小于15，市净率小于2，股息率大于3%，连续分红年限大于5年',
+    logic: 'PE和PB双低代表安全边际高，股息率>3%提供现金流回报，连续分红证明盈利稳定',
+    difficulty: '入门',
+    source: '问财SkillHub'
+  },
+  {
+    category: '财务指标选股',
+    title: '业绩超预期',
+    statement: '净利润增长率大于30%，营业收入增长率大于20%，毛利率大于40%，资产负债率小于60%',
+    logic: '高增长、高毛利、低负债，代表公司处于高速成长期且财务风险可控，典型的成长股特征',
+    difficulty: '进阶',
+    source: '问财SkillHub'
+  },
+  {
+    category: '财务指标选股',
+    title: '彼得林奇PEG策略',
+    statement: '市盈率小于30，净利润增长率大于15%，PEG小于1，流通市值小于500亿',
+    logic: 'PEG=PE/净利润增长率，小于1代表估值相对于增速被低估。小市值有更大的成长空间',
+    difficulty: '进阶',
+    source: '彼得林奇选股法'
+  },
+  {
+    category: '价格形态选股',
+    title: '平台突破',
+    statement: '近20日最高价等于近60日最高价，今日收盘价突破近20日最高价，成交量大于5日均量',
+    logic: '股价在高位横盘整理后向上突破，说明消化了套牢盘和获利盘，新一轮上涨启动',
+    difficulty: '进阶',
+    source: '问财SkillHub'
+  },
+  {
+    category: '价格形态选股',
+    title: '涨停启动',
+    statement: '涨停，非ST，流通市值小于100亿，连续涨停天数等于1，涨停封单额大于1000万',
+    logic: '首板涨停且封单坚决，说明主力态度坚决。小市值弹性大，非ST排除问题股',
+    difficulty: '进阶',
+    source: '问财SkillHub'
+  },
+  {
+    category: '价格形态选股',
+    title: '黄金坑',
+    statement: '近20日跌幅大于15%，近5日出现长下影线，今日阳线，成交量萎缩后放大',
+    logic: '快速下跌后出现长下影线，说明有资金在低位承接，随后阳线确认短期底部形成',
+    difficulty: '高级',
+    source: '问财SkillHub'
+  },
+  {
+    category: '资金流向选股',
+    title: '主力净流入',
+    statement: '主力净流入额排名前50，主力净流入占比大于5%，换手率大于3%',
+    logic: '主力资金大幅流入且占比高，说明机构在主动建仓。配合换手率排除无量空涨',
+    difficulty: '入门',
+    source: '问财SkillHub'
+  },
+  {
+    category: '资金流向选股',
+    title: '北向资金增持',
+    statement: '近5日北向资金增持比例大于0.5%，市盈率小于50，市值大于100亿',
+    logic: '外资持续增持说明对公司基本面认可，大市值+合理估值降低踩雷风险',
+    difficulty: '入门',
+    source: '问财SkillHub'
+  },
+  {
+    category: '资金流向选股',
+    title: '龙虎榜机构买入',
+    statement: '今日龙虎榜，机构专用席位买入额大于卖出额，机构买入占比大于20%',
+    logic: '机构专用席位净买入说明公募基金或保险资金在布局，通常对基本面有深入研究',
+    difficulty: '进阶',
+    source: '问财SkillHub'
+  },
+  {
+    category: '热点题材选股',
+    title: '板块龙头',
+    statement: '所属概念板块近5日涨幅排名前10，个股近5日涨幅大于20%，市值排名前3',
+    logic: '热点板块中涨幅领先、市值最大的龙头股，通常资金关注度高，持续性相对较好',
+    difficulty: '进阶',
+    source: '问财SkillHub'
+  },
+  {
+    category: '热点题材选股',
+    title: '强势股回调',
+    statement: '近20日涨幅大于30%，近3日跌幅大于10%，成交量萎缩至5日均量70%以下',
+    logic: '强势股短期获利回吐后缩量回调，若基本面未变，可能是二次上车机会',
+    difficulty: '高级',
+    source: '问财SkillHub'
+  },
+  {
+    category: '综合策略选股',
+    title: '巴菲特价值股',
+    statement: 'ROE大于15%，毛利率大于30%，净利率大于15%，资产负债率小于50%，自由现金流大于0',
+    logic: '高盈利能力、高利润率、低负债、正现金流，符合巴菲特"护城河"企业特征',
+    difficulty: '进阶',
+    source: '巴菲特选股法'
+  },
+  {
+    category: '综合策略选股',
+    title: '困境反转',
+    statement: '去年净利润增长率小于-20%，今年净利润增长率大于50%，营业收入增长率大于20%，PE小于40',
+    logic: '业绩从低谷大幅反弹，说明公司基本面发生积极变化，市场可能尚未充分定价',
+    difficulty: '高级',
+    source: '问财SkillHub'
+  },
+  {
+    category: '综合策略选股',
+    title: '小盘成长股',
+    statement: '流通市值小于200亿，净利润增长率大于25%，营业收入增长率大于25%，PEG小于1.5，研发费用占比大于5%',
+    logic: '小市值+高增长+研发投入高，典型的高成长中小企业特征，潜在收益高但风险也大',
+    difficulty: '高级',
+    source: '问财SkillHub'
+  }
+];
+
 // ==================== Dual-path learning state ====================
 let currentLearningPath = 'stock';
 let learningProgressV2 = { version: 2, stock: {}, fund: {}, lastVisited: { stock: { level: 1 }, fund: { level: 1 } } };
@@ -2099,6 +2541,11 @@ function switchLearningPath(path) {
   const videoContainer = document.getElementById('learning-video-section');
   if (videoContainer) {
     videoContainer.innerHTML = renderVideoSection();
+  }
+  // Render stock picking library (stock path only)
+  const pickingContainer = document.getElementById('stock-picking-section');
+  if (pickingContainer) {
+    pickingContainer.innerHTML = currentLearningPath === 'stock' ? renderStockPickingLibrary() : '';
   }
 }
 
@@ -2286,6 +2733,66 @@ function renderVideoSection() {
       </div>
     </div>
   `;
+}
+
+function renderStockPickingLibrary() {
+  const difficultyColors = {
+    '入门': 'bg-green-50 text-green-700 border-green-200',
+    '进阶': 'bg-amber-50 text-amber-700 border-amber-200',
+    '高级': 'bg-red-50 text-red-700 border-red-200'
+  };
+  const groups = {};
+  stockPickingStatements.forEach(s => {
+    if (!groups[s.category]) groups[s.category] = [];
+    groups[s.category].push(s);
+  });
+  const categories = Object.keys(groups);
+  return `
+    <div class="mt-8 bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold flex items-center gap-2">
+          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+          选股语句库
+        </h3>
+        <span class="text-xs text-gray-500">源自同花顺问财SkillHub · ${stockPickingStatements.length}条经典语句</span>
+      </div>
+      <p class="text-sm text-gray-600 mb-4">
+        以下选股语句可在<a href="https://www.iwencai.com/unifiedwap/home" target="_blank" rel="noopener" class="text-primary hover:underline">同花顺问财</a>中直接输入使用。
+        每条语句包含选股逻辑说明，建议新手从"入门"级别开始练习。
+      </p>
+      <div class="space-y-3">
+        ${categories.map(cat => `
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button onclick="togglePickingCategory(this)" class="w-full flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <span class="font-medium text-sm">${cat}</span>
+              <span class="text-xs text-gray-500">${groups[cat].length}条</span>
+            </button>
+            <div class="hidden p-3 space-y-3 bg-white">
+              ${groups[cat].map(s => `
+                <div class="border border-gray-100 rounded-lg p-3">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-medium text-sm">${s.title}</span>
+                    <span class="text-xs px-2 py-0.5 rounded border ${difficultyColors[s.difficulty]}">${s.difficulty}</span>
+                  </div>
+                  <div class="bg-gray-50 rounded-md p-2 mb-2">
+                    <code class="text-sm text-primary font-mono select-all">${s.statement}</code>
+                  </div>
+                  <p class="text-xs text-gray-600 mb-1"><strong>逻辑：</strong>${s.logic}</p>
+                  <p class="text-[10px] text-gray-400">来源：${s.source}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function togglePickingCategory(btn) {
+  const panel = btn.nextElementSibling;
+  if (!panel) return;
+  panel.classList.toggle('hidden');
 }
 
 function toggleVideoCategory(btn) {
