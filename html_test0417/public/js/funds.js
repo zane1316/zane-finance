@@ -225,7 +225,7 @@ function renderFundCards() {
       ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-100 text-amber-600 ml-1">精选</span>`
       : '';
     return `
-      <div class="card-gradient p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 stagger-card relative" style="animation-delay:${(i%8)*0.05}s">
+      <div onclick="showFundDetail('${f.code}')" class="card-gradient p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 stagger-card relative cursor-pointer" style="animation-delay:${(i%8)*0.05}s">
         <div class="absolute top-3 right-3">${starBtn}</div>
         <div class="flex items-start justify-between mb-3 pr-6">
           <div class="min-w-0">
@@ -405,3 +405,451 @@ function stopFundRefresh() {
     fundRefreshInterval = null;
   }
 }
+
+// ========== Fund Detail Modal ==========
+let currentFundDetailCode = null;
+let currentFundDetailTab = 'chart';
+let fundDetailHistoryCache = {};
+
+function showFundDetail(code) {
+  currentFundDetailCode = code;
+  currentFundDetailTab = 'chart';
+  const modal = document.getElementById('fund-detail-modal');
+  if (!modal) return;
+
+  // Resolve fund info
+  let fund = null;
+  if (typeof allFundsFullCache !== 'undefined' && allFundsFullCache) {
+    fund = allFundsFullCache.find(f => f.code === code);
+  }
+  if (!fund && typeof allFunds !== 'undefined' && Array.isArray(allFunds)) {
+    fund = allFunds.find(f => f.code === code);
+  }
+  if (!fund) {
+    fund = curatedFunds.find(f => f.code === code);
+  }
+  if (!fund) return;
+
+  document.getElementById('fund-detail-name').textContent = fund.name;
+  document.getElementById('fund-detail-code').textContent = fund.code + (fund.shareClass && fund.shareClass !== '无' ? '  |  ' + fund.shareClass + '类份额' : '');
+
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+
+  renderFundDetailTab();
+}
+
+function closeFundDetail() {
+  const modal = document.getElementById('fund-detail-modal');
+  if (modal) modal.classList.add('hidden');
+  document.body.style.overflow = '';
+  currentFundDetailCode = null;
+}
+
+function switchFundDetailTab(tab) {
+  currentFundDetailTab = tab;
+  ['chart', 'info', 'dca'].forEach(t => {
+    const btn = document.getElementById('fund-tab-' + t);
+    if (btn) {
+      if (t === tab) {
+        btn.className = 'px-4 py-3 text-sm font-medium border-b-2 border-primary text-primary';
+      } else {
+        btn.className = 'px-4 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700';
+      }
+    }
+  });
+  renderFundDetailTab();
+}
+
+function renderFundDetailTab() {
+  const container = document.getElementById('fund-detail-content');
+  if (!container || !currentFundDetailCode) return;
+  if (currentFundDetailTab === 'chart') {
+    renderFundDetailChartTab(container);
+  } else if (currentFundDetailTab === 'info') {
+    renderFundDetailInfoTab(container);
+  } else if (currentFundDetailTab === 'dca') {
+    renderFundDetailDCATab(container);
+  }
+}
+
+function renderFundDetailChartTab(container) {
+  container.innerHTML = `
+    <div class="mb-4 flex items-center justify-between">
+      <div class="flex gap-2">
+        <button onclick="loadFundHistoryMonths(3)" class="px-3 py-1 text-xs rounded-lg border border-gray-200 hover:border-primary hover:text-primary transition">近3月</button>
+        <button onclick="loadFundHistoryMonths(6)" class="px-3 py-1 text-xs rounded-lg border border-primary text-primary bg-blue-50">近6月</button>
+        <button onclick="loadFundHistoryMonths(12)" class="px-3 py-1 text-xs rounded-lg border border-gray-200 hover:border-primary hover:text-primary transition">近1年</button>
+        <button onclick="loadFundHistoryMonths(36)" class="px-3 py-1 text-xs rounded-lg border border-gray-200 hover:border-primary hover:text-primary transition">近3年</button>
+      </div>
+    </div>
+    <div id="fund-detail-chart" class="w-full h-[360px] rounded-xl bg-gray-50"></div>
+    <div id="fund-detail-chart-loading" class="text-center py-12 text-gray-400">
+      <p class="text-sm">正在加载历史净值数据...</p>
+    </div>
+  `;
+  loadFundHistoryMonths(6);
+}
+
+function loadFundHistoryMonths(months) {
+  const chartContainer = document.getElementById('fund-detail-chart');
+  const loadingEl = document.getElementById('fund-detail-chart-loading');
+  if (!currentFundDetailCode) return;
+
+  // Highlight active button
+  const btns = chartContainer?.parentElement?.querySelectorAll('button');
+  btns?.forEach(b => {
+    const m = parseInt(b.textContent.replace(/[^0-9]/g, '') || 6);
+    if (m === months) {
+      b.className = 'px-3 py-1 text-xs rounded-lg border border-primary text-primary bg-blue-50';
+    } else {
+      b.className = 'px-3 py-1 text-xs rounded-lg border border-gray-200 hover:border-primary hover:text-primary transition';
+    }
+  });
+
+  if (loadingEl) loadingEl.style.display = 'block';
+
+  fetchFundHistory(currentFundDetailCode, months).then(data => {
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (!data || data.length === 0) {
+      if (chartContainer) chartContainer.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">暂无历史净值数据</div>';
+      return;
+    }
+    renderFundChart('fund-detail-chart', data);
+  }).catch(err => {
+    console.warn('Failed to load fund history:', err);
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (chartContainer) chartContainer.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">加载失败，请稍后重试</div>';
+  });
+}
+
+function fetchFundHistory(code, months) {
+  const cacheKey = code + '_' + months;
+  if (fundDetailHistoryCache[cacheKey]) return Promise.resolve(fundDetailHistoryCache[cacheKey]);
+
+  const rawCode = code.replace(/^(of|sh|sz|bj)/, '');
+  const per = Math.min(months * 22, 500); // roughly 22 trading days per month
+  const url = `https://fundf10.eastmoney.com/F10DataApi.aspx?type=lsjz&code=${rawCode}&page=1&per=${per}`;
+
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    const callbackName = 'fundHist_' + rawCode + '_' + Date.now();
+    window[callbackName] = function (result) {
+      document.head.removeChild(script);
+      delete window[callbackName];
+      try {
+        const data = parseFundHistory(result);
+        fundDetailHistoryCache[cacheKey] = data;
+        resolve(data);
+      } catch (e) {
+        reject(e);
+      }
+    };
+    script.src = url + '&callback=' + callbackName;
+    script.onerror = () => {
+      document.head.removeChild(script);
+      delete window[callbackName];
+      reject(new Error('Script load error'));
+    };
+    document.head.appendChild(script);
+
+    // Fallback: some Eastmoney APIs ignore callback, use timeout with direct fetch
+    setTimeout(() => {
+      if (window[callbackName]) {
+        // Try direct fetch as fallback
+        fetch(url).then(r => r.text()).then(text => {
+          try {
+            const data = parseFundHistory(text);
+            fundDetailHistoryCache[cacheKey] = data;
+            resolve(data);
+          } catch (e) {
+            // If callback hasn't fired either, reject
+          }
+        }).catch(() => {});
+      }
+    }, 3000);
+
+    // Hard timeout
+    setTimeout(() => {
+      if (window[callbackName]) {
+        delete window[callbackName];
+        if (document.head.contains(script)) document.head.removeChild(script);
+        reject(new Error('Timeout'));
+      }
+    }, 8000);
+  });
+}
+
+function parseFundHistory(raw) {
+  // Eastmoney returns: var apidata={ content:"...", records:123, pages:1, curpage:1 };
+  // content is HTML table rows
+  if (!raw) return [];
+  let text = raw;
+  if (typeof raw === 'object' && raw.content) {
+    text = raw.content;
+  }
+  // Extract table rows
+  const rows = [];
+  const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+  let match;
+  while ((match = rowRegex.exec(text)) !== null) {
+    const rowText = match[1];
+    const cells = [];
+    const cellRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+    let cellMatch;
+    while ((cellMatch = cellRegex.exec(rowText)) !== null) {
+      cells.push(cellMatch[1].replace(/<[^>]+>/g, '').trim());
+    }
+    if (cells.length >= 2) {
+      // cells: [date, nav, accum_nav, dailyChange]
+      const date = cells[0];
+      const nav = parseFloat(cells[1]);
+      if (date && !isNaN(nav)) {
+        rows.push({ time: date, value: nav });
+      }
+    }
+  }
+  // Sort by date ascending
+  return rows.reverse();
+}
+
+function renderFundChart(containerId, data) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = '';
+
+  const chart = window.LightweightCharts.createChart(el, {
+    width: el.clientWidth,
+    height: 360,
+    layout: { background: { color: '#f8fafc' }, textColor: '#374151' },
+    grid: { vertLines: { color: '#e2e8f0' }, horizLines: { color: '#e2e8f0' } },
+    rightPriceScale: { borderColor: '#e2e8f0' },
+    timeScale: { borderColor: '#e2e8f0', timeVisible: false },
+    crosshair: { mode: 1 },
+    handleScroll: { vertTouchDrag: false }
+  });
+
+  const lineColor = data[data.length - 1].value >= data[0].value ? '#DC2626' : '#16A34A';
+  const areaColor = data[data.length - 1].value >= data[0].value ? 'rgba(220, 38, 38, 0.1)' : 'rgba(22, 163, 74, 0.1)';
+
+  const series = chart.addSeries(window.LightweightCharts.AreaSeries, {
+    lineColor: lineColor,
+    topColor: areaColor,
+    bottomColor: 'rgba(255,255,255,0)',
+    lineWidth: 2,
+    lastValueVisible: true,
+    priceLineVisible: false
+  });
+
+  series.setData(data.map(d => ({ time: d.time, value: d.value })));
+  chart.timeScale().fitContent();
+
+  // Resize handler
+  const resizeHandler = () => {
+    chart.applyOptions({ width: el.clientWidth });
+  };
+  window.addEventListener('resize', resizeHandler);
+  // Store cleanup on el
+  el._chartCleanup = () => window.removeEventListener('resize', resizeHandler);
+}
+
+function renderFundDetailInfoTab(container) {
+  let fund = null;
+  if (allFundsFullCache) fund = allFundsFullCache.find(f => f.code === currentFundDetailCode);
+  if (!fund && typeof allFunds !== 'undefined' && Array.isArray(allFunds)) {
+    fund = allFunds.find(f => f.code === currentFundDetailCode);
+  }
+  if (!fund) fund = curatedFunds.find(f => f.code === currentFundDetailCode);
+
+  const q = fundQuoteCache[currentFundDetailCode];
+  const price = q ? formatNumber(q.price, 4) : '--';
+  const change = q ? q.changePercent : null;
+  const changeStr = change !== null ? (change >= 0 ? '+' : '') + formatNumber(change, 2) + '%' : '--';
+  const changeClass = change !== null ? (change >= 0 ? 'text-up' : 'text-down') : 'text-gray-400';
+
+  container.innerHTML = `
+    <div class="space-y-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-gray-50 rounded-xl p-4 text-center">
+          <p class="text-xs text-gray-400 mb-1">最新净值</p>
+          <p class="text-xl font-bold ${changeClass}">${price}</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4 text-center">
+          <p class="text-xs text-gray-400 mb-1">日涨跌</p>
+          <p class="text-xl font-bold ${changeClass}">${changeStr}</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4 text-center">
+          <p class="text-xs text-gray-400 mb-1">基金类型</p>
+          <p class="text-sm font-bold text-gray-700">${fund?.category || '--'}</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4 text-center">
+          <p class="text-xs text-gray-400 mb-1">份额类型</p>
+          <p class="text-sm font-bold text-gray-700">${fund?.shareClass && fund.shareClass !== '无' ? fund.shareClass + '类' : '普通'}</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 rounded-xl p-4">
+          <p class="text-xs text-gray-400 mb-1">基金经理</p>
+          <p class="text-sm font-bold text-gray-700">${fund?.manager || '--'}</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4">
+          <p class="text-xs text-gray-400 mb-1">成立日期</p>
+          <p class="text-sm font-bold text-gray-700">${fund?.since || '--'}</p>
+        </div>
+      </div>
+      <div class="flex justify-center pt-2">
+        <a href="https://fundf10.eastmoney.com/jbgk_${(currentFundDetailCode || '').replace(/^(of|sh|sz|bj)/, '')}.html" target="_blank"
+          class="text-sm text-primary hover:underline flex items-center gap-1"
+        >
+          查看天天基金完整信息 →
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+function renderFundDetailDCATab(container) {
+  let fund = null;
+  if (allFundsFullCache) fund = allFundsFullCache.find(f => f.code === currentFundDetailCode);
+  if (!fund && typeof allFunds !== 'undefined' && Array.isArray(allFunds)) {
+    fund = allFunds.find(f => f.code === currentFundDetailCode);
+  }
+  if (!fund) fund = curatedFunds.find(f => f.code === currentFundDetailCode);
+  const q = fundQuoteCache[currentFundDetailCode];
+  const currentNav = q ? q.price : null;
+
+  container.innerHTML = `
+    <div class="space-y-5">
+      <div class="bg-blue-50 rounded-xl p-4">
+        <p class="text-sm text-blue-700">基于真实历史净值进行定投回测，帮助您了解如果在过去某段时间开始定投该基金，收益情况会如何。</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-xs text-gray-500 mb-1">每月定投金额（元）</label>
+          <input id="fund-dca-monthly" type="number" value="1000" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
+        </div>
+        <div>
+          <label class="block text-xs text-gray-500 mb-1">定投时长（月）</label>
+          <select id="fund-dca-months" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
+            <option value="6">6个月</option>
+            <option value="12" selected>1年</option>
+            <option value="24">2年</option>
+            <option value="36">3年</option>
+          </select>
+        </div>
+        <div class="flex items-end">
+          <button onclick="runFundDCA()" class="w-full py-2.5 btn-gradient text-white rounded-xl font-medium hover:shadow-md transition">开始回测</button>
+        </div>
+      </div>
+      <div id="fund-dca-result" class="hidden">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+          <div class="bg-gray-50 rounded-xl p-3 text-center">
+            <p class="text-xs text-gray-400">投入本金</p>
+            <p id="fund-dca-principal" class="text-lg font-bold text-gray-800">--</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 text-center">
+            <p class="text-xs text-gray-400">持有份额</p>
+            <p id="fund-dca-shares" class="text-lg font-bold text-gray-800">--</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 text-center">
+            <p class="text-xs text-gray-400">当前市值</p>
+            <p id="fund-dca-market" class="text-lg font-bold text-gray-800">--</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-3 text-center">
+            <p class="text-xs text-gray-400">定投收益</p>
+            <p id="fund-dca-profit" class="text-lg font-bold">--</p>
+          </div>
+        </div>
+        <div id="fund-dca-chart" class="w-full h-[280px] rounded-xl bg-gray-50"></div>
+      </div>
+    </div>
+  `;
+}
+
+function runFundDCA() {
+  const monthly = parseFloat(document.getElementById('fund-dca-monthly')?.value) || 0;
+  const months = parseInt(document.getElementById('fund-dca-months')?.value) || 12;
+  if (!monthly || !months || !currentFundDetailCode) return;
+
+  fetchFundHistory(currentFundDetailCode, months).then(data => {
+    if (!data || data.length < 10) {
+      alert('历史数据不足，无法回测');
+      return;
+    }
+    // Simulate monthly DCA using historical NAV
+    // Use roughly evenly spaced data points
+    const step = Math.max(1, Math.floor(data.length / months));
+    const selected = [];
+    for (let i = 0; i < data.length; i += step) {
+      selected.push(data[i]);
+      if (selected.length >= months) break;
+    }
+    if (selected.length < 2) {
+      alert('历史数据不足，无法回测');
+      return;
+    }
+
+    let totalShares = 0;
+    let totalPrincipal = 0;
+    const dcaSeries = [];
+    const marketSeries = [];
+
+    selected.forEach((point, idx) => {
+      const nav = point.value;
+      const shares = monthly / nav;
+      totalShares += shares;
+      totalPrincipal += monthly;
+      const marketValue = totalShares * nav;
+      dcaSeries.push({ time: point.time, principal: totalPrincipal, market: marketValue });
+    });
+
+    const lastNav = selected[selected.length - 1].value;
+    const finalMarket = totalShares * lastNav;
+    const profit = finalMarket - totalPrincipal;
+    const profitPct = totalPrincipal > 0 ? (profit / totalPrincipal) * 100 : 0;
+
+    document.getElementById('fund-dca-principal').textContent = formatNumber(totalPrincipal, 0) + '元';
+    document.getElementById('fund-dca-shares').textContent = formatNumber(totalShares, 2);
+    document.getElementById('fund-dca-market').textContent = formatNumber(finalMarket, 0) + '元';
+    const profitEl = document.getElementById('fund-dca-profit');
+    profitEl.textContent = (profit >= 0 ? '+' : '') + formatNumber(profitPct, 2) + '%';
+    profitEl.className = 'text-lg font-bold ' + (profit >= 0 ? 'text-up' : 'text-down');
+
+    document.getElementById('fund-dca-result').classList.remove('hidden');
+
+    // Draw chart
+    const chartEl = document.getElementById('fund-dca-chart');
+    if (chartEl && window.echarts) {
+      const chart = window.echarts.init(chartEl);
+      chart.setOption({
+        grid: { left: 10, right: 10, top: 10, bottom: 30 },
+        tooltip: { trigger: 'axis' },
+        legend: { bottom: 0, textStyle: { fontSize: 11 } },
+        xAxis: {
+          type: 'category',
+          data: dcaSeries.map(d => d.time.slice(5)), // MM-DD
+          axisLine: { show: false },
+          axisLabel: { fontSize: 10, interval: Math.floor(dcaSeries.length / 6) }
+        },
+        yAxis: {
+          type: 'value',
+          axisLine: { show: false },
+          splitLine: { lineStyle: { color: '#f1f5f9' } },
+          axisLabel: { fontSize: 10, formatter: v => (v / 10000).toFixed(0) + '万' }
+        },
+        series: [
+          { name: '累计投入', data: dcaSeries.map(d => d.principal.toFixed(2)), type: 'line', smooth: true, symbol: 'none', lineStyle: { color: '#9CA3AF', type: 'dashed' } },
+          { name: '持有市值', data: dcaSeries.map(d => d.market.toFixed(2)), type: 'line', smooth: true, symbol: 'none', lineStyle: { color: profit >= 0 ? '#DC2626' : '#16A34A', width: 2 } }
+        ]
+      });
+    }
+  }).catch(err => {
+    console.warn('DCA backtest failed:', err);
+    alert('回测数据加载失败，请稍后重试');
+  });
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeFundDetail();
+});

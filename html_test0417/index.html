@@ -921,6 +921,33 @@
   <script src="./js/funds.js" defer></script>
   <script src="./js/glossary.js" defer></script>
   <script src="./js/news.js" defer></script>
+  <!-- 基金详情模态框 -->
+  <div id="fund-detail-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-black/50" onclick="closeFundDetail()"></div>
+    <div class="absolute inset-x-2 top-8 bottom-8 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-[780px] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+      <!-- Header -->
+      <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-gradient-to-r from-violet-50 to-purple-50">
+        <div class="min-w-0">
+          <h3 id="fund-detail-name" class="text-lg font-bold text-gray-800 truncate"></h3>
+          <p id="fund-detail-code" class="text-xs text-gray-500 mt-0.5"></p>
+        </div>
+        <button onclick="closeFundDetail()" class="text-gray-400 hover:text-gray-600 p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <!-- Tabs -->
+      <div class="flex border-b border-gray-100 px-5 bg-white">
+        <button onclick="switchFundDetailTab('chart')" id="fund-tab-chart" class="px-4 py-3 text-sm font-medium border-b-2 border-primary text-primary">净值走势</button>
+        <button onclick="switchFundDetailTab('info')" id="fund-tab-info" class="px-4 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700">基本信息</button>
+        <button onclick="switchFundDetailTab('dca')" id="fund-tab-dca" class="px-4 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700">定投计算器</button>
+      </div>
+      <!-- Content -->
+      <div class="flex-1 overflow-y-auto p-5" id="fund-detail-content">
+        <!-- JS 动态生成 -->
+      </div>
+    </div>
+  </div>
+
   <script src="./js/app.js" defer></script>
 </body>
 </html>
