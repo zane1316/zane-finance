@@ -4,8 +4,20 @@ let currentFundCategory = '全部';
 let fundQuoteCache = {};
 let allFundsFullCache = null;
 let allFundsFullPromise = null;
+let fundAliasesCache = null;
+let fundAliasesPromise = null;
 const FUND_PAGE_SIZE = 40;
 let fundCurrentPage = 1;
+
+function getFundAliases() {
+  if (fundAliasesCache) return Promise.resolve(fundAliasesCache);
+  if (fundAliasesPromise) return fundAliasesPromise;
+  fundAliasesPromise = fetch('./js/fund-aliases.json')
+    .then(r => r.ok ? r.json() : {})
+    .then(data => { fundAliasesCache = data || {}; return fundAliasesCache; })
+    .catch(err => { console.warn('Failed to load fund aliases:', err); fundAliasesCache = {}; return {}; });
+  return fundAliasesPromise;
+}
 
 const curatedFunds = [
   // 股票型
@@ -83,6 +95,8 @@ function initFunds() {
   renderFundCards();
   loadFundQuotes();
   renderFundRankings();
+  // Pre-load aliases in background
+  getFundAliases().catch(() => {});
 }
 
 function renderFundTabs() {
@@ -126,7 +140,8 @@ function getAllFundsFull() {
 }
 
 function getFilteredFunds() {
-  const query = (document.getElementById('fund-search')?.value || '').trim().toLowerCase();
+  const rawQuery = (document.getElementById('fund-search')?.value || '').trim();
+  const query = rawQuery.toLowerCase();
   // Default: show only curated funds (lightweight)
   let list = curatedFunds;
 
@@ -143,9 +158,41 @@ function getFilteredFunds() {
     list = list.filter(f => f.category === currentFundCategory);
   }
   if (query) {
-    list = list.filter(f => f.name.toLowerCase().includes(query) || f.code.toLowerCase().includes(query));
+    // Build curated code set for highlighting
+    const curatedCodes = new Set(curatedFunds.map(cf => cf.code));
+    list = list.filter(f => {
+      const nameL = f.name.toLowerCase();
+      const codeL = f.code.toLowerCase();
+      // Match name or code
+      if (nameL.includes(query) || codeL.includes(query)) return true;
+      // Match share class (e.g. search "C" matches all C-class funds)
+      if (f.shareClass && f.shareClass.toLowerCase() === query) return true;
+      // Match aliases
+      if (fundAliasesCache && fundAliasesCache[f.code]) {
+        const aliases = fundAliasesCache[f.code];
+        if (aliases.some(a => a.toLowerCase().includes(query))) return true;
+      }
+      return false;
+    }).map(f => {
+      // Tag curated funds for UI badge
+      return { ...f, isCurated: curatedCodes.has(f.code) };
+    });
+  } else {
+    // Default view: tag curated funds
+    const curatedCodes = new Set(curatedFunds.map(cf => cf.code));
+    list = list.map(f => ({ ...f, isCurated: curatedCodes.has(f.code) }));
   }
   return list;
+}
+
+function getShareClassBadgeClass(sc) {
+  if (!sc || sc === '无') return 'bg-gray-100 text-gray-500';
+  if (sc === 'A') return 'bg-blue-100 text-blue-600';
+  if (sc === 'B') return 'bg-purple-100 text-purple-600';
+  if (sc === 'C') return 'bg-orange-100 text-orange-600';
+  if (sc === 'E') return 'bg-pink-100 text-pink-600';
+  if (sc === 'I') return 'bg-teal-100 text-teal-600';
+  return 'bg-gray-100 text-gray-500';
 }
 
 function renderFundCards() {
@@ -171,12 +218,18 @@ function renderFundCards() {
         <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
       </svg>
     </button>`;
+    const shareClassBadge = (f.shareClass && f.shareClass !== '无')
+      ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-medium ${getShareClassBadgeClass(f.shareClass)} ml-1">${f.shareClass}</span>`
+      : '';
+    const curatedBadge = f.isCurated
+      ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-100 text-amber-600 ml-1">精选</span>`
+      : '';
     return `
       <div class="card-gradient p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 stagger-card relative" style="animation-delay:${(i%8)*0.05}s">
         <div class="absolute top-3 right-3">${starBtn}</div>
         <div class="flex items-start justify-between mb-3 pr-6">
           <div class="min-w-0">
-            <h4 class="font-bold text-gray-800 truncate" title="${f.name}">${f.name}</h4>
+            <h4 class="font-bold text-gray-800 truncate" title="${f.name}">${f.name}${shareClassBadge}${curatedBadge}</h4>
             <p class="text-xs text-gray-400 mt-0.5">${f.code}</p>
           </div>
           <span class="px-2 py-0.5 rounded-lg text-xs font-medium ${getCategoryBadgeClass(f.category)}">${f.category}</span>
@@ -311,13 +364,18 @@ function loadMoreFunds() {
 function doFundSearch() {
   fundCurrentPage = 1;
   const query = (document.getElementById('fund-search')?.value || '').trim().toLowerCase();
-  if (query && !allFundsFullCache && !allFundsFullPromise) {
-    // First search: lazy-load full fund list
+  const needsFull = query && !allFundsFullCache && !allFundsFullPromise;
+  const needsAliases = query && !fundAliasesCache && !fundAliasesPromise;
+  if (needsFull || needsAliases) {
+    // First search: lazy-load full fund list + aliases
     const container = document.getElementById('fund-cards');
     if (container) {
       container.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400"><p class="text-lg mb-2">正在加载全市场基金数据...</p><p class="text-sm">首次搜索约需1-2秒，请稍候</p></div>`;
     }
-    getAllFundsFull().then(() => {
+    Promise.all([
+      needsFull ? getAllFundsFull() : Promise.resolve(),
+      needsAliases ? getFundAliases() : Promise.resolve()
+    ]).then(() => {
       renderFundCards();
       loadFundQuotes();
       renderFundRankings();

@@ -5,12501 +5,15001 @@ const allFunds = [
   {
     "code": "of000082",
     "name": "嘉实研究阿尔法股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000309",
-    "name": "大摩品质生活精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000326",
     "name": "南方中小盘成长股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000409",
-    "name": "鹏华环保产业股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000411",
     "name": "景顺长城优质成长股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000418",
-    "name": "景顺长城成长之星股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000457",
     "name": "摩根核心成长股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000471",
-    "name": "富国城镇发展股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000472",
     "name": "富国城镇发展股票(后端)",
-    "category": "股票型"
-  },
-  {
-    "code": "of000513",
-    "name": "富国高端制造行业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000514",
     "name": "富国高端制造行业股票A(后端)",
-    "category": "股票型"
-  },
-  {
-    "code": "of000524",
-    "name": "摩根民生需求股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000549",
     "name": "华安大国新经济股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000577",
-    "name": "安信价值精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000586",
     "name": "景顺长城中小创精选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000592",
-    "name": "建信改革红利股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000594",
     "name": "大摩进取优选股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000628",
-    "name": "大成高鑫股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000688",
     "name": "景顺长城研究精选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000696",
-    "name": "汇添富环保行业股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000697",
     "name": "汇添富移动互联股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000711",
-    "name": "嘉实医疗保健股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000729",
     "name": "建信中小盘先锋股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000746",
-    "name": "招商行业精选股票基金",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000751",
     "name": "嘉实新兴产业股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000756",
-    "name": "建信潜力新蓝筹股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000761",
     "name": "国富健康优质生活股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000778",
-    "name": "鹏华先进制造股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000780",
     "name": "鹏华医疗保健股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000793",
-    "name": "工银高端制造股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000803",
     "name": "工银研究精选股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000828",
-    "name": "宏利转型机遇股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000831",
     "name": "工银医疗保健股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000854",
-    "name": "鹏华养老产业股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000866",
     "name": "华宝制造股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000867",
-    "name": "华宝品质生活股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000884",
     "name": "民生加银优选股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000893",
-    "name": "工银创新动力股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000913",
     "name": "农银医疗保健股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000916",
-    "name": "前海开源股息率100强股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000925",
     "name": "汇添富外延增长股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000955",
-    "name": "南方产业活力",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000960",
     "name": "招商医药健康产业股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of000971",
-    "name": "诺安新经济股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of000974",
     "name": "安信消费医药股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000978",
-    "name": "景顺长城量化精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000979",
     "name": "景顺长城沪港深精选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000985",
-    "name": "嘉实逆向策略股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000991",
     "name": "工银战略转型股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of000996",
-    "name": "中银新动力股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001008",
     "name": "工银国企改革股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001009",
-    "name": "摩根安全战略股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001028",
     "name": "华安物联网主题股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001036",
-    "name": "嘉实企业变革股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001039",
     "name": "嘉实先进制造股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001040",
-    "name": "新华策略精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001042",
     "name": "华夏领先股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001043",
-    "name": "工银美丽城镇股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001044",
     "name": "嘉实新消费股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001047",
-    "name": "光大国企改革股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001048",
     "name": "富国新兴产业股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001049",
-    "name": "富国新兴产业股票A(后端)",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001054",
     "name": "工银新金融股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001070",
-    "name": "建信信息产业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001072",
     "name": "华安智能装备主题股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001097",
-    "name": "华泰柏瑞积极优选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001104",
     "name": "华安新丝路主题股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001105",
-    "name": "信澳转型创新股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001126",
     "name": "摩根卓越制造股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001158",
-    "name": "工银新材料新能源股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001162",
     "name": "前海开源优势蓝筹股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001163",
-    "name": "银华中国梦30股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001166",
     "name": "建信环保产业股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001167",
-    "name": "金鹰科技创新股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001171",
     "name": "工银养老产业股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001178",
-    "name": "前海开源再融资股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001186",
     "name": "富国文体健康股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001187",
-    "name": "富国文体健康股票A(后端)",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001188",
     "name": "鹏华改革红利股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001193",
-    "name": "中金消费升级股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001195",
     "name": "工银农业产业股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001208",
-    "name": "诺安低碳经济股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001223",
     "name": "鹏华文化传媒娱乐股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001230",
-    "name": "鹏华医药科技股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001236",
     "name": "博时丝路主题股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001245",
-    "name": "工银生态环境股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001277",
     "name": "博时国企改革股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001291",
-    "name": "大摩量化多策略股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001313",
     "name": "摩根智慧互联股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001319",
-    "name": "农银信息传媒股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001396",
     "name": "建信互联网+产业升级股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001404",
-    "name": "招商移动互联网产业股票基金A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001409",
     "name": "工银互联网加股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001410",
-    "name": "信澳新能源产业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001416",
     "name": "嘉实事件驱动股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001421",
-    "name": "南方量化成长股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001473",
     "name": "建信大安全战略精选股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001476",
-    "name": "中银智能制造股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001482",
     "name": "摩根新兴服务股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001490",
-    "name": "汇添富国企创新股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001496",
     "name": "工银聚焦30股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001521",
-    "name": "国寿安保成长优选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001528",
     "name": "诺安先进制造股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001541",
-    "name": "汇添富民营新动力股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001542",
     "name": "国泰互联网+股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001576",
-    "name": "国泰智能装备股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001577",
     "name": "嘉实低价策略股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001579",
-    "name": "国泰大农业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001583",
     "name": "安信新常态股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001605",
-    "name": "国富沪港深成长精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001616",
     "name": "嘉实环保低碳股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001626",
-    "name": "国泰央企改革股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001628",
     "name": "招商体育文化休闲股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of001637",
-    "name": "嘉实量化精选股票",
-    "category": "股票型"
+    "code": "of001638",
+    "name": "前海开源优势蓝筹股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of001643",
-    "name": "汇丰晋信智造先锋股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001645",
-    "name": "国泰大健康股票A",
-    "category": "股票型"
+    "code": "of001644",
+    "name": "汇丰晋信智造先锋股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of001651",
     "name": "工银新蓝筹股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001672",
-    "name": "国寿安保智慧生活股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001677",
     "name": "中银战略新兴产业股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001678",
-    "name": "英大国企改革A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001685",
     "name": "汇添富沪港深新价值股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001692",
-    "name": "南方国策动力",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001703",
     "name": "银华沪港深增长股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001705",
-    "name": "泓德战略转型股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001707",
     "name": "诺安高端制造股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001714",
-    "name": "工银文体产业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001717",
     "name": "工银前沿医疗股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001718",
-    "name": "工银物流产业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001719",
     "name": "工银国家战略股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of001725",
-    "name": "汇添富高端制造股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of001726",
     "name": "汇添富新兴消费股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001736",
-    "name": "圆信永丰优加生活",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001749",
     "name": "招商中国机遇股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001764",
-    "name": "广发沪港深新机遇股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001766",
     "name": "摩根医疗健康股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001790",
-    "name": "国泰智能汽车股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001825",
     "name": "建信中国制造2025股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001849",
-    "name": "前海开源强势共识100强股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001877",
     "name": "宝盈国家安全沪港深股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001878",
-    "name": "嘉实沪港深精选股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001915",
     "name": "宝盈医疗健康沪港深股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001917",
-    "name": "招商量化精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001938",
     "name": "中欧时代先锋股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001956",
-    "name": "国联安科技动力",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of001974",
     "name": "景顺长城量化新动力股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of001975",
-    "name": "景顺长城环保优势股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of002121",
     "name": "广发沪港深新起点股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of002168",
-    "name": "嘉实智能汽车股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of002210",
     "name": "创金合信量化多因子股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of002229",
-    "name": "华夏经济转型股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of002289",
     "name": "华商改革创新股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of002300",
-    "name": "长盛医疗量化股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of002332",
     "name": "汇丰晋信沪港深A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of002334",
     "name": "汇丰晋信大盘波动股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of002387",
     "name": "工银沪港深股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of002595",
     "name": "博时工业4.0主题股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of002621",
-    "name": "中欧消费主题股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of002861",
-    "name": "工银智能制造股票A",
-    "category": "股票型"
+    "code": "of002697",
+    "name": "中欧消费主题股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of002871",
     "name": "华夏智胜价值成长A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of002952",
     "name": "建信多因子量化股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of002980",
-    "name": "华夏创新前沿股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of003053",
     "name": "嘉实文体娱乐股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of003069",
     "name": "光大创业板量化优选A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of003145",
     "name": "国联竞争优势",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of003190",
-    "name": "创金合信消费主题股票A",
-    "category": "股票型"
+    "code": "of003191",
+    "name": "创金合信消费主题股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of003230",
-    "name": "创金合信医疗保健股票A",
-    "category": "股票型"
+    "code": "of003231",
+    "name": "创金合信医疗保健股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of003298",
-    "name": "嘉实物流产业股票A",
-    "category": "股票型"
+    "code": "of003299",
+    "name": "嘉实物流产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of003624",
-    "name": "创金合信资源股票发起式A",
-    "category": "股票型"
-  },
-  {
-    "code": "of003634",
-    "name": "嘉实农业产业股票A",
-    "category": "股票型"
+    "code": "of003625",
+    "name": "创金合信资源股票发起式C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of003745",
     "name": "广发多元新兴股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of003834",
-    "name": "华夏能源革新股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of003853",
     "name": "金鹰信息产业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of003956",
     "name": "南方产业智选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of003984",
-    "name": "嘉实新能源新材料股票A",
-    "category": "股票型"
+    "code": "of003985",
+    "name": "嘉实新能源新材料股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of004040",
-    "name": "金鹰医疗健康产业A",
-    "category": "股票型"
-  },
-  {
-    "code": "of004075",
-    "name": "交银医药创新股票A",
-    "category": "股票型"
+    "code": "of004041",
+    "name": "金鹰医疗健康产业C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of004098",
     "name": "前海开源港股通股息率50强",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of004189",
-    "name": "华商消费行业股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of004292",
-    "name": "鹏华沪深港互联网股票",
-    "category": "股票型"
+    "code": "of004241",
+    "name": "中欧时代先锋股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of004350",
     "name": "汇丰晋信价值先锋股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of004352",
-    "name": "华银研究精选股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004403",
     "name": "平安股息精选沪港深A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004450",
     "name": "嘉实前沿科技沪港深股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of004476",
-    "name": "景顺长城沪港深领先科技股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004616",
     "name": "中欧电子信息产业沪港深股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of004640",
-    "name": "华夏节能环保股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004683",
     "name": "建信高端医疗股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of004686",
-    "name": "华夏研究精选股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004698",
     "name": "博时军工主题股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of004716",
-    "name": "中信保诚量化阿尔法股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004784",
     "name": "招商稳健优选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of004805",
-    "name": "长信消费精选量化股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004812",
     "name": "中欧先进制造股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004851",
     "name": "广发医疗保健股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004925",
     "name": "长信低碳环保行业量化股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of004995",
-    "name": "广发品牌消费股票发起式A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of004997",
     "name": "广发高端制造股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of005009",
-    "name": "申万菱信行业轮动股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005037",
     "name": "银华新能源新材料A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005106",
     "name": "银华农业产业股票发起式A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of005161",
-    "name": "华商上游产业股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of005189",
-    "name": "海富通量化前锋股票A",
-    "category": "股票型"
+    "code": "of005188",
+    "name": "海富通量化前锋股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of005209",
     "name": "东吴双三角股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005235",
     "name": "银华食品饮料量化股票发起式A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005237",
     "name": "银华医疗健康量化优选A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005259",
     "name": "建信龙头企业股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of005267",
-    "name": "嘉实价值精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of005268",
     "name": "鹏华优势企业",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of005303",
-    "name": "嘉实医药健康股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of005310",
-    "name": "广发电子信息传媒股票A",
-    "category": "股票型"
+    "code": "of005304",
+    "name": "嘉实医药健康股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of005328",
     "name": "前海开源价值策略股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of005402",
-    "name": "广发资源优选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of005433",
     "name": "申万菱信医药先锋股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of005457",
-    "name": "景顺长城量化小盘股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005495",
     "name": "创金合信科技成长股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005505",
     "name": "前海开源中药股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005612",
     "name": "嘉实核心优势股票发起式",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of005620",
-    "name": "中欧品质消费股票A",
-    "category": "股票型"
+    "code": "of005621",
+    "name": "中欧品质消费股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of005628",
-    "name": "汇安趋势动力股票A",
-    "category": "股票型"
+    "code": "of005629",
+    "name": "汇安趋势动力股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of005635",
-    "name": "博时量化多策略股票A",
-    "category": "股票型"
+    "code": "of005636",
+    "name": "博时量化多策略股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of005660",
-    "name": "嘉实资源精选股票A",
-    "category": "股票型"
+    "code": "of005661",
+    "name": "嘉实资源精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of005662",
-    "name": "嘉实金融精选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of005669",
-    "name": "前海开源公用事业股票",
-    "category": "股票型"
+    "code": "of005663",
+    "name": "嘉实金融精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of005707",
     "name": "富国港股通量化精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005777",
     "name": "广发科技动力股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of005802",
-    "name": "汇添富智能制造股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of005825",
     "name": "申万菱信智能驱动股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of005826",
-    "name": "华夏潜龙精选股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of005894",
-    "name": "华夏优势精选股票",
-    "category": "股票型"
+    "code": "of005885",
+    "name": "金鹰信息产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of005927",
     "name": "创金合信新能源汽车股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005960",
     "name": "博时量化价值股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005962",
     "name": "宝盈人工智能股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005968",
     "name": "创金合信工业周期股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of005970",
     "name": "国泰消费优选股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of005983",
-    "name": "摩根核心精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of006002",
     "name": "工银医药健康股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of006081",
-    "name": "海富通电子传媒股票A",
-    "category": "股票型"
+    "code": "of006080",
+    "name": "海富通电子传媒股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of006106",
     "name": "景顺长城量化港股通股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of006138",
-    "name": "国联安价值优选股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of006195",
     "name": "国金量化多因子股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of006228",
-    "name": "中欧医疗创新股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of006251",
-    "name": "银华兴盛股票A",
-    "category": "股票型"
+    "code": "of006229",
+    "name": "中欧医疗创新股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of006257",
     "name": "信澳先进智造股票型A",
-    "category": "股票型"
-  },
-  {
-    "code": "of006265",
-    "name": "红土创新新科技股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of006502",
     "name": "财通集成电路产业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of006603",
     "name": "嘉实互融精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of006604",
-    "name": "嘉实消费精选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of006671",
-    "name": "广发消费升级股票",
-    "category": "股票型"
+    "code": "of006605",
+    "name": "嘉实消费精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of006675",
     "name": "宝盈品牌消费股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of006692",
     "name": "金信消费升级股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of006751",
     "name": "富国互联科技股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of006781",
-    "name": "汇丰晋信港股通精选股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of006803",
     "name": "嘉实互通精选股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of006868",
-    "name": "华夏科技成长股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of006923",
     "name": "前海开源沪港深非周期股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of006926",
     "name": "长城量化精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of006981",
-    "name": "中金新医药股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of007130",
-    "name": "中庚小盘价值股票",
-    "category": "股票型"
+    "code": "of007005",
+    "name": "中金新医药股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of007133",
     "name": "嘉实长青竞争优势股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of007137",
     "name": "鹏扬元合量化大盘A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of007287",
     "name": "合煦智远消费主题股票发起式A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of007354",
     "name": "创金合信港股通量化股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of007388",
     "name": "摩根研究驱动股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of007470",
     "name": "博道叁佰智航股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of007479",
+    "name": "光大量化股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of007523",
     "name": "汇添富内需增长股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of007548",
     "name": "易方达ESG责任投资股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of007586",
-    "name": "华泰保兴多策略",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of007590",
     "name": "华宝绿色领先股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of007674",
-    "name": "工银产业升级股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of007685",
-    "name": "华商电子行业量化股票发起式A",
-    "category": "股票型"
+    "code": "of007675",
+    "name": "工银产业升级股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of007750",
     "name": "广发优势增长股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of007831",
-    "name": "博道伍佰智航股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of007853",
-    "name": "华商计算机行业量化股票发起式A",
-    "category": "股票型"
+    "code": "of007832",
+    "name": "博道伍佰智航股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of007903",
     "name": "长城量化小盘股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of007965",
     "name": "民生加银品质消费股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of008009",
     "name": "华商高端装备制造股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of008075",
-    "name": "招商核心优选股票A",
-    "category": "股票型"
+    "code": "of008076",
+    "name": "招商核心优选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of008085",
     "name": "海富通先进制造股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of008107",
-    "name": "华商医药医疗行业股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of008128",
     "name": "湘财长源股票型A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of008134",
     "name": "鹏华优选价值股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of008166",
-    "name": "工银消费股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of008177",
-    "name": "建信高股息主题股票",
-    "category": "股票型"
+    "code": "of008167",
+    "name": "工银消费股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of008234",
     "name": "光大消费主题股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of008261",
-    "name": "招商研究优选股票A",
-    "category": "股票型"
+    "code": "of008262",
+    "name": "招商研究优选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of008264",
-    "name": "南方ESG股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of008283",
-    "name": "易方达金融行业股票发起式A",
-    "category": "股票型"
+    "code": "of008265",
+    "name": "南方ESG股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of008286",
     "name": "易方达研究精选股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of008294",
-    "name": "朱雀企业优胜A",
-    "category": "股票型"
+    "code": "of008295",
+    "name": "朱雀企业优胜C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of008303",
-    "name": "宝盈龙头优选股票A",
-    "category": "股票型"
+    "code": "of008304",
+    "name": "宝盈龙头优选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of008314",
-    "name": "摩根慧选成长股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of008382",
-    "name": "融通产业趋势股票",
-    "category": "股票型"
+    "code": "of008315",
+    "name": "摩根慧选成长股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of008412",
     "name": "长盛竞争优势A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of008445",
     "name": "融通产业趋势先锋股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of008537",
-    "name": "兴银研究精选股票A",
-    "category": "股票型"
+    "code": "of008538",
+    "name": "兴银研究精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of008618",
-    "name": "永赢医药健康A",
-    "category": "股票型"
+    "code": "of008619",
+    "name": "永赢医药健康C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of008736",
-    "name": "南方高股息股票A",
-    "category": "股票型"
+    "code": "of008737",
+    "name": "南方高股息股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of008854",
-    "name": "南方内需增长两年股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of008860",
-    "name": "民生加银龙头优选股票A",
-    "category": "股票型"
+    "code": "of008855",
+    "name": "南方内需增长两年股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of008871",
     "name": "大成睿裕六月持有股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of008923",
     "name": "建信医疗健康行业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of008934",
     "name": "大成科技消费股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of008958",
     "name": "嘉实回报精选股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of009017",
-    "name": "银华港股通精选股票发起式A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of009043",
     "name": "九泰久信量化股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of009069",
-    "name": "大成睿鑫股票A",
-    "category": "股票型"
+    "code": "of009070",
+    "name": "大成睿鑫股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of009106",
-    "name": "嘉合同顺智选股票A",
-    "category": "股票型"
+    "code": "of009107",
+    "name": "嘉合同顺智选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of009126",
-    "name": "嘉实基础产业优选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of009147",
-    "name": "建信新能源行业股票A",
-    "category": "股票型"
+    "code": "of009127",
+    "name": "嘉实基础产业优选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of009162",
     "name": "富国医药成长30股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of009240",
     "name": "泰康蓝筹优势一年持有股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of009265",
-    "name": "易方达消费精选股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of009341",
     "name": "易方达均衡成长股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of009379",
-    "name": "中银成长优选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of009398",
     "name": "华富成长企业精选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of009414",
-    "name": "中银大健康股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of009476",
     "name": "建信食品饮料行业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of009491",
-    "name": "宝盈创新驱动股票A",
-    "category": "股票型"
+    "code": "of009492",
+    "name": "宝盈创新驱动股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of009537",
-    "name": "太平行业优选股票A",
-    "category": "股票型"
+    "code": "of009538",
+    "name": "太平行业优选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of009550",
-    "name": "汇添富开放视野中国优势六个月持有股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of009557",
-    "name": "申万菱信创业板量化精选股票A",
-    "category": "股票型"
+    "code": "of009551",
+    "name": "汇添富开放视野中国优势六个月持有股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of009601",
     "name": "招商科技动力3个月滚动持有股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of009658",
     "name": "汇丰晋信中小盘低波动策略股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of009794",
     "name": "太平智选一年定开股票",
-    "category": "股票型"
-  },
-  {
-    "code": "of009805",
-    "name": "国泰医药健康股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of009852",
     "name": "银华品质消费股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of009863",
-    "name": "富国创新趋势股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of009864",
     "name": "招商景气优选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of009874",
     "name": "九泰久睿量化股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of009875",
-    "name": "天弘甄选食品饮料股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of009877",
-    "name": "中银内核驱动股票A",
-    "category": "股票型"
+    "code": "of009876",
+    "name": "天弘甄选食品饮料股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of009891",
     "name": "融通产业趋势臻选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of009896",
-    "name": "广发港股通成长精选股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of009898",
-    "name": "民生加银医药健康股票A",
-    "category": "股票型"
+    "code": "of009897",
+    "name": "广发港股通成长精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of009899",
     "name": "上银内需增长股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of009954",
-    "name": "华银优选成长股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of009988",
     "name": "信澳蓝筹精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of010003",
-    "name": "景顺长城电子信息产业股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of010010",
-    "name": "国投瑞银港股通6个月定开股票",
-    "category": "股票型"
+    "code": "of010004",
+    "name": "景顺长城电子信息产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of010013",
     "name": "易方达信息行业精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010112",
     "name": "广发研究精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010120",
     "name": "九泰久福量化股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010128",
     "name": "宝盈发展新动能股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010141",
     "name": "朱雀企业优选A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of010161",
-    "name": "广发瑞安精选股票A",
-    "category": "股票型"
+    "code": "of010160",
+    "name": "广发高端制造股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of010196",
-    "name": "易方达核心优势股票A",
-    "category": "股票型"
+    "code": "of010162",
+    "name": "广发瑞安精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of010204",
-    "name": "中银港股通优势成长股票",
-    "category": "股票型"
+    "code": "of010197",
+    "name": "易方达核心优势股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of010235",
+    "name": "广发资源优选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of010245",
+    "name": "广发品牌消费股票发起式C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of010322",
     "name": "大摩新兴产业股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of010341",
-    "name": "招商产业精选股票A",
-    "category": "股票型"
+    "code": "of010342",
+    "name": "招商产业精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of010361",
     "name": "嘉实品质优选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010387",
     "name": "易方达医药生物股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010391",
     "name": "易方达战略新兴产业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010409",
     "name": "富国消费精选30股票A",
-    "category": "股票型"
-  },
-  {
-    "code": "of010420",
-    "name": "民生加银成长优选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010434",
     "name": "红土创新医疗保健股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of010469",
-    "name": "圆信永丰聚优股票A",
-    "category": "股票型"
+    "code": "of010470",
+    "name": "圆信永丰聚优股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of010495",
-    "name": "创金合信创新驱动股票A",
-    "category": "股票型"
+    "code": "of010496",
+    "name": "创金合信创新驱动股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of010585",
     "name": "创金合信医药消费股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010592",
     "name": "南方医药创新股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010680",
     "name": "华夏新兴成长股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of010685",
+    "name": "工银前沿医疗股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of010703",
     "name": "财通智选消费股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010709",
     "name": "安信医药健康股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010801",
     "name": "长江量化消费精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of010815",
-    "name": "农银新兴消费股票",
-    "category": "股票型"
+    "code": "of010812",
+    "name": "中银战略新兴产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of010892",
     "name": "中银证券精选行业股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010896",
     "name": "太平价值增长股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of010998",
     "name": "博道消费智航A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of011013",
-    "name": "长城消费30股票A",
-    "category": "股票型"
+    "code": "of011014",
+    "name": "长城消费30股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011042",
-    "name": "国泰价值先锋股票A",
-    "category": "股票型"
+    "code": "of011043",
+    "name": "国泰价值先锋股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of011077",
     "name": "汇丰晋信创新先锋",
-    "category": "股票型"
-  },
-  {
-    "code": "of011104",
-    "name": "光大智能汽车主题股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
     "code": "of011107",
     "name": "九泰天兴量化智选A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011122",
     "name": "汇添富ESG可持续成长股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of011125",
+    "name": "富国文体健康股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of011142",
     "name": "创金合信新材料新能源股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011146",
     "name": "创金合信气候变化责任投资股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011149",
     "name": "创金合信ESG责任投资股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011220",
     "name": "南方匠心优选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011224",
     "name": "九泰盈泰量化股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011229",
     "name": "创金合信数字经济主题股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011236",
     "name": "摩根行业睿选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011269",
     "name": "中银证券优势制造股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011285",
     "name": "民生价值优选6个月持有股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of011328",
-    "name": "景顺长城新能源产业股票A",
-    "category": "股票型"
+    "code": "of011295",
+    "name": "中信保诚量化阿尔法股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011349",
-    "name": "淳厚现代服务业股票A",
-    "category": "股票型"
+    "code": "of011322",
+    "name": "国泰智能装备股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011373",
-    "name": "招商前沿医疗保健股票A",
-    "category": "股票型"
+    "code": "of011326",
+    "name": "国泰医药健康股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011377",
-    "name": "创金合信积极成长股票A",
-    "category": "股票型"
+    "code": "of011329",
+    "name": "景顺长城新能源产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011384",
-    "name": "南方远见回报股票A",
-    "category": "股票型"
+    "code": "of011350",
+    "name": "淳厚现代服务业股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011418",
-    "name": "汇添富消费精选两年持有股票A",
-    "category": "股票型"
+    "code": "of011374",
+    "name": "招商前沿医疗保健股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of011378",
+    "name": "创金合信积极成长股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of011385",
+    "name": "南方远见回报股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of011419",
+    "name": "汇添富消费精选两年持有股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of011425",
     "name": "广发优势成长股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011457",
     "name": "新华行业龙头主题股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of011470",
+    "name": "东吴新产业精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of011476",
+    "name": "工银新蓝筹股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of011498",
     "name": "富国沪深300基本面精选股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011506",
     "name": "建信高端装备股票A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of011589",
     "name": "九泰天利量化A",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
-    "code": "of011601",
-    "name": "前海开源公共卫生股票A",
-    "category": "股票型"
+    "code": "of011592",
+    "name": "博时军工主题股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011645",
-    "name": "国泰核心价值两年持有期股票A",
-    "category": "股票型"
+    "code": "of011602",
+    "name": "前海开源公共卫生股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011651",
-    "name": "招商港股通核心精选股票A",
-    "category": "股票型"
+    "code": "of011646",
+    "name": "国泰核心价值两年持有期股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011685",
-    "name": "创金合信先进装备股票A",
-    "category": "股票型"
+    "code": "of011652",
+    "name": "招商港股通核心精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
-    "code": "of011722",
-    "name": "前海开源深圳特区精选股票A",
-    "category": "股票型"
+    "code": "of011686",
+    "name": "创金合信先进装备股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of011723",
+    "name": "前海开源深圳特区精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
   },
   {
     "code": "of011793",
     "name": "建信智能汽车股票",
-    "category": "股票型"
+    "category": "股票型",
+    "shareClass": "无"
   },
   {
-    "code": "of011824",
-    "name": "浙商汇金量化臻选股票A",
-    "category": "股票型"
+    "code": "of011825",
+    "name": "浙商汇金量化臻选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of011882",
+    "name": "招商蓝筹精选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of011923",
+    "name": "大成消费精选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of011934",
+    "name": "中航量化阿尔法六个月持有A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012045",
+    "name": "大成医药健康股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012126",
+    "name": "宏利新能源股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012181",
+    "name": "中银智能制造股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012211",
+    "name": "申万菱信智能汽车股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012215",
+    "name": "民生加银核心资产股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012244",
+    "name": "广发金融地产精选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012350",
+    "name": "万家元贞量化选股股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012360",
+    "name": "汇丰晋信港股通核心资产股票发起式A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012445",
+    "name": "华富新能源股票型发起式A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012497",
+    "name": "同泰行业优选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012696",
+    "name": "同泰数字经济股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012800",
+    "name": "宏利转型机遇股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012836",
+    "name": "招商景气精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012930",
+    "name": "中庚价值先锋股票",
+    "category": "股票型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of013005",
+    "name": "国泰价值领航股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013050",
+    "name": "兴业能源革新股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013133",
+    "name": "创金合信文娱媒体股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013152",
+    "name": "长信消费精选量化股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013242",
+    "name": "华银优势行业股票",
+    "category": "股票型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of013340",
+    "name": "创金合信芯片产业股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013414",
+    "name": "太平智远三个月定开股票发起式",
+    "category": "股票型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of013466",
+    "name": "博时智选量化多因子股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013490",
+    "name": "同泰金融精选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of013505",
+    "name": "华安新丝路主题股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013613",
+    "name": "宝盈国家安全沪港深股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013641",
+    "name": "博道成长智航股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of013899",
+    "name": "摩根全景优势股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of013918",
+    "name": "申万菱信量化小盘股票(LOF)C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013940",
+    "name": "东吴医疗服务股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014046",
+    "name": "交银医药创新股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014062",
+    "name": "景顺长城专精特新量化优选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014064",
+    "name": "银华农业产业股票发起式C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014122",
+    "name": "大成品质医疗股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014140",
+    "name": "易方达高质量增长量化精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014185",
+    "name": "招商专精特新股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014187",
+    "name": "华夏量化优选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014191",
+    "name": "广发先进制造股票发起式A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014198",
+    "name": "华夏智胜先锋股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014300",
+    "name": "宏利先进制造股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014342",
+    "name": "摩根时代睿选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014376",
+    "name": "东吴新能源汽车股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014380",
+    "name": "建信中国制造2025股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014416",
+    "name": "泰康研究精选股票发起A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014453",
+    "name": "中银新动力股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014536",
+    "name": "诺安高端制造股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014590",
+    "name": "招商成长先导股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014635",
+    "name": "景顺长城ESG量化股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014669",
+    "name": "银华专精特新量化优选股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014737",
+    "name": "创金合信专精特新股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014863",
+    "name": "建信信息产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014930",
+    "name": "富国高端制造行业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014937",
+    "name": "摩根核心精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014958",
+    "name": "华富消费成长股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015001",
+    "name": "工银物流产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015048",
+    "name": "建信新能源行业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015053",
+    "name": "东方红医疗升级股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015075",
+    "name": "摩根卓越制造股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015115",
+    "name": "汇添富高端制造股票D",
+    "category": "股票型",
+    "shareClass": "D"
+  },
+  {
+    "code": "of015124",
+    "name": "汇添富国企创新股票D",
+    "category": "股票型",
+    "shareClass": "D"
+  },
+  {
+    "code": "of015140",
+    "name": "泰康医疗健康股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015146",
+    "name": "同泰新能源1年持有股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015159",
+    "name": "申万菱信智能驱动股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015171",
+    "name": "申万菱信医药先锋股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015194",
+    "name": "汇添富新兴消费股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015196",
+    "name": "汇添富智能制造股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015198",
+    "name": "汇添富移动互联股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015364",
+    "name": "汇丰晋信价值先锋股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015408",
+    "name": "景顺长城成长趋势股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015468",
+    "name": "嘉实农业产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015537",
+    "name": "红塔红土新能源主题精选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015588",
+    "name": "国泰大农业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015608",
+    "name": "信澳转型创新股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015628",
+    "name": "圆信永丰弘阳股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015642",
+    "name": "银华数字经济股票发起式C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015734",
+    "name": "红塔红土信息产业精选股票发起式A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015754",
+    "name": "上银内需增长股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015891",
+    "name": "富国上证50基本面精选股票发起式A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015904",
+    "name": "广发新能源精选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016018",
+    "name": "银河康乐股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016052",
+    "name": "华商改革创新股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016074",
+    "name": "创金合信软件产业股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016283",
+    "name": "华泰柏瑞积极优选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016292",
+    "name": "华安物联网主题股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016399",
+    "name": "九泰久睿量化股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016444",
+    "name": "中泰研究精选6个月持有股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016449",
+    "name": "南方新材料股票发起A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016551",
+    "name": "诺德策略回报股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016725",
+    "name": "农银品质农业股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016847",
+    "name": "中欧高端装备股票发起A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016858",
+    "name": "国金量化多因子股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017038",
+    "name": "富国中证1000优选股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of017073",
+    "name": "嘉实清洁能源股票发起式A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of017099",
+    "name": "摩根民生需求股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017133",
+    "name": "中银新能源产业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017166",
+    "name": "易米低碳经济股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017289",
+    "name": "宏利首选企业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017293",
+    "name": "申万菱信红利量化选股股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017301",
+    "name": "安信数字经济股票发起C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017480",
+    "name": "广发医药精选股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017489",
+    "name": "嘉实信息产业股票发起式C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017650",
+    "name": "中庚港股通价值股票",
+    "category": "股票型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of017727",
+    "name": "鑫元成长驱动股票发起式C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017745",
+    "name": "嘉实绿色主题股票发起式C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017747",
+    "name": "建信电子行业股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017825",
+    "name": "华安新材料主题股票发起式C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017900",
+    "name": "鹏华医药科技股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017921",
+    "name": "中海医疗保健主题股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017932",
+    "name": "富达传承6个月股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017948",
+    "name": "国富中小盘股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of018009",
+    "name": "长盛医疗量化股票C",
+    "category": "股票型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of018045",
+    "name": "东方创新医疗股票A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of018048",
+    "name": "申万菱信数字产业股票型发起式A",
+    "category": "股票型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of018194",
+    "name": "建信新材料精选股票发起A",
+    "category": "股票型",
+    "shareClass": "A"
   },
   {
     "code": "of000001",
     "name": "华夏成长混合",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of000029",
-    "name": "富国宏观策略灵活配置混合A",
-    "category": "混合型"
+    "code": "of000061",
+    "name": "华夏盛世混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of000063",
-    "name": "长盛电子信息主题混合A",
-    "category": "混合型"
+    "code": "of000155",
+    "name": "富国通胀通缩主题轮动混合A(后端)",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of000120",
-    "name": "中银美丽中国混合A",
-    "category": "混合型"
+    "code": "of000215",
+    "name": "广发趋势优选灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of000159",
-    "name": "富国高新技术产业混合(后端)",
-    "category": "混合型"
+    "code": "of000327",
+    "name": "南方潜力新蓝筹混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of000195",
-    "name": "工银成长收益混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of000242",
-    "name": "景顺长城策略精选灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of000294",
-    "name": "华安生态优先混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of000362",
-    "name": "国泰聚信价值优势混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of000417",
-    "name": "国联安新精选混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of000459",
-    "name": "英大领先回报B",
-    "category": "混合型"
+    "code": "of000423",
+    "name": "前海开源事件驱动混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of000520",
     "name": "上银新兴价值成长混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of000532",
-    "name": "景顺长城优势企业混合A",
-    "category": "混合型"
+    "code": "of000550",
+    "name": "广发新动力混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of000551",
-    "name": "中信保诚幸福消费混合A",
-    "category": "混合型"
+    "code": "of000590",
+    "name": "华安新活力灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of000574",
-    "name": "宝盈新价值混合A",
-    "category": "混合型"
+    "code": "of000652",
+    "name": "博时裕隆灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of000598",
-    "name": "长盛生态环境混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of000639",
-    "name": "宝盈祥瑞混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of000672",
-    "name": "工银绝对收益混合发起B",
-    "category": "混合型"
-  },
-  {
-    "code": "of000717",
-    "name": "融通转型三动力灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of000753",
-    "name": "华宝量化对冲混合A",
-    "category": "混合型"
+    "code": "of000727",
+    "name": "融通健康产业灵活配置混合A/B",
+    "category": "混合型",
+    "shareClass": "B"
   },
   {
     "code": "of000794",
     "name": "宝盈睿丰创新混合A/B",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "B"
   },
   {
-    "code": "of000841",
-    "name": "富国新回报灵活配置混合A/B",
-    "category": "混合型"
-  },
-  {
-    "code": "of000880",
-    "name": "富国研究精选灵活配置混合A",
-    "category": "混合型"
+    "code": "of000849",
+    "name": "汇丰晋信双核策略混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of000935",
     "name": "浙商汇金转型成长",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of000966",
-    "name": "中邮核心科技创新灵活配置混合",
-    "category": "混合型"
+    "code": "of000986",
+    "name": "太平灵活配置",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of000993",
-    "name": "华宝稳健回报混合",
-    "category": "混合型"
+    "code": "of001067",
+    "name": "鹏华弘盛混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001037",
-    "name": "国投瑞银锐意改革混合A",
-    "category": "混合型"
+    "code": "of001115",
+    "name": "广发聚安混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001073",
-    "name": "华泰柏瑞量化绝对收益混合",
-    "category": "混合型"
+    "code": "of001143",
+    "name": "华商量化进取混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of001110",
-    "name": "中欧瑾泉灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of001127",
-    "name": "中银宏观策略混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of001146",
-    "name": "中欧瑾源灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of001157",
-    "name": "国联安睿祺灵活配置混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of001183",
-    "name": "南方利淘A",
-    "category": "混合型"
+    "code": "of001172",
+    "name": "鹏华弘泽混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of001202",
     "name": "东方红领先精选混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001220",
-    "name": "民生加银研究精选混合",
-    "category": "混合型"
+    "code": "of001227",
+    "name": "中邮信息产业灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001231",
-    "name": "银华泰利灵活配置混合A",
-    "category": "混合型"
+    "code": "of001266",
+    "name": "国投瑞银招财混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001255",
-    "name": "长城改革红利混合A",
-    "category": "混合型"
+    "code": "of001286",
+    "name": "易方达新鑫混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of001270",
-    "name": "英大灵活配置混合型发起式A",
-    "category": "混合型"
+    "code": "of001311",
+    "name": "华安新回报混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001281",
-    "name": "长安鑫利优选混合A",
-    "category": "混合型"
+    "code": "of001330",
+    "name": "鹏华弘实混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of001302",
-    "name": "前海开源金银珠宝混合A",
-    "category": "混合型"
+    "code": "of001355",
+    "name": "广发聚泰混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001316",
-    "name": "安信稳健增值混合A",
-    "category": "混合型"
+    "code": "of001379",
+    "name": "景顺长城领先回报混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of001329",
-    "name": "鹏华弘实混合A",
-    "category": "混合型"
+    "code": "of001405",
+    "name": "东方红策略精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001349",
-    "name": "富国改革动力混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of001364",
-    "name": "大成景润灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of001387",
-    "name": "国联新经济混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of001412",
-    "name": "德邦鑫星价值灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of001430",
-    "name": "中邮乐享收益灵活配置混合A",
-    "category": "混合型"
+    "code": "of001433",
+    "name": "易方达瑞景混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
     "code": "of001463",
     "name": "光大一带一路混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001479",
-    "name": "中邮风格轮动灵活配置混合",
-    "category": "混合型"
+    "code": "of001489",
+    "name": "万家瑞丰灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of001508",
-    "name": "富国新动力灵活配置混合A",
-    "category": "混合型"
+    "code": "of001530",
+    "name": "万家瑞富灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001534",
-    "name": "华宝万物互联混合A",
-    "category": "混合型"
+    "code": "of001564",
+    "name": "东方红京东大数据混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001558",
-    "name": "天弘医疗健康混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of001574",
-    "name": "中海混改红利混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of001607",
-    "name": "英大策略优选A",
-    "category": "混合型"
+    "code": "of001603",
+    "name": "易方达安盈回报混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of001648",
     "name": "工银新价值灵活配置混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001675",
-    "name": "江信同福A",
-    "category": "混合型"
+    "code": "of001688",
+    "name": "嘉实新起点混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001702",
-    "name": "东方创新科技混合",
-    "category": "混合型"
+    "code": "of001721",
+    "name": "工银新增益混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of001716",
-    "name": "工银新趋势灵活配置混合A",
-    "category": "混合型"
+    "code": "of001746",
+    "name": "易方达瑞富灵活配置混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of001740",
-    "name": "光大中国制造2025灵活配置混合A",
-    "category": "混合型"
+    "code": "of001780",
+    "name": "诺安改革趋势灵活配置混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of001758",
-    "name": "嘉实研究增强混合",
-    "category": "混合型"
+    "code": "of001808",
+    "name": "银华互联网主题灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001789",
-    "name": "国泰量化收益灵活配置混合A",
-    "category": "混合型"
+    "code": "of001835",
+    "name": "易方达瑞祥混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001809",
-    "name": "中信建投智信物联网A",
-    "category": "混合型"
+    "code": "of001874",
+    "name": "前海开源沪港深价值精选混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of001830",
-    "name": "融通跨界成长灵活配置混合",
-    "category": "混合型"
+    "code": "of001898",
+    "name": "易方达大健康混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of001853",
-    "name": "融通中国风1号灵活配置混合A/B(后端)",
-    "category": "混合型"
+    "code": "of001933",
+    "name": "华商新兴活力混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of001875",
-    "name": "前海开源沪港深优势精选混合A",
-    "category": "混合型"
+    "code": "of001986",
+    "name": "前海开源人工智能主题混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001905",
-    "name": "华安安益灵活配置混合A",
-    "category": "混合型"
+    "code": "of002015",
+    "name": "南方荣光A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of001940",
-    "name": "农银现代农业加",
-    "category": "混合型"
+    "code": "of002043",
+    "name": "天治研究驱动混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of001978",
-    "name": "泰信互联网+主题混合A",
-    "category": "混合型"
+    "code": "of002062",
+    "name": "国泰国策驱动灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of002002",
-    "name": "华夏回报混合A(后端)",
-    "category": "混合型"
+    "code": "of002096",
+    "name": "博时新收益C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of002018",
-    "name": "鹏华弘安混合A",
-    "category": "混合型"
+    "code": "of002135",
+    "name": "广发鑫源混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of002049",
-    "name": "融通新机遇灵活配置混合",
-    "category": "混合型"
+    "code": "of002160",
+    "name": "南方驱动混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of002087",
-    "name": "国富新机遇混合A",
-    "category": "混合型"
+    "code": "of002186",
+    "name": "国联安鑫享灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of002125",
-    "name": "广发新兴成长混合A",
-    "category": "混合型"
+    "code": "of002228",
+    "name": "长城新优选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of002146",
-    "name": "长安鑫益增强混合A",
-    "category": "混合型"
+    "code": "of002273",
+    "name": "宏利创益混合B",
+    "category": "混合型",
+    "shareClass": "B"
   },
   {
-    "code": "of002174",
-    "name": "东方互联网嘉混合",
-    "category": "混合型"
+    "code": "of002319",
+    "name": "大成一带一路灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of002211",
-    "name": "嘉实新财富混合A",
-    "category": "混合型"
+    "code": "of002376",
+    "name": "国寿安保核心产业混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of002244",
-    "name": "景顺长城低碳科技主题混合",
-    "category": "混合型"
+    "code": "of002425",
+    "name": "金鹰元禧混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of002264",
-    "name": "华夏乐享健康混合A",
-    "category": "混合型"
+    "code": "of002489",
+    "name": "国泰民福策略价值混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of002288",
-    "name": "中银稳进策略混合A",
-    "category": "混合型"
+    "code": "of002542",
+    "name": "长城久鼎混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of002305",
-    "name": "光大风格轮动混合A",
-    "category": "混合型"
+    "code": "of002577",
+    "name": "南方新兴龙头灵活配置混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of002350",
-    "name": "华安安华灵活配置混合A",
-    "category": "混合型"
+    "code": "of002605",
+    "name": "融通新消费灵活配置混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of002389",
-    "name": "招商安德灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of002446",
-    "name": "广发利鑫灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of002482",
-    "name": "宝盈互联网沪港深混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of002518",
-    "name": "民生加银鑫福混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of002561",
-    "name": "东吴安鑫量化混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of002581",
-    "name": "招商丰凯混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of002602",
-    "name": "易方达丰惠混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of002622",
-    "name": "广发稳裕混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of002657",
-    "name": "招商安裕灵活配置混合A",
-    "category": "混合型"
+    "code": "of002649",
+    "name": "民生智造2025灵活配置混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
     "code": "of002683",
     "name": "民生加银前沿科技灵活配置混合",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of002717",
-    "name": "红塔红土盛隆灵活配置A",
-    "category": "混合型"
+    "code": "of002746",
+    "name": "汇添富多策略定开混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of002776",
-    "name": "招商安荣混合A",
-    "category": "混合型"
+    "code": "of002801",
+    "name": "泓德泓信混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of002804",
-    "name": "华泰柏瑞量化对冲",
-    "category": "混合型"
+    "code": "of002849",
+    "name": "金信智能中国2025混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of002846",
-    "name": "泓德泓华混合",
-    "category": "混合型"
+    "code": "of002945",
+    "name": "大成盛世精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of002910",
-    "name": "易方达供给改革混合",
-    "category": "混合型"
+    "code": "of003044",
+    "name": "东方红战略精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of002956",
-    "name": "融通新趋势灵活配置混合(后端)",
-    "category": "混合型"
+    "code": "of003131",
+    "name": "国寿安保强国智造混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of003030",
-    "name": "安信新目标混合A",
-    "category": "混合型"
+    "code": "of003182",
+    "name": "华富弘鑫混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of003125",
-    "name": "中科沃土沃鑫成长精选混合A",
-    "category": "混合型"
+    "code": "of003294",
+    "name": "嘉实新趋势混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of003165",
-    "name": "鹏华弘嘉混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of003282",
-    "name": "中信保诚至裕混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of003331",
-    "name": "博时乐臻定开混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of003397",
-    "name": "银华体育文化灵活配置混合A",
-    "category": "混合型"
+    "code": "of003380",
+    "name": "中信保诚至选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of003495",
     "name": "鹏华弘尚混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of003581",
-    "name": "前海联合国民健康混合A",
-    "category": "混合型"
+    "code": "of003591",
+    "name": "华泰柏瑞享利混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of003655",
-    "name": "信澳新财富混合A",
-    "category": "混合型"
+    "code": "of003693",
+    "name": "大成景尚灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of003717",
-    "name": "中银量化精选混合A",
-    "category": "混合型"
+    "code": "of003839",
+    "name": "易方达瑞通灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of003842",
-    "name": "中邮景泰灵活配置混合A",
-    "category": "混合型"
+    "code": "of003883",
+    "name": "易方达瑞弘混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of003889",
-    "name": "汇安丰泽混合A",
-    "category": "混合型"
+    "code": "of004011",
+    "name": "华泰柏瑞鼎利灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of004044",
-    "name": "金鹰转型动力混合",
-    "category": "混合型"
+    "code": "of004129",
+    "name": "国联安鑫汇混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004119",
-    "name": "广发创新驱动灵活配置混合",
-    "category": "混合型"
+    "code": "of004218",
+    "name": "前海开源裕和混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004154",
-    "name": "中信保诚新悦混合B",
-    "category": "混合型"
+    "code": "of004244",
+    "name": "东方周期优选灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004223",
-    "name": "金信多策略精选混合A",
-    "category": "混合型"
+    "code": "of004314",
+    "name": "前海开源沪港深新硬件A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004260",
-    "name": "德邦稳盈增长灵活配置混合A",
-    "category": "混合型"
+    "code": "of004374",
+    "name": "华泰保兴吉年丰混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004316",
-    "name": "前海开源沪港深裕鑫A",
-    "category": "混合型"
-  },
-  {
-    "code": "of004355",
-    "name": "嘉实丰和灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of004413",
-    "name": "建信民丰回报混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of004456",
-    "name": "兴银消费新趋势灵活配置A",
-    "category": "混合型"
+    "code": "of004442",
+    "name": "中欧康裕混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of004521",
     "name": "安信工业4.0灵活配置混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of004657",
     "name": "金鹰民富收益混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004694",
-    "name": "天弘策略精选混合A",
-    "category": "混合型"
+    "code": "of004707",
+    "name": "景顺长城睿成混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004726",
-    "name": "先锋聚优A",
-    "category": "混合型"
+    "code": "of004745",
+    "name": "长盛创新驱动混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004763",
-    "name": "中科沃土沃嘉混合A",
-    "category": "混合型"
+    "code": "of004795",
+    "name": "富荣福鑫混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of004833",
-    "name": "先锋聚利混合A",
-    "category": "混合型"
+    "code": "of004852",
+    "name": "广发价值回报混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of004890",
-    "name": "中邮健康文娱灵活配置混合A",
-    "category": "混合型"
+    "code": "of004927",
+    "name": "中航军民融合精选C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of004934",
-    "name": "圆信永丰消费升级",
-    "category": "混合型"
+    "code": "of004966",
+    "name": "泓德致远混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of004975",
-    "name": "交银恒益灵活配置混合A",
-    "category": "混合型"
+    "code": "of005040",
+    "name": "鹏扬景兴混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of005014",
-    "name": "泰康景泰回报混合A",
-    "category": "混合型"
+    "code": "of005089",
+    "name": "嘉实新添辉定期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of005067",
-    "name": "融通逆向策略灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of005109",
-    "name": "汇安多策略混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of005140",
-    "name": "华夏睿磐泰荣混合A",
-    "category": "混合型"
+    "code": "of005136",
+    "name": "华安幸福生活混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of005190",
     "name": "东方红沪港深混合(后端)",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of005244",
-    "name": "国泰聚优价值灵活配置混合A",
-    "category": "混合型"
+    "code": "of005251",
+    "name": "银华多元动力灵活配置混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of005269",
-    "name": "华泰柏瑞港股通量化混合A",
-    "category": "混合型"
+    "code": "of005281",
+    "name": "中科沃土转型升级混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005294",
-    "name": "诺德新宜灵活配置混合",
-    "category": "混合型"
+    "code": "of005331",
+    "name": "益民优势安享混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005335",
-    "name": "浙商全景消费混合A",
-    "category": "混合型"
+    "code": "of005368",
+    "name": "富国清洁能源产业混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005358",
-    "name": "东方阿尔法精选混合A",
-    "category": "混合型"
+    "code": "of005437",
+    "name": "易方达易百智能量化策略A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005400",
-    "name": "万家潜力价值灵活配置混合A",
-    "category": "混合型"
+    "code": "of005482",
+    "name": "博时创新驱动混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005449",
-    "name": "华夏行业龙头混合",
-    "category": "混合型"
+    "code": "of005522",
+    "name": "华泰保兴吉年福定开混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of005489",
-    "name": "中金衡优灵活配置混合A",
-    "category": "混合型"
+    "code": "of005553",
+    "name": "国富新趋势混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of005521",
-    "name": "华安红利精选混合A",
-    "category": "混合型"
+    "code": "of005600",
+    "name": "汇安量化优选灵活配置C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of005544",
-    "name": "银华瑞和灵活配置混合A",
-    "category": "混合型"
+    "code": "of005652",
+    "name": "国富天颐混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005587",
-    "name": "安信比较优势混合A",
-    "category": "混合型"
+    "code": "of005701",
+    "name": "摩根香港精选港股通混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005616",
-    "name": "东方量化成长灵活配置混合A",
-    "category": "混合型"
+    "code": "of005760",
+    "name": "富国周期优势混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005646",
-    "name": "中海沪港深多策略灵活配置混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of005682",
-    "name": "财通资管消费精选混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of005711",
-    "name": "永赢惠添利灵活配置混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of005742",
-    "name": "南方成安优选混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of005810",
-    "name": "南方瑞祥一年混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of005840",
-    "name": "富国产业驱动混合A",
-    "category": "混合型"
+    "code": "of005823",
+    "name": "泰康颐享混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of005876",
     "name": "易方达鑫转增利混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005914",
-    "name": "景顺长城智能生活混合A",
-    "category": "混合型"
+    "code": "of005933",
+    "name": "前海联合先进制造混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of005967",
-    "name": "鹏华创新驱动混合A",
-    "category": "混合型"
+    "code": "of005959",
+    "name": "财通新视野灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of006022",
-    "name": "富国大盘价值量化精选混合A",
-    "category": "混合型"
+    "code": "of006013",
+    "name": "易方达鑫转招利混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006100",
-    "name": "平安优势产业混合A",
-    "category": "混合型"
+    "code": "of006104",
+    "name": "华泰柏瑞量化智慧混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of006132",
-    "name": "万家智造优势混合A",
-    "category": "混合型"
+    "code": "of006159",
+    "name": "博时荣享回报混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of006181",
-    "name": "格林伯锐灵活配置A",
-    "category": "混合型"
+    "code": "of006218",
+    "name": "富国生物医药科技混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006231",
-    "name": "国融融君混合A",
-    "category": "混合型"
+    "code": "of006259",
+    "name": "汇添富红利增长混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006266",
-    "name": "永赢智能领先混合A",
-    "category": "混合型"
+    "code": "of006323",
+    "name": "合煦智远嘉选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006314",
-    "name": "国联策略优选混合A",
-    "category": "混合型"
+    "code": "of006392",
+    "name": "中信保诚创新成长混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006369",
-    "name": "弘毅远方国企转型升级混合A",
-    "category": "混合型"
+    "code": "of006457",
+    "name": "平安估值优势混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006424",
-    "name": "嘉合锦程混合A",
-    "category": "混合型"
+    "code": "of006535",
+    "name": "恒生前海恒锦裕利A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006522",
-    "name": "财通新兴蓝筹混合A",
-    "category": "混合型"
+    "code": "of006573",
+    "name": "人保行业轮动混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006547",
-    "name": "红塔红土盛弘混合A",
-    "category": "混合型"
+    "code": "of006649",
+    "name": "汇安多因子混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of006601",
-    "name": "国融融泰灵活配置混合A",
-    "category": "混合型"
+    "code": "of006769",
+    "name": "长城研究精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006689",
-    "name": "方正富邦信泓混合A",
-    "category": "混合型"
+    "code": "of006878",
+    "name": "天治量化核心精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of006768",
-    "name": "华安沪港深优选混合",
-    "category": "混合型"
+    "code": "of006976",
+    "name": "鹏华核心优势混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006836",
-    "name": "永赢惠泽一年",
-    "category": "混合型"
+    "code": "of007063",
+    "name": "长盛研发回报混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006890",
-    "name": "摩根领先优选混合A",
-    "category": "混合型"
+    "code": "of007119",
+    "name": "睿远成长价值混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of006977",
-    "name": "农银汇理海棠三年定开混合",
-    "category": "混合型"
+    "code": "of007183",
+    "name": "万家沪港深蓝筹混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of007074",
-    "name": "国寿安保新蓝筹混合",
-    "category": "混合型"
+    "code": "of007291",
+    "name": "汇丰晋信港股通双核策略混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of007132",
-    "name": "长城港股通价值精选混合A",
-    "category": "混合型"
+    "code": "of007350",
+    "name": "华夏科技创新混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of007182",
-    "name": "万家沪港深蓝筹混合A",
-    "category": "混合型"
+    "code": "of007449",
+    "name": "兴全多维价值混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of007277",
-    "name": "恒生前海消费升级混合",
-    "category": "混合型"
+    "code": "of007501",
+    "name": "万家科创主题灵活配置混合(LOF)C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of007345",
-    "name": "富国科技创新灵活配置混合",
-    "category": "混合型"
+    "code": "of007575",
+    "name": "宝盈祥泰混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of007393",
-    "name": "上银未来生活灵活配置混合A",
-    "category": "混合型"
+    "code": "of007725",
+    "name": "招商瑞文混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of007484",
-    "name": "信澳核心科技混合A",
-    "category": "混合型"
+    "code": "of007808",
+    "name": "华银量化优选灵活配置",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of007549",
-    "name": "中泰开阳价值优选混合A",
-    "category": "混合型"
+    "code": "of007875",
+    "name": "国融融兴混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of007733",
-    "name": "南方智锐混合A",
-    "category": "混合型"
+    "code": "of007968",
+    "name": "华泰柏瑞研究精选A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of007835",
-    "name": "国泰鑫睿混合",
-    "category": "混合型"
+    "code": "of008091",
+    "name": "中信保诚红利精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of007887",
-    "name": "东方红启元三年持有混合B",
-    "category": "混合型"
-  },
-  {
-    "code": "of008050",
-    "name": "同泰慧择混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of008110",
-    "name": "九泰科盈价值混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of008150",
-    "name": "嘉实远见企业精选两年持有期混合",
-    "category": "混合型"
+    "code": "of008140",
+    "name": "汇添富绝对收益定开混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of008209",
     "name": "南方宝泰一年混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of008271",
-    "name": "大成优势企业混合A",
-    "category": "混合型"
+    "code": "of008270",
+    "name": "大成睿享混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of008308",
-    "name": "华夏见龙精选混合",
-    "category": "混合型"
+    "code": "of008313",
+    "name": "光大研究精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of008353",
-    "name": "宏利消费量化混合A",
-    "category": "混合型"
+    "code": "of008372",
+    "name": "富国阿尔法两年持有期混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of008378",
-    "name": "兴全社会价值三年持有混合",
-    "category": "混合型"
+    "code": "of008419",
+    "name": "惠升惠泽混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of008424",
-    "name": "国联品牌优选混合A",
-    "category": "混合型"
+    "code": "of008499",
+    "name": "鹏扬景科混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of008507",
-    "name": "交银内核驱动混合",
-    "category": "混合型"
+    "code": "of008576",
+    "name": "财通碳中和一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of008547",
-    "name": "博道安远6个月持有期混合",
-    "category": "混合型"
+    "code": "of008656",
+    "name": "招商科技创新混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of008640",
-    "name": "方正富邦科技创新A",
-    "category": "混合型"
+    "code": "of008723",
+    "name": "永赢鑫享混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of008712",
-    "name": "景顺长城品质成长混合A",
-    "category": "混合型"
+    "code": "of008833",
+    "name": "银华汇盈一年持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of008786",
-    "name": "长城健康生活混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of008838",
-    "name": "德邦量化对冲混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of008866",
-    "name": "博时产业新趋势混合A",
-    "category": "混合型"
+    "code": "of008861",
+    "name": "西部利得港股通新机遇混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of008919",
     "name": "永赢科技驱动A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of008978",
-    "name": "银华长丰混合发起式",
-    "category": "混合型"
+    "code": "of008979",
+    "name": "万家民丰回报一年持有混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of009005",
-    "name": "创金合信鑫祺混合A",
-    "category": "混合型"
+    "code": "of009009",
+    "name": "平安科技创新混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009025",
-    "name": "海富通科技创新混合A",
-    "category": "混合型"
+    "code": "of009049",
+    "name": "易方达高端制造混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009057",
-    "name": "博时科技创新混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of009096",
-    "name": "鹏华安泽混合A",
-    "category": "混合型"
+    "code": "of009092",
+    "name": "富国新材料新能源混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of009128",
     "name": "明亚价值长青混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009154",
-    "name": "海富通富盈混合A",
-    "category": "混合型"
+    "code": "of009152",
+    "name": "南方瑞盛三年混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of009199",
     "name": "万家价值优势一年持有期混合",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
     "code": "of009232",
     "name": "鹏华安惠混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009263",
-    "name": "华宝红利精选混合A",
-    "category": "混合型"
+    "code": "of009261",
+    "name": "民生加银聚利6个月混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009318",
-    "name": "南方成长先锋混合A",
-    "category": "混合型"
+    "code": "of009308",
+    "name": "天弘安康颐养混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009353",
-    "name": "浙商科创一个月滚动持有混合A",
-    "category": "混合型"
+    "code": "of009342",
+    "name": "易方达优质企业三年持有期混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of009380",
-    "name": "富安达科技领航混合A",
-    "category": "混合型"
+    "code": "of009368",
+    "name": "浦银安盛价值精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009411",
-    "name": "中银科技创新一年定开混合",
-    "category": "混合型"
+    "code": "of009401",
+    "name": "华安添瑞6个月混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009437",
-    "name": "信澳科技创新一年定开混合A",
-    "category": "混合型"
+    "code": "of009432",
+    "name": "德邦科技创新一年定开混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009488",
-    "name": "中邮价值精选混合A",
-    "category": "混合型"
+    "code": "of009489",
+    "name": "中邮价值精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009527",
-    "name": "浙商汇金新兴消费混合",
-    "category": "混合型"
+    "code": "of009539",
+    "name": "兴业睿进混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009564",
-    "name": "汇安消费龙头混合A",
-    "category": "混合型"
+    "code": "of009576",
+    "name": "东方红智远三年持有混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of009606",
-    "name": "长信稳健精选混合A",
-    "category": "混合型"
+    "code": "of009622",
+    "name": "中欧心益稳健6个月混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009636",
-    "name": "华泰柏瑞景气优选A",
-    "category": "混合型"
+    "code": "of009649",
+    "name": "嘉实精选平衡混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009661",
-    "name": "平安研究睿选混合A",
-    "category": "混合型"
+    "code": "of009669",
+    "name": "长信量化价值驱动混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009688",
-    "name": "万家鑫动力月月购一年滚动混合",
-    "category": "混合型"
+    "code": "of009695",
+    "name": "招商成长精选一年定开混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009707",
-    "name": "工银新兴制造混合A",
-    "category": "混合型"
+    "code": "of009716",
+    "name": "博时恒盛持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009750",
-    "name": "汇安价值蓝筹混合A",
-    "category": "混合型"
+    "code": "of009766",
+    "name": "安信平稳双利3个月持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009796",
-    "name": "大成汇享一年持有混合A",
-    "category": "混合型"
+    "code": "of009798",
+    "name": "大成创业板两年定开混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009819",
-    "name": "嘉实鑫福一年持有期混合",
-    "category": "混合型"
+    "code": "of009821",
+    "name": "嘉实浦惠6个月持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009847",
-    "name": "圆信永丰研究精选混合A",
-    "category": "混合型"
+    "code": "of009848",
+    "name": "圆信永丰研究精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009869",
-    "name": "嘉实产业先锋混合A",
-    "category": "混合型"
+    "code": "of009872",
+    "name": "中欧责任投资混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009893",
-    "name": "大摩优悦安和混合A",
-    "category": "混合型"
+    "code": "of009902",
+    "name": "易方达悦享一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009929",
-    "name": "南方创新驱动混合A",
-    "category": "混合型"
+    "code": "of009937",
+    "name": "东方欣益一年持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of009958",
-    "name": "长安鑫悦消费混合A",
-    "category": "混合型"
+    "code": "of009966",
+    "name": "宝盈祥琪混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of009984",
-    "name": "鹏华启航混合",
-    "category": "混合型"
+    "code": "of009993",
+    "name": "嘉实前沿创新混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of009999",
-    "name": "东方中国红利混合",
-    "category": "混合型"
+    "code": "of010023",
+    "name": "广发制造业精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010036",
-    "name": "广发恒通六个月持有期混合A",
-    "category": "混合型"
+    "code": "of010042",
+    "name": "嘉实港股优势混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010062",
-    "name": "南方行业精选一年混合A",
-    "category": "混合型"
+    "code": "of010065",
+    "name": "圆信永丰兴研C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010104",
-    "name": "景顺长城消费精选混合A",
-    "category": "混合型"
+    "code": "of010106",
+    "name": "华夏核心科技6个月定开混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010122",
-    "name": "华泰柏瑞优势领航混合A",
-    "category": "混合型"
+    "code": "of010127",
+    "name": "平安价值成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010148",
-    "name": "浙商智选经济动能混合A",
-    "category": "混合型"
+    "code": "of010159",
+    "name": "中银医疗保健混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010186",
-    "name": "嘉实核心成长混合A",
-    "category": "混合型"
+    "code": "of010188",
+    "name": "中欧添益一年混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010220",
-    "name": "海富通消费核心混合A",
-    "category": "混合型"
+    "code": "of010228",
+    "name": "平安鼎弘混合(LOF)C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010257",
-    "name": "天弘多利一年定开混合A",
-    "category": "混合型"
+    "code": "of010268",
+    "name": "太平睿安混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010286",
-    "name": "海富通成长价值混合A",
-    "category": "混合型"
+    "code": "of010291",
+    "name": "华泰柏瑞研究精选C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010305",
-    "name": "华夏创新驱动混合A",
-    "category": "混合型"
+    "code": "of010313",
+    "name": "上银鑫恒混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010336",
-    "name": "中欧悦享生活混合A",
-    "category": "混合型"
+    "code": "of010345",
+    "name": "华泰柏瑞成长智选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010369",
-    "name": "大成卓享一年持有混合A",
-    "category": "混合型"
+    "code": "of010377",
+    "name": "广发价值核心混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010385",
-    "name": "华安汇嘉精选混合A",
-    "category": "混合型"
+    "code": "of010405",
+    "name": "惠升医药健康6个月持有期混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of010413",
-    "name": "财通资管宸瑞一年持有混合A",
-    "category": "混合型"
+    "code": "of010426",
+    "name": "国投瑞银开放视角精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010437",
-    "name": "嘉实竞争力优选混合A",
-    "category": "混合型"
+    "code": "of010452",
+    "name": "广发瑞福精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010454",
-    "name": "交银内需增长一年持有混合",
-    "category": "混合型"
+    "code": "of010489",
+    "name": "鹏华优选成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010488",
-    "name": "鹏华优选成长混合A",
-    "category": "混合型"
+    "code": "of010534",
+    "name": "广发均衡增长混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010536",
-    "name": "泰康优势企业混合A",
-    "category": "混合型"
+    "code": "of010550",
+    "name": "华商双擎领航混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of010551",
-    "name": "淳厚欣颐一年持有期混合",
-    "category": "混合型"
+    "code": "of010587",
+    "name": "鹏扬先进制造混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010584",
-    "name": "渤海汇金新动能主题混合A",
-    "category": "混合型"
+    "code": "of010610",
+    "name": "摩根远见两年持有期混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of010605",
-    "name": "创金合信鑫祥混合A",
-    "category": "混合型"
+    "code": "of010646",
+    "name": "融通价值趋势混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010636",
-    "name": "财通安盈混合A",
-    "category": "混合型"
+    "code": "of010667",
+    "name": "安信价值回报三年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010663",
-    "name": "长江均衡成长混合发起式A",
-    "category": "混合型"
+    "code": "of010694",
+    "name": "万家内需增长一年持有混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of010692",
-    "name": "华夏核心价值混合A",
-    "category": "混合型"
+    "code": "of010715",
+    "name": "财通资管消费升级一年持有A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010707",
-    "name": "安信平稳合盈一年持有混合A",
-    "category": "混合型"
+    "code": "of010740",
+    "name": "汇安核心价值混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010730",
-    "name": "银华心佳两年持有期混合",
-    "category": "混合型"
+    "code": "of010775",
+    "name": "博时恒旭持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010751",
-    "name": "宝盈优质成长混合A",
-    "category": "混合型"
+    "code": "of010796",
+    "name": "民生价值发现一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010787",
-    "name": "华安优势企业混合A",
-    "category": "混合型"
+    "code": "of010826",
+    "name": "大成产业趋势混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010817",
-    "name": "国联安鑫稳3个月持有混合A",
-    "category": "混合型"
+    "code": "of010846",
+    "name": "南方卓越优选3个月持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010839",
-    "name": "易方达瑞安灵活配置混合A",
-    "category": "混合型"
+    "code": "of010877",
+    "name": "浙商智选先锋一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010868",
-    "name": "华宝安盈混合A",
-    "category": "混合型"
+    "code": "of010898",
+    "name": "银河产业动力混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010885",
-    "name": "长盛优势企业精选混合A",
-    "category": "混合型"
+    "code": "of010923",
+    "name": "永赢鑫欣混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010906",
-    "name": "博远优享混合A",
-    "category": "混合型"
+    "code": "of010945",
+    "name": "招商商业模式优选C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010929",
-    "name": "大成核心价值甄选混合A",
-    "category": "混合型"
+    "code": "of010978",
+    "name": "华夏鸿阳6个月持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of010963",
-    "name": "信澳周期动力混合A",
-    "category": "混合型"
+    "code": "of011011",
+    "name": "融通产业趋势精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of010984",
-    "name": "国寿安保稳安混合A",
-    "category": "混合型"
+    "code": "of011034",
+    "name": "南方宝恒混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011015",
-    "name": "嘉合锦元回报混合A",
-    "category": "混合型"
+    "code": "of011060",
+    "name": "西部利得策略优选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011044",
-    "name": "中银顺泽回报一年持有期混合A",
-    "category": "混合型"
+    "code": "of011087",
+    "name": "易方达瑞康混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011069",
-    "name": "工银成长精选混合A",
-    "category": "混合型"
+    "code": "of011118",
+    "name": "汇添富稳健睿选一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011099",
-    "name": "富国价值创造混合A",
-    "category": "混合型"
+    "code": "of011139",
+    "name": "广发聚鸿六个月持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011138",
-    "name": "广发聚鸿六个月持有期混合A",
-    "category": "混合型"
+    "code": "of011163",
+    "name": "博时港股通领先趋势混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011167",
-    "name": "景顺长城景气成长混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of011184",
-    "name": "东方阿尔法招阳混合A",
-    "category": "混合型"
+    "code": "of011182",
+    "name": "长盛成长龙头混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of011201",
     "name": "财通优势行业轮动混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011243",
-    "name": "万家惠裕回报6个月持有期混合A",
-    "category": "混合型"
+    "code": "of011232",
+    "name": "光大锦弘混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011267",
-    "name": "长盛鑫盛稳健一年持有A",
-    "category": "混合型"
+    "code": "of011256",
+    "name": "交银鸿光一年混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011287",
-    "name": "前海开源聚慧三年持有混合",
-    "category": "混合型"
+    "code": "of011278",
+    "name": "华夏内需驱动混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011312",
-    "name": "东方红启瑞三年持有混合B",
-    "category": "混合型"
+    "code": "of011302",
+    "name": "易方达悦盈一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011336",
-    "name": "兴全汇吉一年持有混合A",
-    "category": "混合型"
+    "code": "of011331",
+    "name": "鹏华远见成长混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011355",
-    "name": "华泰柏瑞港股通时代机遇混合A",
-    "category": "混合型"
+    "code": "of011348",
+    "name": "易方达宁易一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011387",
-    "name": "工银宁瑞6个月持有期混合A",
-    "category": "混合型"
+    "code": "of011371",
+    "name": "华商远见价值A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011403",
-    "name": "融通鑫新成长混合A",
-    "category": "混合型"
+    "code": "of011400",
+    "name": "汇添富数字未来混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011435",
-    "name": "中欧研究精选混合A",
-    "category": "混合型"
+    "code": "of011429",
+    "name": "前海开源民裕进取",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of011468",
-    "name": "国富竞争优势三年持有期混合A",
-    "category": "混合型"
+    "code": "of011454",
+    "name": "华泰柏瑞景气优选C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011501",
-    "name": "方正富邦汇福一年定开混合A",
-    "category": "混合型"
+    "code": "of011475",
+    "name": "工银消费服务混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011521",
-    "name": "鹏扬景源一年持有混合A",
-    "category": "混合型"
+    "code": "of011505",
+    "name": "上银丰益混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011536",
-    "name": "惠升惠益混合A",
-    "category": "混合型"
+    "code": "of011526",
+    "name": "中信保诚丰裕一年持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011562",
-    "name": "汇添富稳健盈和一年持有混合",
-    "category": "混合型"
+    "code": "of011549",
+    "name": "九泰久慧混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011585",
-    "name": "博时产业慧选混合A",
-    "category": "混合型"
+    "code": "of011567",
+    "name": "富国消费升级混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011637",
-    "name": "广发沪港深价值成长混合A",
-    "category": "混合型"
+    "code": "of011588",
+    "name": "前海开源成份精选混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of011687",
-    "name": "易方达龙头优选两年持有混合A",
-    "category": "混合型"
+    "code": "of011644",
+    "name": "嘉实时代先锋三年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of011690",
+    "name": "招商品质发现混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of011710",
     "name": "中欧睿泽混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of011733",
     "name": "银华瑞祥一年持有期混合",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of011756",
-    "name": "博时产业优选混合A",
-    "category": "混合型"
+    "code": "of011755",
+    "name": "广发竞争优势混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011777",
-    "name": "易方达稳健增长混合A",
-    "category": "混合型"
+    "code": "of011774",
+    "name": "国寿安保璟珹6个月持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011791",
-    "name": "招商瑞盈9个月持有期混合A",
-    "category": "混合型"
+    "code": "of011789",
+    "name": "工银聚益混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011813",
-    "name": "融通创新动力混合A",
-    "category": "混合型"
+    "code": "of011811",
+    "name": "财通安华混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of011828",
     "name": "平安睿享成长混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011849",
-    "name": "西部利得量化价值一年持有期混合",
-    "category": "混合型"
+    "code": "of011848",
+    "name": "易方达商业模式优选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011874",
-    "name": "博时先进制造混合A",
-    "category": "混合型"
+    "code": "of011872",
+    "name": "中邮悦享6个月持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of011903",
-    "name": "南方领航优选混合A",
-    "category": "混合型"
+    "code": "of011895",
+    "name": "博时医疗保健行业混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011927",
-    "name": "博时汇誉回报混合A",
-    "category": "混合型"
+    "code": "of011914",
+    "name": "华夏永泓一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of011977",
-    "name": "格林研究优选混合A",
-    "category": "混合型"
+    "code": "of011938",
+    "name": "博时新能源汽车主题混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012005",
-    "name": "信澳恒盛混合A",
-    "category": "混合型"
+    "code": "of011981",
+    "name": "国富匠心精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012007",
+    "name": "万家瑞富灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of012033",
     "name": "广发睿盛混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012067",
-    "name": "嘉实蓝筹优势混合A",
-    "category": "混合型"
+    "code": "of012069",
+    "name": "天弘安康颐享12个月持有A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012086",
-    "name": "博时健康生活混合A",
-    "category": "混合型"
+    "code": "of012088",
+    "name": "东方红锦和甄选18个月持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012113",
-    "name": "融通稳健增长一年持有期混合A",
-    "category": "混合型"
+    "code": "of012119",
+    "name": "工银核心优势混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012138",
-    "name": "景顺长城安益回报一年持有混合A",
-    "category": "混合型"
+    "code": "of012147",
+    "name": "富国大盘核心资产混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of012161",
-    "name": "安信招信一年持有混合A",
-    "category": "混合型"
+    "code": "of012174",
+    "name": "国泰兴泽优选一年持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012188",
-    "name": "华安优势龙头混合A",
-    "category": "混合型"
+    "code": "of012195",
+    "name": "万家瑞泽回报一年持有混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of012221",
-    "name": "瑞达行业轮动混合A",
-    "category": "混合型"
+    "code": "of012224",
+    "name": "信澳成长精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012250",
-    "name": "安信平衡增利混合A",
-    "category": "混合型"
+    "code": "of012251",
+    "name": "安信平衡增利混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012268",
-    "name": "浙商智多享稳健混合发起式A",
-    "category": "混合型"
+    "code": "of012269",
+    "name": "浙商智多享稳健混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012297",
-    "name": "东兴宸瑞量化混合A",
-    "category": "混合型"
+    "code": "of012301",
+    "name": "易方达核心智造混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of012342",
-    "name": "广发瑞泽精选混合A",
-    "category": "混合型"
+    "code": "of012347",
+    "name": "易方达港股通成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012373",
-    "name": "富国稳健恒盛12个月持有混合A",
-    "category": "混合型"
+    "code": "of012383",
+    "name": "宏利新兴景气龙头混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012410",
-    "name": "海富通成长领航混合A",
-    "category": "混合型"
+    "code": "of012422",
+    "name": "华夏优加生活混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012437",
-    "name": "德邦价值优选混合A",
-    "category": "混合型"
+    "code": "of012447",
+    "name": "华夏互联网龙头混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012473",
-    "name": "大成成长回报六个月持有混合A",
-    "category": "混合型"
+    "code": "of012475",
+    "name": "平安优质企业混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012491",
-    "name": "华商核心引力混合A",
-    "category": "混合型"
+    "code": "of012494",
+    "name": "长信内需均衡混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012521",
-    "name": "英大稳固增强核心一年持有混合A",
-    "category": "混合型"
+    "code": "of012525",
+    "name": "融通稳信增益6个月持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012556",
-    "name": "长盛景气优选混合",
-    "category": "混合型"
+    "code": "of012568",
+    "name": "天弘高端制造混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012588",
-    "name": "南方港股通优势企业混合A",
-    "category": "混合型"
+    "code": "of012595",
+    "name": "招商瑞享1年持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012661",
-    "name": "广发恒益一年持有期混合A",
-    "category": "混合型"
+    "code": "of012647",
+    "name": "中欧洞见一年持有混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of012690",
-    "name": "广发消费领先混合A",
-    "category": "混合型"
+    "code": "of012681",
+    "name": "永赢鑫辰混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012765",
-    "name": "广发大盘价值混合A",
-    "category": "混合型"
+    "code": "of012710",
+    "name": "华夏核心成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012772",
+    "name": "信澳精华配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of012826",
     "name": "工银聚宁9个月持有期混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012852",
-    "name": "嘉实远见先锋一年持有期混合A",
-    "category": "混合型"
+    "code": "of012851",
+    "name": "国联低碳经济3个月持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of012913",
-    "name": "方正富邦趋势领航混合A",
-    "category": "混合型"
+    "code": "of012905",
+    "name": "金鹰睿选成长六个月持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012963",
-    "name": "招商稳健平衡混合A",
-    "category": "混合型"
+    "code": "of012953",
+    "name": "华泰柏瑞恒利混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of012987",
-    "name": "嘉合锦明混合A",
-    "category": "混合型"
+    "code": "of012978",
+    "name": "瑞达鑫红量化6个月持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013021",
-    "name": "建信兴润一年持有混合",
-    "category": "混合型"
+    "code": "of013000",
+    "name": "广发盛泽一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of013078",
-    "name": "方正富邦策略轮动混合A",
-    "category": "混合型"
+    "code": "of013041",
+    "name": "鹏扬景浦一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of013113",
-    "name": "博时博盈稳健6个月持有期混合A",
-    "category": "混合型"
+    "code": "of013091",
+    "name": "摩根均衡优选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of013175",
-    "name": "海富通碳中和混合A",
-    "category": "混合型"
+    "code": "of013123",
+    "name": "汇添富精选核心优势一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of013225",
-    "name": "景顺长城安景一年持有期混合A",
-    "category": "混合型"
+    "code": "of013166",
+    "name": "东兴宸祥量化混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of013270",
-    "name": "前海开源聚利一年持有混合A",
-    "category": "混合型"
+    "code": "of013209",
+    "name": "金鹰大视野混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of013326",
-    "name": "万家景气驱动混合A",
-    "category": "混合型"
+    "code": "of013261",
+    "name": "太平睿享混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013365",
-    "name": "汇添富产业升级混合A",
-    "category": "混合型"
+    "code": "of013295",
+    "name": "东方红智选三年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013395",
-    "name": "华夏新能源车龙头混合发起式A",
-    "category": "混合型"
+    "code": "of013347",
+    "name": "工银丰盈回报灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013461",
-    "name": "鹏扬成长先锋混合A",
-    "category": "混合型"
+    "code": "of013369",
+    "name": "汇添富自主核心科技一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of013534",
-    "name": "鹏华沃鑫混合A",
-    "category": "混合型"
+    "code": "of013396",
+    "name": "华夏新能源车龙头混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013569",
-    "name": "天弘永利优佳混合A",
-    "category": "混合型"
+    "code": "of013451",
+    "name": "博时凤凰领航混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013623",
-    "name": "湘财周期轮动一年持有混合",
-    "category": "混合型"
+    "code": "of013500",
+    "name": "南方金融主题灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013665",
-    "name": "银河成长优选一年持有混合A",
-    "category": "混合型"
+    "code": "of013531",
+    "name": "浙商聚潮产业成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013712",
-    "name": "方正富邦鑫益一年定开混合A",
-    "category": "混合型"
+    "code": "of013560",
+    "name": "招商均衡回报混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013767",
-    "name": "平安价值回报混合A",
-    "category": "混合型"
+    "code": "of013608",
+    "name": "广发睿恒进取一年持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013824",
-    "name": "汇丰晋信慧悦混合",
-    "category": "混合型"
+    "code": "of013632",
+    "name": "富国利享回报12个月持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of013855",
-    "name": "嘉实品质发现混合A",
-    "category": "混合型"
+    "code": "of013675",
+    "name": "长城价值甄选一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013910",
-    "name": "兴业兴睿两年持有混合A",
-    "category": "混合型"
+    "code": "of013713",
+    "name": "方正富邦鑫益一年定开混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013958",
-    "name": "华商鑫选回报一年持有混合A",
-    "category": "混合型"
+    "code": "of013758",
+    "name": "泰信均衡价值混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of013991",
-    "name": "中欧港股通精选一年持有混合A",
-    "category": "混合型"
+    "code": "of013785",
+    "name": "东方红优质甄选一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014024",
-    "name": "华富卓越成长一年持有期混合A",
-    "category": "混合型"
+    "code": "of013847",
+    "name": "华泰柏瑞匠心汇选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of014068",
-    "name": "工银瑞信悦享混合A",
-    "category": "混合型"
+    "code": "of013872",
+    "name": "招商能源转型混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014135",
-    "name": "中欧金安量化混合A",
-    "category": "混合型"
+    "code": "of013912",
+    "name": "中欧招益稳健一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of014160",
-    "name": "易方达悦融一年持有混合A",
-    "category": "混合型"
+    "code": "of013950",
+    "name": "交银先锋混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014210",
-    "name": "国投瑞银竞争优势混合A",
-    "category": "混合型"
+    "code": "of013981",
+    "name": "光大恒鑫混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014244",
-    "name": "鹏扬竞争力先锋一年持有混合A",
-    "category": "混合型"
+    "code": "of014008",
+    "name": "华安制造升级一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014275",
-    "name": "易方达北交所精选两年定开混合A",
-    "category": "混合型"
+    "code": "of014038",
+    "name": "交银启诚混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of014307",
-    "name": "嘉实多元动力混合A",
-    "category": "混合型"
+    "code": "of014057",
+    "name": "富国金安均衡精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of014333",
-    "name": "工银优势领航混合A",
-    "category": "混合型"
+    "code": "of014107",
+    "name": "博时品质生活混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of014362",
-    "name": "睿远稳进配置两年持有混合A",
-    "category": "混合型"
+    "code": "of014143",
+    "name": "银河创新成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014423",
-    "name": "汇丰晋信研究精选混合",
-    "category": "混合型"
+    "code": "of014171",
+    "name": "富国新兴成长量化精选混合(LOF)C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014482",
-    "name": "华夏融盛可持续一年持有混合A",
-    "category": "混合型"
+    "code": "of014208",
+    "name": "华安产业精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014541",
-    "name": "华安新能源主题混合A",
-    "category": "混合型"
+    "code": "of014236",
+    "name": "淳厚时代优选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014579",
-    "name": "华泰柏瑞恒泽混合A",
-    "category": "混合型"
+    "code": "of014269",
+    "name": "嘉实北交所精选两年定期混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014291",
+    "name": "东方红民享甄选一年持有混合",
+    "category": "混合型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of014326",
+    "name": "国联安核心趋势一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014351",
+    "name": "华商卓越成长一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014401",
+    "name": "富国核心趋势混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of014441",
+    "name": "博时恒鑫稳健一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014479",
+    "name": "中加低碳经济六个月持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014521",
+    "name": "诺安利鑫灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014551",
+    "name": "诺安新动力灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014581",
+    "name": "东吴阿尔法灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of014615",
     "name": "尚正正鑫混合发起A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of014657",
-    "name": "中欧融享增益一年持有期混合A",
-    "category": "混合型"
+    "code": "of014648",
+    "name": "融通先进制造混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014699",
-    "name": "东方高端制造混合A",
-    "category": "混合型"
+    "code": "of014687",
+    "name": "招商核心装备混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014730",
-    "name": "华富荣盛一年持有期混合A",
-    "category": "混合型"
+    "code": "of014708",
+    "name": "天弘臻选健康混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of014767",
-    "name": "景顺长城华城稳健6个月持有期混合A",
-    "category": "混合型"
+    "code": "of014747",
+    "name": "贝莱德港股通远景视野混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014794",
-    "name": "富国远见优选混合A",
-    "category": "混合型"
+    "code": "of014773",
+    "name": "华安品质领先混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of014818",
-    "name": "国金新兴价值混合A",
-    "category": "混合型"
+    "code": "of014800",
+    "name": "工银招瑞一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014841",
-    "name": "东方阿尔法医疗健康混合发起A",
-    "category": "混合型"
+    "code": "of014826",
+    "name": "汇泉兴至未来一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014892",
-    "name": "永赢添添欣12个月持有混合A",
-    "category": "混合型"
+    "code": "of014849",
+    "name": "建信健康民生混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of014938",
-    "name": "同泰产业升级混合A",
-    "category": "混合型"
+    "code": "of014879",
+    "name": "华安价值驱动一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015004",
-    "name": "中邮能源革新混合型发起A",
-    "category": "混合型"
+    "code": "of014919",
+    "name": "银华心选一年持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of015035",
-    "name": "银华核心动力精选混合A",
-    "category": "混合型"
+    "code": "of014949",
+    "name": "交银恒益灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015096",
-    "name": "东财数字经济混合发起式A",
-    "category": "混合型"
+    "code": "of014977",
+    "name": "华安生态优先混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015122",
-    "name": "汇添富医疗服务灵活配置混合D",
-    "category": "混合型"
+    "code": "of015010",
+    "name": "嘉合锦鑫混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of015160",
-    "name": "南方宝嘉混合A",
-    "category": "混合型"
+    "code": "of015041",
+    "name": "西部利得新富混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015211",
-    "name": "招商安鼎平衡1年持有期混合A",
-    "category": "混合型"
+    "code": "of015077",
+    "name": "摩根成长先锋混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015258",
-    "name": "鹏华稳享一年持有期混合A",
-    "category": "混合型"
+    "code": "of015102",
+    "name": "东方红ESG可持续投资混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of015303",
-    "name": "鹏扬丰融价值先锋一年持有混合A",
-    "category": "混合型"
+    "code": "of015128",
+    "name": "长城产业成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015400",
-    "name": "弘毅远方甄选混合A",
-    "category": "混合型"
+    "code": "of015158",
+    "name": "申万菱信价值精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015519",
-    "name": "安信远见稳进一年持有混合A",
-    "category": "混合型"
+    "code": "of015192",
+    "name": "汇添富社会责任混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015578",
-    "name": "南方宝祥混合A",
-    "category": "混合型"
+    "code": "of015229",
+    "name": "华夏低碳经济一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of015663",
-    "name": "易米开鑫价值优选混合A",
-    "category": "混合型"
+    "code": "of015286",
+    "name": "国投瑞银产业转型一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015732",
-    "name": "尚正新能源产业混合A",
-    "category": "混合型"
+    "code": "of015321",
+    "name": "长江新兴产业混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015842",
-    "name": "国投瑞银专精特新量化选股混合A",
-    "category": "混合型"
+    "code": "of015382",
+    "name": "东方兴瑞趋势领航混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015927",
-    "name": "西部利得绿色能源混合A",
-    "category": "混合型"
+    "code": "of015413",
+    "name": "西部利得数字产业混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of015986",
-    "name": "中海新兴成长六个月持有期混合",
-    "category": "混合型"
+    "code": "of015486",
+    "name": "平安策略优选1年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of016075",
-    "name": "华夏智造升级混合A",
-    "category": "混合型"
+    "code": "of015528",
+    "name": "弘毅远方汽车产业升级混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015573",
+    "name": "华宝收益增长混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015610",
+    "name": "万家匠心致远一年持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015657",
+    "name": "富荣研究优选混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015690",
+    "name": "富国中小盘精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015724",
+    "name": "英大碳中和混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015769",
+    "name": "天弘低碳经济混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015838",
+    "name": "广发招利混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015903",
+    "name": "博时优质精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015965",
+    "name": "长城安心回报混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015988",
+    "name": "万家远见先锋一年持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016059",
+    "name": "长城久鼎混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016092",
+    "name": "汇泉匠心智选一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of016159",
     "name": "汇添富数字经济核心产业一年持有期混合D",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "D"
   },
   {
-    "code": "of016250",
-    "name": "华夏远见成长一年持有混合A",
-    "category": "混合型"
+    "code": "of016198",
+    "name": "大成科创主题混合(LOF)C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of016303",
-    "name": "中信建投北交所精选两年定开混合A",
-    "category": "混合型"
+    "code": "of016255",
+    "name": "中信保诚优胜精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of016345",
-    "name": "长安行业成长混合A",
-    "category": "混合型"
+    "code": "of016285",
+    "name": "汇丰晋信龙头优势混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of016388",
-    "name": "汇安均衡成长混合A",
-    "category": "混合型"
+    "code": "of016308",
+    "name": "景顺长城北交所精选两年定开混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of016492",
-    "name": "南方均衡成长混合A",
-    "category": "混合型"
+    "code": "of016350",
+    "name": "招商碳中和主题混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of016528",
-    "name": "广发稳宏一年持有混合A",
-    "category": "混合型"
+    "code": "of016389",
+    "name": "汇安均衡成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016467",
+    "name": "国泰海通量化选股混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016504",
+    "name": "广发核心竞争力混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016530",
+    "name": "鹏华碳中和主题混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of016560",
     "name": "永赢启源混合发起A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of016626",
-    "name": "汇添富创新成长混合A",
-    "category": "混合型"
+    "code": "of016593",
+    "name": "长城远见成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of016678",
-    "name": "贝莱德浦悦丰利混合A",
-    "category": "混合型"
+    "code": "of016637",
+    "name": "博道和瑞多元稳健6个月持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of016766",
-    "name": "中欧行业景气一年持有混合A",
-    "category": "混合型"
+    "code": "of016703",
+    "name": "兴业品质睿选混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of016832",
-    "name": "东方红锦惠甄选18个月持有混合A",
-    "category": "混合型"
+    "code": "of016767",
+    "name": "中欧行业景气一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of016902",
-    "name": "鑫元欣悦混合A",
-    "category": "混合型"
+    "code": "of016827",
+    "name": "安信稳健启航一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of017026",
-    "name": "鑫元鑫领航混合A",
-    "category": "混合型"
+    "code": "of016873",
+    "name": "广发远见智选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of017075",
-    "name": "宝盈半导体产业混合发起式A",
-    "category": "混合型"
+    "code": "of016979",
+    "name": "博时均衡优选混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017036",
+    "name": "嘉实低碳精选混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of017083",
+    "name": "鹏华安锦一年持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of017130",
     "name": "国投瑞银比较优势一年持有混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of017218",
-    "name": "鹏华汽车产业混合发起式A",
-    "category": "混合型"
+    "code": "of017181",
+    "name": "大成至诚鑫选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of017265",
-    "name": "招商瑞成1年持有期混合A",
-    "category": "混合型"
+    "code": "of017225",
+    "name": "国泰悦益六个月持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of017454",
-    "name": "国泰慧益一年持有混合A",
-    "category": "混合型"
+    "code": "of017299",
+    "name": "汇添富添添鑫多元收益9个月持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of017532",
-    "name": "平安研究优选混合A",
-    "category": "混合型"
+    "code": "of017425",
+    "name": "华泰紫金先进制造混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of017600",
-    "name": "华夏行业甄选混合A",
-    "category": "混合型"
+    "code": "of017484",
+    "name": "财通资管数字经济混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of017630",
-    "name": "富国周期精选三年持有期混合A",
-    "category": "混合型"
+    "code": "of017537",
+    "name": "东方红远见价值混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of017697",
-    "name": "华夏新材料龙头混合发起式A",
-    "category": "混合型"
+    "code": "of017598",
+    "name": "华夏景气驱动混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of017737",
-    "name": "融通慧心混合A",
-    "category": "混合型"
+    "code": "of017619",
+    "name": "鑫元添鑫回报6个月持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of017801",
-    "name": "汇添富战略精选中小盘市值3年持有混合发起A",
-    "category": "混合型"
+    "code": "of017656",
+    "name": "嘉实价值丰裕混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of017850",
-    "name": "交银启信混合发起A",
-    "category": "混合型"
+    "code": "of017719",
+    "name": "华夏消费臻选混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of017743",
+    "name": "中欧行业鑫选混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017769",
+    "name": "博时信享一年持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of017827",
+    "name": "兴全欣越混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017859",
+    "name": "交银持续成长主题混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of017886",
     "name": "国富安颐稳健6个月持有期混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of017977",
-    "name": "信澳优享生活混合A",
-    "category": "混合型"
+    "code": "of017957",
+    "name": "汇添富稳健鑫添益六个月持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018029",
-    "name": "泓德新能源产业混合发起式A",
-    "category": "混合型"
+    "code": "of017981",
+    "name": "东财成长优选A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of018101",
-    "name": "贝莱德卓越远航混合A",
-    "category": "混合型"
+    "code": "of018004",
+    "name": "广发优质生活混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018184",
-    "name": "万家先进制造混合发起式A",
-    "category": "混合型"
+    "code": "of018052",
+    "name": "鹏扬医疗健康混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of018220",
-    "name": "广发品质优选混合发起式A",
-    "category": "混合型"
+    "code": "of018097",
+    "name": "东财价值启航C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018294",
-    "name": "景顺长城国企价值混合A",
-    "category": "混合型"
+    "code": "of018159",
+    "name": "国泰创新医疗混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of018350",
-    "name": "万家欣优混合A",
-    "category": "混合型"
+    "code": "of018209",
+    "name": "富国精准医疗混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018381",
-    "name": "安信红利精选混合A",
-    "category": "混合型"
+    "code": "of018235",
+    "name": "光大新机遇混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018438",
-    "name": "财通资管品质消费混合发起式A",
-    "category": "混合型"
+    "code": "of018288",
+    "name": "信澳优势产业混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018504",
-    "name": "景顺长城周期优选混合A",
-    "category": "混合型"
+    "code": "of018332",
+    "name": "嘉实新兴景气混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of018618",
-    "name": "中信保诚远见成长混合A",
-    "category": "混合型"
+    "code": "of018373",
+    "name": "中泰星锐景气成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018714",
-    "name": "平安新鑫优选混合A",
-    "category": "混合型"
+    "code": "of018410",
+    "name": "中欧价值回报混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018788",
-    "name": "中信建投臻选成长混合发起式A",
-    "category": "混合型"
+    "code": "of018446",
+    "name": "工银领航三年持有混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of018827",
-    "name": "鑫元科技创新混合A",
-    "category": "混合型"
+    "code": "of018470",
+    "name": "国富策略回报混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018901",
-    "name": "招商回报优选混合发起式A",
-    "category": "混合型"
+    "code": "of018546",
+    "name": "国投瑞银瑞盈混合(LOF)C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of018963",
-    "name": "国泰海通量化选股混合发起D",
-    "category": "混合型"
+    "code": "of018590",
+    "name": "银华体育文化灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of019006",
-    "name": "蜂巢先进制造混合发起式A",
-    "category": "混合型"
+    "code": "of018656",
+    "name": "新华行业周期轮换混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of019113",
-    "name": "东财慧心优选混合发起式A",
-    "category": "混合型"
+    "code": "of018710",
+    "name": "鹏华沪深港新兴成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of019153",
-    "name": "中欧锐意成长混合发起A",
-    "category": "混合型"
+    "code": "of018776",
+    "name": "金信精选成长混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019277",
-    "name": "长城国企优选混合发起式A",
-    "category": "混合型"
+    "code": "of018821",
+    "name": "银华新材料混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019328",
-    "name": "国泰金盛回报混合A",
-    "category": "混合型"
+    "code": "of018868",
+    "name": "兴全品质甄选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019351",
-    "name": "招商远见回报3年定开混合",
-    "category": "混合型"
+    "code": "of018910",
+    "name": "中欧科技成长混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019363",
-    "name": "大成至信回报三年定开放混合",
-    "category": "混合型"
+    "code": "of018946",
+    "name": "招商安益灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of019387",
-    "name": "中欧时代共赢混合发起A1",
-    "category": "混合型"
+    "code": "of018993",
+    "name": "中欧数字经济混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019422",
-    "name": "华安远见慧选混合发起式A2",
-    "category": "混合型"
+    "code": "of019029",
+    "name": "华宝医药生物混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of019468",
-    "name": "信澳新材料精选混合A",
-    "category": "混合型"
+    "code": "of019089",
+    "name": "华润元大信息传媒科技混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of019535",
-    "name": "东方红新兴成长混合A",
-    "category": "混合型"
+    "code": "of019130",
+    "name": "天弘多元锐选一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019617",
-    "name": "工银远见共赢混合A1",
-    "category": "混合型"
+    "code": "of019166",
+    "name": "东兴蓝海财富混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of019690",
-    "name": "华商产业机遇混合A",
-    "category": "混合型"
+    "code": "of019200",
+    "name": "华富健康文娱灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of019722",
-    "name": "中银量化选股混合发起A",
-    "category": "混合型"
+    "code": "of019226",
+    "name": "方正富邦金立方一年持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of019276",
+    "name": "长城智能产业混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019309",
+    "name": "中航恒宇港股通价值优选混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of019346",
+    "name": "交银医疗健康混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019362",
+    "name": "富国核心优势混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019392",
+    "name": "嘉实匠心严选混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of019431",
+    "name": "永赢睿信混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of019478",
+    "name": "中邮医药健康混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019570",
+    "name": "诺安行业轮动混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019618",
+    "name": "工银远见共赢混合A2",
+    "category": "混合型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of019693",
+    "name": "信澳鑫悦智选6个月持有期混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019727",
+    "name": "国泰招享添利六个月持有混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of019773",
     "name": "东方红智享三年持有混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019800",
-    "name": "华泰紫金价值甄选混合A",
-    "category": "混合型"
+    "code": "of019797",
+    "name": "银河国企主题混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019915",
-    "name": "华夏瑞益混合A3",
-    "category": "混合型"
+    "code": "of019888",
+    "name": "中欧周期优选混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of019985",
-    "name": "蜂巢趋势臻选混合A",
-    "category": "混合型"
+    "code": "of019958",
+    "name": "湘财医药健康混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of020005",
-    "name": "国泰金马稳健混合A",
-    "category": "混合型"
+    "code": "of019988",
+    "name": "万家红利量化选股混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of020037",
-    "name": "鹏华品质甄选混合A",
-    "category": "混合型"
+    "code": "of020018",
+    "name": "国泰金鹿混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of020075",
-    "name": "财通资管创新成长混合A",
-    "category": "混合型"
+    "code": "of020065",
+    "name": "西部利得科技创新混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of020158",
-    "name": "信澳核心智选混合A",
-    "category": "混合型"
+    "code": "of020124",
+    "name": "银华沪深股通精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of020267",
-    "name": "宏利睿智成长混合A",
-    "category": "混合型"
+    "code": "of020168",
+    "name": "广发信远回报混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of020385",
-    "name": "信澳恒瑞9个月持有期混合A",
-    "category": "混合型"
+    "code": "of020233",
+    "name": "大摩景气智选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of020440",
-    "name": "东兴数字经济混合发起A",
-    "category": "混合型"
+    "code": "of020326",
+    "name": "南方安裕混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of020497",
-    "name": "安信均衡增长混合A",
-    "category": "混合型"
+    "code": "of020384",
+    "name": "金信转型创新成长混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of020623",
-    "name": "汇添富稳健收益混合B",
-    "category": "混合型"
+    "code": "of020429",
+    "name": "华安先进制造混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of020695",
-    "name": "海富通红利优选混合A",
-    "category": "混合型"
+    "code": "of020470",
+    "name": "长城半导体混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of020830",
-    "name": "东兴医药生物量化选股混合A",
-    "category": "混合型"
+    "code": "of020511",
+    "name": "金鹰科技致远混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of020929",
-    "name": "国投瑞银新活力混合D",
-    "category": "混合型"
+    "code": "of020601",
+    "name": "国寿安保景气优选混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of021094",
-    "name": "东方低碳经济混合A",
-    "category": "混合型"
+    "code": "of020669",
+    "name": "国投瑞银弘信回报混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of021202",
-    "name": "汇添富均衡回报混合发起式A",
-    "category": "混合型"
+    "code": "of020816",
+    "name": "湘财红利量化选股混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of020884",
+    "name": "鹏华成长先锋混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of020980",
+    "name": "西部利得价值回报混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of021148",
+    "name": "财通华臻量化选股混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of021219",
+    "name": "平安价值精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of021333",
     "name": "信澳国企智选混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of021431",
-    "name": "景顺长城精锐成长混合A",
-    "category": "混合型"
+    "code": "of021427",
+    "name": "国泰优质精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of021513",
-    "name": "富国港股通红利精选混合A",
-    "category": "混合型"
+    "code": "of021490",
+    "name": "中航趋势领航混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of021626",
-    "name": "华富半导体产业混合发起式A",
-    "category": "混合型"
+    "code": "of021526",
+    "name": "南华丰汇混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of021665",
-    "name": "中银周期优选混合发起A",
-    "category": "混合型"
+    "code": "of021604",
+    "name": "新华积极价值灵活配置混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of021792",
-    "name": "华泰保兴产业升级混合发起A",
-    "category": "混合型"
+    "code": "of021651",
+    "name": "东方红红利量化选股混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of021864",
-    "name": "中欧中证800研究智选混合发起A",
-    "category": "混合型"
+    "code": "of021727",
+    "name": "泓德智选启诚混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of021973",
-    "name": "天弘优势企业混合发起A",
-    "category": "混合型"
+    "code": "of021814",
+    "name": "华泰柏瑞红利量化选股混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of022038",
-    "name": "兴银数字经济智选混合发起A",
-    "category": "混合型"
+    "code": "of021885",
+    "name": "太平量化选股混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of022189",
-    "name": "鹏华金城混合A",
-    "category": "混合型"
+    "code": "of021965",
+    "name": "泓德智选启鑫混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of022276",
-    "name": "汇添富弘悦回报混合发起式A",
-    "category": "混合型"
+    "code": "of021991",
+    "name": "中加专精特新量化选股混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of022369",
-    "name": "鹏华安益增强混合A",
-    "category": "混合型"
+    "code": "of022093",
+    "name": "华商研究驱动混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of022492",
-    "name": "金元顺安鑫怡混合发起式A",
-    "category": "混合型"
+    "code": "of022173",
+    "name": "海富通沪港深混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of022575",
-    "name": "人保民鸿混合A",
-    "category": "混合型"
+    "code": "of022237",
+    "name": "融通央企精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of022717",
-    "name": "永赢锐见进取混合A",
-    "category": "混合型"
+    "code": "of022285",
+    "name": "鹏华弘实混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of022974",
-    "name": "鹏华弘实混合D",
-    "category": "混合型"
+    "code": "of022361",
+    "name": "天弘荣创一年持有混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of023099",
-    "name": "金信周期价值混合A",
-    "category": "混合型"
+    "code": "of022447",
+    "name": "前海开源周期精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of023232",
-    "name": "国泰合利6个月持有混合A",
-    "category": "混合型"
+    "code": "of022547",
+    "name": "泓德悦享一年持有期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of023397",
-    "name": "尚正研究睿选混合发起A",
-    "category": "混合型"
+    "code": "of022596",
+    "name": "华安添颐混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of023560",
-    "name": "富达创新驱动混合发起A",
-    "category": "混合型"
+    "code": "of022705",
+    "name": "银河科技成长混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of023632",
-    "name": "景顺长城新兴产业混合A",
-    "category": "混合型"
+    "code": "of022785",
+    "name": "国泰鑫策略价值灵活配置混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of023839",
-    "name": "银华甄选价值回报混合A",
-    "category": "混合型"
+    "code": "of022985",
+    "name": "诺安鼎利混合D",
+    "category": "混合型",
+    "shareClass": "D"
   },
   {
-    "code": "of023955",
-    "name": "国金安瑞平衡A",
-    "category": "混合型"
+    "code": "of023081",
+    "name": "南方致远混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of024087",
-    "name": "百嘉科技创新混合A",
-    "category": "混合型"
+    "code": "of023134",
+    "name": "泰康招享混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of024214",
-    "name": "华安优势领航混合A",
-    "category": "混合型"
+    "code": "of023193",
+    "name": "景顺长城产业趋势混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of024354",
-    "name": "国泰红利智选混合A",
-    "category": "混合型"
+    "code": "of023314",
+    "name": "国泰聚鑫量化选股混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of024396",
-    "name": "东兴产业升级混合发起A",
-    "category": "混合型"
+    "code": "of023417",
+    "name": "天弘荣创一年持有混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of024431",
-    "name": "富国均衡配置混合A",
-    "category": "混合型"
+    "code": "of023542",
+    "name": "平安恒泽混合E",
+    "category": "混合型",
+    "shareClass": "E"
   },
   {
-    "code": "of024446",
-    "name": "中欧大盘智选混合发起A",
-    "category": "混合型"
+    "code": "of023606",
+    "name": "平安鑫瑞混合F",
+    "category": "混合型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of023762",
+    "name": "广发智选启航混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of023875",
+    "name": "兴全合润混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of023952",
+    "name": "农银平衡价值混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024053",
+    "name": "工银科技先锋混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024176",
+    "name": "中欧大盘价值混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024238",
+    "name": "信澳新财富混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024331",
+    "name": "华夏资源精选混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024388",
+    "name": "中航智选领航混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of024430",
+    "name": "东方红核心价值混合C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024445",
+    "name": "工银泓裕回报混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
     "code": "of024462",
     "name": "南方瑞享混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of024476",
-    "name": "南华科技创新混合发起A",
-    "category": "混合型"
+    "code": "of024477",
+    "name": "南华科技创新混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of024558",
-    "name": "平安鑫享混合D",
-    "category": "混合型"
+    "code": "of024535",
+    "name": "平安港股通科技精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of024640",
-    "name": "中欧化工产业混合发起A",
-    "category": "混合型"
+    "code": "of024638",
+    "name": "永赢汇达6个月持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of024678",
-    "name": "东海产业优选混合发起式A",
-    "category": "混合型"
+    "code": "of024675",
+    "name": "兴合景气智选混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of024717",
-    "name": "汇安成长领航混合A",
-    "category": "混合型"
+    "code": "of024697",
+    "name": "华夏信远一年持有混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of024794",
-    "name": "鑫元医药睿选混合发起式A",
-    "category": "混合型"
+    "code": "of024786",
+    "name": "汇添富港股通红利回报混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of024824",
-    "name": "招商医药精选混合发起式A",
-    "category": "混合型"
+    "code": "of024809",
+    "name": "华夏成长动力混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of024900",
-    "name": "西部利得专精特新量化选股混合A",
-    "category": "混合型"
+    "code": "of024842",
+    "name": "信澳高端装备混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of024929",
-    "name": "华夏卓越成长混合B",
-    "category": "混合型"
+    "code": "of024923",
+    "name": "招商资管智达红利优选混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of025024",
-    "name": "华商港股通价值回报混合",
-    "category": "混合型"
+    "code": "of025022",
+    "name": "浦银安盛医疗创新混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of025082",
-    "name": "摩根慧启成长混合A",
-    "category": "混合型"
+    "code": "of025076",
+    "name": "汇添富成长优选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of025188",
-    "name": "前海开源沪港深裕鑫D",
-    "category": "混合型"
+    "code": "of025172",
+    "name": "德邦医疗创新混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of025287",
-    "name": "恒生前海匠心精选混合A",
-    "category": "混合型"
+    "code": "of025222",
+    "name": "创金合信弘科混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of025352",
-    "name": "凯石瑞鑫6个月持有混合发起A",
-    "category": "混合型"
+    "code": "of025327",
+    "name": "银华嘉瑞平衡混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of025358",
+    "name": "鑫元锦鑫回报混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of025421",
     "name": "浦银安盛数字经济混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of025499",
-    "name": "东方阿尔法科技智选混合发起A",
-    "category": "混合型"
+    "code": "of025470",
+    "name": "华西优选价值混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of025558",
-    "name": "光大阳光启明星创新驱动混合A",
-    "category": "混合型"
+    "code": "of025542",
+    "name": "华夏行业景气混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of025584",
-    "name": "光大阳光智造混合A",
-    "category": "混合型"
+    "code": "of025569",
+    "name": "光大阳光稳健增长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of025666",
-    "name": "银华鑫禾混合A",
-    "category": "混合型"
+    "code": "of025647",
+    "name": "平安高端装备混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of025709",
-    "name": "汇添富价值驱动混合A",
-    "category": "混合型"
+    "code": "of025686",
+    "name": "国泰半导体制造精选混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of025761",
-    "name": "招商均衡进取混合A",
-    "category": "混合型"
+    "code": "of025718",
+    "name": "富国兴和混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of025792",
-    "name": "东方阿尔法科技甄选混合发起A",
-    "category": "混合型"
+    "code": "of025771",
+    "name": "中金安心回报混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of025843",
-    "name": "兴证资管金麒麟兴睿优选混合D",
-    "category": "混合型"
+    "code": "of025800",
+    "name": "招商洞见价值混合发起式",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of025880",
-    "name": "汇添富科技领先混合A",
-    "category": "混合型"
+    "code": "of025848",
+    "name": "西部利得红利鑫选混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of025930",
-    "name": "农银致远价值混合A",
-    "category": "混合型"
+    "code": "of025904",
+    "name": "兴证资管恒睿致胜混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of025933",
+    "name": "中欧价值裕享混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of025987",
     "name": "东海领航精选3个月持有混合发起式D",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "D"
   },
   {
     "code": "of026018",
     "name": "平安发现价值混合A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026078",
-    "name": "中航卓越领航混合发起A",
-    "category": "混合型"
+    "code": "of026077",
+    "name": "恒生前海港股通科技成长混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of026199",
-    "name": "大摩港股通多元成长混合A",
-    "category": "混合型"
+    "code": "of026177",
+    "name": "华商品质甄选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026251",
-    "name": "易方达消费机遇混合A",
-    "category": "混合型"
+    "code": "of026219",
+    "name": "泰康金泰回报3个月持有C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of026273",
-    "name": "平安数字经济精选混合发起式A",
-    "category": "混合型"
+    "code": "of026261",
+    "name": "银华智享混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026332",
-    "name": "广发盛世精选混合A",
-    "category": "混合型"
+    "code": "of026283",
+    "name": "东方红先锋锐选混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of026382",
-    "name": "中航洞见领航混合A",
-    "category": "混合型"
+    "code": "of026351",
+    "name": "博道衍晟混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026448",
-    "name": "大摩沪港深科技混合A",
-    "category": "混合型"
+    "code": "of026386",
+    "name": "中欧价值锐选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026475",
-    "name": "西部利得创新驱动鑫选混合发起A",
-    "category": "混合型"
+    "code": "of026450",
+    "name": "天弘稳益优选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026512",
-    "name": "睿远研选均衡三年持有混合发起式",
-    "category": "混合型"
+    "code": "of026476",
+    "name": "西部利得创新驱动鑫选混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of026560",
-    "name": "国泰海通低碳经济睿选混合发起A",
-    "category": "混合型"
+    "code": "of026524",
+    "name": "泰信消费精选混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026621",
-    "name": "富国价值策略混合",
-    "category": "混合型"
+    "code": "of026561",
+    "name": "国泰海通低碳经济睿选混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of026666",
-    "name": "华泰紫金策略精选混合A",
-    "category": "混合型"
+    "code": "of026632",
+    "name": "平安半导体领航精选混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of026667",
+    "name": "华泰紫金策略精选混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
     "code": "of026709",
     "name": "景顺长城智享混合",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
     "code": "of026762",
     "name": "广发医疗创新精选混合发起式A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026841",
-    "name": "华安创新动能混合A",
-    "category": "混合型"
+    "code": "of026838",
+    "name": "财通资管周期研选混合发起式C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of026886",
-    "name": "财通资管消费研选混合发起式A",
-    "category": "混合型"
+    "code": "of026865",
+    "name": "苏新韵启混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of026933",
-    "name": "鑫元周期睿选混合发起式A",
-    "category": "混合型"
+    "code": "of026903",
+    "name": "融通消费臻选混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of026986",
-    "name": "汇泉科创创业量化选股混合A",
-    "category": "混合型"
+    "code": "of026942",
+    "name": "中加量化选股混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of027049",
-    "name": "融通医疗创新臻选混合A",
-    "category": "混合型"
+    "code": "of026990",
+    "name": "国泰产业智选混合发起A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of027117",
-    "name": "东财新兴产业混合发起式A",
-    "category": "混合型"
+    "code": "of027046",
+    "name": "弘毅远方医疗创新混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of040007",
-    "name": "华安中小盘成长混合",
-    "category": "混合型"
+    "code": "of027085",
+    "name": "英大产业精选混合发起C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of041001",
-    "name": "华安创新混合(后端)",
-    "category": "混合型"
+    "code": "of027159",
+    "name": "中欧景气回报混合C",
+    "category": "混合型",
+    "shareClass": "C"
   },
   {
-    "code": "of050007",
-    "name": "博时平衡配置混合",
-    "category": "混合型"
+    "code": "of027311",
+    "name": "富国消费服务混合发起式A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of050026",
-    "name": "博时医疗保健行业混合A",
-    "category": "混合型"
+    "code": "of041005",
+    "name": "华安宏利混合A(后端)",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of070003",
-    "name": "嘉实稳健混合",
-    "category": "混合型"
+    "code": "of050201",
+    "name": "博时价值增长贰号混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
     "code": "of070021",
     "name": "嘉实主题新动力混合",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of080007",
-    "name": "长盛同鑫行业配置混合A",
-    "category": "混合型"
+    "code": "of090006",
+    "name": "大成2020生命周期混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of090007",
-    "name": "大成策略回报混合A",
-    "category": "混合型"
+    "code": "of100020",
+    "name": "富国天益价值混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of090020",
-    "name": "大成健康产业混合A",
-    "category": "混合型"
+    "code": "of110010",
+    "name": "易方达价值成长混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of100022",
-    "name": "富国天瑞强势混合A",
-    "category": "混合型"
+    "code": "of128001",
+    "name": "国投瑞银融华债券(后端)",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of100060",
-    "name": "富国高新技术产业混合",
-    "category": "混合型"
+    "code": "of160212",
+    "name": "国泰估值优势混合(LOF)A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of110015",
-    "name": "易方达行业领先混合",
-    "category": "混合型"
+    "code": "of160527",
+    "name": "博时研究优选混合(LOF)A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of121005",
-    "name": "国投瑞银创新动力混合",
-    "category": "混合型"
+    "code": "of160805",
+    "name": "长盛同智优势混合(LOF)",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of128008",
-    "name": "国投瑞银成长优选混合(后端)",
-    "category": "混合型"
+    "code": "of161220",
+    "name": "国投瑞银新兴产业混合(LOF)A(后端)",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of160142",
-    "name": "南方优势产业(LOF)",
-    "category": "混合型"
+    "code": "of161655",
+    "name": "融通蓝筹成长混合A/B(后端)",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of160323",
-    "name": "华夏磐泰混合(LOF)A",
-    "category": "混合型"
+    "code": "of161838",
+    "name": "银华创业板两年定期开放混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of160526",
-    "name": "博时优势企业灵活配置混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of160613",
-    "name": "鹏华盛世创新混合(LOF)A",
-    "category": "混合型"
-  },
-  {
-    "code": "of160812",
-    "name": "长盛同益成长回报(LOF)",
-    "category": "混合型"
-  },
-  {
-    "code": "of161006",
-    "name": "富国天惠成长混合(LOF)A(后端)",
-    "category": "混合型"
-  },
-  {
-    "code": "of161224",
-    "name": "国投瑞银新丝路混合(LOF)",
-    "category": "混合型"
-  },
-  {
-    "code": "of161609",
-    "name": "融通动力先锋混合A/B",
-    "category": "混合型"
-  },
-  {
-    "code": "of161660",
-    "name": "融通领先成长混合(LOF)A(后端)",
-    "category": "混合型"
-  },
-  {
-    "code": "of161810",
-    "name": "银华内需精选混合(LOF)",
-    "category": "混合型"
-  },
-  {
-    "code": "of161914",
-    "name": "万家创业板2年定期开放混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of162207",
-    "name": "宏利效率优选混合(LOF)",
-    "category": "混合型"
-  },
-  {
-    "code": "of162703",
-    "name": "广发小盘成长混合(LOF)A",
-    "category": "混合型"
+    "code": "of162209",
+    "name": "宏利市值优选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of163409",
     "name": "兴全绿色投资混合(LOF)",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of163418",
-    "name": "兴全合兴混合A",
-    "category": "混合型"
+    "code": "of163809",
+    "name": "中银蓝筹混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of163810",
-    "name": "中银价值混合A",
-    "category": "混合型"
+    "code": "of166001",
+    "name": "中欧新趋势混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of165512",
-    "name": "中信保诚新机遇混合(LOF)",
-    "category": "混合型"
-  },
-  {
-    "code": "of166006",
-    "name": "中欧行业成长混合(LOF)A",
-    "category": "混合型"
-  },
-  {
-    "code": "of166025",
-    "name": "中欧远见两年定开混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of167003",
-    "name": "平安鼎弘混合(LOF)A",
-    "category": "混合型"
+    "code": "of166109",
+    "name": "信澳量化先锋(LOF)A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of168301",
     "name": "东海祥龙(LOF)A",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of169105",
-    "name": "东方红睿华沪港深混合(LOF)A",
-    "category": "混合型"
+    "code": "of180010",
+    "name": "银华优质增长混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of180011",
-    "name": "银华优势企业混合(后端)",
-    "category": "混合型"
+    "code": "of200016",
+    "name": "长城稳健成长混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of200006",
-    "name": "长城消费增值混合A",
-    "category": "混合型"
+    "code": "of202020",
+    "name": "南方策略优化混合(后端)",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of202001",
-    "name": "南方稳健成长混合",
-    "category": "混合型"
+    "code": "of210004",
+    "name": "金鹰稳健成长混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of202009",
-    "name": "南方盛元红利混合",
-    "category": "混合型"
+    "code": "of217002",
+    "name": "招商安泰平衡混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of202027",
-    "name": "南方高端装备混合A",
-    "category": "混合型"
-  },
-  {
-    "code": "of206013",
-    "name": "鹏华宏观灵活配置混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of210008",
-    "name": "金鹰策略配置混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of213908",
-    "name": "宝盈资源优选混合(后端)",
-    "category": "混合型"
-  },
-  {
-    "code": "of217020",
-    "name": "招商安达灵活配置混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of233011",
-    "name": "大摩主题优选混合",
-    "category": "混合型"
-  },
-  {
-    "code": "of240010",
-    "name": "华宝行业精选混合",
-    "category": "混合型"
+    "code": "of233015",
+    "name": "大摩量化配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
     "code": "of257021",
     "name": "国联安精选混合(后端)",
-    "category": "混合型"
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of260103",
-    "name": "景顺长城动力平衡混合",
-    "category": "混合型"
+    "code": "of260115",
+    "name": "景顺长城中小盘混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of260116",
-    "name": "景顺长城核心竞争力混合A",
-    "category": "混合型"
+    "code": "of270022",
+    "name": "广发内需增长混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of270011",
-    "name": "广发聚富混合(后端)",
-    "category": "混合型"
+    "code": "of310308",
+    "name": "申万菱信盛利精选混合A",
+    "category": "混合型",
+    "shareClass": "A"
   },
   {
-    "code": "of270028",
-    "name": "广发制造业精选混合A",
-    "category": "混合型"
+    "code": "of340001",
+    "name": "兴全可转债混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
-    "code": "of290006",
-    "name": "泰信蓝筹精选混合",
-    "category": "混合型"
+    "code": "of360016",
+    "name": "光大行业轮动混合",
+    "category": "混合型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of398002",
+    "name": "中海优质成长混合(后端)",
+    "category": "混合型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of400013",
+    "name": "东方成长收益灵活配置混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of450003",
+    "name": "国富潜力组合混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of470098",
+    "name": "汇添富逆向投资混合A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of501022",
+    "name": "银华鑫盛灵活配置混合(LOF)A",
+    "category": "混合型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of501070",
+    "name": "广发睿阳三年定开混合",
+    "category": "混合型",
+    "shareClass": "无"
   },
   {
     "code": "of000003",
     "name": "中海可转债债券A",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of000047",
-    "name": "华夏双债债券A",
-    "category": "债券型"
+    "code": "of000064",
+    "name": "大摩18个月定开债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of000090",
-    "name": "民生加银高等级信用债A",
-    "category": "债券型"
+    "code": "of000106",
+    "name": "建信安心回报债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of000129",
-    "name": "大成景安短融债券B",
-    "category": "债券型"
+    "code": "of000138",
+    "name": "民生加银岁岁增利债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of000152",
-    "name": "大成景旭纯债债券A",
-    "category": "债券型"
+    "code": "of000183",
+    "name": "嘉实丰益策略定期债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of000189",
-    "name": "易方达丰华债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of000227",
-    "name": "华安年年红债券A",
-    "category": "债券型"
+    "code": "of000213",
+    "name": "泰信鑫益定期开放C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
     "code": "of000271",
     "name": "中邮定开债券A",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of000310",
-    "name": "安信永利信用债券A",
-    "category": "债券型"
+    "code": "of000334",
+    "name": "长城稳固收益债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of000372",
-    "name": "中银惠利半年定期开放债券A",
-    "category": "债券型"
+    "code": "of000402",
+    "name": "工银纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of000465",
-    "name": "景顺长城鑫月薪定期支付债券",
-    "category": "债券型"
+    "code": "of000521",
+    "name": "诺安瑞鑫定开债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of000552",
-    "name": "中加纯债一年A",
-    "category": "债券型"
+    "code": "of000674",
+    "name": "中海中短债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of000694",
-    "name": "鑫元鸿利A",
-    "category": "债券型"
+    "code": "of000809",
+    "name": "招商招利1个月期理财债券B",
+    "category": "债券型",
+    "shareClass": "B"
   },
   {
-    "code": "of000810",
-    "name": "富国收益增强债券A",
-    "category": "债券型"
+    "code": "of000931",
+    "name": "国寿安保尊益信用纯债债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of000943",
-    "name": "工银中高等级信用债债券A",
-    "category": "债券型"
+    "code": "of001058",
+    "name": "华夏理财30天债券B",
+    "category": "债券型",
+    "shareClass": "B"
   },
   {
-    "code": "of001045",
-    "name": "华夏可转债增强债券A",
-    "category": "债券型"
+    "code": "of001516",
+    "name": "大成安汇金融债E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of001299",
-    "name": "兴业添利债券",
-    "category": "债券型"
+    "code": "of001868",
+    "name": "招商产业债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of001776",
-    "name": "中欧兴利债券A",
-    "category": "债券型"
+    "code": "of001988",
+    "name": "南方纯元A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of001945",
-    "name": "东方红信用债债券A",
-    "category": "债券型"
+    "code": "of002175",
+    "name": "博时裕乾纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of002101",
-    "name": "创金合信转债精选债券A",
-    "category": "债券型"
+    "code": "of002336",
+    "name": "创金合信尊享纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of002206",
-    "name": "博时裕康纯债债券A",
-    "category": "债券型"
+    "code": "of002406",
+    "name": "光大中高等级债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of002301",
-    "name": "兴业短债债券A",
-    "category": "债券型"
+    "code": "of002492",
+    "name": "工银月月薪定期支付债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of002377",
-    "name": "建信睿怡纯债A",
-    "category": "债券型"
+    "code": "of002568",
+    "name": "博时裕发纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of002452",
-    "name": "民生加银和鑫定开债",
-    "category": "债券型"
+    "code": "of002651",
+    "name": "东方红汇利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of002504",
-    "name": "鹏华永达中短债6个月定开债券A",
-    "category": "债券型"
+    "code": "of002735",
+    "name": "泓德裕荣纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of002552",
-    "name": "华夏恒利定开债",
-    "category": "债券型"
+    "code": "of002794",
+    "name": "天弘永利债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of002636",
-    "name": "广发集裕债券A",
-    "category": "债券型"
+    "code": "of002881",
+    "name": "中加丰润纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of002711",
-    "name": "广发集丰债券A",
-    "category": "债券型"
+    "code": "of002933",
+    "name": "圆信永丰强化收益C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of002754",
-    "name": "博时裕创纯债债券A",
-    "category": "债券型"
+    "code": "of002996",
+    "name": "长信稳健纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of002811",
-    "name": "博时裕顺纯债债券A",
-    "category": "债券型"
+    "code": "of003074",
+    "name": "宏利汇利债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of002901",
-    "name": "财通资管积极收益债券A",
-    "category": "债券型"
+    "code": "of003156",
+    "name": "招商招悦纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of002946",
-    "name": "大成景盛一年定开债A",
-    "category": "债券型"
+    "code": "of003197",
+    "name": "光大安诚债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of002991",
-    "name": "嘉实稳鑫纯债债券",
-    "category": "债券型"
-  },
-  {
-    "code": "of003041",
-    "name": "鑫元得利债券",
-    "category": "债券型"
-  },
-  {
-    "code": "of003121",
-    "name": "中信保诚稳利A",
-    "category": "债券型"
-  },
-  {
-    "code": "of003176",
-    "name": "德邦景颐债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of003209",
-    "name": "鹏华丰达债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of003254",
-    "name": "前海开源鼎裕债券A",
-    "category": "债券型"
+    "code": "of003227",
+    "name": "中信保诚稳健债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
     "code": "of003285",
     "name": "国寿安保安康纯债债券",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of003324",
-    "name": "东方永兴18个月定开债A",
-    "category": "债券型"
+    "code": "of003329",
+    "name": "万家鑫安纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of003390",
-    "name": "江信一年定开",
-    "category": "债券型"
+    "code": "of003408",
+    "name": "景顺长城景泰丰利纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of003428",
-    "name": "中加丰盈一年定开债",
-    "category": "债券型"
+    "code": "of003452",
+    "name": "招商招盛纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of003458",
-    "name": "嘉实稳宏债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of003518",
-    "name": "万家鑫瑞纯债A",
-    "category": "债券型"
+    "code": "of003511",
+    "name": "长盛可转债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
     "code": "of003566",
     "name": "博时臻选纯债债券A",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of003612",
-    "name": "南方卓元债券A",
-    "category": "债券型"
+    "code": "of003619",
+    "name": "招商招旺纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of003662",
-    "name": "鹏华永盛一年定开债",
-    "category": "债券型"
-  },
-  {
-    "code": "of003696",
-    "name": "国泰润鑫定开债发起式",
-    "category": "债券型"
+    "code": "of003674",
+    "name": "融通通玺债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
     "code": "of003767",
     "name": "宏利纯利债券A",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of003832",
     "name": "中银丰润定期开放债券",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of003880",
-    "name": "嘉实稳骏",
-    "category": "债券型"
+    "code": "of003922",
+    "name": "长盛盛康纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of003978",
-    "name": "中信建投稳祥A",
-    "category": "债券型"
+    "code": "of004022",
+    "name": "广发汇富一年定期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of004031",
-    "name": "鑫元添利三个月定开债",
-    "category": "债券型"
-  },
-  {
-    "code": "of004079",
-    "name": "万家鑫丰纯债A",
-    "category": "债券型"
+    "code": "of004063",
+    "name": "华夏恒融债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
     "code": "of004118",
     "name": "博时裕鹏纯债债券",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of004168",
-    "name": "博时富嘉纯债债券",
-    "category": "债券型"
+    "code": "of004242",
+    "name": "兴业稳康三年定开债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of004318",
-    "name": "国寿安保尊裕优化回报债券A",
-    "category": "债券型"
+    "code": "of004400",
+    "name": "金信民兴债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of004441",
-    "name": "富荣富兴纯债A",
-    "category": "债券型"
+    "code": "of004498",
+    "name": "鹏华丰源债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of004499",
-    "name": "鹏华丰瑞债券A",
-    "category": "债券型"
+    "code": "of004601",
+    "name": "博时富腾纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of004585",
-    "name": "鹏扬汇利债券A",
-    "category": "债券型"
+    "code": "of004681",
+    "name": "万家安弘纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of004647",
-    "name": "新华鼎利债券A",
-    "category": "债券型"
+    "code": "of004807",
+    "name": "中银证券安弘债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of004728",
-    "name": "中欧瑾泰债券A",
-    "category": "债券型"
+    "code": "of004897",
+    "name": "长安泓源纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of004826",
-    "name": "平安惠悦纯债A",
-    "category": "债券型"
+    "code": "of004953",
+    "name": "兴全恒益债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of004893",
-    "name": "华润元大润泽债券A",
-    "category": "债券型"
+    "code": "of005047",
+    "name": "南华瑞扬纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of004923",
-    "name": "华夏鼎祥三个月定开债A",
-    "category": "债券型"
+    "code": "of005158",
+    "name": "长江乐盈定开债发起式",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of005008",
-    "name": "东方红汇阳债券Z",
-    "category": "债券型"
+    "code": "of005284",
+    "name": "华商可转债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of005079",
-    "name": "兴银鑫日享短债A",
-    "category": "债券型"
+    "code": "of005346",
+    "name": "长安泓润纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of005172",
-    "name": "泰康安悦纯债3月定开债券",
-    "category": "债券型"
+    "code": "of005407",
+    "name": "华夏鼎泰六个月定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of005286",
-    "name": "银华岁丰定期开放债券发起式",
-    "category": "债券型"
+    "code": "of005451",
+    "name": "鹏扬双利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of005338",
-    "name": "兴业3个月定开债券",
-    "category": "债券型"
+    "code": "of005503",
+    "name": "汇添富理财60天债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of005377",
-    "name": "华安鼎瑞定开债发起式",
-    "category": "债券型"
+    "code": "of005580",
+    "name": "光大晟利债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of005425",
-    "name": "民生加银睿通3个月定开发起式A",
-    "category": "债券型"
+    "code": "of005648",
+    "name": "招商添琪3个月定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of005446",
-    "name": "鑫元广利定开债发起式",
-    "category": "债券型"
+    "code": "of005710",
+    "name": "兴业嘉润3个月定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of005476",
-    "name": "南方涪利定开债",
-    "category": "债券型"
+    "code": "of005751",
+    "name": "平安双债添益债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of005547",
-    "name": "诺安圆鼎定开债",
-    "category": "债券型"
+    "code": "of005790",
+    "name": "银河景行3个月定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of005606",
-    "name": "招商招鸿6个月定开债发起式",
-    "category": "债券型"
+    "code": "of005852",
+    "name": "中银添利债券发起C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of005647",
-    "name": "广发汇佳定期开放债券",
-    "category": "债券型"
+    "code": "of005893",
+    "name": "先锋汇盈纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of005684",
-    "name": "财通资管鸿睿12个月定开债A",
-    "category": "债券型"
+    "code": "of005971",
+    "name": "平安惠锦纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of005719",
-    "name": "招商招诚定开债发起式",
-    "category": "债券型"
+    "code": "of006026",
+    "name": "东吴鼎泰纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of005750",
-    "name": "平安双债添益债券A",
-    "category": "债券型"
+    "code": "of006059",
+    "name": "鹏扬泓利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of005781",
-    "name": "华富富瑞3个月定开债",
-    "category": "债券型"
-  },
-  {
-    "code": "of005820",
-    "name": "博时富兴纯债3个月定开债发起式",
-    "category": "债券型"
-  },
-  {
-    "code": "of005853",
-    "name": "财通聚利债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of005890",
-    "name": "先锋博盈纯债A",
-    "category": "债券型"
-  },
-  {
-    "code": "of005931",
-    "name": "国联恒裕纯债A",
-    "category": "债券型"
-  },
-  {
-    "code": "of005995",
-    "name": "国投瑞银顺泓债券",
-    "category": "债券型"
-  },
-  {
-    "code": "of006032",
-    "name": "创金合信汇泽三个月定开债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of006068",
-    "name": "中加颐信纯债债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of006096",
-    "name": "中金浙金6个月定开债",
-    "category": "债券型"
+    "code": "of006088",
+    "name": "永赢润益债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of006135",
     "name": "长江乐鑫定开债",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of006163",
-    "name": "融通增辉定开债券发起式",
-    "category": "债券型"
+    "code": "of006171",
+    "name": "鹏扬淳利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006188",
-    "name": "华泰保兴尊颐定开",
-    "category": "债券型"
+    "code": "of006210",
+    "name": "东方臻宝纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006254",
-    "name": "长城久悦债券A",
-    "category": "债券型"
+    "code": "of006304",
+    "name": "中加颐鑫纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006332",
-    "name": "招商金鸿债券A",
-    "category": "债券型"
+    "code": "of006384",
+    "name": "招商添盈纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006405",
-    "name": "华富恒盛纯债债券A",
-    "category": "债券型"
+    "code": "of006423",
+    "name": "嘉合磐稳纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006436",
-    "name": "浦银安盛中短债A",
-    "category": "债券型"
+    "code": "of006466",
+    "name": "浦银安盛双债增强债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006482",
-    "name": "广发可转债债券A",
-    "category": "债券型"
+    "code": "of006506",
+    "name": "永赢祥益债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006513",
-    "name": "鹏扬淳享债券A",
-    "category": "债券型"
+    "code": "of006549",
+    "name": "国金惠盈纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006565",
-    "name": "光大尊泰定开债",
-    "category": "债券型"
+    "code": "of006592",
+    "name": "广发景明中短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006609",
-    "name": "申万菱信安泰瑞利中短债A",
-    "category": "债券型"
+    "code": "of006632",
+    "name": "鑫元臻利C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006638",
-    "name": "人保鑫盛纯债A",
-    "category": "债券型"
+    "code": "of006663",
+    "name": "易方达安悦超短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006665",
-    "name": "华夏鼎康债券A",
-    "category": "债券型"
+    "code": "of006707",
+    "name": "永赢宏益债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006706",
-    "name": "国联聚汇定期开放债券",
-    "category": "债券型"
+    "code": "of006754",
+    "name": "鑫元悦利定开债发起式",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of006747",
-    "name": "东海祥利纯债",
-    "category": "债券型"
+    "code": "of006794",
+    "name": "交银稳鑫短债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006773",
-    "name": "国寿安保尊荣中短债债券A",
-    "category": "债券型"
+    "code": "of006829",
+    "name": "鹏扬利沣短债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006806",
-    "name": "西部利得添盈短债债券A",
-    "category": "债券型"
+    "code": "of006853",
+    "name": "中银汇享债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of006838",
-    "name": "鑫元荣利三个月定开债",
-    "category": "债券型"
+    "code": "of006897",
+    "name": "新华聚利债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006869",
-    "name": "广发政策性金融债",
-    "category": "债券型"
+    "code": "of006932",
+    "name": "平安0-3年期政策性金融债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006907",
-    "name": "银华安鑫短债债券A",
-    "category": "债券型"
+    "code": "of006965",
+    "name": "财通安瑞短债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of006944",
-    "name": "永赢悦利债券",
-    "category": "债券型"
+    "code": "of006996",
+    "name": "南方惠利6个月定开债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of006970",
-    "name": "广发景利纯债A",
-    "category": "债券型"
+    "code": "of007037",
+    "name": "海富通聚合纯债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of006995",
-    "name": "南方惠利6个月定开债A",
-    "category": "债券型"
+    "code": "of007105",
+    "name": "国泰丰鑫纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of007050",
-    "name": "鑫元恒利三个月定开债",
-    "category": "债券型"
+    "code": "of007174",
+    "name": "招商添旭定开债发起式C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of007116",
-    "name": "华宝政金债债券A",
-    "category": "债券型"
+    "code": "of007213",
+    "name": "华安安平6个月定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of007167",
-    "name": "华安安和债券A",
-    "category": "债券型"
+    "code": "of007268",
+    "name": "山证资管裕睿6个月定开债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of007206",
-    "name": "银华丰华三个月定开债",
-    "category": "债券型"
+    "code": "of007321",
+    "name": "鹏华金利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of007256",
-    "name": "广发汇阳三个月定期开放债券",
-    "category": "债券型"
+    "code": "of007371",
+    "name": "国联安增瑞政金债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of007302",
-    "name": "华宝宝盛债券A",
-    "category": "债券型"
+    "code": "of007409",
+    "name": "鹏扬淳开债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of007332",
-    "name": "嘉合磐昇纯债A",
-    "category": "债券型"
+    "code": "of007443",
+    "name": "浙商汇金聚盈中短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of007377",
-    "name": "西部利得聚享一年定开债券A",
-    "category": "债券型"
+    "code": "of007500",
+    "name": "鹏华尊诚定开债发起式",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of007420",
-    "name": "华安鼎信3个月定开债",
-    "category": "债券型"
+    "code": "of007543",
+    "name": "永赢开泰中高等级中短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of007451",
-    "name": "易方达恒兴3个月定开债",
-    "category": "债券型"
+    "code": "of007566",
+    "name": "中银宁享债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of007492",
-    "name": "上银政策性金融债债券A",
-    "category": "债券型"
+    "code": "of007603",
+    "name": "景顺长城中短债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of007529",
-    "name": "嘉实汇鑫中短债A",
-    "category": "债券型"
+    "code": "of007653",
+    "name": "长盛稳益6个月A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of007551",
-    "name": "鑫元泽利A",
-    "category": "债券型"
+    "code": "of007699",
+    "name": "建信荣禧一年定期开放债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of007567",
-    "name": "南方恒新39个月A",
-    "category": "债券型"
+    "code": "of007738",
+    "name": "淳厚稳惠债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of007595",
-    "name": "招商添泽纯债A",
-    "category": "债券型"
-  },
-  {
-    "code": "of007640",
-    "name": "宏利永利债券",
-    "category": "债券型"
-  },
-  {
-    "code": "of007681",
-    "name": "鹏华丰登债券",
-    "category": "债券型"
-  },
-  {
-    "code": "of007712",
-    "name": "中银康享3个月定期开放债券",
-    "category": "债券型"
-  },
-  {
-    "code": "of007752",
-    "name": "中银招利债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of007778",
-    "name": "广发景富纯债",
-    "category": "债券型"
+    "code": "of007772",
+    "name": "浦银安盛盛煊定开债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
     "code": "of007859",
     "name": "平安5-10年期政策性金融债A",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of007908",
-    "name": "招商添韵3个月定开债A",
-    "category": "债券型"
+    "code": "of007914",
+    "name": "财通资管丰和两年定开债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of007953",
-    "name": "平安惠文纯债",
-    "category": "债券型"
+    "code": "of007956",
+    "name": "鹏华稳利短债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of007985",
-    "name": "博时富悦纯债A",
-    "category": "债券型"
+    "code": "of007991",
+    "name": "富国汇远三年定开债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008010",
-    "name": "前海联合润盈短债A",
-    "category": "债券型"
+    "code": "of008022",
+    "name": "建信短债债券F",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of008032",
-    "name": "海富通裕昇三年定开债券",
-    "category": "债券型"
+    "code": "of008068",
+    "name": "圆信永丰丰和C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008081",
-    "name": "汇添富鑫远债",
-    "category": "债券型"
+    "code": "of008147",
+    "name": "中银添瑞6个月C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008160",
-    "name": "前海联合淳安3年定开债券",
-    "category": "债券型"
+    "code": "of008222",
+    "name": "兴业机遇债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008217",
-    "name": "国泰聚盈三年定期开放债券",
-    "category": "债券型"
+    "code": "of008289",
+    "name": "国寿安保泰祥纯债一年定开债券发起式",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of008266",
-    "name": "华夏鼎明债券A",
-    "category": "债券型"
+    "code": "of008355",
+    "name": "农银汇理金祺一年定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of008331",
-    "name": "万家可转债债券A",
-    "category": "债券型"
+    "code": "of008429",
+    "name": "中信保诚嘉裕五年定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of008363",
-    "name": "广发民丰一年定期开放债券",
-    "category": "债券型"
+    "code": "of008470",
+    "name": "朱雀安鑫回报债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008426",
-    "name": "华安安敦债券A",
-    "category": "债券型"
+    "code": "of008502",
+    "name": "鹏扬聚利六个月持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008463",
-    "name": "招商添瑞1年定开债A",
-    "category": "债券型"
+    "code": "of008535",
+    "name": "兴银合盛定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of008493",
-    "name": "鹏华尊泰一年定开发起式债券",
-    "category": "债券型"
+    "code": "of008571",
+    "name": "金信民达纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of008511",
-    "name": "宝盈鸿盛债券A",
-    "category": "债券型"
+    "code": "of008615",
+    "name": "浙商汇金聚泓两年定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of008558",
-    "name": "永赢邦利债券A",
-    "category": "债券型"
+    "code": "of008654",
+    "name": "诺德汇盈一年定开",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of008587",
-    "name": "淳厚中短债债券A",
-    "category": "债券型"
+    "code": "of008690",
+    "name": "平安增利六个月定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of008624",
-    "name": "汇安裕鑫12个月定开纯债债券",
-    "category": "债券型"
+    "code": "of008730",
+    "name": "天弘纯享一年定开",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of008651",
-    "name": "博时富进一年期定开债发起式",
-    "category": "债券型"
+    "code": "of008771",
+    "name": "南方昭元债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of008678",
-    "name": "财通兴利纯债12个月定开债",
-    "category": "债券型"
+    "code": "of008806",
+    "name": "鑫元锦利定期开放A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of008722",
-    "name": "永赢欣益纯债一年定开发起式",
-    "category": "债券型"
+    "code": "of008874",
+    "name": "国寿安保尊诚纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008746",
-    "name": "财通多利债券A",
-    "category": "债券型"
+    "code": "of008925",
+    "name": "鹏华尊达一年定开发起式债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of008780",
-    "name": "南方宁利一年定开债发起式",
-    "category": "债券型"
+    "code": "of009002",
+    "name": "长城泰利纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008807",
-    "name": "鹏扬淳悦一年定开债发起式",
-    "category": "债券型"
+    "code": "of009094",
+    "name": "华泰柏瑞鸿利中短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of008868",
-    "name": "民生加银嘉益债券",
-    "category": "债券型"
+    "code": "of009212",
+    "name": "易方达恒茂39个月定开债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of008904",
-    "name": "华安安腾一年定开债",
-    "category": "债券型"
-  },
-  {
-    "code": "of008993",
-    "name": "汇添富多策略纯债A",
-    "category": "债券型"
-  },
-  {
-    "code": "of009053",
-    "name": "平安合庆定开债",
-    "category": "债券型"
-  },
-  {
-    "code": "of009148",
-    "name": "平安合聚定开债",
-    "category": "债券型"
-  },
-  {
-    "code": "of009236",
-    "name": "中信建投稳泰一年定开债券",
-    "category": "债券型"
-  },
-  {
-    "code": "of009287",
-    "name": "惠升和裕纯债债券A",
-    "category": "债券型"
+    "code": "of009279",
+    "name": "同泰恒兴纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
     "code": "of009306",
     "name": "平安惠铭纯债",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of009407",
-    "name": "格林泓远纯债A",
-    "category": "债券型"
+    "code": "of009403",
+    "name": "平安惠盈纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of009465",
-    "name": "东方可转债债券A",
-    "category": "债券型"
+    "code": "of009461",
+    "name": "东方臻萃3个月定开债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of009552",
-    "name": "财通资管丰乾39个月定开债A",
-    "category": "债券型"
+    "code": "of009523",
+    "name": "宝盈聚福39个月定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of009599",
-    "name": "嘉实致嘉纯债债券",
-    "category": "债券型"
+    "code": "of009587",
+    "name": "国寿安保瑞和66个月定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
     "code": "of009679",
     "name": "浙商惠隆39个月定开债券",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of009756",
-    "name": "华宝宝利定开债券",
-    "category": "债券型"
+    "code": "of009763",
+    "name": "惠升和悦债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of009799",
-    "name": "中银证券安汇三年定开债",
-    "category": "债券型"
+    "code": "of009827",
+    "name": "民生加银家盈6个月持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of009839",
-    "name": "国金惠丰39个月定开债",
-    "category": "债券型"
+    "code": "of009917",
+    "name": "格林泓利增强债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of009922",
-    "name": "华夏鼎富债券A",
-    "category": "债券型"
+    "code": "of010015",
+    "name": "华夏鼎清债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of010083",
-    "name": "中银欣享利率债债券A",
-    "category": "债券型"
+    "code": "of010146",
+    "name": "格林中短债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of010174",
-    "name": "英大智享债券A",
-    "category": "债券型"
+    "code": "of010250",
+    "name": "国金惠诚债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of010254",
-    "name": "嘉实丰年一年定期纯债债券A",
-    "category": "债券型"
+    "code": "of010397",
+    "name": "中加瑞合纯债债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of010449",
-    "name": "广发恒悦债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of010479",
-    "name": "鹏华丰颐债券",
-    "category": "债券型"
+    "code": "of010474",
+    "name": "华富安华债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
     "code": "of010577",
     "name": "汇安永福90天持有中短债A",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of010631",
-    "name": "惠升和韵66个月定开债券",
-    "category": "债券型"
+    "code": "of010635",
+    "name": "天弘合益债券发起C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of010767",
-    "name": "建信利率债策略纯债债券A",
-    "category": "债券型"
+    "code": "of010836",
+    "name": "国泰瑞泰纯债债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of010899",
-    "name": "上银慧恒收益增强债券A",
-    "category": "债券型"
+    "code": "of010980",
+    "name": "华夏鼎润债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of011029",
-    "name": "安信永盈一年定开债券",
-    "category": "债券型"
+    "code": "of011091",
+    "name": "工银双玺6个月持有期债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of011115",
-    "name": "海富通利率债债券A",
-    "category": "债券型"
+    "code": "of011294",
+    "name": "招商添逸1年定开债券发起式",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of011310",
-    "name": "国联恒阳纯债A",
-    "category": "债券型"
+    "code": "of011617",
+    "name": "汇添富AAA级信用纯债E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of011628",
-    "name": "嘉实致明3个月定期纯债债券",
-    "category": "债券型"
-  },
-  {
-    "code": "of011699",
-    "name": "蜂巢丰华债券A",
-    "category": "债券型"
+    "code": "of011660",
+    "name": "汇添富中高等级信用债E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
     "code": "of011942",
     "name": "建信泓利一年持有期债券",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of011961",
-    "name": "易方达稳鑫30天滚动持有短债A",
-    "category": "债券型"
+    "code": "of012000",
+    "name": "富国安泰90天滚动持有短债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of012059",
-    "name": "鹏华永益3个月定开债",
-    "category": "债券型"
+    "code": "of012133",
+    "name": "招商添浩纯债D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of012204",
-    "name": "中银通利债券A",
-    "category": "债券型"
+    "code": "of012247",
+    "name": "博时月月享30天持有期短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of012290",
-    "name": "国联恒益纯债A",
-    "category": "债券型"
+    "code": "of012331",
+    "name": "广发集优9个月持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of012384",
-    "name": "宏利中短债债券A",
-    "category": "债券型"
+    "code": "of012398",
+    "name": "南方佳元6个月持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of012452",
-    "name": "国泰利优30天滚动持有短债A",
-    "category": "债券型"
+    "code": "of012489",
+    "name": "招商招顺纯债D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of012591",
-    "name": "广发添财180天滚动持有债券A",
-    "category": "债券型"
+    "code": "of012611",
+    "name": "东方臻善纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of012745",
     "name": "华宝宝瑞一年定开债",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of012807",
-    "name": "国联安恒鑫3个月定开债",
-    "category": "债券型"
+    "code": "of012824",
+    "name": "富国安利90天滚动持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of012933",
-    "name": "易方达稳丰90天滚动持有短债A",
-    "category": "债券型"
+    "code": "of012938",
+    "name": "创金合信尊泓债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of013063",
-    "name": "广发集益一年持有债券A",
-    "category": "债券型"
+    "code": "of013076",
+    "name": "建信鑫悦90天滚动中短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of013136",
-    "name": "惠升和怡一年定开债发起式",
-    "category": "债券型"
+    "code": "of013165",
+    "name": "东兴兴盈三个月定开债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of013211",
-    "name": "华富安盈一年持有期债券A",
-    "category": "债券型"
+    "code": "of013222",
+    "name": "博远臻享3个月定开债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of013257",
-    "name": "南方通元6个月持有债券A",
-    "category": "债券型"
+    "code": "of013282",
+    "name": "国泰海通30天滚动持有中短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of013375",
-    "name": "平安元鑫120天滚动持有中短债A",
-    "category": "债券型"
+    "code": "of013401",
+    "name": "大成稳益90天滚动持有债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of013457",
-    "name": "华夏鼎业三个月定开债券A",
-    "category": "债券型"
+    "code": "of013482",
+    "name": "平安合轩1年定开债发起式",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of013522",
-    "name": "华富吉丰60天滚动持有中短债A",
-    "category": "债券型"
+    "code": "of013547",
+    "name": "财通资管鸿享30天滚动中短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of013577",
-    "name": "华安众悦60天滚动持有短债A",
-    "category": "债券型"
+    "code": "of013614",
+    "name": "泰信鑫瑞债券发起式A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of013663",
-    "name": "富国安福30天滚动持有短债发起A",
-    "category": "债券型"
+    "code": "of013690",
+    "name": "湘财久盛39个月定期开放债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of013718",
-    "name": "兴银稳益30天持有期债券A",
-    "category": "债券型"
+    "code": "of013730",
+    "name": "方正富邦稳恒3个月定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of013773",
-    "name": "国泰睿元一年定期开放债券发起式",
-    "category": "债券型"
+    "code": "of013800",
+    "name": "财通安裕30天持有期中短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of013821",
-    "name": "南方定利一年定开债券",
-    "category": "债券型"
+    "code": "of013839",
+    "name": "中银恒嘉60天滚动持有短债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of013952",
-    "name": "工银瑞和3个月定开债券A",
-    "category": "债券型"
+    "code": "of013971",
+    "name": "长江尊利债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of014004",
-    "name": "博时富璟纯债一年定开债",
-    "category": "债券型"
+    "code": "of014055",
+    "name": "太平恒兴纯债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of014088",
-    "name": "永赢稳健增强债券A",
-    "category": "债券型"
+    "code": "of014138",
+    "name": "中泰安睿债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of014240",
-    "name": "农银金鸿短债债券A",
-    "category": "债券型"
+    "code": "of014259",
+    "name": "百嘉百兴纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of014315",
-    "name": "鹏华双季享180天持有债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of014391",
-    "name": "华安添信债券",
-    "category": "债券型"
+    "code": "of014385",
+    "name": "华富安业一年持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of014452",
     "name": "天弘惠享一年定开债券发起",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of014490",
-    "name": "浙商双月鑫60天滚动持有中短债A",
-    "category": "债券型"
+    "code": "of014493",
+    "name": "浙商汇金兴利增强债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
     "code": "of014638",
     "name": "银华安鑫短债债券D",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of014716",
-    "name": "东兴兴源债券A",
-    "category": "债券型"
+    "code": "of014717",
+    "name": "东兴兴源债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of014778",
-    "name": "国寿安保安和纯债债券",
-    "category": "债券型"
+    "code": "of014779",
+    "name": "尚正臻利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of014858",
-    "name": "建信鑫享短债债券F",
-    "category": "债券型"
+    "code": "of014870",
+    "name": "方正富邦稳丰一年定开债券发起",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of014952",
-    "name": "国泰睿鸿一年定开债发起",
-    "category": "债券型"
+    "code": "of014965",
+    "name": "国投瑞银顺和一年定开债发起式",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of015008",
-    "name": "汇安永利30天持有期短债A",
-    "category": "债券型"
+    "code": "of015049",
+    "name": "招商添安1年定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of015106",
-    "name": "百嘉百顺纯债债券A",
-    "category": "债券型"
+    "code": "of015175",
+    "name": "申万菱信稳益宝债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of015248",
-    "name": "国泰海通60天滚动持有中短债A",
-    "category": "债券型"
+    "code": "of015284",
+    "name": "圆信永丰兴益三个月定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of015312",
-    "name": "国金及第中短债债券B",
-    "category": "债券型"
+    "code": "of015350",
+    "name": "银河季季盈90天滚动持有短债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of015371",
-    "name": "中加聚享增盈债券A",
-    "category": "债券型"
+    "code": "of015415",
+    "name": "华宝宝隆债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of015433",
-    "name": "金元顺安泓泽债券",
-    "category": "债券型"
+    "code": "of015465",
+    "name": "兴全兴益债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of015471",
-    "name": "万家鑫橙纯债A",
-    "category": "债券型"
+    "code": "of015492",
+    "name": "中航瑞发3个月定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of015500",
-    "name": "山证资管裕辰债券发起式",
-    "category": "债券型"
+    "code": "of015534",
+    "name": "红塔红土瑞鑫纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of015552",
-    "name": "中加安盈一年定开债发起",
-    "category": "债券型"
+    "code": "of015606",
+    "name": "广发集祥债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of015622",
-    "name": "平安合禧1年定开发起",
-    "category": "债券型"
+    "code": "of015672",
+    "name": "中加丰裕纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of015706",
-    "name": "诺德安元纯债债券",
-    "category": "债券型"
+    "code": "of015748",
+    "name": "上银可转债精选债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of015782",
-    "name": "创金合信稳健添利债券A",
-    "category": "债券型"
-  },
-  {
-    "code": "of015834",
-    "name": "汇添富鑫和纯债A",
-    "category": "债券型"
+    "code": "of015832",
+    "name": "永赢宏泰短债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of015893",
     "name": "广发景益债券A",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of015933",
-    "name": "中泰安悦6个月定开债A",
-    "category": "债券型"
+    "code": "of015934",
+    "name": "中泰安悦6个月定开债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of015991",
-    "name": "长城鑫利30天滚动持有中短债A",
-    "category": "债券型"
+    "code": "of015996",
+    "name": "汇安裕盈纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of016026",
-    "name": "渤海汇金汇鑫益3个月定开债发起",
-    "category": "债券型"
+    "code": "of016032",
+    "name": "光大尊颐纯债一年债券发起",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of016109",
-    "name": "南方振元债券发起A",
-    "category": "债券型"
+    "code": "of016124",
+    "name": "汇泉安盈回报债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of016149",
-    "name": "中银季季享90天滚动持有中短债债券发起A",
-    "category": "债券型"
+    "code": "of016172",
+    "name": "鹏扬利泽债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of016206",
-    "name": "信澳汇享三个月定开债券A",
-    "category": "债券型"
+    "code": "of016236",
+    "name": "浦银安盛普诚纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of016314",
-    "name": "同泰泰裕三个月定开债A",
-    "category": "债券型"
+    "code": "of016327",
+    "name": "农银双利回报债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of016396",
-    "name": "交银稳益短债债券A",
-    "category": "债券型"
+    "code": "of016405",
+    "name": "大成景泽中短债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of016424",
-    "name": "广发集汇债券A",
-    "category": "债券型"
+    "code": "of016427",
+    "name": "汇添富丰利短债D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of016472",
-    "name": "天弘增益回报债券发起式D",
-    "category": "债券型"
+    "code": "of016483",
+    "name": "国泰利盈60天滚动持有中短债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of016576",
     "name": "民生加银瑞丰一年定开债券发起",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of016614",
-    "name": "中欧尊悦一年定开债券发起",
-    "category": "债券型"
+    "code": "of016612",
+    "name": "长盛盛远债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of016673",
-    "name": "华安鼎津一年定开债发起式",
-    "category": "债券型"
+    "code": "of016670",
+    "name": "博时恒耀债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of016722",
-    "name": "国泰海通安弘六个月定开债券",
-    "category": "债券型"
+    "code": "of016717",
+    "name": "中银中短债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of016779",
-    "name": "招商安华债券D",
-    "category": "债券型"
+    "code": "of016765",
+    "name": "百嘉百盈纯债债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of016806",
-    "name": "华宝安融六个月持有期债券A",
-    "category": "债券型"
+    "code": "of016807",
+    "name": "华宝安融六个月持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of016877",
-    "name": "长信稳恒债券A",
-    "category": "债券型"
+    "code": "of016875",
+    "name": "交银稳安30天滚动持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of016933",
-    "name": "景顺长城睿丰短债A",
-    "category": "债券型"
+    "code": "of016926",
+    "name": "华夏鼎辉债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of016986",
-    "name": "淳厚瑞和债券A",
-    "category": "债券型"
+    "code": "of016959",
+    "name": "财通资管睿安债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of017053",
-    "name": "南方ESG纯债债券发起A",
-    "category": "债券型"
+    "code": "of017024",
+    "name": "天弘通享债券发起A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of017134",
-    "name": "博道和祥多元稳健债券A",
-    "category": "债券型"
+    "code": "of017121",
+    "name": "南方贤元一年持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of017214",
-    "name": "兴华安聚纯债A",
-    "category": "债券型"
+    "code": "of017163",
+    "name": "蜂巢添益纯债E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of017432",
-    "name": "交银稳安60天滚动持有债券A",
-    "category": "债券型"
+    "code": "of017307",
+    "name": "招商鑫嘉中短债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of017466",
-    "name": "汇添富稳鑫120天滚动持有债券B",
-    "category": "债券型"
+    "code": "of017443",
+    "name": "嘉实30天持有期中短债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of017556",
-    "name": "招商安凯债券",
-    "category": "债券型"
+    "code": "of017500",
+    "name": "兴业嘉辰一年定开债券发起式",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of017659",
-    "name": "汇添富稳丰中短债债券A",
-    "category": "债券型"
+    "code": "of017584",
+    "name": "鑫元聚鑫收益增强D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of017695",
-    "name": "招商添轩1年定开债",
-    "category": "债券型"
+    "code": "of017681",
+    "name": "建信睿安一年定期开放债券发起",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of017793",
-    "name": "国联安聚利39个月封闭式债券",
-    "category": "债券型"
+    "code": "of017729",
+    "name": "景顺长城景泰裕利纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of017955",
-    "name": "汇添富稳瑞30天滚动持有中短债B",
-    "category": "债券型"
+    "code": "of017817",
+    "name": "鹏扬裕利三年封闭式债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of018059",
-    "name": "兴合锦安利率债A",
-    "category": "债券型"
+    "code": "of018011",
+    "name": "交银稳安90天持有期债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of018170",
-    "name": "嘉实双季瑞享6个月持有债券A",
-    "category": "债券型"
+    "code": "of018091",
+    "name": "博时利发纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of018253",
-    "name": "平安利率债A",
-    "category": "债券型"
+    "code": "of018192",
+    "name": "建信鑫弘180天持有期债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of018393",
-    "name": "富国稳健添利债券A",
-    "category": "债券型"
+    "code": "of018271",
+    "name": "工银恒享纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of018458",
-    "name": "华润元大润享三个月定开债A",
-    "category": "债券型"
+    "code": "of018420",
+    "name": "汇添富稳航30天持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of018516",
-    "name": "恒越安裕纯债债券",
-    "category": "债券型"
+    "code": "of018481",
+    "name": "中金恒新90天持有债券发起",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of018568",
-    "name": "长信稳固60天滚动持有债券A",
-    "category": "债券型"
+    "code": "of018530",
+    "name": "中欧稳鑫180天持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of018601",
-    "name": "长城集利债券发起式A",
-    "category": "债券型"
+    "code": "of018581",
+    "name": "中银纯债债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of018644",
-    "name": "金鹰悦享债券A",
-    "category": "债券型"
+    "code": "of018617",
+    "name": "民生加银添润债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of018701",
-    "name": "中银惠利半年定期开放债券B",
-    "category": "债券型"
+    "code": "of018669",
+    "name": "兴华安惠纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of018758",
-    "name": "山证资管汇利一年定开债券A",
-    "category": "债券型"
+    "code": "of018737",
+    "name": "景顺长城景颐裕利债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of018798",
-    "name": "易方达安裕60天持有债券A",
-    "category": "债券型"
+    "code": "of018764",
+    "name": "汇添富稳荣回报债券发起式C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of018846",
-    "name": "华泰保兴尊睿6个月持有债券发起A",
-    "category": "债券型"
+    "code": "of018826",
+    "name": "兴银创盈一年定开债发起",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of018924",
-    "name": "南方金添利三年定开债券A",
-    "category": "债券型"
+    "code": "of018867",
+    "name": "东方红3个月定开纯债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of018981",
-    "name": "湘财鑫利纯债A",
-    "category": "债券型"
+    "code": "of018942",
+    "name": "长城裕利债券发起式C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of019048",
-    "name": "嘉实汇享30天持有期纯债债券A",
-    "category": "债券型"
+    "code": "of018989",
+    "name": "博时双季益六个月持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of019123",
-    "name": "中欧诚悦债券A",
-    "category": "债券型"
+    "code": "of019056",
+    "name": "百嘉百川30天持有纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of019287",
-    "name": "鹏华丰诚债券D",
-    "category": "债券型"
+    "code": "of019122",
+    "name": "安信中短利率债(LOF)D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of019400",
-    "name": "国泰海通安睿纯债债券A",
-    "category": "债券型"
+    "code": "of019264",
+    "name": "易方达安瑞短债债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of019477",
-    "name": "鹏扬淳盈6个月定开D",
-    "category": "债券型"
+    "code": "of019373",
+    "name": "大成元丰多利债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of019543",
-    "name": "浦银安盛普恒利率债",
-    "category": "债券型"
+    "code": "of019445",
+    "name": "华富恒盛纯债债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of019591",
-    "name": "平安0-3年期政策性金融债债券D",
-    "category": "债券型"
+    "code": "of019489",
+    "name": "景顺长城景泰通利纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of019662",
-    "name": "易方达兴利180天持有债券A",
-    "category": "债券型"
+    "code": "of019541",
+    "name": "东方红90天持有纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of019742",
-    "name": "华宝宝丰高等级债券D",
-    "category": "债券型"
+    "code": "of019584",
+    "name": "富国稳健添辰债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of019826",
-    "name": "浙商汇金聚利一年定开债D",
-    "category": "债券型"
+    "code": "of019648",
+    "name": "中海中短债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of019939",
-    "name": "长信120天滚动持有债券A",
-    "category": "债券型"
+    "code": "of019724",
+    "name": "鑫元稳丰利率债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of020033",
-    "name": "国泰民安增利债券A",
-    "category": "债券型"
+    "code": "of019809",
+    "name": "华泰柏瑞鸿瑞60天持有期债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of020078",
-    "name": "金信民富债券A",
-    "category": "债券型"
+    "code": "of019899",
+    "name": "长盛盛康纯债E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of020144",
-    "name": "银华致淳债券",
-    "category": "债券型"
+    "code": "of019962",
+    "name": "国联安月享30天持有期纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of020211",
-    "name": "兴华安启纯债A",
-    "category": "债券型"
+    "code": "of020046",
+    "name": "广发添盈180天持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of020284",
-    "name": "东方红汇享债券A",
-    "category": "债券型"
+    "code": "of020083",
+    "name": "易方达投资级信用债债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of020351",
-    "name": "农银金瑞利率债债券",
-    "category": "债券型"
+    "code": "of020173",
+    "name": "汇安中短债债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of020399",
-    "name": "国泰利恒30天持有债券A",
-    "category": "债券型"
+    "code": "of020213",
+    "name": "银华晶鑫债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of020455",
-    "name": "大成安汇金融债债券D",
-    "category": "债券型"
+    "code": "of020262",
+    "name": "平安鑫惠90天持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of020319",
+    "name": "鹏扬淳合债券D",
+    "category": "债券型",
+    "shareClass": "D"
+  },
+  {
+    "code": "of020374",
+    "name": "天弘弘择短债D",
+    "category": "债券型",
+    "shareClass": "D"
+  },
+  {
+    "code": "of020414",
+    "name": "中信保诚优质纯债债券I",
+    "category": "债券型",
+    "shareClass": "I"
+  },
+  {
+    "code": "of020472",
+    "name": "长城0-5年政金债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
     "code": "of020532",
     "name": "湘财鑫睿债券A",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of020569",
-    "name": "建信宁远90天持有期债券A",
-    "category": "债券型"
+    "code": "of020565",
+    "name": "华夏鼎昭利率债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of020598",
-    "name": "格林聚利增强一个月持有期债券A",
-    "category": "债券型"
+    "code": "of020590",
+    "name": "融通通宸债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of020663",
-    "name": "华安季季鑫90天持有债券A",
-    "category": "债券型"
+    "code": "of020642",
+    "name": "鹏扬丰利一年持有债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of020711",
-    "name": "同泰恒兴纯债D",
-    "category": "债券型"
+    "code": "of020702",
+    "name": "南华瑞享纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of020761",
-    "name": "汇添富丰泰纯债A",
-    "category": "债券型"
+    "code": "of020738",
+    "name": "安信宝利债券(LOF)C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of020811",
-    "name": "富国盛利增强债券发起式A",
-    "category": "债券型"
+    "code": "of020790",
+    "name": "银华季季鑫90天持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of020855",
-    "name": "泉果泰然30天持有期债券A",
-    "category": "债券型"
+    "code": "of020823",
+    "name": "汇泉安阳纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of020907",
-    "name": "中航瑞尚利率债A",
-    "category": "债券型"
+    "code": "of020882",
+    "name": "长信180天持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of020937",
-    "name": "长江90天持有期债券A",
-    "category": "债券型"
+    "code": "of020917",
+    "name": "鹏扬稳鑫120天滚动持有债券E",
+    "category": "债券型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of020940",
+    "name": "永赢安裕120天滚动持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
     "code": "of020962",
     "name": "中信保诚双盈债券(LOF)D",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of021068",
-    "name": "鹏华双季乐180天持有期债券A",
-    "category": "债券型"
+    "code": "of021014",
+    "name": "信澳悦享利率债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of021136",
-    "name": "广发集享债券A",
-    "category": "债券型"
+    "code": "of021070",
+    "name": "恒生前海恒荣纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of021237",
-    "name": "合煦智远嘉悦利率债A",
-    "category": "债券型"
+    "code": "of021127",
+    "name": "恒越季季乐3个月滚动持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of021290",
-    "name": "安信宝利债券(LOF)F",
-    "category": "债券型"
+    "code": "of021197",
+    "name": "信澳鑫泰6个月持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of021355",
-    "name": "汇添富增强收益债券D",
-    "category": "债券型"
+    "code": "of021266",
+    "name": "中信保诚稳悦债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of021412",
-    "name": "富国泓利纯债债券型发起式D",
-    "category": "债券型"
+    "code": "of021336",
+    "name": "国联利率债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of021441",
-    "name": "申万菱信安泰添益纯债债券A",
-    "category": "债券型"
+    "code": "of021387",
+    "name": "永赢泰利债券B",
+    "category": "债券型",
+    "shareClass": "B"
   },
   {
-    "code": "of021517",
-    "name": "兴华兴利债券A",
-    "category": "债券型"
+    "code": "of021425",
+    "name": "长城月月鑫30天持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of021581",
-    "name": "贝莱德和悦利率债A",
-    "category": "债券型"
+    "code": "of021452",
+    "name": "富国绿色纯债一年定开债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of021696",
-    "name": "浙商汇金聚悦利率债A",
-    "category": "债券型"
+    "code": "of021544",
+    "name": "博远增汇纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of021772",
-    "name": "汇添富双利增强债券D",
-    "category": "债券型"
+    "code": "of021588",
+    "name": "广发景利纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of021803",
-    "name": "华商鸿信纯债债券",
-    "category": "债券型"
+    "code": "of021680",
+    "name": "永赢安泽6个月持有债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of021921",
-    "name": "汇泉安阳纯债D",
-    "category": "债券型"
+    "code": "of021761",
+    "name": "红塔红土30天持有期债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of022014",
-    "name": "中欧稳裕30天滚动持有债券发起A",
-    "category": "债券型"
+    "code": "of021794",
+    "name": "国泰海通安宜纯债债券",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of022056",
-    "name": "嘉实季季惠享3个月持有期纯债A",
-    "category": "债券型"
+    "code": "of021846",
+    "name": "创金合信聚鑫债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of022103",
-    "name": "交银裕通纯债债券D",
-    "category": "债券型"
+    "code": "of021941",
+    "name": "中海丰泽利率债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of022143",
-    "name": "富国景利纯债债券D",
-    "category": "债券型"
+    "code": "of022015",
+    "name": "中欧稳裕30天滚动持有债券发起C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of022201",
-    "name": "国泰利安中短债债券F",
-    "category": "债券型"
+    "code": "of022045",
+    "name": "招商安宁债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of022232",
-    "name": "鹏华双债保利债券A",
-    "category": "债券型"
+    "code": "of022088",
+    "name": "永赢安泰中短债D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of022280",
-    "name": "鹏华纯债债券A",
-    "category": "债券型"
+    "code": "of022128",
+    "name": "华安纯债债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of022348",
-    "name": "融通稳鑫90天持有期债券A",
-    "category": "债券型"
+    "code": "of022159",
+    "name": "富国丰利增强债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of022397",
-    "name": "大成添鑫债券A",
-    "category": "债券型"
+    "code": "of022218",
+    "name": "华宝宝裕债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of022510",
-    "name": "鹏华丰盛债券A",
-    "category": "债券型"
+    "code": "of022244",
+    "name": "平安惠悦纯债C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of022564",
-    "name": "永赢昭利债券B",
-    "category": "债券型"
+    "code": "of022279",
+    "name": "融通通和债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of022621",
-    "name": "民生加银双月鑫60天持有债券A",
-    "category": "债券型"
+    "code": "of022319",
+    "name": "兴全恒嘉30天持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of022668",
-    "name": "尚正正达债券A",
-    "category": "债券型"
+    "code": "of022388",
+    "name": "天弘稳兴债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of022786",
-    "name": "大摩稳丰利率债A",
-    "category": "债券型"
+    "code": "of022409",
+    "name": "鑫元睿鑫添益债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of022842",
-    "name": "摩根恒鑫债券A",
-    "category": "债券型"
+    "code": "of022530",
+    "name": "天弘安怡30天滚动持有短债发起E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of023026",
-    "name": "大成景苏利率债A",
-    "category": "债券型"
+    "code": "of022580",
+    "name": "天弘增利短债发起E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of023092",
-    "name": "招商招坤纯债D",
-    "category": "债券型"
+    "code": "of022618",
+    "name": "摩根共同分类目录绿色债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of023224",
-    "name": "景顺长城180天持有期债券A",
-    "category": "债券型"
+    "code": "of022658",
+    "name": "建信丰融债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of023280",
-    "name": "工银稳健丰利120天滚动持有债券A",
-    "category": "债券型"
+    "code": "of022753",
+    "name": "汇安稳裕债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of023317",
-    "name": "华泰保兴开元3个月持有债券发起A",
-    "category": "债券型"
+    "code": "of022809",
+    "name": "博时裕乾纯债债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of023403",
-    "name": "前海开源鼎裕债券D",
-    "category": "债券型"
+    "code": "of022877",
+    "name": "交银丰晟收益债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of023487",
-    "name": "西部利得裕丰回报债券A",
-    "category": "债券型"
+    "code": "of023025",
+    "name": "南方升元中短期利率债债券D",
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of023540",
-    "name": "中欧稳航90天持有债券A",
-    "category": "债券型"
+    "code": "of023077",
+    "name": "诺德安锦利率债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of023615",
-    "name": "银华远景债券D",
-    "category": "债券型"
+    "code": "of023171",
+    "name": "兴华安泽纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of023662",
-    "name": "国泰海通稳健悦享90天持有债券发起A",
-    "category": "债券型"
+    "code": "of023248",
+    "name": "永赢泓利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of023691",
-    "name": "中信保诚稳益D",
-    "category": "债券型"
+    "code": "of023287",
+    "name": "创金合信恒荣120天持有期债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of023784",
-    "name": "中欧增强回报债券(LOF)D",
-    "category": "债券型"
+    "code": "of023316",
+    "name": "摩根30天持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of023804",
-    "name": "汇安聚利债券A",
-    "category": "债券型"
+    "code": "of023374",
+    "name": "安信锦顺利率债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of023848",
-    "name": "宏利悦享30天持有债券A",
-    "category": "债券型"
+    "code": "of023468",
+    "name": "华安众泰纯债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of024081",
-    "name": "国联稳健添益债券A",
-    "category": "债券型"
+    "code": "of023507",
+    "name": "富国安丰60天持有期债券发起式A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of024110",
-    "name": "融通增元债券A",
-    "category": "债券型"
+    "code": "of023580",
+    "name": "博时四月兴120天持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of024135",
-    "name": "中泰双益债券A",
-    "category": "债券型"
+    "code": "of023637",
+    "name": "易方达安旭90天持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of024213",
-    "name": "嘉实稳宏债券D",
-    "category": "债券型"
+    "code": "of023671",
+    "name": "华商收益增强债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of024288",
-    "name": "兴业福盛债券A",
-    "category": "债券型"
+    "code": "of023698",
+    "name": "长城元利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of024323",
-    "name": "光大添利30天滚动持有债券A",
-    "category": "债券型"
+    "code": "of023790",
+    "name": "国投瑞银优化增强债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of024515",
-    "name": "海富通瑞泽90天持有债券发起A",
-    "category": "债券型"
+    "code": "of023812",
+    "name": "兴业恒泰债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of024582",
-    "name": "汇添富稳惠6个月持有债券A",
-    "category": "债券型"
+    "code": "of023953",
+    "name": "汇安嘉盈一年持有期债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of024720",
-    "name": "中银中高等级债券D",
-    "category": "债券型"
+    "code": "of024018",
+    "name": "东海合益3个月定开债券发起式C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of024945",
-    "name": "国联稳健鑫益债券A",
-    "category": "债券型"
+    "code": "of024103",
+    "name": "浙商汇金锦利增强30天持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024129",
+    "name": "宏利嘉利债券C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024206",
+    "name": "长信利鑫债券(LOF)E",
+    "category": "债券型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of024284",
+    "name": "易方达安如30天持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of024306",
+    "name": "兴业兴和盛债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of024488",
+    "name": "东吴中短债债券发起A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of024541",
+    "name": "英大安瑞6个月定开债券C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024621",
+    "name": "华泰柏瑞锦华债券D",
+    "category": "债券型",
+    "shareClass": "D"
+  },
+  {
+    "code": "of024783",
+    "name": "华夏债券增强六个月持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024947",
+    "name": "招商瑞锦回报债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of024971",
     "name": "东方红短债债券D",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "D"
   },
   {
-    "code": "of025084",
-    "name": "民生加银高等级信用债债券D",
-    "category": "债券型"
+    "code": "of025055",
+    "name": "民生加银鑫享债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of025133",
-    "name": "万家可转债债券D",
-    "category": "债券型"
+    "code": "of025120",
+    "name": "宏利盛享债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of025176",
-    "name": "平安如意中短债F",
-    "category": "债券型"
+    "code": "of025157",
+    "name": "华泰保兴兴元180天封闭债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of025236",
-    "name": "中信建投悠享12个月持有期债券A",
-    "category": "债券型"
+    "code": "of025227",
+    "name": "广发集瑞债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of025279",
-    "name": "长城兴怡债券A",
-    "category": "债券型"
+    "code": "of025266",
+    "name": "国泰稳健添利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of025305",
-    "name": "中欧优利债券A",
-    "category": "债券型"
+    "code": "of025290",
+    "name": "建信丰泽债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of025463",
-    "name": "汇添富稳健回报债券D",
-    "category": "债券型"
+    "code": "of025372",
+    "name": "景顺长城景颐裕利债券F",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of025592",
-    "name": "国泰海通安泰三个月持有债券A",
-    "category": "债券型"
+    "code": "of025562",
+    "name": "大摩灵动优选债券E",
+    "category": "债券型",
+    "shareClass": "E"
   },
   {
-    "code": "of025640",
-    "name": "国泰民安增利债券D",
-    "category": "债券型"
+    "code": "of025626",
+    "name": "国泰海通鑫逸债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of025767",
-    "name": "尚正臻瑞3个月持有债券A",
-    "category": "债券型"
+    "code": "of025731",
+    "name": "鹏华睿享180天持有期债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of025975",
-    "name": "前海联合弘利债券A",
-    "category": "债券型"
+    "code": "of025891",
+    "name": "国联金如意双利一年持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of026025",
-    "name": "华夏六个月滚动持有债券A",
-    "category": "债券型"
+    "code": "of025992",
+    "name": "广发集辉债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of026049",
-    "name": "华夏卓安债券A",
-    "category": "债券型"
+    "code": "of026031",
+    "name": "中欧稳达三个月滚动持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of026133",
-    "name": "鹏华睿和90天持有期债券A",
-    "category": "债券型"
+    "code": "of026051",
+    "name": "信澳鑫丰债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of026208",
-    "name": "金元顺安丰惠债券A",
-    "category": "债券型"
+    "code": "of026098",
+    "name": "前海开源安和债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of026307",
-    "name": "新华锦利债券A",
-    "category": "债券型"
+    "code": "of026198",
+    "name": "易方达悦恒稳健债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of026361",
-    "name": "财通资管双泰债券A",
-    "category": "债券型"
+    "code": "of026243",
+    "name": "中银证券安怡债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of026481",
-    "name": "农银瑞恒债券A",
-    "category": "债券型"
+    "code": "of026322",
+    "name": "广发乾利一年持有债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of026676",
-    "name": "创金合信弘达债券A",
-    "category": "债券型"
+    "code": "of026411",
+    "name": "广发添益120天滚动持有债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of026992",
-    "name": "博时恒乐债券B",
-    "category": "债券型"
+    "code": "of026500",
+    "name": "富国嘉汇债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of027064",
-    "name": "长信稳健汇利90天持有债券A",
-    "category": "债券型"
+    "code": "of026706",
+    "name": "方正富邦恒信双利债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of040010",
-    "name": "华安稳定收益债券B",
-    "category": "债券型"
+    "code": "of026978",
+    "name": "中海铭嘉债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of041009",
-    "name": "华安稳定收益债券A(后端)",
-    "category": "债券型"
+    "code": "of027024",
+    "name": "国金安裕债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of051106",
-    "name": "博时稳定价值债券A(后端)",
-    "category": "债券型"
+    "code": "of027168",
+    "name": "南方丰泽稳健添利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of091002",
-    "name": "大成债券A/B(后端)",
-    "category": "债券型"
+    "code": "of040041",
+    "name": "华安纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of100059",
-    "name": "富国产业债券A(后端)",
-    "category": "债券型"
+    "code": "of070009",
+    "name": "嘉实超短债债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of110035",
-    "name": "易方达双债增强债券A",
-    "category": "债券型"
+    "code": "of100019",
+    "name": "富国天利增长债券A(后端)",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of160602",
-    "name": "鹏华普天债券A",
-    "category": "债券型"
+    "code": "of110028",
+    "name": "易方达安心回报债券B",
+    "category": "债券型",
+    "shareClass": "B"
   },
   {
-    "code": "of161018",
-    "name": "富国天丰强化债券(LOF)A(后端)",
-    "category": "债券型"
+    "code": "of160515",
+    "name": "博时安丰18个月定开债A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of161619",
-    "name": "融通岁岁添利定开债B",
-    "category": "债券型"
+    "code": "of161117",
+    "name": "易方达永旭定开债",
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of162715",
-    "name": "广发聚源债券(LOF)A",
-    "category": "债券型"
+    "code": "of161902",
+    "name": "万家增强收益债券C",
+    "category": "债券型",
+    "shareClass": "C"
   },
   {
-    "code": "of163827",
-    "name": "中银产业债债券A",
-    "category": "债券型"
+    "code": "of163816",
+    "name": "中银转债增强债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of164903",
     "name": "交银信用添利债券(LOF)(后端)",
-    "category": "债券型"
+    "category": "债券型",
+    "shareClass": "无"
   },
   {
-    "code": "of180015",
-    "name": "银华增强收益债券A",
-    "category": "债券型"
+    "code": "of200013",
+    "name": "长城积极增利债券A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
-    "code": "of202305",
-    "name": "南方旺元60天滚动持有中短债A",
-    "category": "债券型"
+    "code": "of213007",
+    "name": "宝盈增强收益债券A/B",
+    "category": "债券型",
+    "shareClass": "B"
+  },
+  {
+    "code": "of240013",
+    "name": "华宝增强收益债券B",
+    "category": "债券型",
+    "shareClass": "B"
+  },
+  {
+    "code": "of270049",
+    "name": "广发纯债债券C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of360019",
+    "name": "光大添天盈五年定开债",
+    "category": "债券型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of410004",
+    "name": "华富收益增强债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of470058",
+    "name": "汇添富可转换债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of485107",
+    "name": "工银添利债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of519121",
+    "name": "浦银安盛6个月持有期债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of519207",
+    "name": "万家年年恒荣C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of519632",
+    "name": "银河君辉3个月定开债",
+    "category": "债券型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of519719",
+    "name": "交银纯债债券发起A(后端)",
+    "category": "债券型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of519762",
+    "name": "交银裕通纯债债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of519967",
+    "name": "长信利富债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of531017",
+    "name": "建信双息红利债券C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of620003",
+    "name": "金元顺安丰利债券A",
+    "category": "债券型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of675043",
+    "name": "西部利得合享C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of690202",
+    "name": "民生增强收益债券C",
+    "category": "债券型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of890011",
+    "name": "长江聚利债券型A",
+    "category": "债券型",
+    "shareClass": "A"
   },
   {
     "code": "of000008",
     "name": "嘉实中证500ETF联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of000076",
-    "name": "华夏恒生ETF联接现钞",
-    "category": "指数型"
+    "code": "of000180",
+    "name": "广发美国房地产指数美元现汇(QDII)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of000218",
-    "name": "国泰黄金ETF联接A",
-    "category": "指数型"
+    "code": "of000373",
+    "name": "华安中证细分医药ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of000370",
-    "name": "广发全球医疗保健美元现汇(QDII)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of000614",
-    "name": "华安德国(DAX)联接(QDII)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of000948",
-    "name": "华夏沪港通恒生ETF联接A",
-    "category": "指数型"
+    "code": "of000835",
+    "name": "华润元大富时中国A50指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of001021",
     "name": "华夏亚债中国指数A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of001093",
-    "name": "广发生物科技指数美元(QDII)A",
-    "category": "指数型"
+    "code": "of001180",
+    "name": "广发医药卫生联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of001242",
-    "name": "博时中证淘金大数据100A",
-    "category": "指数型"
+    "code": "of001455",
+    "name": "景顺长城中证500ETF联接",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of001469",
-    "name": "广发中证全指金融地产联接A",
-    "category": "指数型"
+    "code": "of001557",
+    "name": "天弘中证500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of001556",
-    "name": "天弘中证500指数增强A",
-    "category": "指数型"
+    "code": "of001632",
+    "name": "天弘中证食品饮料ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of001879",
-    "name": "长城创业板指数增强A",
-    "category": "指数型"
+    "code": "of002423",
+    "name": "华宝标普美国消费美元",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of002510",
-    "name": "申万菱信中证500指数增强A",
-    "category": "指数型"
+    "code": "of002963",
+    "name": "易方达黄金ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of003015",
-    "name": "中金沪深300指数增强A",
-    "category": "指数型"
+    "code": "of003082",
+    "name": "国联银行间1-3年中高等级信用债指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of003376",
-    "name": "广发中债7-10年国开债指数A",
-    "category": "指数型"
+    "code": "of003646",
+    "name": "创金合信中证1000指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of003722",
-    "name": "易方达纳斯达克100ETF联接(QDII-LOF)A(美元现汇)",
-    "category": "指数型"
+    "code": "of003884",
+    "name": "汇安沪深300指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of004069",
-    "name": "南方中证全指证券公司ETF联接A",
-    "category": "指数型"
+    "code": "of004195",
+    "name": "招商中证1000指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of004532",
-    "name": "民生加银港股通高股息A",
-    "category": "指数型"
+    "code": "of004408",
+    "name": "招商深证100指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of004881",
-    "name": "中银沪深300指数增强A",
-    "category": "指数型"
+    "code": "of004642",
+    "name": "南方中证房地产ETF发起联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of005113",
-    "name": "平安沪深300指数量化A",
-    "category": "指数型"
+    "code": "of004856",
+    "name": "广发中证全指建筑材料指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of005530",
-    "name": "汇添富沪深300指数增强A",
-    "category": "指数型"
+    "code": "of005063",
+    "name": "广发中证全指家用电器ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of005623",
-    "name": "广发中债1-3年农发债指数A",
-    "category": "指数型"
+    "code": "of005229",
+    "name": "嘉实富时中国A50ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of005850",
-    "name": "财通沪深300指数增强",
-    "category": "指数型"
+    "code": "of005562",
+    "name": "创金合信中证红利低波动指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of006020",
-    "name": "广发沪深300指数增强A",
-    "category": "指数型"
+    "code": "of005640",
+    "name": "平安300ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of006220",
-    "name": "工银上证50ETF联接A",
-    "category": "指数型"
+    "code": "of005761",
+    "name": "招商MSCI中国A股国际ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of006409",
-    "name": "富国中债-1-3年国开行债券指数A",
-    "category": "指数型"
+    "code": "of005867",
+    "name": "国泰沪深300指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of006486",
-    "name": "广发中证1000ETF联接A",
-    "category": "指数型"
+    "code": "of005994",
+    "name": "国投瑞银中证500指数量化增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of006633",
-    "name": "博时中债1-3政金债指数A",
-    "category": "指数型"
+    "code": "of006165",
+    "name": "建信中证1000指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of006729",
-    "name": "万家中证500指数增强A",
-    "category": "指数型"
+    "code": "of006286",
+    "name": "华泰MSCI中国A股联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of006848",
-    "name": "博时中债5-10农发行A",
-    "category": "指数型"
+    "code": "of006395",
+    "name": "华夏上证50AH优选指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of007021",
-    "name": "嘉实中债1-3政金债指数A",
-    "category": "指数型"
+    "code": "of006480",
+    "name": "广发纳斯达克100ETF联接美元(QDII)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of007078",
-    "name": "工银3-5年国开债指数A",
-    "category": "指数型"
+    "code": "of006569",
+    "name": "国联安中证医药100C",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of007135",
-    "name": "广发中证A100ETF联接A",
-    "category": "指数型"
+    "code": "of006682",
+    "name": "景顺长城中证500指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of006743",
+    "name": "国联央视财经50ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of006849",
+    "name": "博时中债5-10农发行C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of006962",
+    "name": "南方中债7-10年国开行债券指数C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of007044",
+    "name": "博道沪深300增强A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of007094",
+    "name": "建信中债国开行债A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of007136",
+    "name": "广发中证A100ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of007171",
     "name": "易方达中债3-5年国开行债A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of007252",
-    "name": "广发中债农发债总指数A",
-    "category": "指数型"
+    "code": "of007216",
+    "name": "浙商中华预期高股息C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of007324",
-    "name": "鑫元中债1-3年国开行债券指数A",
-    "category": "指数型"
+    "code": "of007289",
+    "name": "汇添富中债1-3年农发债A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of007466",
-    "name": "华泰柏瑞中证红利低波ETF联接A",
-    "category": "指数型"
+    "code": "of007380",
+    "name": "易方达上证50ETF联接基金C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of007593",
-    "name": "鹏扬中证500质量成长ETF联接A",
-    "category": "指数型"
+    "code": "of007467",
+    "name": "华泰柏瑞中证红利低波ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of007765",
-    "name": "前海开源1-3年国开债A",
-    "category": "指数型"
+    "code": "of007531",
+    "name": "华宝券商ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of007809",
-    "name": "富国中证央企创新驱动ETF联接A",
-    "category": "指数型"
+    "code": "of007665",
+    "name": "永赢创业板指数发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of007885",
-    "name": "国联中证500ETF联接A",
-    "category": "指数型"
+    "code": "of007788",
+    "name": "易方达中证国企带路发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of007983",
-    "name": "申万菱信中证研发创新100ETF联接A",
-    "category": "指数型"
+    "code": "of007806",
+    "name": "建信MSCI中国A股指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of008054",
-    "name": "汇添富中债7-10年国开债A",
-    "category": "指数型"
+    "code": "of007844",
+    "name": "华宝标普油气上游股票人民币C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of007937",
+    "name": "华夏饲料豆粕期货ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of007995",
+    "name": "华夏中证500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of008056",
+    "name": "南方上证50增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of008125",
     "name": "创金合信中债1-3年国开债A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of008240",
-    "name": "东财上证50ETF发起式联接A",
-    "category": "指数型"
+    "code": "of008238",
+    "name": "中泰沪深300增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of008326",
-    "name": "东财通信A",
-    "category": "指数型"
+    "code": "of008291",
+    "name": "民生加银沪深300ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of008519",
-    "name": "中金中证沪港深优选消费50指数A",
-    "category": "指数型"
+    "code": "of008399",
+    "name": "华泰柏瑞中证科技ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of008592",
-    "name": "天弘沪深300指数增强发起A",
-    "category": "指数型"
+    "code": "of008583",
+    "name": "西部利得中债1-3年政金债指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of008708",
-    "name": "建信富时100指数(QDII)C美元现汇",
-    "category": "指数型"
+    "code": "of008677",
+    "name": "银华中债1-3年国开行债券指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of008887",
-    "name": "华夏国证半导体芯片ETF联接A",
-    "category": "指数型"
+    "code": "of008777",
+    "name": "华安沪深300ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of008933",
-    "name": "天弘中债1-3年国开债指数发起A",
-    "category": "指数型"
+    "code": "of008907",
+    "name": "汇添富中证国企一带一路ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of008957",
+    "name": "鹏华中债3-5年国开行债券指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of009033",
     "name": "建信上海金ETF联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of009116",
-    "name": "东兴中证消费50A",
-    "category": "指数型"
+    "code": "of009087",
+    "name": "太平中债1-3年政策性金融债A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of009324",
-    "name": "长城中债3-5年国开债指数A",
-    "category": "指数型"
+    "code": "of009225",
+    "name": "天弘中证中美互联网(QDII)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of009560",
-    "name": "上银中债1-3年国开行债券指数A",
-    "category": "指数型"
+    "code": "of009422",
+    "name": "工银彭博国开债1-3年指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of009656",
-    "name": "华安中债1-5年国开行债券ETF联接A",
-    "category": "指数型"
+    "code": "of009582",
+    "name": "国寿中债3-5年政金债指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of009924",
-    "name": "中银中债1-5年国开债指数",
-    "category": "指数型"
+    "code": "of009702",
+    "name": "鹏华中债1-3年农发行债券指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of010497",
-    "name": "光大中债1-5年政金债A",
-    "category": "指数型"
+    "code": "of009860",
+    "name": "易方达中证银行ETF联接(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of010769",
-    "name": "天弘中证农业主题ETF联接A",
-    "category": "指数型"
+    "code": "of010202",
+    "name": "天弘中证科技100指数增强发起A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of010908",
-    "name": "大成沪深300增强发起式A",
-    "category": "指数型"
+    "code": "of010364",
+    "name": "鹏华空天军工指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of011132",
-    "name": "鹏扬沪深300质量成长低波动A",
-    "category": "指数型"
+    "code": "of010572",
+    "name": "易方达中证万得生物科技指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of011610",
-    "name": "华泰柏瑞上证科创板50成份ETF联接A",
-    "category": "指数型"
+    "code": "of010770",
+    "name": "天弘中证农业主题ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of010872",
+    "name": "博时沪深300指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of011035",
+    "name": "嘉实中证稀土产业ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of011316",
+    "name": "天弘创业板300ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of011611",
+    "name": "华泰柏瑞上证科创板50成份ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of011796",
     "name": "新华中债0-3年政策性金融债指数A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of011966",
-    "name": "招商中证光伏产业ETF联接A",
-    "category": "指数型"
+    "code": "of011964",
+    "name": "泰康中证500ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of012080",
-    "name": "易方达中证500指数量化增强A",
-    "category": "指数型"
+    "code": "of012039",
+    "name": "中加1-5年国开债指数",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of012310",
-    "name": "民生加银中债3-5年政金债指数A",
-    "category": "指数型"
+    "code": "of012158",
+    "name": "汇添富上证50基本面增强指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of012364",
-    "name": "广发中证光伏产业指数A",
-    "category": "指数型"
+    "code": "of012275",
+    "name": "富国中证沪港深500ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of012503",
-    "name": "国泰中证环保产业50ETF联接A",
-    "category": "指数型"
+    "code": "of012348",
+    "name": "天弘恒生科技ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of012570",
-    "name": "建信恒生科技指数发起(QDII)A",
-    "category": "指数型"
+    "code": "of012404",
+    "name": "东方中债1-5年政策性金融债C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of012636",
-    "name": "国泰中证全指软件ETF联接A",
-    "category": "指数型"
+    "code": "of012544",
+    "name": "嘉实中证新能源汽车指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of012712",
-    "name": "建信沪深300红利ETF联接A",
-    "category": "指数型"
+    "code": "of012590",
+    "name": "易方达中证全指证券公司ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of012737",
-    "name": "广发创新药ETF联接A",
-    "category": "指数型"
+    "code": "of012637",
+    "name": "国泰中证全指软件ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of012768",
-    "name": "华夏中证动漫游戏ETF发起式联接A",
-    "category": "指数型"
+    "code": "of012708",
+    "name": "东方红中证红利低波动指数A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012733",
+    "name": "易方达中证人工智能主题ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012757",
+    "name": "易方达中证龙头企业指数C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012809",
+    "name": "鹏华中证沪港深科技龙头指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of012862",
     "name": "汇添富中证电池主题ETF发起式联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of012898",
-    "name": "兴银中证科创创业50指数A",
-    "category": "指数型"
+    "code": "of012874",
+    "name": "易方达中证全指证券公司指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of012973",
-    "name": "国泰汽车整车ETF联接A",
-    "category": "指数型"
+    "code": "of012911",
+    "name": "同泰沪深300量化增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of013138",
-    "name": "上银中债5-10年国开行债券指数A",
-    "category": "指数型"
+    "code": "of013013",
+    "name": "华夏中证新能源汽车ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of013298",
-    "name": "南方中证科创创业50ETF联接A",
-    "category": "指数型"
+    "code": "of013083",
+    "name": "中信保诚中证信息安全指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of013317",
-    "name": "华宝中证科创创业50ETF联接A",
-    "category": "指数型"
+    "code": "of013169",
+    "name": "建信彭博1-5年政金债A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of013471",
-    "name": "华宝中证全指农牧渔ETF发起式联接A",
-    "category": "指数型"
+    "code": "of013275",
+    "name": "富国中证煤炭指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013305",
+    "name": "易方达中证科创创业50联接C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013320",
+    "name": "华安中证新能源汽车ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013443",
+    "name": "建信创业板ETF联接E",
+    "category": "指数型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of013502",
+    "name": "易方达低碳ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of013639",
     "name": "光大中证500指数增强A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of013922",
-    "name": "华夏中证1000ETF发起式联接A",
-    "category": "指数型"
+    "code": "of013893",
+    "name": "国联安上证科创50ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of014125",
-    "name": "华夏中证1000指数增强A",
-    "category": "指数型"
+    "code": "of014101",
+    "name": "鹏扬中债3-5年国开债指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of014218",
-    "name": "汇添富中证科创创业50指数增强发起式A",
-    "category": "指数型"
+    "code": "of014154",
+    "name": "天弘华证沪深港长期竞争力指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of014418",
-    "name": "西部利得CES芯片指数增强A",
-    "category": "指数型"
+    "code": "of014202",
+    "name": "天弘中证1000指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of014437",
-    "name": "鹏华中证同业存单AAA指数7天持有",
-    "category": "指数型"
+    "code": "of014372",
+    "name": "浙商沪深300指数增强(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of014534",
-    "name": "南方MSCI中国A50互联互通ETF联接A",
-    "category": "指数型"
+    "code": "of014429",
+    "name": "华富中证同业存单AAA指数7天持有",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of014661",
-    "name": "天弘黄金ETF联接A",
-    "category": "指数型"
+    "code": "of014529",
+    "name": "汇添富MSCI中国A50互联互通ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of015037",
-    "name": "天弘MSCI中国A50互联互通指数A",
-    "category": "指数型"
+    "code": "of014588",
+    "name": "华安中证500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of015336",
-    "name": "嘉实中证芯片产业指数发起式A",
-    "category": "指数型"
+    "code": "of014777",
+    "name": "富国中证芯片产业ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of015545",
-    "name": "大成标普500等权重指数(QDII)C美元",
-    "category": "指数型"
+    "code": "of014982",
+    "name": "华安标普全球石油指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of015739",
-    "name": "国泰中证港股通科技ETF发起联接A",
-    "category": "指数型"
+    "code": "of015061",
+    "name": "中信建投沪深300指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of015825",
-    "name": "国泰中证同业存单AAA指数7天持有",
-    "category": "指数型"
+    "code": "of015300",
+    "name": "华夏纳斯达克100ETF发起式联接(QDII)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of015863",
-    "name": "华泰柏瑞中证同业存单AAA指数7天持有期",
-    "category": "指数型"
+    "code": "of015495",
+    "name": "景顺长城中证1000指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of015894",
-    "name": "平安中证消费电子主题ETF发起式联接A",
-    "category": "指数型"
+    "code": "of015600",
+    "name": "国泰创业板指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of015993",
-    "name": "博时中证光伏产业ETF联接A",
-    "category": "指数型"
+    "code": "of015677",
+    "name": "鹏华中证一带一路主题指数(LOF)C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015794",
+    "name": "天弘创业板指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015861",
+    "name": "嘉实中证同业存单AAA指数7天持有期",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of015879",
+    "name": "富国中证农业主题ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015994",
+    "name": "博时中证光伏产业ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of016057",
     "name": "博时纳斯达克100ETF发起式联接(QDII)C人民币",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of016122",
-    "name": "华富中证科创创业50指数增强A",
-    "category": "指数型"
+    "code": "of016134",
+    "name": "嘉实沪深300指数研究增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of016355",
-    "name": "华夏国证疫苗与生物科技指数发起A",
-    "category": "指数型"
+    "code": "of016278",
+    "name": "广发美国房地产指数人民币(QDII)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of016452",
-    "name": "南方纳斯达克100指数发起(QDII)A",
-    "category": "指数型"
+    "code": "of016366",
+    "name": "东方红中证同业存单AAA指数7天持有",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of016535",
-    "name": "嘉实纳斯达克100ETF发起联接(QDII)C美元现汇",
-    "category": "指数型"
+    "code": "of016496",
+    "name": "景顺长城中证港股通科技ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of016633",
-    "name": "富国中证1000ETF联接A",
-    "category": "指数型"
+    "code": "of016582",
+    "name": "嘉实上海金ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of016776",
-    "name": "嘉实中证1000指数增强发起A",
-    "category": "指数型"
+    "code": "of016688",
+    "name": "创金合信中债长三角中高等级信用债指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of016860",
-    "name": "民生加银中证同业存单AAA指数7天持有",
-    "category": "指数型"
+    "code": "of016789",
+    "name": "万家国证2000ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of016915",
-    "name": "中金华证清洁能源指数发起A",
-    "category": "指数型"
+    "code": "of016866",
+    "name": "华泰紫金中证500指数增强发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of016968",
-    "name": "兴业中证500ETF发起式联接A",
-    "category": "指数型"
+    "code": "of016916",
+    "name": "中金华证清洁能源指数发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of017092",
-    "name": "景顺长城纳斯达克科技ETF联接(QDII)A美元现汇",
-    "category": "指数型"
+    "code": "of016962",
+    "name": "国联安中证1000指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of017140",
-    "name": "华宝中证有色金属ETF发起式联接A",
-    "category": "指数型"
+    "code": "of017068",
+    "name": "申万菱信中证1000指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017141",
+    "name": "华宝中证有色金属ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of017192",
     "name": "天弘中证工业有色金属主题ETF发起联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of017471",
-    "name": "国泰中证机床ETF发起联接A",
-    "category": "指数型"
+    "code": "of017470",
+    "name": "嘉实上证科创板芯片ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of017519",
-    "name": "汇添富北证50成份指数A",
-    "category": "指数型"
+    "code": "of017516",
+    "name": "易方达北证50成份指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of017559",
-    "name": "华安上证科创板芯片ETF发起式联接A",
-    "category": "指数型"
+    "code": "of017528",
+    "name": "嘉实北证50成份指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of017610",
-    "name": "华夏恒生港股通中国内地企业高股息率ETF发起式联接A",
-    "category": "指数型"
+    "code": "of017574",
+    "name": "华夏中证机床ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of017644",
-    "name": "博道中证1000指数增强A",
-    "category": "指数型"
+    "code": "of017641",
+    "name": "摩根标普500指数(QDII)人民币A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of017725",
-    "name": "百嘉中证同业存单AAA指数7天持有",
-    "category": "指数型"
+    "code": "of017701",
+    "name": "方正富邦中证同业存单AAA指数7天持有",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of017846",
-    "name": "国金中证1000指数增强A",
-    "category": "指数型"
+    "code": "of017837",
+    "name": "博时中债7-10政金债指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of017896",
-    "name": "汇添富中证800指数增强A",
-    "category": "指数型"
+    "code": "of017893",
+    "name": "鹏华国证2000指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of017952",
-    "name": "汇添富纳斯达克生物科技ETF发起式联接(QDII)美元现钞",
-    "category": "指数型"
+    "code": "of017938",
+    "name": "易方达中证医疗ETF联接发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of018034",
-    "name": "国泰国证绿色电力ETF发起联接A",
-    "category": "指数型"
+    "code": "of018014",
+    "name": "长信中证1000指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of018078",
-    "name": "南方恒生生物科技ETF发起联接(QDII)A",
-    "category": "指数型"
+    "code": "of018063",
+    "name": "华泰紫金中证1000指数增强发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of018128",
-    "name": "博时北证50成份指数发起式A",
-    "category": "指数型"
+    "code": "of018103",
+    "name": "易方达中证港股通消费主题ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of018167",
-    "name": "国泰有色矿业ETF联接A",
-    "category": "指数型"
+    "code": "of018132",
+    "name": "博时中证有色金属矿业主题指数A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of018168",
+    "name": "国泰有色矿业ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of018233",
     "name": "浙商中证1000指数增强A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of018336",
-    "name": "华夏恒生中国企业ETF发起式联接(QDII)A",
-    "category": "指数型"
+    "code": "of018316",
+    "name": "易方达中证装备产业ETF联接发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of018379",
-    "name": "万家储能电池ETF联接A",
-    "category": "指数型"
+    "code": "of018371",
+    "name": "华夏创业板指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of018411",
-    "name": "易方达芯片ETF联接A",
-    "category": "指数型"
+    "code": "of018396",
+    "name": "招商中证全指医疗器械ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of018502",
-    "name": "东财中证光伏指数发起式A",
-    "category": "指数型"
+    "code": "of018483",
+    "name": "鹏华创业板50ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of018613",
-    "name": "红塔红土中证同业存单AAA指数7天持有",
-    "category": "指数型"
+    "code": "of018565",
+    "name": "嘉实中证全指家用电器指数发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of018685",
-    "name": "银华中债1-3年国开行债券指数D",
-    "category": "指数型"
+    "code": "of018653",
+    "name": "万家国证2000指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of018786",
-    "name": "招商国证2000指数增强A",
-    "category": "指数型"
+    "code": "of018732",
+    "name": "华夏中证智选1000价值稳健策略ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of018896",
-    "name": "易方达消费电子ETF联接A",
-    "category": "指数型"
+    "code": "of018851",
+    "name": "博时标普石油天然气勘探及生产精选行业指数发起(QDII)A人民币",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of018969",
-    "name": "汇添富纳斯达克100ETF发起式联接(QDII)美元现钞",
-    "category": "指数型"
+    "code": "of018921",
+    "name": "东方红中证优势成长指数发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of019061",
-    "name": "易方达中证软件服务ETF联接发起式A",
-    "category": "指数型"
+    "code": "of019014",
+    "name": "景顺长城国证2000指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of019118",
-    "name": "景顺长城纳斯达克科技ETF联接(QDII)E人民币",
-    "category": "指数型"
+    "code": "of019087",
+    "name": "工银中证稀有金属主题ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of019171",
-    "name": "天弘沪港深云计算ETF联接A",
-    "category": "指数型"
+    "code": "of019142",
+    "name": "易方达中证电信主题ETF联接发起式C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019174",
+    "name": "摩根纳斯达克100指数(QDII)美元现汇A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of019240",
     "name": "华泰柏瑞中证1000指数增强A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of019315",
-    "name": "易方达中证新能源ETF联接发起式A",
-    "category": "指数型"
+    "code": "of019292",
+    "name": "浙商之江凤凰联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of019402",
-    "name": "财通资管中证1000指数增强A",
-    "category": "指数型"
+    "code": "of019324",
+    "name": "易方达中证生物科技主题ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of019454",
-    "name": "华泰柏瑞中韩半导体ETF发起式联接(QDII)A",
-    "category": "指数型"
+    "code": "of019405",
+    "name": "华夏中证全指运输ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of019531",
-    "name": "南方中证光伏产业指数发起A",
-    "category": "指数型"
+    "code": "of019493",
+    "name": "易方达央企科技50ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of019572",
-    "name": "达诚中证同业存单AAA指数7天持有期",
-    "category": "指数型"
+    "code": "of019530",
+    "name": "南方中证国新央企科技引领ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of019670",
-    "name": "广发港股创新药ETF联接(QDII)A",
-    "category": "指数型"
+    "code": "of019565",
+    "name": "招商CFETS银行间绿色债券指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of019739",
-    "name": "宝盈纳斯达克100指数发起(QDII)C美元现汇",
-    "category": "指数型"
+    "code": "of019633",
+    "name": "国泰半导体设备ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of019831",
-    "name": "华夏中证智选300价值稳健策略ETF发起式联接A",
-    "category": "指数型"
+    "code": "of019711",
+    "name": "广发道琼斯石油指数(QDII-LOF)美元现汇E",
+    "category": "指数型",
+    "shareClass": "E"
   },
   {
-    "code": "of019866",
-    "name": "国泰上证科创板100ETF发起联接A",
-    "category": "指数型"
+    "code": "of019808",
+    "name": "富安达中证500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of019911",
-    "name": "华安中证红利低波动指数发起式A",
-    "category": "指数型"
+    "code": "of019855",
+    "name": "博时中证新能源ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of019955",
-    "name": "国联中债0-3年政金债指数A",
-    "category": "指数型"
+    "code": "of019870",
+    "name": "华泰柏瑞中证2000ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of019912",
+    "name": "华安中证红利低波动指数发起式C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019937",
+    "name": "华安恒生互联网科技业ETF发起式联接(QDII)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of020011",
     "name": "国泰沪深300指数A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of020093",
-    "name": "泰康医疗健康ETF发起式联接A",
-    "category": "指数型"
+    "code": "of020095",
+    "name": "富国中证绿色电力ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of020113",
     "name": "易方达中证沪港深500ETF发起式联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of020165",
-    "name": "中信保诚中债0-2年政金债指数A",
-    "category": "指数型"
+    "code": "of020160",
+    "name": "中信保诚沪深300指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of020220",
-    "name": "国联安沪深300指数增强A",
-    "category": "指数型"
+    "code": "of020207",
+    "name": "华安中债0-3年政金债指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of020271",
-    "name": "万家创业板综合ETF发起式联接A",
-    "category": "指数型"
+    "code": "of020252",
+    "name": "银河中债0-3年政金债指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of020309",
-    "name": "海富通中债0-2年政金债A",
-    "category": "指数型"
+    "code": "of020290",
+    "name": "国泰中证机器人ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of020379",
-    "name": "大成彭博农发行债1-3年指数D",
-    "category": "指数型"
+    "code": "of020324",
+    "name": "博时中证基建工程指数发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of020456",
-    "name": "平安上证红利低波动指数A",
-    "category": "指数型"
+    "code": "of020394",
+    "name": "大成中债1-3年国开债指数D",
+    "category": "指数型",
+    "shareClass": "D"
+  },
+  {
+    "code": "of020461",
+    "name": "华安中证国有企业红利ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of020500",
     "name": "广发中证港股通非银ETF发起式联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of020585",
-    "name": "东海中债0-3年政策性金融债A",
-    "category": "指数型"
+    "code": "of020542",
+    "name": "浙商汇金中债0-3年政策性金融债C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of020628",
-    "name": "汇添富上证科创板芯片ETF发起式联接A",
-    "category": "指数型"
+    "code": "of020618",
+    "name": "中银新华中诚信红利价值指数发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of020667",
-    "name": "富国创业板中盘200ETF发起式联接A",
-    "category": "指数型"
+    "code": "of020635",
+    "name": "汇添富恒生生物科技ETF发起式联接(QDII)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of020691",
-    "name": "博时中证全指通信设备指数发起式A",
-    "category": "指数型"
+    "code": "of020672",
+    "name": "招商红利低波动100指数发起式A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of020700",
+    "name": "广发中债农发债总指数D",
+    "category": "指数型",
+    "shareClass": "D"
   },
   {
     "code": "of020743",
     "name": "广发恒生消费ETF发起式联接(QDII)A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of020839",
-    "name": "南方中证半导体产业指数发起A",
-    "category": "指数型"
+    "code": "of020791",
+    "name": "天弘中债1-5年政策性金融债指数发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of020886",
-    "name": "交银中债0-3年政金债指数A",
-    "category": "指数型"
+    "code": "of020867",
+    "name": "华安恒生港股通中国央企红利ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of020981",
-    "name": "华安国证机器人产业指数发起式A",
-    "category": "指数型"
+    "code": "of020899",
+    "name": "天弘中证全指通信设备指数发起A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021044",
-    "name": "国泰香港国企红利ETF联接(QDII)A",
-    "category": "指数型"
+    "code": "of020983",
+    "name": "博时国证消费电子主题指数发起式A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021082",
-    "name": "鹏华中证工业互联网主题ETF发起式联接A",
-    "category": "指数型"
+    "code": "of021011",
+    "name": "上银中债5-10年国开行债券指数C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of021036",
+    "name": "博时中证汽车零部件主题指数发起式C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of021060",
+    "name": "嘉实上证科创板生物医药ETF发起联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of021084",
+    "name": "鹏华中证光伏产业ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of021099",
     "name": "博时中证红利ETF发起式联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021159",
-    "name": "天弘沪港深物联网ETF联接A",
-    "category": "指数型"
+    "code": "of021125",
+    "name": "博时上证超大盘ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of021185",
-    "name": "中信保诚中证500指数增强A",
-    "category": "指数型"
+    "code": "of021162",
+    "name": "天弘北证50成份指数发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of021214",
-    "name": "嘉实中证A50ETF联接A",
-    "category": "指数型"
+    "code": "of021186",
+    "name": "中信保诚中证500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of021243",
-    "name": "富国中证中央企业红利ETF发起式联接A",
-    "category": "指数型"
+    "code": "of021213",
+    "name": "大成中证A50ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of021275",
-    "name": "万家上证科创板100指数增强发起式A",
-    "category": "指数型"
+    "code": "of021231",
+    "name": "工银中证A50ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021298",
-    "name": "中欧北证50成份指数发起A",
-    "category": "指数型"
+    "code": "of021254",
+    "name": "富国沪深300ESG基准ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021329",
-    "name": "富国上证科创板100ETF发起式联接A",
-    "category": "指数型"
+    "code": "of021280",
+    "name": "富国国证疫苗与生物科技ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021375",
-    "name": "中欧中证红利低波动100指数发起A",
-    "category": "指数型"
+    "code": "of021300",
+    "name": "诺德中证同业存单AAA指数7天持有期",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of021415",
-    "name": "泰康红利低波ETF联接A",
-    "category": "指数型"
+    "code": "of021330",
+    "name": "富国上证科创板100ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of021474",
-    "name": "华安上证科创板新一代信息技术ETF发起式联接A",
-    "category": "指数型"
+    "code": "of021365",
+    "name": "华夏中证全指可选消费ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021532",
-    "name": "天弘半导体设备指数A",
-    "category": "指数型"
+    "code": "of021389",
+    "name": "银河中证红利低波动100指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of021565",
-    "name": "南方中债0-3年农发行债券指数A",
-    "category": "指数型"
+    "code": "of021421",
+    "name": "广发国证信创ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of021606",
-    "name": "易方达中债新综指发起式(LOF)D",
-    "category": "指数型"
+    "code": "of021480",
+    "name": "博时国证龙头家电ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021653",
-    "name": "南方中证全指计算机ETF发起联接A",
-    "category": "指数型"
+    "code": "of021527",
+    "name": "鑫元中证同业存单AAA指数7天持有期",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of021701",
-    "name": "国泰上证国企红利ETF联接A",
-    "category": "指数型"
+    "code": "of021562",
+    "name": "天弘中证央企红利50指数发起C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of021602",
+    "name": "汇添富中证信息技术应用创新产业ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of021622",
+    "name": "天弘汽车零部件指数C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of021673",
+    "name": "国泰黄金股ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of021702",
+    "name": "国泰上证国企红利ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of021720",
     "name": "鹏华中债0-3年政金债指数A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021749",
-    "name": "易方达创业板成长ETF联接发起式A",
-    "category": "指数型"
+    "code": "of021750",
+    "name": "易方达创业板成长ETF联接发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of021778",
-    "name": "广发纳指100ETF联接(QDII)人民币F",
-    "category": "指数型"
+    "code": "of021773",
+    "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币E",
+    "category": "指数型",
+    "shareClass": "E"
   },
   {
-    "code": "of021838",
-    "name": "嘉实纳斯达克100ETF发起联接(QDII)I人民币",
-    "category": "指数型"
+    "code": "of021832",
+    "name": "富国沪深300ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of021856",
+    "name": "博时中证油气资源ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of021881",
     "name": "鑫元华证沪深港红利50指数A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of021922",
-    "name": "博时中证国新央企现代能源ETF发起式联接A",
-    "category": "指数型"
+    "code": "of021903",
+    "name": "格林中证同业存单AAA指数7天持有期",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of021945",
-    "name": "广发国证半导体芯片ETF联接F",
-    "category": "指数型"
+    "code": "of021944",
+    "name": "广发中证基建工程ETF联接F",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of021961",
-    "name": "景顺长城中证国新港股通央企红利ETF联接A",
-    "category": "指数型"
+    "code": "of021963",
+    "name": "天弘储能电池指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022022",
-    "name": "圆信永丰中债0-3年政策性金融债指数A",
-    "category": "指数型"
+    "code": "of022024",
+    "name": "圆信永丰中债0-3年政策性金融债指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of022080",
-    "name": "贝莱德中证同业存单AAA指数7天持有期",
-    "category": "指数型"
+    "code": "of022072",
+    "name": "天弘港股红利高股息指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022106",
-    "name": "广发信息技术联接F",
-    "category": "指数型"
+    "code": "of022098",
+    "name": "长城中证红利低波100ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of022186",
-    "name": "鹏华中债1-3年农发行债券指数D",
-    "category": "指数型"
+    "code": "of022151",
+    "name": "国投瑞银中证港股通央企红利指数发起式A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022309",
-    "name": "国联沪深300指数增强A",
-    "category": "指数型"
+    "code": "of022255",
+    "name": "鑫元中债1-3年国开行债券指数D",
+    "category": "指数型",
+    "shareClass": "D"
   },
   {
-    "code": "of022353",
-    "name": "华泰紫金中债0-3年政金债指数A",
-    "category": "指数型"
+    "code": "of022326",
+    "name": "长城中证港股通高股息指数发起(QDII)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of022421",
-    "name": "大成中证A500ETF发起式联接A",
-    "category": "指数型"
+    "code": "of022359",
+    "name": "易方达中债7-10年期国开行债券指数D",
+    "category": "指数型",
+    "shareClass": "D"
   },
   {
-    "code": "of022436",
-    "name": "摩根中证A500ETF联接A",
-    "category": "指数型"
+    "code": "of022422",
+    "name": "大成中证A500ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of022453",
-    "name": "嘉实中证A500ETF联接A",
-    "category": "指数型"
+    "code": "of022434",
+    "name": "南方中证A500ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022467",
-    "name": "国泰海通中证A500指数增强A",
-    "category": "指数型"
+    "code": "of022448",
+    "name": "国泰中证A500ETF发起联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022563",
-    "name": "农银中证同业存单AAA指数7天持有",
-    "category": "指数型"
+    "code": "of022460",
+    "name": "易方达中证A500ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of022650",
-    "name": "天治中债0-3年政策性金融债指数A",
-    "category": "指数型"
+    "code": "of022474",
+    "name": "兴全中证A500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of022695",
-    "name": "鹏华中证800ETF发起式联接A",
-    "category": "指数型"
+    "code": "of022502",
+    "name": "国泰黄金ETF联接E",
+    "category": "指数型",
+    "shareClass": "E"
   },
   {
-    "code": "of022727",
-    "name": "南方中债3-5年农发行债券指数D",
-    "category": "指数型"
+    "code": "of022544",
+    "name": "天弘中证科技100指数增强发起E",
+    "category": "指数型",
+    "shareClass": "E"
   },
   {
-    "code": "of022764",
-    "name": "富国中债优选投资级信用债指数发起式A",
-    "category": "指数型"
+    "code": "of022609",
+    "name": "南方中债1-5年国开行债券指数I",
+    "category": "指数型",
+    "shareClass": "I"
   },
   {
-    "code": "of022790",
-    "name": "苏新中证500指数增强A",
-    "category": "指数型"
+    "code": "of022646",
+    "name": "华安上证180ETF联接I",
+    "category": "指数型",
+    "shareClass": "I"
   },
   {
-    "code": "of022836",
-    "name": "建信中债0-3年政金债指数A",
-    "category": "指数型"
+    "code": "of022671",
+    "name": "招商中证A500指数增强发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of022869",
-    "name": "华夏公用事业ETF联接A",
-    "category": "指数型"
+    "code": "of022688",
+    "name": "申万菱信中证A500指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022896",
-    "name": "广发创业板ETF发起式联接Y",
-    "category": "指数型"
+    "code": "of022719",
+    "name": "广发中证国新港股通央企红利ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022904",
-    "name": "大成中证A500ETF发起式联接Y",
-    "category": "指数型"
+    "code": "of022745",
+    "name": "博道中证A500指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of022769",
+    "name": "浦银安盛中证A500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of022794",
+    "name": "鹏华国证疫苗与生物科技ETF发起式联接I",
+    "category": "指数型",
+    "shareClass": "I"
+  },
+  {
+    "code": "of022819",
+    "name": "鹏华中证500指数增强I",
+    "category": "指数型",
+    "shareClass": "I"
+  },
+  {
+    "code": "of022837",
+    "name": "建信中债0-3年政金债指数C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of022859",
+    "name": "中银沪深300指数A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of022884",
+    "name": "鹏华中证港股通科技ETF发起式联接I",
+    "category": "指数型",
+    "shareClass": "I"
+  },
+  {
+    "code": "of022898",
+    "name": "中欧中证A500指数发起Y",
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
     "code": "of022911",
     "name": "摩根中证A500ETF联接Y",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
-    "code": "of022918",
-    "name": "南方中证A500ETF联接Y",
-    "category": "指数型"
+    "code": "of022923",
+    "name": "易方达深证100ETF联接Y",
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
-    "code": "of022925",
-    "name": "易方达中证红利ETF联接发起式Y",
-    "category": "指数型"
+    "code": "of022935",
+    "name": "工银沪深300指数Y",
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
-    "code": "of022932",
-    "name": "工银科创ETF联接Y",
-    "category": "指数型"
+    "code": "of022947",
+    "name": "华泰柏瑞中证A500ETF联接Y",
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
-    "code": "of022939",
-    "name": "华夏科创创业50ETF发起式联接Y",
-    "category": "指数型"
+    "code": "of022959",
+    "name": "华夏上证50ETF联接Y",
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
-    "code": "of022946",
-    "name": "建信中证500指数增强Y",
-    "category": "指数型"
+    "code": "of022975",
+    "name": "工银中证A50ETF联接Y",
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
-    "code": "of022953",
-    "name": "富国中证500指数增强(LOF)Y",
-    "category": "指数型"
+    "code": "of023016",
+    "name": "路博迈CFETS0-5年期气候变化高等级债券综合指数",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of022960",
-    "name": "天弘创业板ETF联接Y",
-    "category": "指数型"
+    "code": "of023052",
+    "name": "交银中证A50指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022967",
-    "name": "万家中证A500ETF发起式联接Y",
-    "category": "指数型"
+    "code": "of023073",
+    "name": "国泰海通中证港股通高股息投资指数发起(QDII)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of022981",
-    "name": "天弘中证科创创业50ETF联接Y",
-    "category": "指数型"
+    "code": "of023120",
+    "name": "民生加银中证全指指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023038",
-    "name": "汇安中证A500指数A",
-    "category": "指数型"
+    "code": "of023162",
+    "name": "银河上证国有企业红利ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of023064",
-    "name": "申万菱信沪深300价值ETF联接A",
-    "category": "指数型"
+    "code": "of023198",
+    "name": "招商资管中证500指数增强发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023119",
-    "name": "民生加银中证全指指数增强A",
-    "category": "指数型"
+    "code": "of023231",
+    "name": "南方上证180ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023179",
-    "name": "华泰柏瑞上证180ETF联接A",
-    "category": "指数型"
+    "code": "of023257",
+    "name": "国融中证同业存单AAA指数7天持有期",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of023203",
-    "name": "兴全中证沪港深300指数增强A",
-    "category": "指数型"
+    "code": "of023305",
+    "name": "永赢中证A500指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of023252",
-    "name": "天弘上证180ETF发起联接A",
-    "category": "指数型"
-  },
-  {
-    "code": "of023298",
-    "name": "汇添富中证A500指数增强A",
-    "category": "指数型"
-  },
-  {
-    "code": "of023331",
-    "name": "华富中证A500指数A",
-    "category": "指数型"
+    "code": "of023333",
+    "name": "金鹰中证A500指数发起A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of023371",
     "name": "国泰创业板50ETF发起联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of023407",
-    "name": "华宝创业板人工智能ETF发起式联接A",
-    "category": "指数型"
+    "code": "of023385",
+    "name": "平安中证人工智能主题ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023431",
-    "name": "天弘中证A50指数A",
-    "category": "指数型"
+    "code": "of023414",
+    "name": "工银创业板50ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of023435",
+    "name": "富安达中证A500指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of023466",
     "name": "华安中证A500增强策略ETF发起式联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of023499",
-    "name": "博道中证800指数增强A",
-    "category": "指数型"
+    "code": "of023494",
+    "name": "新华中证A500指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of023516",
-    "name": "华泰保兴中证A500指数增强A",
-    "category": "指数型"
+    "code": "of023510",
+    "name": "博时中债7-10政金债指数D",
+    "category": "指数型",
+    "shareClass": "D"
   },
   {
-    "code": "of023536",
-    "name": "博时中证金融科技主题ETF联接A",
-    "category": "指数型"
+    "code": "of023531",
+    "name": "永赢国证通用航空产业ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023562",
-    "name": "广发中证800指数增强A",
-    "category": "指数型"
+    "code": "of023552",
+    "name": "银华上证科创板人工智能ETF发起式联接I",
+    "category": "指数型",
+    "shareClass": "I"
+  },
+  {
+    "code": "of023572",
+    "name": "万家中证港股通央企红利ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of023609",
     "name": "光大中证A500指数A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of023638",
-    "name": "国泰A股电网设备ETF联接A",
-    "category": "指数型"
+    "code": "of023634",
+    "name": "国泰中债优选投资级信用债指数发起A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of023685",
-    "name": "建信上海金ETF联接D",
-    "category": "指数型"
+    "code": "of023668",
+    "name": "中银中证A500指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of023723",
-    "name": "景顺长城上证科创板综合价格ETF联接A",
-    "category": "指数型"
+    "code": "of023720",
+    "name": "华夏上证科创板综合ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023737",
-    "name": "富国上证科创板综合价格ETF联接A",
-    "category": "指数型"
+    "code": "of023732",
+    "name": "南方上证科创板综合ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023757",
-    "name": "鹏华上证科创综合ETF联接A",
-    "category": "指数型"
+    "code": "of023744",
+    "name": "建信上证科创板综合ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023779",
-    "name": "华夏中证大数据产业ETF发起式联接D",
-    "category": "指数型"
+    "code": "of023766",
+    "name": "华夏中证全指证券公司ETF联接D",
+    "category": "指数型",
+    "shareClass": "D"
   },
   {
-    "code": "of023830",
-    "name": "华泰柏瑞创业板50ETF联接A",
-    "category": "指数型"
+    "code": "of023822",
+    "name": "泓德中证500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023865",
-    "name": "兴业中证A500ETF联接A",
-    "category": "指数型"
+    "code": "of023852",
+    "name": "富国上证科创板新能源ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023886",
-    "name": "永赢北证50成份指数发起A",
-    "category": "指数型"
+    "code": "of023874",
+    "name": "博时上证综合指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023903",
-    "name": "国投瑞银上证科创板综合价格指数增强A",
-    "category": "指数型"
+    "code": "of023890",
+    "name": "国泰海通上证科创板综合价格指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023926",
-    "name": "鹏华上证科创板200ETF联接A",
-    "category": "指数型"
+    "code": "of023904",
+    "name": "国投瑞银上证科创板综合价格指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023949",
-    "name": "银河中证A500ETF联接A",
-    "category": "指数型"
+    "code": "of023920",
+    "name": "国泰富时现金流ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of023981",
-    "name": "泰信中证A500指数增强A",
-    "category": "指数型"
+    "code": "of023941",
+    "name": "永赢上证科创板综合指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024029",
-    "name": "招商恒生港股通高股息低波动ETF发起式联接A",
-    "category": "指数型"
+    "code": "of023976",
+    "name": "兴银中证全指公用事业指数发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024063",
-    "name": "汇添富创业板ETF联接A",
-    "category": "指数型"
+    "code": "of024003",
+    "name": "汇添富国证自由现金流ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024038",
+    "name": "银华港股科技30联接C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024069",
+    "name": "上银中证半导体产业指数发起式A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of024085",
     "name": "兴业上证科创板综合价格ETF联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024161",
-    "name": "大成北证50成份指数发起式A",
-    "category": "指数型"
+    "code": "of024146",
+    "name": "富国深证100ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024194",
-    "name": "永赢国证商用卫星通信产业ETF发起联接A",
-    "category": "指数型"
+    "code": "of024179",
+    "name": "富国中证500ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of024195",
+    "name": "永赢国证商用卫星通信产业ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of024234",
     "name": "南方中债0-5年中高等级江苏省城投类债券指数D",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "D"
   },
   {
-    "code": "of024263",
-    "name": "华夏中证红利质量ETF发起式联接D",
-    "category": "指数型"
+    "code": "of024252",
+    "name": "申万菱信中证红利指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024326",
-    "name": "农银中证800自由现金流指数A",
-    "category": "指数型"
+    "code": "of024275",
+    "name": "东兴中证A500指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024348",
-    "name": "中欧国证通用航空产业指数发起A",
-    "category": "指数型"
+    "code": "of024333",
+    "name": "招商中证500增强策略ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024369",
-    "name": "天弘富时自由现金流指数A",
-    "category": "指数型"
+    "code": "of024352",
+    "name": "长江中证A500指数增强发起A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024400",
-    "name": "国投瑞银中证全指自由现金流指数发起式A",
-    "category": "指数型"
+    "code": "of024371",
+    "name": "天弘中证港股通央企红利ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024419",
-    "name": "华夏创业板新能源ETF发起式联接A",
-    "category": "指数型"
+    "code": "of024394",
+    "name": "永赢恒生消费指数发起(QDII)C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024566",
-    "name": "易方达国证自由现金流ETF联接A",
-    "category": "指数型"
+    "code": "of024416",
+    "name": "长信沪深300指数量化增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024602",
-    "name": "方正富邦中证全指自由现金流ETF联接A",
-    "category": "指数型"
+    "code": "of024510",
+    "name": "泓德上证科创板综合指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024624",
-    "name": "苏新中证800自由现金流指数A",
-    "category": "指数型"
+    "code": "of024560",
+    "name": "华宝上证科创板人工智能ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024642",
-    "name": "华夏中证银行ETF联接D",
-    "category": "指数型"
+    "code": "of024578",
+    "name": "万家中证800自由现金流ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of024610",
+    "name": "平安中证人工智能主题ETF发起式联接E",
+    "category": "指数型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of024625",
+    "name": "苏新中证800自由现金流指数C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of024643",
+    "name": "华夏食品饮料ETF联接D",
+    "category": "指数型",
+    "shareClass": "D"
   },
   {
     "code": "of024688",
     "name": "富国国证通用航空产业ETF发起式联接A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024725",
-    "name": "南方创业板人工智能ETF联接A",
-    "category": "指数型"
+    "code": "of024716",
+    "name": "大成中证800指数增强发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024748",
-    "name": "博时中证卫星产业指数A",
-    "category": "指数型"
+    "code": "of024743",
+    "name": "浦银安盛北证50成份指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024768",
-    "name": "汇添富中证机器人ETF发起式联接A",
-    "category": "指数型"
+    "code": "of024761",
+    "name": "富国中证800自由现金流ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024788",
-    "name": "光大国证通用航空产业指数发起式A",
-    "category": "指数型"
+    "code": "of024774",
+    "name": "永赢上证科创板人工智能指数发起A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of024833",
-    "name": "博时中证全指自由现金流ETF联接A",
-    "category": "指数型"
+    "code": "of024815",
+    "name": "汇添富沪深300自由现金流指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024864",
-    "name": "富国恒生港股通汽车主题ETF发起式联接A",
-    "category": "指数型"
+    "code": "of024848",
+    "name": "国投瑞银中证港股通科技指数发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024883",
-    "name": "鹏华上证科创板综合指数增强A",
-    "category": "指数型"
+    "code": "of024865",
+    "name": "富国恒生港股通汽车主题ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024904",
-    "name": "招商资管中证全指自由现金流指数发起A",
-    "category": "指数型"
+    "code": "of024882",
+    "name": "南方创业板中盘200ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024949",
-    "name": "易方达上证380ETF联接A",
-    "category": "指数型"
+    "code": "of024899",
+    "name": "国投瑞银上证科创板人工智能指数发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of024985",
-    "name": "华宝中证制药ETF发起联接A",
-    "category": "指数型"
+    "code": "of024926",
+    "name": "交银恒生港股通创新药精选指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of025010",
-    "name": "招商沪深300指数增强Y",
-    "category": "指数型"
+    "code": "of024974",
+    "name": "华泰柏瑞上证科创板半导体材料设备主题ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of025043",
-    "name": "天弘中证500指数增强Y",
-    "category": "指数型"
+    "code": "of025003",
+    "name": "泰信中证全指自由现金流指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of025123",
-    "name": "东兴中债1-3年政金债指数A",
-    "category": "指数型"
+    "code": "of025027",
+    "name": "东财上证科创50ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of025181",
-    "name": "浦银安盛港股通科技指数A",
-    "category": "指数型"
+    "code": "of025106",
+    "name": "南方上证科创板人工智能ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025220",
-    "name": "华宝恒生港股通创新药精选ETF发起式联接A",
-    "category": "指数型"
+    "code": "of025127",
+    "name": "鹏华中证香港银行指数(LOF)I",
+    "category": "指数型",
+    "shareClass": "I"
   },
   {
-    "code": "of025315",
-    "name": "摩根上证科创板新一代信息技术ETF联接A",
-    "category": "指数型"
+    "code": "of025169",
+    "name": "永赢国证自由现金流ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025362",
-    "name": "国泰创业板新能源ETF发起联接A",
-    "category": "指数型"
+    "code": "of025196",
+    "name": "广发创业板指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of025293",
+    "name": "平安恒生指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of025324",
+    "name": "鑫元上证科创板综合价格指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of025364",
+    "name": "路博迈上证科创板综合价格指数增强A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of025383",
     "name": "中加北证50成份指数增强A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of025426",
-    "name": "国联中证港股通综合指数增强A",
-    "category": "指数型"
+    "code": "of025424",
+    "name": "华夏中证500自由现金流ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025452",
-    "name": "国投瑞银上证综合指数增强A",
-    "category": "指数型"
+    "code": "of025444",
+    "name": "景顺长城北证50成份指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025488",
-    "name": "中邮北证50成份指数增强发起式A",
-    "category": "指数型"
+    "code": "of025479",
+    "name": "华夏上证180ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025507",
-    "name": "华夏中证港股通医疗主题ETF发起式联接A",
-    "category": "指数型"
+    "code": "of025502",
+    "name": "万家沪深300指数量化增强发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025652",
-    "name": "大成创业板人工智能ETF发起式联接A",
-    "category": "指数型"
+    "code": "of025552",
+    "name": "中银中证机器人指数C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025690",
-    "name": "弘毅远方北证50成份指数A",
-    "category": "指数型"
+    "code": "of025665",
+    "name": "中金北证50指数增强发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025719",
-    "name": "嘉实恒生港股通科技主题ETF联接A",
-    "category": "指数型"
+    "code": "of025692",
+    "name": "南方中证通用航空主题ETF发起联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of025763",
-    "name": "工银中证800指数增强发起式A",
-    "category": "指数型"
+    "code": "of025712",
+    "name": "汇添富中证A500指数量化增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025832",
-    "name": "天弘电网设备特高压指数A",
-    "category": "指数型"
+    "code": "of025735",
+    "name": "华安恒生港股通科技主题ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of025883",
-    "name": "汇添富上证综合指数Y",
-    "category": "指数型"
+    "code": "of025805",
+    "name": "华夏国证港股通科技ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of025954",
-    "name": "华宝北证50成份指数A",
-    "category": "指数型"
+    "code": "of025869",
+    "name": "博时创业板综合ETF联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of026091",
-    "name": "国泰中证港股通汽车产业主题ETF发起联接A",
-    "category": "指数型"
+    "code": "of025937",
+    "name": "华泰柏瑞恒生港股通高股息低波动ETF发起式联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of026119",
-    "name": "东财北证50指数增强发起式A",
-    "category": "指数型"
+    "code": "of025984",
+    "name": "鹏华中证500指数量化增强I",
+    "category": "指数型",
+    "shareClass": "I"
   },
   {
-    "code": "of026175",
-    "name": "路博迈中证A股指数增强A",
-    "category": "指数型"
+    "code": "of026095",
+    "name": "易方达创业板50ETF联接A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of026255",
-    "name": "国寿安保中证800指数增强A",
-    "category": "指数型"
+    "code": "of026129",
+    "name": "永赢中证工程机械主题指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of026415",
-    "name": "汇百川CFETS0-5年期气候变化高等级债券综合指数",
-    "category": "指数型"
+    "code": "of026164",
+    "name": "英大上证科创板综合指数增强发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of026477",
-    "name": "招商中证有色金属矿业主题ETF发起式联接A",
-    "category": "指数型"
+    "code": "of026250",
+    "name": "山证资管中证同业存单AAA指数7天持有",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of026606",
-    "name": "南方中证港股通50ETF联接A",
-    "category": "指数型"
+    "code": "of026373",
+    "name": "鹏华中债0-3年政金债指数I",
+    "category": "指数型",
+    "shareClass": "I"
   },
   {
-    "code": "of026654",
-    "name": "汇添富上证科创板人工智能ETF发起式联接A",
-    "category": "指数型"
+    "code": "of026444",
+    "name": "易方达中证细分有色金属产业主题指数发起式A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of026718",
-    "name": "银华中证科创创业50ETF发起式联接A",
-    "category": "指数型"
+    "code": "of026527",
+    "name": "鹏华创业板新能源ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of026614",
+    "name": "国泰上证科创板人工智能ETF发起联接C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of026675",
+    "name": "德邦沪深300指数增强C",
+    "category": "指数型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of026719",
+    "name": "银华中证科创创业50ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
     "code": "of026755",
     "name": "华宝中证港股通信息技术ETF发起联接",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of026780",
-    "name": "华泰保兴中证800指数增强A",
-    "category": "指数型"
+    "code": "of026775",
+    "name": "中欧中证500指数量化增强C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of026835",
-    "name": "太平中证港股通互联网指数A",
-    "category": "指数型"
+    "code": "of026817",
+    "name": "富国创业板新能源ETF发起式联接C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of026922",
-    "name": "华宝中证港股通医疗主题ETF发起式联接",
-    "category": "指数型"
+    "code": "of026863",
+    "name": "易方达恒生生物科技ETF联接发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of027043",
-    "name": "兴银中证科创创业人工智能指数A",
-    "category": "指数型"
+    "code": "of026963",
+    "name": "鑫元北证50成份指数发起式C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of027146",
-    "name": "平安中证A50ETF联接Y",
-    "category": "指数型"
+    "code": "of027112",
+    "name": "汇添富沪深300基本面增强指数Y",
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
-    "code": "of040046",
-    "name": "华安纳斯达克100ETF联接(QDII)A",
-    "category": "指数型"
+    "code": "of027155",
+    "name": "广发科创50ETF发起式联接Y",
+    "category": "指数型",
+    "shareClass": "Y"
   },
   {
-    "code": "of050013",
-    "name": "博时上证超大盘ETF联接A",
-    "category": "指数型"
+    "code": "of027275",
+    "name": "天弘中证电池主题指数发起C",
+    "category": "指数型",
+    "shareClass": "C"
   },
   {
-    "code": "of090012",
-    "name": "大成深证成长40ETF联接A",
-    "category": "指数型"
+    "code": "of050002",
+    "name": "博时沪深300指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of110019",
-    "name": "易方达深证100ETF联接A",
-    "category": "指数型"
+    "code": "of100033",
+    "name": "富国中证红利指数增强A(后端)",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of110033",
-    "name": "易方达恒生国企ETF联接现钞A",
-    "category": "指数型"
+    "code": "of118002",
+    "name": "易方达标普消费品指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of159013",
-    "name": "大成中证工业互联网主题ETF",
-    "category": "指数型"
+    "code": "of159020",
+    "name": "易方达中证畜牧养殖产业ETF",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159021",
-    "name": "华夏国证大盘价值ETF",
-    "category": "指数型"
+    "code": "of159100",
+    "name": "巴西ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159032",
-    "name": "工业有色ETF易方达",
-    "category": "指数型"
+    "code": "of159113",
+    "name": "科创债ETF大成",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159105",
-    "name": "恒生生物科技ETF易方达",
-    "category": "指数型"
+    "code": "of159127",
+    "name": "港股通红利ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159112",
-    "name": "科创债ETF银华",
-    "category": "指数型"
+    "code": "of159140",
+    "name": "科创创业人工智能ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159120",
-    "name": "港股通科技ETF国联安",
-    "category": "指数型"
-  },
-  {
-    "code": "of159128",
-    "name": "港股科技ETF天弘",
-    "category": "指数型"
-  },
-  {
-    "code": "of159136",
-    "name": "A50ETF广发",
-    "category": "指数型"
-  },
-  {
-    "code": "of159143",
-    "name": "港股通央企红利ETF平安",
-    "category": "指数型"
-  },
-  {
-    "code": "of159151",
-    "name": "食品ETF华夏",
-    "category": "指数型"
-  },
-  {
-    "code": "of159159",
-    "name": "公用事业ETF国投瑞银",
-    "category": "指数型"
+    "code": "of159153",
+    "name": "消费电子ETF鹏华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of159168",
     "name": "有色ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159176",
-    "name": "华宝中证全指家用电器ETF",
-    "category": "指数型"
+    "code": "of159181",
+    "name": "石油ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159183",
-    "name": "新能源车ETF招商",
-    "category": "指数型"
+    "code": "of159195",
+    "name": "华安国证石油天然气ETF",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159191",
-    "name": "港股通科技ETF易方达",
-    "category": "指数型"
+    "code": "of159208",
+    "name": "航空航天ETF万家",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159199",
-    "name": "平安国证石油天然气ETF",
-    "category": "指数型"
+    "code": "of159221",
+    "name": "现金流ETF嘉实",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159207",
-    "name": "高股息ETF广发",
-    "category": "指数型"
+    "code": "of159235",
+    "name": "中证现金流ETF大成",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159215",
-    "name": "A500ETF平安",
-    "category": "指数型"
-  },
-  {
-    "code": "of159222",
-    "name": "自由现金流ETF易方达",
-    "category": "指数型"
-  },
-  {
-    "code": "of159230",
-    "name": "通用航空ETF华夏",
-    "category": "指数型"
-  },
-  {
-    "code": "of159238",
-    "name": "沪深300增强ETF景顺",
-    "category": "指数型"
-  },
-  {
-    "code": "of159246",
-    "name": "创业板人工智能ETF富国",
-    "category": "指数型"
-  },
-  {
-    "code": "of159256",
-    "name": "创业板软件ETF华夏",
-    "category": "指数型"
+    "code": "of159248",
+    "name": "人工智能ETF万家",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of159263",
     "name": "价值ETF易方达",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159271",
-    "name": "恒生ETF鹏华",
-    "category": "指数型"
+    "code": "of159277",
+    "name": "港股通红利ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159279",
-    "name": "创业板人工智能ETF华安",
-    "category": "指数型"
+    "code": "of159291",
+    "name": "创业板综增强ETF招商",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159288",
-    "name": "创业板综ETF银华",
-    "category": "指数型"
+    "code": "of159305",
+    "name": "储能电池ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159296",
-    "name": "A500红利低波ETF华宝",
-    "category": "指数型"
+    "code": "of159322",
+    "name": "黄金股ETF平安",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159303",
-    "name": "恒生医疗ETF大成",
-    "category": "指数型"
+    "code": "of159336",
+    "name": "央企红利ETF融通",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159312",
-    "name": "恒指港股通ETF广发",
-    "category": "指数型"
-  },
-  {
-    "code": "of159323",
-    "name": "港股通汽车ETF华夏",
-    "category": "指数型"
-  },
-  {
-    "code": "of159331",
-    "name": "红利港股ETF国泰",
-    "category": "指数型"
-  },
-  {
-    "code": "of159339",
-    "name": "A500ETF银华",
-    "category": "指数型"
-  },
-  {
-    "code": "of159357",
-    "name": "A500ETF博时",
-    "category": "指数型"
-  },
-  {
-    "code": "of159365",
-    "name": "恒指港股通ETF富国",
-    "category": "指数型"
+    "code": "of159359",
+    "name": "A500ETF华安",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of159372",
     "name": "创业板50ETF万家",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159380",
-    "name": "A500ETF东财",
-    "category": "指数型"
+    "code": "of159386",
+    "name": "A500ETF永赢",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159388",
-    "name": "创业板人工智能ETF国泰",
-    "category": "指数型"
+    "code": "of159399",
+    "name": "现金流ETF国泰",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159396",
-    "name": "信用债ETF博时",
-    "category": "指数型"
+    "code": "of159512",
+    "name": "汽车ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159502",
-    "name": "标普生物科技ETF嘉实",
-    "category": "指数型"
+    "code": "of159527",
+    "name": "云计算ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159511",
-    "name": "通信ETF南方",
-    "category": "指数型"
+    "code": "of159540",
+    "name": "信创ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159519",
-    "name": "港股国企ETF国泰",
-    "category": "指数型"
-  },
-  {
-    "code": "of159528",
-    "name": "国企改革ETF富国",
-    "category": "指数型"
-  },
-  {
-    "code": "of159536",
-    "name": "中证2000ETF汇添富",
-    "category": "指数型"
-  },
-  {
-    "code": "of159543",
-    "name": "国证2000ETF工银",
-    "category": "指数型"
-  },
-  {
-    "code": "of159552",
-    "name": "中证2000增强ETF招商",
-    "category": "指数型"
-  },
-  {
-    "code": "of159560",
-    "name": "芯片ETF景顺",
-    "category": "指数型"
+    "code": "of159555",
+    "name": "中证2000增强ETF银华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of159568",
     "name": "港股互联网ETF博时",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159576",
-    "name": "深证100ETF广发",
-    "category": "指数型"
+    "code": "of159583",
+    "name": "通信ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159587",
-    "name": "粮食ETF广发",
-    "category": "指数型"
+    "code": "of159599",
+    "name": "芯片ETF东财",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159595",
-    "name": "中证A50ETF大成",
-    "category": "指数型"
+    "code": "of159612",
+    "name": "标普500ETF国泰",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159603",
-    "name": "科创创业ETF天弘",
-    "category": "指数型"
+    "code": "of159627",
+    "name": "A100ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159611",
-    "name": "电力ETF广发",
-    "category": "指数型"
+    "code": "of159640",
+    "name": "碳中和龙头ETF工银",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159619",
-    "name": "基建ETF国泰",
-    "category": "指数型"
-  },
-  {
-    "code": "of159628",
-    "name": "国证2000ETF万家",
-    "category": "指数型"
-  },
-  {
-    "code": "of159636",
-    "name": "港股通科技30ETF工银",
-    "category": "指数型"
-  },
-  {
-    "code": "of159643",
-    "name": "疫苗ETF国泰",
-    "category": "指数型"
-  },
-  {
-    "code": "of159653",
-    "name": "ESG300ETF国联安",
-    "category": "指数型"
-  },
-  {
-    "code": "of159661",
-    "name": "A100ETF嘉实",
-    "category": "指数型"
+    "code": "of159656",
+    "name": "沪深300成长ETF万家",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of159670",
     "name": "消费50ETF国联安",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159678",
-    "name": "500增强ETF博时",
-    "category": "指数型"
+    "code": "of159685",
+    "name": "1000增强ETF天弘",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159687",
-    "name": "亚太精选ETF南方",
-    "category": "指数型"
+    "code": "of159699",
+    "name": "恒生消费ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159696",
-    "name": "纳指ETF易方达",
-    "category": "指数型"
+    "code": "of159716",
+    "name": "深证100ETF华宝",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159706",
-    "name": "深证100ETF华安",
-    "category": "指数型"
+    "code": "of159731",
+    "name": "石化ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159715",
-    "name": "稀土ETF易方达",
-    "category": "指数型"
+    "code": "of159748",
+    "name": "创新药ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159723",
-    "name": "科技龙头ETF汇添富",
-    "category": "指数型"
-  },
-  {
-    "code": "of159732",
-    "name": "消费电子ETF华夏",
-    "category": "指数型"
-  },
-  {
-    "code": "of159742",
-    "name": "恒生科技ETF博时",
-    "category": "指数型"
-  },
-  {
-    "code": "of159752",
-    "name": "新能源ETF申万菱信",
-    "category": "指数型"
-  },
-  {
-    "code": "of159766",
-    "name": "旅游ETF富国",
-    "category": "指数型"
-  },
-  {
-    "code": "of159777",
-    "name": "创科技ETF国联安",
-    "category": "指数型"
+    "code": "of159768",
+    "name": "房地产ETF银华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of159786",
     "name": "VRETF银华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159795",
-    "name": "智能汽车ETF汇添富",
-    "category": "指数型"
+    "code": "of159801",
+    "name": "芯片ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159805",
-    "name": "传媒ETF鹏华",
-    "category": "指数型"
+    "code": "of159819",
+    "name": "人工智能ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159813",
-    "name": "半导体ETF鹏华",
-    "category": "指数型"
+    "code": "of159836",
+    "name": "创业板300ETF天弘",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159824",
-    "name": "新能源车ETF博时",
-    "category": "指数型"
+    "code": "of159850",
+    "name": "恒生国企ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159835",
-    "name": "创新药ETF建信",
-    "category": "指数型"
+    "code": "of159865",
+    "name": "养殖ETF国泰",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159842",
-    "name": "券商ETF银华",
-    "category": "指数型"
-  },
-  {
-    "code": "of159851",
-    "name": "金融科技ETF华宝",
-    "category": "指数型"
-  },
-  {
-    "code": "of159861",
-    "name": "碳中和50ETF国泰",
-    "category": "指数型"
-  },
-  {
-    "code": "of159869",
-    "name": "游戏ETF华夏",
-    "category": "指数型"
-  },
-  {
-    "code": "of159877",
-    "name": "医疗ETF南方",
-    "category": "指数型"
-  },
-  {
-    "code": "of159888",
-    "name": "智能汽车ETF华夏",
-    "category": "指数型"
+    "code": "of159881",
+    "name": "有色金属ETF国泰",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of159898",
     "name": "医疗器械ETF招商",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159907",
-    "name": "国证2000ETF广发",
-    "category": "指数型"
+    "code": "of159913",
+    "name": "深价值ETF交银",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159916",
-    "name": "基本面ETF建信",
-    "category": "指数型"
+    "code": "of159931",
+    "name": "金融地产ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159928",
-    "name": "消费ETF汇添富",
-    "category": "指数型"
+    "code": "of159945",
+    "name": "能源ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159936",
-    "name": "可选消费ETF广发",
-    "category": "指数型"
+    "code": "of159965",
+    "name": "央视50ETF国联",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159944",
-    "name": "材料ETF广发",
-    "category": "指数型"
+    "code": "of159977",
+    "name": "创业板ETF天弘",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159957",
-    "name": "创业板ETF华夏",
-    "category": "指数型"
+    "code": "of159998",
+    "name": "计算机ETF天弘",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of159966",
-    "name": "创业板价值ETF华夏",
-    "category": "指数型"
+    "code": "of160223",
+    "name": "国泰创业板指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of159973",
-    "name": "民企ETF弘毅远方",
-    "category": "指数型"
+    "code": "of160616",
+    "name": "鹏华中证500指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of159982",
-    "name": "中证500ETF鹏华",
-    "category": "指数型"
+    "code": "of160636",
+    "name": "鹏华中证移动互联网指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of159996",
-    "name": "家电ETF国泰",
-    "category": "指数型"
+    "code": "of160807",
+    "name": "长盛沪深300指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of160140",
-    "name": "南方道琼斯美国精选A",
-    "category": "指数型"
+    "code": "of161030",
+    "name": "富国中证体育产业指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of160224",
-    "name": "国泰中证计算机主题ETF联接A",
-    "category": "指数型"
+    "code": "of161122",
+    "name": "易方达中证万得生物科技指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of160516",
-    "name": "博时证券公司ETF联接A",
-    "category": "指数型"
+    "code": "of161227",
+    "name": "国投瑞银深证100指数",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of160628",
-    "name": "鹏华中证800地产指数(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of160635",
-    "name": "鹏华中证医药指数(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of160706",
-    "name": "嘉实沪深300ETF联接A",
-    "category": "指数型"
-  },
-  {
-    "code": "of161017",
-    "name": "富国中证500指数增强(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of161028",
-    "name": "富国中证新能源汽车指数(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of161036",
-    "name": "富国中证娱乐主题指数增强(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of161123",
-    "name": "易方达中证万得并购重组(LOF)",
-    "category": "指数型"
-  },
-  {
-    "code": "of161211",
-    "name": "国投沪深300金融地产联接",
-    "category": "指数型"
-  },
-  {
-    "code": "of161607",
-    "name": "融通巨潮100指数A(LOF)",
-    "category": "指数型"
-  },
-  {
-    "code": "of161662",
-    "name": "融通深证成份指数A(后端)",
-    "category": "指数型"
-  },
-  {
-    "code": "of161725",
-    "name": "招商中证白酒指数(LOF)A",
-    "category": "指数型"
+    "code": "of161715",
+    "name": "招商大宗商品(LOF)",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of162213",
     "name": "宏利沪深300指数A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of162711",
-    "name": "广发中证500ETF联接A",
-    "category": "指数型"
+    "code": "of163111",
+    "name": "申万菱信中小企业100指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of163114",
-    "name": "申万菱信中证环保产业指数(LOF)A",
-    "category": "指数型"
+    "code": "of164401",
+    "name": "前海开源中证健康产业指数",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of163808",
-    "name": "中银中证A100指数增强",
-    "category": "指数型"
+    "code": "of165511",
+    "name": "中信保诚中证500指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of164809",
-    "name": "工银中证500ETF联接A",
-    "category": "指数型"
+    "code": "of167503",
+    "name": "安信一带一路指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of165312",
-    "name": "建信央视财经50指数(LOF)",
-    "category": "指数型"
-  },
-  {
-    "code": "of165523",
-    "name": "中信保诚中证信息安全指数(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of167506",
-    "name": "安信深圳科技指数(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of201002",
-    "name": "长城久泰沪深300指数A(后端)",
-    "category": "指数型"
-  },
-  {
-    "code": "of202025",
-    "name": "南方上证380ETF联接A",
-    "category": "指数型"
+    "code": "of202016",
+    "name": "南方沪深300ETF联接A(后端)",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of217027",
     "name": "招商央视财经50指数A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of270010",
-    "name": "广发沪深300ETF联接A",
-    "category": "指数型"
+    "code": "of290010",
+    "name": "泰信中证200指数",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of310398",
-    "name": "申万菱信沪深300价值指数A",
-    "category": "指数型"
+    "code": "of481009",
+    "name": "工银沪深300指数A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of460300",
-    "name": "华泰柏瑞沪深300ETF联接A",
-    "category": "指数型"
+    "code": "of501021",
+    "name": "华宝港股通标普香港上市中国中小盘指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of501009",
-    "name": "汇添富中证生物科技指数(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of501030",
-    "name": "汇添富中证环境治理指数(LOF)A",
-    "category": "指数型"
-  },
-  {
-    "code": "of501060",
-    "name": "中金中证优选300指数(LOF)A",
-    "category": "指数型"
+    "code": "of501057",
+    "name": "汇添富中证新能源汽车产业指数(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
     "code": "of501307",
     "name": "银河中证沪港深高股息A",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of502013",
-    "name": "长盛中证申万一带一路指数(LOF)",
-    "category": "指数型"
+    "code": "of502056",
+    "name": "广发中证医疗ETF联接(LOF)A",
+    "category": "指数型",
+    "shareClass": "A"
   },
   {
-    "code": "of510030",
-    "name": "价值ETF华宝",
-    "category": "指数型"
-  },
-  {
-    "code": "of510130",
-    "name": "上证中盘ETF易方达",
-    "category": "指数型"
-  },
-  {
-    "code": "of510210",
-    "name": "上证指数ETF富国",
-    "category": "指数型"
+    "code": "of510160",
+    "name": "产业升级ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of510330",
     "name": "沪深300ETF华夏",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of510500",
-    "name": "中证500ETF南方",
-    "category": "指数型"
+    "code": "of510570",
+    "name": "中证500ETF兴业",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of510590",
-    "name": "中证500ETF平安",
-    "category": "指数型"
+    "code": "of510770",
+    "name": "G60创新ETF申万菱信",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of510710",
-    "name": "上证50ETF博时",
-    "category": "指数型"
+    "code": "of511060",
+    "name": "5年地方债ETF海富通",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of510880",
-    "name": "红利ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "of511200",
+    "name": "信用债ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of511030",
-    "name": "公司债ETF平安",
-    "category": "指数型"
+    "code": "of512040",
+    "name": "价值100ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of511120",
-    "name": "科创债ETF广发",
-    "category": "指数型"
-  },
-  {
-    "code": "of511220",
-    "name": "城投债ETF海富通",
-    "category": "指数型"
-  },
-  {
-    "code": "of512000",
-    "name": "券商ETF华宝",
-    "category": "指数型"
-  },
-  {
-    "code": "of512070",
-    "name": "证券保险ETF易方达",
-    "category": "指数型"
-  },
-  {
-    "code": "of512150",
-    "name": "富时A50ETF汇安",
-    "category": "指数型"
-  },
-  {
-    "code": "of512240",
-    "name": "A50ETF鹏华",
-    "category": "指数型"
+    "code": "of512170",
+    "name": "医疗ETF华宝",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of512380",
     "name": "MSCI中国ETF银华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of512500",
-    "name": "中证500ETF华夏",
-    "category": "指数型"
+    "code": "of512560",
+    "name": "军工ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of512580",
-    "name": "环保ETF广发",
-    "category": "指数型"
+    "code": "of512700",
+    "name": "银行ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of512670",
-    "name": "国防ETF鹏华",
-    "category": "指数型"
+    "code": "of512890",
+    "name": "红利低波ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of512750",
-    "name": "基本面50ETF嘉实",
-    "category": "指数型"
+    "code": "of513020",
+    "name": "港股科技ETF国泰",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of512880",
-    "name": "证券ETF国泰",
-    "category": "指数型"
+    "code": "of513140",
+    "name": "港股通金融ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of512960",
-    "name": "央企结构调整ETF博时",
-    "category": "指数型"
-  },
-  {
-    "code": "of513030",
-    "name": "德国ETF华安",
-    "category": "指数型"
-  },
-  {
-    "code": "of513100",
-    "name": "纳指ETF国泰",
-    "category": "指数型"
-  },
-  {
-    "code": "of513170",
-    "name": "恒生央企ETF鹏华",
-    "category": "指数型"
-  },
-  {
-    "code": "of513240",
-    "name": "港股通信息技术ETF华安",
-    "category": "指数型"
-  },
-  {
-    "code": "of513330",
-    "name": "恒生互联网ETF华夏",
-    "category": "指数型"
+    "code": "of513280",
+    "name": "恒生生物科技ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of513520",
     "name": "日经ETF华夏",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of513620",
-    "name": "港股医疗ETF银华",
-    "category": "指数型"
+    "code": "of513700",
+    "name": "港股通医药ETF鹏华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of513730",
-    "name": "东南亚科技ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "of513870",
+    "name": "纳指ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of513830",
-    "name": "港股通高股息ETF嘉实",
-    "category": "指数型"
+    "code": "of515010",
+    "name": "证券ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of513910",
-    "name": "港股通央企红利ETF华夏",
-    "category": "指数型"
+    "code": "of515150",
+    "name": "一带一路ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of515000",
-    "name": "科技ETF华宝",
-    "category": "指数型"
+    "code": "of515293",
+    "name": "银行ETF天弘",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of515080",
-    "name": "中证红利ETF招商",
-    "category": "指数型"
-  },
-  {
-    "code": "of515160",
-    "name": "MSCI中国ETF招商",
-    "category": "指数型"
-  },
-  {
-    "code": "of515230",
-    "name": "软件ETF国泰",
-    "category": "指数型"
-  },
-  {
-    "code": "of515320",
-    "name": "电子50ETF华安",
-    "category": "指数型"
-  },
-  {
-    "code": "of515400",
-    "name": "大数据ETF富国",
-    "category": "指数型"
-  },
-  {
-    "code": "of515590",
-    "name": "500等权ETF前海开源",
-    "category": "指数型"
+    "code": "of515460",
+    "name": "红利质量ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of515700",
     "name": "新能源车ETF平安",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of515790",
-    "name": "光伏ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "of515880",
+    "name": "通信ETF国泰",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of515900",
-    "name": "央企创新ETF博时",
-    "category": "指数型"
+    "code": "of516020",
+    "name": "化工ETF华宝",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of515990",
-    "name": "一带一路ETF汇添富",
-    "category": "指数型"
-  },
-  {
-    "code": "of516080",
-    "name": "创新药ETF易方达",
-    "category": "指数型"
-  },
-  {
-    "code": "of516160",
+    "code": "of516163",
     "name": "新能源ETF南方",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of516230",
-    "name": "光伏ETF招商",
-    "category": "指数型"
+    "code": "of516310",
+    "name": "银行ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of516320",
-    "name": "高端装备ETF华夏",
-    "category": "指数型"
+    "code": "of516530",
+    "name": "物流ETF银华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of516460",
-    "name": "现金流ETF800鹏华",
-    "category": "指数型"
-  },
-  {
-    "code": "of516570",
-    "name": "化工行业ETF易方达",
-    "category": "指数型"
-  },
-  {
-    "code": "of516640",
-    "name": "芯片ETF富国",
-    "category": "指数型"
-  },
-  {
-    "code": "of516730",
-    "name": "证券ETF浦银",
-    "category": "指数型"
+    "code": "of516660",
+    "name": "新能源车ETF华安",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of516810",
     "name": "农业ETF华夏",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of516890",
-    "name": "新材料ETF平安",
-    "category": "指数型"
+    "code": "of516950",
+    "name": "基建ETF银华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of516970",
-    "name": "基建ETF广发",
-    "category": "指数型"
+    "code": "of517120",
+    "name": "创新药ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of517090",
-    "name": "央企共赢ETF国泰",
-    "category": "指数型"
+    "code": "of517520",
+    "name": "黄金股ETF永赢",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "of517200",
-    "name": "互联网ETF嘉实",
-    "category": "指数型"
+    "code": "of518680",
+    "name": "金ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of519671",
+    "name": "银河沪深300价值指数A",
+    "category": "指数型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of520560",
+    "name": "香港大盘30ETF华宝",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of520690",
+    "name": "港股创新药ETF博时",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of520840",
+    "name": "港股通恒生科技ETF华安",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of520960",
+    "name": "恒指港股通ETF嘉实",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of530060",
+    "name": "上证指数ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of539001",
+    "name": "建信纳斯达克100指数(QDII)A人民币",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of551580",
+    "name": "科创债ETF泰康",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of560100",
+    "name": "中证500增强ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of560250",
+    "name": "红利质量ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of560380",
+    "name": "A100ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of560520",
+    "name": "红利低波100ETF大成",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of560670",
+    "name": "银行ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of560820",
+    "name": "中证A50ETF新华",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of561010",
+    "name": "软件ETF华安",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of561220",
+    "name": "数字经济ETF工银",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "of000041",
     "name": "华夏全球股票(QDII)(人民币)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000043",
     "name": "嘉实美国成长股票人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000044",
     "name": "嘉实美国成长股票美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000103",
     "name": "国泰境外高收益债(QDII)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000157",
     "name": "富国全球科技互联网股票(QDII)A(后端)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000162",
     "name": "富国中国中小盘混合(QDII)人民币A(后端)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000163",
     "name": "富国全球债券(QDII)人民币A(后端)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000274",
     "name": "广发亚太中高收益债(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of000275",
     "name": "广发亚太中高收益债美元现汇(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of000290",
     "name": "鹏华全球高收益债(QDII)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000341",
     "name": "嘉实新兴市场C2(QDII)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000342",
     "name": "嘉实新兴市场A1(QDII)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000906",
     "name": "广发全球精选股票(QDII)美元A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of000927",
     "name": "博时大中华亚太精选美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000934",
     "name": "国富大中华精选混合",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000988",
     "name": "嘉实全球互联网股票人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000989",
     "name": "嘉实全球互联网股票美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of000990",
     "name": "嘉实全球互联网股票美元现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of001061",
     "name": "华夏收益债券(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of001063",
+    "name": "华夏收益债券(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of001065",
     "name": "华夏海外收益债券现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of001066",
     "name": "华夏海外收益债券现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of001668",
     "name": "汇添富全球移动互联混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of001691",
     "name": "南方香港成长灵活配置混合",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of001876",
     "name": "鹏华全球高收益债美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of001984",
     "name": "摩根中国生物医药混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of002230",
     "name": "华夏大中华混合(QDII)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002286",
     "name": "中银美元债债券(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of002287",
     "name": "中银美元债债券(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002379",
     "name": "工银香港中小盘人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002380",
     "name": "工银香港中小盘美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002391",
     "name": "华安全球美元收益债人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of002392",
     "name": "华安全球美元收益债美元现汇A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of002393",
+    "name": "华安全球美元收益债C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of002400",
     "name": "南方亚洲美元收益债券(QDII)A(人民币)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002401",
     "name": "南方亚洲美元收益债券(QDII)C(人民币)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002402",
     "name": "南方亚洲美元收益债券(QDII)A(美元现汇)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002403",
     "name": "南方亚洲美元收益债券(QDII)C(美元现汇)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002426",
     "name": "华安全球美元票息债人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of002427",
     "name": "华安全球美元票息债美元现汇A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of002429",
+    "name": "华安全球美元票息债C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of002877",
     "name": "华夏大中华信用债A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of002878",
     "name": "华夏大中华信用债美元现汇A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of002879",
     "name": "华夏大中华信用债美元现钞A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of002880",
+    "name": "华夏大中华信用债C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of002891",
     "name": "华夏移动互联混合人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002892",
     "name": "华夏移动互联混合美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of002893",
     "name": "华夏移动互联混合美元现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003243",
     "name": "摩根中国世纪混合(QDII)人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003244",
     "name": "摩根中国世纪混合(QDII)美元现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003245",
     "name": "摩根中国世纪混合(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003321",
     "name": "易方达原油C类人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003322",
     "name": "易方达原油A类美元汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003323",
     "name": "易方达原油C类美元汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003385",
     "name": "工银全球美元债A人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003386",
     "name": "工银全球美元债A美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
+  },
+  {
+    "code": "of003387",
+    "name": "工银全球美元债C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of003606",
     "name": "海富通全球收益债券美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003629",
     "name": "摩根全球多元配置(QDII-FOF)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of003630",
     "name": "摩根全球多元配置(QDII-FOF)美元现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003631",
     "name": "摩根全球多元配置(QDII-FOF)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003972",
     "name": "国富美元债一年持有期债券(QDII)人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of003973",
     "name": "国富美元债一年持有期债券(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of004419",
     "name": "汇添富美元债债券(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of004420",
+    "name": "汇添富美元债债券(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of004421",
     "name": "汇添富美元债债券(QDII)美元现汇A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of004422",
+    "name": "汇添富美元债债券(QDII)美元现汇C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of004877",
     "name": "汇添富全球医疗混合(QDII)人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of004878",
     "name": "汇添富全球医疗混合(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of004879",
     "name": "汇添富全球医疗混合(QDII)美元现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of004998",
     "name": "长信全球债券人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of004999",
     "name": "长信全球债券美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of005243",
     "name": "融通中国概念债券(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of005534",
     "name": "华夏新时代混合人民币(QDII)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of005698",
     "name": "华夏全球科技先锋混合(QDII)A(人民币)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of005699",
     "name": "工银新经济混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of005700",
     "name": "工银新经济混合(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of005801",
     "name": "工银印度基金美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of006105",
     "name": "宏利印度股票(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of006282",
     "name": "摩根欧洲动力策略股票(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of006283",
     "name": "鹏华美国房地产美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of006285",
     "name": "鹏华全球中短债(QDII)美元现汇A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of006308",
     "name": "汇添富全球消费混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of006309",
+    "name": "汇添富全球消费混合(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of006310",
     "name": "汇添富全球消费混合(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of006370",
     "name": "国富大中华精选混合美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of006373",
     "name": "国富全球科技互联混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of006374",
     "name": "国富全球科技互联混合(QDII)美元现汇A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of006426",
     "name": "汇添富全球移动互联混合(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of006445",
     "name": "华夏海外聚享混合发起式(QDII-FOF)A人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of006446",
     "name": "华夏海外聚享混合发起式(QDII-FOF)A美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of006447",
     "name": "华夏海外聚享混合发起式(QDII-FOF)A美元现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of006448",
     "name": "华夏海外聚享混合发起式(QDII-FOF)C人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
+  },
+  {
+    "code": "of006476",
+    "name": "南方原油C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of006555",
     "name": "浦银安盛全球智能科技(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of006792",
     "name": "鹏华港美互联股票美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of007140",
     "name": "富国全球债券(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of007204",
     "name": "银华美元债精选债券(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of007205",
+    "name": "银华美元债精选债券(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of007280",
     "name": "摩根日本精选股票(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of007360",
     "name": "易方达中短期美元债(QDII)A人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of007361",
     "name": "易方达中短期美元债(QDII)C人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of007362",
     "name": "易方达中短期美元债(QDII)A美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of007363",
     "name": "易方达中短期美元债(QDII)C美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of007455",
     "name": "富国蓝筹精选股票(QDII)人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of007721",
     "name": "天弘标普500发起(QDII-FOF)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of007722",
+    "name": "天弘标普500发起(QDII-FOF)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of007729",
     "name": "招商普盛全球配置(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of007975",
     "name": "招商普盛全球配置(QDII-FOF)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
+  },
+  {
+    "code": "of007976",
+    "name": "易方达黄金主题人民币C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of007977",
     "name": "易方达黄金主题美元现汇A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of007978",
+    "name": "易方达黄金主题美元现汇C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of008095",
     "name": "中银亚太精选债券(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of008096",
+    "name": "中银亚太精选债券(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of008097",
     "name": "中银亚太精选债券(QDII)美元A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of008098",
+    "name": "中银亚太精选债券(QDII)美元C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of008183",
     "name": "招商普盛全球配置(QDII-FOF)美元现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of008253",
     "name": "华宝致远混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of008254",
+    "name": "华宝致远混合(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of008284",
     "name": "易方达全球医药行业混合发起式(QDII)A(人民币)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of008285",
     "name": "易方达全球医药行业混合发起式(QDII)A(美元现汇)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
+  },
+  {
+    "code": "of008320",
+    "name": "鹏华全球中短债(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of008321",
+    "name": "鹏华全球中短债(QDII)美元现汇C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of008367",
     "name": "富国亚洲收益债券(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of008368",
     "name": "富国亚洲收益债券(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of008751",
     "name": "大成全球美元债(QDII)A人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of008752",
     "name": "大成全球美元债(QDII)C人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of008763",
     "name": "天弘越南市场股票发起(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of008764",
+    "name": "天弘越南市场股票发起(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of009108",
     "name": "富国红利精选混合(QDII)人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of009193",
     "name": "富国红利精选混合(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of009562",
     "name": "工银全球股票(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of009563",
     "name": "工银全球股票(QDII)港币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of010583",
     "name": "富国蓝筹精选股票(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of010591",
     "name": "富国中国中小盘混合(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of010644",
     "name": "富国全球健康生活主题混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of010645",
     "name": "富国全球健康生活主题混合(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of010671",
     "name": "景顺长城大中华混合(QDII)A美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of011420",
     "name": "广发全球科技三个月定开混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of011421",
     "name": "广发全球科技三个月定开混合(QDII)美元A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of011422",
+    "name": "广发全球科技三个月定开混合(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of011423",
+    "name": "广发全球科技三个月定开混合(QDII)美元C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of011583",
     "name": "大成港股精选混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of011584",
+    "name": "大成港股精选混合(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of011940",
     "name": "大成全球美元债(QDII)A美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of011941",
     "name": "大成全球美元债(QDII)C美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of012060",
     "name": "富国全球消费精选混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of012061",
     "name": "富国全球消费精选混合(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
+  },
+  {
+    "code": "of012062",
+    "name": "富国全球消费精选混合(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of012208",
     "name": "华夏港股前沿经济混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012209",
+    "name": "华夏港股前沿经济混合(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of012379",
     "name": "创金合信港股互联网3个月持有期混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012380",
+    "name": "创金合信港股互联网3个月持有期混合(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of012535",
     "name": "万家全球成长一年持有期混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012536",
+    "name": "万家全球成长一年持有期混合(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of012584",
     "name": "南方中国新兴经济9个月持有期混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012585",
+    "name": "南方中国新兴经济9个月持有期混合(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of012920",
     "name": "易方达全球成长精选混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of012921",
     "name": "易方达全球成长精选混合(QDII)美元现汇A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of012922",
+    "name": "易方达全球成长精选混合(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of012923",
+    "name": "易方达全球成长精选混合(QDII)美元现汇C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of012924",
     "name": "华夏新时代混合美元现汇(QDII)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of012925",
     "name": "华夏新时代混合美元现钞(QDII)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of013328",
     "name": "嘉实全球价值股票(QDII)人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of013329",
     "name": "嘉实全球价值股票(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of013363",
     "name": "大成中国优势混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of013364",
+    "name": "大成中国优势混合(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013508",
+    "name": "广发亚太中高收益债(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of013509",
+    "name": "广发亚太中高收益债美元现汇(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014002",
+    "name": "浦银安盛全球智能科技(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014127",
+    "name": "融通核心价值混合C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015202",
+    "name": "汇添富全球移动互联混合(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of015203",
     "name": "汇添富全球移动互联混合(QDII)人民币D",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "D"
   },
   {
     "code": "of015204",
     "name": "银华全球新能源车量化优选股票(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015205",
+    "name": "银华全球新能源车量化优选股票(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of015884",
     "name": "中欧港股数字经济混合发起(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of015885",
+    "name": "中欧港股数字经济混合发起(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of016199",
     "name": "汇添富全球汽车产业升级混合(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of016200",
     "name": "汇添富全球汽车产业升级混合(QDII)美元现汇",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of016201",
     "name": "汇添富全球汽车产业升级混合(QDII)美元现钞",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
+  },
+  {
+    "code": "of016202",
+    "name": "汇添富全球汽车产业升级混合(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of016664",
     "name": "天弘全球高端制造混合(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016665",
+    "name": "天弘全球高端制造混合(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of016667",
     "name": "景顺长城全球半导体芯片股票A(QDII-LOF)(美元现汇)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of016668",
     "name": "景顺长城全球半导体芯片股票C(QDII-LOF)(人民币)",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of016701",
     "name": "银华海外数字经济量化选股混合发起式(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016702",
+    "name": "银华海外数字经济量化选股混合发起式(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016742",
+    "name": "华安大中华升级股票(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of016823",
+    "name": "天弘全球新能源汽车股票(QDII-LOF)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of016988",
     "name": "景顺长城大中华混合(QDII)C人民币",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
   },
   {
     "code": "of017071",
     "name": "申万菱信全球新能源股票型发起式(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of017072",
+    "name": "申万菱信全球新能源股票型发起式(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of017144",
     "name": "华宝海外新能源汽车股票发起式(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
+  },
+  {
+    "code": "of017145",
+    "name": "华宝海外新能源汽车股票发起式(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
+  },
+  {
+    "code": "of017204",
+    "name": "华宝海外科技股票(QDII-LOF)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of017429",
     "name": "嘉实全球创新龙头股票(QDII)人民币A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
     "code": "of017430",
     "name": "嘉实全球创新龙头股票(QDII)美元",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "无"
+  },
+  {
+    "code": "of017431",
+    "name": "嘉实全球创新龙头股票(QDII)人民币C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of017436",
     "name": "华宝纳斯达克精选股票发起式(QDII)A",
-    "category": "QDII"
+    "category": "QDII",
+    "shareClass": "A"
   },
   {
-    "code": "of017653",
-    "name": "创金合信全球芯片产业股票发起(QDII)A",
-    "category": "QDII"
-  },
-  {
-    "code": "of017730",
-    "name": "嘉实全球产业升级股票发起式(QDII)A",
-    "category": "QDII"
-  },
-  {
-    "code": "of017970",
-    "name": "摩根海外稳健配置混合(QDII-FOF)人民币A",
-    "category": "QDII"
-  },
-  {
-    "code": "of017971",
-    "name": "摩根海外稳健配置混合(QDII-FOF)美元现汇",
-    "category": "QDII"
-  },
-  {
-    "code": "of017972",
-    "name": "摩根海外稳健配置混合(QDII-FOF)美元现钞",
-    "category": "QDII"
-  },
-  {
-    "code": "of018155",
-    "name": "创金合信全球医药生物股票发起(QDII)A",
-    "category": "QDII"
-  },
-  {
-    "code": "of018229",
-    "name": "易方达全球优质企业混合(QDII)A(人民币份额)",
-    "category": "QDII"
-  },
-  {
-    "code": "of018230",
-    "name": "易方达全球优质企业混合(QDII)C(人民币份额)",
-    "category": "QDII"
-  },
-  {
-    "code": "of018231",
-    "name": "易方达全球优质企业混合(QDII)A(美元现汇份额)",
-    "category": "QDII"
-  },
-  {
-    "code": "of018232",
-    "name": "易方达全球优质企业混合(QDII)C(美元现汇份额)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019035",
-    "name": "易方达全球医药行业混合发起式(QDII)C(人民币)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019036",
-    "name": "易方达全球医药行业混合发起式(QDII)C(美元现汇)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019075",
-    "name": "嘉实全球产业精选混合发起式(QDII)人民币",
-    "category": "QDII"
-  },
-  {
-    "code": "of019076",
-    "name": "嘉实全球产业精选混合发起式(QDII)美元",
-    "category": "QDII"
-  },
-  {
-    "code": "of019155",
-    "name": "易方达全球配置混合(QDII)A(人民币)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019156",
-    "name": "易方达全球配置混合(QDII)C(人民币)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019157",
-    "name": "易方达全球配置混合(QDII)A(美元现汇)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019158",
-    "name": "易方达全球配置混合(QDII)C(美元现汇)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019230",
-    "name": "广发全球稳健配置混合(QDII)人民币A",
-    "category": "QDII"
-  },
-  {
-    "code": "of019232",
-    "name": "广发全球稳健配置混合(QDII)美元A",
-    "category": "QDII"
-  },
-  {
-    "code": "of019265",
-    "name": "南方港股数字经济混合发起(QDII)A",
-    "category": "QDII"
-  },
-  {
-    "code": "of019415",
-    "name": "南方港股医药行业混合发起(QDII)A",
-    "category": "QDII"
-  },
-  {
-    "code": "of019447",
-    "name": "华夏全球科技先锋混合(QDII)A(美元现汇)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019448",
-    "name": "华夏全球科技先锋混合(QDII)A(美元现钞)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019480",
-    "name": "博时亚洲票息收益债券C人民币",
-    "category": "QDII"
-  },
-  {
-    "code": "of019481",
-    "name": "博时亚洲票息收益债券C美元现汇",
-    "category": "QDII"
-  },
-  {
-    "code": "of019549",
-    "name": "华夏全球股票美元现汇(QDII)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019550",
-    "name": "华夏全球股票美元现钞(QDII)",
-    "category": "QDII"
-  },
-  {
-    "code": "of019630",
-    "name": "银华美元债精选债券(QDII)D",
-    "category": "QDII"
-  },
-  {
-    "code": "of022512",
-    "name": "南方亚洲美元收益债券(QDII)E(人民币)",
-    "category": "QDII"
-  },
-  {
-    "code": "of022523",
-    "name": "天弘标普500发起(QDII-FOF)D",
-    "category": "QDII"
-  },
-  {
-    "code": "of022524",
-    "name": "天弘越南市场股票发起(QDII)D",
-    "category": "QDII"
-  },
-  {
-    "code": "of023402",
-    "name": "广发全球精选股票(QDII)人民币F",
-    "category": "QDII"
-  },
-  {
-    "code": "of025070",
-    "name": "东方红医疗创新混合(QDII)A",
-    "category": "QDII"
-  },
-  {
-    "code": "of025162",
-    "name": "国泰大宗商品(QDII-LOF)D",
-    "category": "QDII"
-  },
-  {
-    "code": "of025174",
-    "name": "长城港股医疗保健精选混合发起(QDII)A",
-    "category": "QDII"
-  },
-  {
-    "code": "of025339",
-    "name": "招商普盛全球配置(QDII)人民币D",
-    "category": "QDII"
-  },
-  {
-    "code": "of025587",
-    "name": "光大阳光香港精选混合(QDII)A人民币",
-    "category": "QDII"
-  },
-  {
-    "code": "of025588",
-    "name": "光大阳光香港精选混合(QDII)A美元现汇",
-    "category": "QDII"
-  },
-  {
-    "code": "of025589",
-    "name": "光大阳光香港精选混合(QDII)C人民币",
-    "category": "QDII"
-  },
-  {
-    "code": "of025654",
-    "name": "富国医药精选混合(QDII)A",
-    "category": "QDII"
-  },
-  {
-    "code": "of025787",
-    "name": "大成港股恒信混合(QDII)",
-    "category": "QDII"
-  },
-  {
-    "code": "of025852",
-    "name": "富国港股精选混合(QDII)人民币",
-    "category": "QDII"
-  },
-  {
-    "code": "of025853",
-    "name": "富国港股精选混合(QDII)美元现汇",
-    "category": "QDII"
-  },
-  {
-    "code": "of026228",
-    "name": "富国全球科技互联网股票(QDII)D",
-    "category": "QDII"
-  },
-  {
-    "code": "of026246",
-    "name": "汇丰晋信港股精选股票(QDII)人民币A",
-    "category": "QDII"
-  },
-  {
-    "code": "of026248",
-    "name": "汇丰晋信港股精选股票(QDII)美元现汇A",
-    "category": "QDII"
+    "code": "of017437",
+    "name": "华宝纳斯达克精选股票发起式(QDII)C",
+    "category": "QDII",
+    "shareClass": "C"
   },
   {
     "code": "of000009",
     "name": "易方达天天理财货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000198",
-    "name": "天弘余额宝货币",
-    "category": "货币型"
+    "code": "of000203",
+    "name": "国富日日收益货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000210",
-    "name": "光大现金宝货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of000301",
-    "name": "德邦德利货币B",
-    "category": "货币型"
+    "code": "of000300",
+    "name": "德邦德利货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of000330",
     "name": "汇添富现金宝货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of000359",
     "name": "易方达易理财货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000379",
-    "name": "平安日增利货币A",
-    "category": "货币型"
+    "code": "of000380",
+    "name": "景顺长城景益货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000389",
-    "name": "广发天天红货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of000425",
-    "name": "长盛添利宝货币B",
-    "category": "货币型"
+    "code": "of000424",
+    "name": "长盛添利宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of000475",
     "name": "广发天天利货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000484",
-    "name": "鑫元货币B",
-    "category": "货币型"
+    "code": "of000493",
+    "name": "南方现金通A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000505",
-    "name": "国寿安保货币A",
-    "category": "货币型"
+    "code": "of000506",
+    "name": "国寿安保货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of000528",
-    "name": "工银薪金货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of000540",
-    "name": "国金金腾通货币A",
-    "category": "货币型"
+    "code": "of000539",
+    "name": "中银活期宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of000548",
     "name": "鹏华聚财通货币",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
     "code": "of000575",
     "name": "兴全添利宝货币",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of000581",
-    "name": "嘉实活钱包货币A",
-    "category": "货币型"
+    "code": "of000588",
+    "name": "招商招钱宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000600",
-    "name": "汇添富和聚宝货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of000605",
-    "name": "银华多利宝货币B",
-    "category": "货币型"
+    "code": "of000604",
+    "name": "银华多利宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of000618",
     "name": "嘉实薪金宝货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000625",
-    "name": "诺安天天宝B",
-    "category": "货币型"
+    "code": "of000626",
+    "name": "大成丰财宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000638",
-    "name": "富国富钱包货币A",
-    "category": "货币型"
+    "code": "of000641",
+    "name": "诺安理财宝货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of000644",
-    "name": "招商招金宝货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of000648",
-    "name": "易方达财富快线货币B",
-    "category": "货币型"
+    "code": "of000647",
+    "name": "易方达财富快线货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of000657",
     "name": "银华活钱宝货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000662",
-    "name": "银华活钱宝货币F",
-    "category": "货币型"
+    "code": "of000661",
+    "name": "银华活钱宝货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of000681",
-    "name": "信澳慧管家货币A",
-    "category": "货币型"
+    "code": "of000678",
+    "name": "华宝现金宝货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of000693",
-    "name": "建信现金添利货币A",
-    "category": "货币型"
+    "code": "of000686",
+    "name": "建信嘉薪宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000701",
-    "name": "景顺长城景丰货币A",
-    "category": "货币型"
+    "code": "of000700",
+    "name": "宏利货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of000707",
     "name": "景顺长城景丰货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of000712",
-    "name": "摩根天添宝货币A",
-    "category": "货币型"
+    "code": "of000713",
+    "name": "摩根天添宝货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of000721",
-    "name": "兴业货币A",
-    "category": "货币型"
+    "code": "of000722",
+    "name": "兴业货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of000725",
-    "name": "大成添利宝货币B",
-    "category": "货币型"
+    "code": "of000730",
+    "name": "博时现金宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000735",
-    "name": "博时天天增利货币B",
-    "category": "货币型"
+    "code": "of000741",
+    "name": "兴银货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000748",
-    "name": "广发活期宝货币A",
-    "category": "货币型"
+    "code": "of000759",
+    "name": "平安财富宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000760",
-    "name": "工银财富货币A",
-    "category": "货币型"
+    "code": "of000773",
+    "name": "万家现金宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000779",
-    "name": "诺安聚鑫宝货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of000789",
-    "name": "易方达龙宝货币A",
-    "category": "货币型"
+    "code": "of000787",
+    "name": "国新国证现金增利货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
     "code": "of000816",
     "name": "南方理财金交易型货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000836",
-    "name": "国投瑞银钱多宝货币A",
-    "category": "货币型"
+    "code": "of000832",
+    "name": "天弘现金管家货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of000855",
-    "name": "摩根天添盈货币A",
-    "category": "货币型"
+    "code": "of000847",
+    "name": "国联货币A",
+    "category": "货币型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of000857",
+    "name": "摩根天添盈货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
     "code": "of000863",
     "name": "富国天时货币D",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of000871",
-    "name": "华银宜投宝A",
-    "category": "货币型"
+    "code": "of000872",
+    "name": "华银宜投宝B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of000874",
-    "name": "华安现金宝货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of000891",
-    "name": "博时现金宝货币B",
-    "category": "货币型"
+    "code": "of000883",
+    "name": "中金现金管家货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of000905",
     "name": "鹏华安盈宝货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000912",
-    "name": "英大现金宝A",
-    "category": "货币型"
+    "code": "of000917",
+    "name": "嘉实快线货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of000922",
-    "name": "中邮现金驿站货币B",
-    "category": "货币型"
+    "code": "of000923",
+    "name": "中邮现金驿站货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of000982",
-    "name": "华银现金添利B",
-    "category": "货币型"
+    "code": "of001006",
+    "name": "中信建投凤凰货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of001077",
     "name": "华夏现金宝货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of001095",
-    "name": "国投瑞银添利宝货币B",
-    "category": "货币型"
+    "code": "of001096",
+    "name": "国寿安保聚宝盆货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of001175",
-    "name": "山证资管日日添利货币A",
-    "category": "货币型"
+    "code": "of001176",
+    "name": "山证资管日日添利货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of001232",
-    "name": "嘉合货币A",
-    "category": "货币型"
+    "code": "of001233",
+    "name": "嘉合货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of001240",
-    "name": "民生加银现金增利货币D",
-    "category": "货币型"
-  },
-  {
-    "code": "of001374",
-    "name": "华夏现金增利货币B",
-    "category": "货币型"
+    "code": "of001308",
+    "name": "博时外服货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of001401",
     "name": "德邦如意货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of001526",
-    "name": "鑫元安鑫宝A",
-    "category": "货币型"
+    "code": "of001527",
+    "name": "鑫元安鑫宝B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of001624",
-    "name": "兴业添天盈货币A",
-    "category": "货币型"
+    "code": "of001625",
+    "name": "兴业添天盈货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of001697",
-    "name": "大成恒丰宝货币A",
-    "category": "货币型"
+    "code": "of001698",
+    "name": "大成恒丰宝货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of001821",
     "name": "兴全天添益货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of001843",
-    "name": "九泰日添金货币B",
-    "category": "货币型"
+    "code": "of001867",
+    "name": "诺安聚鑫宝货币D",
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of001871",
-    "name": "前海开源货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of001895",
-    "name": "宏利活期友货币B",
-    "category": "货币型"
+    "code": "of001894",
+    "name": "宏利活期友货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of001925",
     "name": "兴业鑫天盈货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of001930",
-    "name": "华夏收益宝货币B",
-    "category": "货币型"
+    "code": "of001931",
+    "name": "国寿安保鑫钱包货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of001973",
-    "name": "光大保德信耀钱包货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of001987",
-    "name": "东方金元宝货币A",
-    "category": "货币型"
+    "code": "of001982",
+    "name": "富国收益宝交易型货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of002077",
     "name": "浙商日添利A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of002184",
-    "name": "泓德泓利货币A",
-    "category": "货币型"
+    "code": "of002185",
+    "name": "泓德泓利货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of002200",
-    "name": "大成慧成货币A",
-    "category": "货币型"
+    "code": "of002202",
+    "name": "大成慧成货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of002243",
-    "name": "东方金证通货币A",
-    "category": "货币型"
+    "code": "of002247",
+    "name": "新疆前海联合海盈货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of002260",
-    "name": "中信建投添鑫宝A",
-    "category": "货币型"
+    "code": "of002299",
+    "name": "招商招福宝货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of002302",
-    "name": "新沃通宝B",
-    "category": "货币型"
+    "code": "of002325",
+    "name": "南方日添益E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of002469",
-    "name": "华泰柏瑞交易货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of002672",
-    "name": "诺德货币A",
-    "category": "货币型"
+    "code": "of002647",
+    "name": "中科沃土货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of002680",
     "name": "工银安盈货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of002722",
-    "name": "工银财富货币B",
-    "category": "货币型"
+    "code": "of002733",
+    "name": "上银慧盈利货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of002753",
-    "name": "建信嘉薪宝货币B",
-    "category": "货币型"
+    "code": "of002758",
+    "name": "建信现金增利货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of002760",
-    "name": "东兴安盈宝B",
-    "category": "货币型"
+    "code": "of002828",
+    "name": "南方现金增利货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of002852",
-    "name": "招商财富宝交易型货币A",
-    "category": "货币型"
+    "code": "of002855",
+    "name": "博时现金宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of002889",
-    "name": "交银天利宝货币A",
-    "category": "货币型"
+    "code": "of002890",
+    "name": "交银天利宝货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of002912",
-    "name": "兴业稳天盈货币A",
-    "category": "货币型"
+    "code": "of002917",
+    "name": "嘉实活钱包货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
     "code": "of002957",
     "name": "财通财通宝货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of003022",
     "name": "建信现金添益货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of003164",
-    "name": "建信现金添利货币B",
-    "category": "货币型"
+    "code": "of003075",
+    "name": "国联货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
     "code": "of003206",
     "name": "博时合鑫货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of003246",
-    "name": "华泰柏瑞天添宝货币A",
-    "category": "货币型"
+    "code": "of003252",
+    "name": "大成添益交易型货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of003264",
-    "name": "新华活期添利货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of003316",
-    "name": "中银证券现金管家货币A",
-    "category": "货币型"
+    "code": "of003281",
+    "name": "广发活期宝货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of003364",
     "name": "长江乐享货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of003391",
     "name": "建信天添益货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of003399",
     "name": "太平日日金货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of003423",
-    "name": "国寿安保添利货币B",
-    "category": "货币型"
+    "code": "of003460",
+    "name": "嘉实现金宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of003467",
-    "name": "富荣货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of003474",
-    "name": "南方天天利货币B",
-    "category": "货币型"
+    "code": "of003473",
+    "name": "南方天天利货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of003480",
     "name": "财通资管鑫管家货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of003515",
     "name": "国泰利是宝货币",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of003535",
-    "name": "浦银安盛日日丰货币B",
-    "category": "货币型"
+    "code": "of003536",
+    "name": "浦银安盛日日丰货币D",
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of003538",
-    "name": "招商招利宝货币B",
-    "category": "货币型"
+    "code": "of003585",
+    "name": "先锋现金宝A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of003588",
-    "name": "东吴增鑫宝货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of003711",
-    "name": "宏利京元宝货币A",
-    "category": "货币型"
+    "code": "of003679",
+    "name": "国联现金增利货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
     "code": "of003753",
     "name": "工银如意货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of003874",
     "name": "浙商日添金货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of003994",
     "name": "华富货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of004039",
-    "name": "中欧骏泰货币B",
-    "category": "货币型"
+    "code": "of004056",
+    "name": "华夏惠利货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of004072",
-    "name": "金元顺安金通宝货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of004078",
-    "name": "金信民发货币B",
-    "category": "货币型"
+    "code": "of004077",
+    "name": "金信民发货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of004121",
     "name": "兴银现金添利A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of004151",
-    "name": "先锋日添利A",
-    "category": "货币型"
+    "code": "of004152",
+    "name": "先锋日添利B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of004169",
-    "name": "万家现金增利货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of004178",
-    "name": "圆信永丰丰润货币A",
-    "category": "货币型"
+    "code": "of004173",
+    "name": "嘉实增益宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of004186",
     "name": "江信增利货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of004201",
-    "name": "华夏财富宝货币B",
-    "category": "货币型"
+    "code": "of004210",
+    "name": "前海开源货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of004251",
-    "name": "华夏惠利货币B",
-    "category": "货币型"
+    "code": "of004261",
+    "name": "招商招禧宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of004282",
-    "name": "博时兴荣货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of004330",
-    "name": "太平日日鑫A",
-    "category": "货币型"
+    "code": "of004286",
+    "name": "华富天盈货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of004369",
     "name": "前海开源聚财宝B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of004398",
-    "name": "融通现金宝货币B",
-    "category": "货币型"
+    "code": "of004399",
+    "name": "融通汇财宝货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of004493",
-    "name": "华泰保兴货币A",
-    "category": "货币型"
+    "code": "of004494",
+    "name": "华泰保兴货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of004502",
-    "name": "中银如意宝货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of004568",
-    "name": "长城工资宝货币B",
-    "category": "货币型"
+    "code": "of004553",
+    "name": "中信建投凤凰货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of004684",
     "name": "鹏华盈余宝货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of004701",
-    "name": "鹏华盈余宝货币B",
-    "category": "货币型"
+    "code": "of004717",
+    "name": "万家天添宝货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of004749",
-    "name": "华泰紫金天天金交易型货币B",
-    "category": "货币型"
+    "code": "of004771",
+    "name": "海富通添益货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of004776",
-    "name": "鹏华金元宝货币",
-    "category": "货币型"
+    "code": "of004796",
+    "name": "广发钱袋子货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of004811",
-    "name": "万家现金宝货币B",
-    "category": "货币型"
+    "code": "of004861",
+    "name": "泰康现金管家货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of004862",
-    "name": "泰康现金管家货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of004866",
-    "name": "格林货币B",
-    "category": "货币型"
+    "code": "of004865",
+    "name": "格林货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of004903",
     "name": "人保货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of004967",
-    "name": "红土创新货币A",
-    "category": "货币型"
+    "code": "of004964",
+    "name": "银华惠添益货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
     "code": "of004971",
     "name": "南方天天宝货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of004983",
-    "name": "鹏扬现金通利货币A",
-    "category": "货币型"
+    "code": "of004984",
+    "name": "鹏扬现金通利货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of005020",
-    "name": "中信保诚智惠金货币A",
-    "category": "货币型"
+    "code": "of005057",
+    "name": "东方红货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of005107",
-    "name": "广发添利货币B",
-    "category": "货币型"
+    "code": "of005097",
+    "name": "易方达现金增利货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of005134",
-    "name": "长信长金通货币A",
-    "category": "货币型"
+    "code": "of005131",
+    "name": "海富通盈鑫货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of005151",
-    "name": "红土创新优淳货币B",
-    "category": "货币型"
+    "code": "of005148",
+    "name": "新华活期添利货币E",
+    "category": "货币型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of005153",
+    "name": "农银汇理日日鑫交易型货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
     "code": "of005196",
     "name": "博时合丰货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of005230",
-    "name": "长盛货币B",
-    "category": "货币型"
+    "code": "of005253",
+    "name": "国泰货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of007696",
-    "name": "嘉实融享货币",
-    "category": "货币型"
+    "code": "of007708",
+    "name": "中银瑞福浮动净值型货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of007805",
     "name": "华宝浮动净值货币",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of007868",
-    "name": "汇添富汇鑫货币A",
-    "category": "货币型"
+    "code": "of007866",
+    "name": "创金合信货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of008192",
-    "name": "博时兴荣货币A",
-    "category": "货币型"
+    "code": "of008191",
+    "name": "博时合利货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of008733",
-    "name": "易方达易理财货币B",
-    "category": "货币型"
+    "code": "of008393",
+    "name": "博时现金收益货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of009485",
-    "name": "国寿安保聚宝盆货币B",
-    "category": "货币型"
+    "code": "of009251",
+    "name": "光大保德信货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of009712",
-    "name": "信澳慧管家货币B",
-    "category": "货币型"
+    "code": "of009588",
+    "name": "汇添富现金宝货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of009790",
-    "name": "国寿安保增金宝货币B",
-    "category": "货币型"
+    "code": "of009744",
+    "name": "英大现金宝B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of010173",
-    "name": "易方达增金宝货币B",
-    "category": "货币型"
+    "code": "of010005",
+    "name": "鹏扬现金通利货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of010727",
-    "name": "建信现金增利货币B",
-    "category": "货币型"
+    "code": "of010288",
+    "name": "民生加银现金宝货币B",
+    "category": "货币型",
+    "shareClass": "B"
+  },
+  {
+    "code": "of011063",
+    "name": "国寿安保鑫钱包货币B",
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
     "code": "of011413",
     "name": "富国安益货币B",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "B"
   },
   {
-    "code": "of013003",
-    "name": "汇添富收益快钱货币D",
-    "category": "货币型"
+    "code": "of012104",
+    "name": "永赢货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of015420",
-    "name": "工银安盈货币D",
-    "category": "货币型"
+    "code": "of012841",
+    "name": "华泰柏瑞交易货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of014822",
+    "name": "中泰锦泉汇金货币",
+    "category": "货币型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of015419",
+    "name": "工银安盈货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of015649",
+    "name": "华泰紫金货币增利A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of015778",
     "name": "浙商汇金金算盘货币",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of016361",
-    "name": "工银货币B",
-    "category": "货币型"
+    "code": "of016096",
+    "name": "汇添富和聚宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of016446",
-    "name": "财通资管现金聚财货币",
-    "category": "货币型"
+    "code": "of016429",
+    "name": "华夏快线货币A",
+    "category": "货币型",
+    "shareClass": "A"
+  },
+  {
+    "code": "of016565",
+    "name": "中银活期宝货币B",
+    "category": "货币型",
+    "shareClass": "B"
+  },
+  {
+    "code": "of017062",
+    "name": "汇添富全额宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
     "code": "of017492",
     "name": "诺安货币D",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of017780",
-    "name": "上银慧盈利货币A",
-    "category": "货币型"
+    "code": "of017570",
+    "name": "中邮现金驿站货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of017930",
-    "name": "华泰柏瑞交易货币D",
-    "category": "货币型"
+    "code": "of017781",
+    "name": "上银慧盈利货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of018205",
-    "name": "嘉实薪金宝货币B",
-    "category": "货币型"
+    "code": "of017898",
+    "name": "海富通货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of018437",
-    "name": "易方达保证金货币D",
-    "category": "货币型"
+    "code": "of017940",
+    "name": "上银慧增利货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of018614",
-    "name": "万家货币D",
-    "category": "货币型"
+    "code": "of017984",
+    "name": "泰康薪意保货币D",
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of018793",
-    "name": "汇添富和聚宝货币D",
-    "category": "货币型"
+    "code": "of018111",
+    "name": "嘉实增益宝货币E",
+    "category": "货币型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of018299",
+    "name": "中信保诚智惠金货币E",
+    "category": "货币型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of018346",
+    "name": "长信长金通货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of018408",
+    "name": "南方现金增利货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of018599",
+    "name": "交银天利宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of018649",
+    "name": "富国安益货币E",
+    "category": "货币型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of018671",
+    "name": "广发添利货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of018782",
+    "name": "汇丰晋信货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of018850",
+    "name": "博时合晶货币A",
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
     "code": "of018907",
     "name": "博时合鑫货币A",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "A"
   },
   {
-    "code": "of019023",
-    "name": "长城收益宝货币D",
-    "category": "货币型"
+    "code": "of018953",
+    "name": "民生加银现金宝货币D",
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of019238",
-    "name": "南方现金增利货币D",
-    "category": "货币型"
+    "code": "of019050",
+    "name": "鑫元货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of019675",
-    "name": "广发货币D",
-    "category": "货币型"
+    "code": "of019145",
+    "name": "长盛货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of020007",
-    "name": "国泰货币A",
-    "category": "货币型"
+    "code": "of019507",
+    "name": "东方金元宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of020081",
-    "name": "华夏惠利货币D",
-    "category": "货币型"
+    "code": "of019637",
+    "name": "华夏天利货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of020827",
-    "name": "交银货币D",
-    "category": "货币型"
+    "code": "of019769",
+    "name": "华商现金增利货币E",
+    "category": "货币型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of019839",
+    "name": "大成丰财宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of019995",
+    "name": "华夏沃利货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of020039",
+    "name": "东吴货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of020201",
+    "name": "中银证券现金管家货币E",
+    "category": "货币型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of020468",
+    "name": "中银货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of020606",
+    "name": "南方日添益货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of020852",
+    "name": "中银证券现金管家货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of020990",
+    "name": "财通财通宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
     "code": "of021135",
     "name": "创金合信货币D",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of021447",
-    "name": "工银薪金货币D",
-    "category": "货币型"
+    "code": "of021406",
+    "name": "华夏沃利货币D",
+    "category": "货币型",
+    "shareClass": "D"
+  },
+  {
+    "code": "of021763",
+    "name": "汇添金货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
     "code": "of021998",
     "name": "信澳慧管家货币F",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of022692",
-    "name": "工银添益快线货币B",
-    "category": "货币型"
+    "code": "of022601",
+    "name": "华安现金富利货币C",
+    "category": "货币型",
+    "shareClass": "C"
+  },
+  {
+    "code": "of022723",
+    "name": "工银现金货币B",
+    "category": "货币型",
+    "shareClass": "B"
+  },
+  {
+    "code": "of023355",
+    "name": "大成添利宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
     "code": "of023625",
     "name": "创金合信货币F",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of023796",
-    "name": "农银天天利货币D",
-    "category": "货币型"
+    "code": "of023709",
+    "name": "万家现金宝货币D",
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of024283",
-    "name": "摩根货币D",
-    "category": "货币型"
+    "code": "of023777",
+    "name": "上银慧盈利货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of024525",
-    "name": "鑫元安鑫宝D",
-    "category": "货币型"
+    "code": "of023836",
+    "name": "大成恒丰宝货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of024589",
-    "name": "宏利货币F",
-    "category": "货币型"
+    "code": "of023993",
+    "name": "东吴货币E",
+    "category": "货币型",
+    "shareClass": "E"
+  },
+  {
+    "code": "of024310",
+    "name": "长江乐享货币D",
+    "category": "货币型",
+    "shareClass": "D"
+  },
+  {
+    "code": "of024580",
+    "name": "宏利活期友货币F",
+    "category": "货币型",
+    "shareClass": "无"
+  },
+  {
+    "code": "of024724",
+    "name": "山证资管日日添利货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
     "code": "of024844",
     "name": "华富货币D",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
-    "code": "of024897",
-    "name": "平安日鑫D",
-    "category": "货币型"
+    "code": "of024890",
+    "name": "平安财富宝货币D",
+    "category": "货币型",
+    "shareClass": "D"
   },
   {
     "code": "of025158",
     "name": "华夏现金增值货币",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of025515",
-    "name": "光大保德信阳光现金宝货币",
-    "category": "货币型"
+    "code": "of025469",
+    "name": "太平日日金货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
     "code": "of025633",
     "name": "鹏华现金增利货币",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
     "code": "of025738",
     "name": "长盛元增利货币",
-    "category": "货币型"
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of025775",
-    "name": "中金聚金利货币",
-    "category": "货币型"
+    "code": "of025781",
+    "name": "湘财天天盈货币",
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of025952",
-    "name": "平安天添利货币",
-    "category": "货币型"
+    "code": "of026030",
+    "name": "诺安理财宝货币E",
+    "category": "货币型",
+    "shareClass": "E"
   },
   {
-    "code": "of026121",
-    "name": "前海联合现金添利货币",
-    "category": "货币型"
+    "code": "of026123",
+    "name": "申万菱信天添利",
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
-    "code": "of026276",
-    "name": "华泰紫金天天金货币ETFD",
-    "category": "货币型"
+    "code": "of026281",
+    "name": "博时合鑫货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of026586",
-    "name": "东方红货币F",
-    "category": "货币型"
+    "code": "of026331",
+    "name": "博时兴盛货币C",
+    "category": "货币型",
+    "shareClass": "C"
   },
   {
-    "code": "of040039",
-    "name": "华安日日鑫货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of070008",
-    "name": "嘉实货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of070088",
-    "name": "嘉实货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of090022",
-    "name": "大成现金增利货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of100025",
-    "name": "富国天时货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of110016",
-    "name": "易方达货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of150005",
-    "name": "银河银富货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of150998",
-    "name": "银河钱包货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of159003",
-    "name": "招商快线ETF",
-    "category": "货币型"
-  },
-  {
-    "code": "of159006",
-    "name": "汇添富收益快钱货币B",
-    "category": "货币型"
-  },
-  {
-    "code": "of161608",
-    "name": "融通易支付货币A",
-    "category": "货币型"
-  },
-  {
-    "code": "of161623",
-    "name": "融通汇财宝货币B",
-    "category": "货币型"
+    "code": "of026422",
+    "name": "永赢现金惠货币",
+    "category": "货币型",
+    "shareClass": "无"
   },
   {
     "code": "sz159998",
     "name": "计算机ETF天弘",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159991",
     "name": "创业板大盘ETF招商",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159975",
     "name": "深100ETF招商",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159967",
     "name": "创业板成长ETF华夏",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159958",
     "name": "创业板ETF工银",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159945",
     "name": "能源ETF广发",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159937",
     "name": "黄金ETF博时",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159929",
     "name": "医药ETF汇添富",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159918",
     "name": "中创400ETF嘉实",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159908",
     "name": "创业板ETF博时",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159899",
     "name": "软件ETF招商",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159889",
     "name": "智能汽车ETF国泰",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159880",
     "name": "有色ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159870",
     "name": "化工ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159862",
     "name": "食品饮料ETF银华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159852",
     "name": "软件ETF嘉实",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159843",
     "name": "食品饮料ETF招商",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159836",
     "name": "创业板300ETF天弘",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159825",
     "name": "农业ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159814",
     "name": "创业大盘ETF西部利得",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159806",
     "name": "新能源车ETF国泰",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159796",
     "name": "电池ETF汇添富",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159787",
     "name": "建材ETF易方达",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159778",
     "name": "工业互联网ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159767",
     "name": "电池龙头ETF兴银",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159755",
     "name": "电池ETF广发",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159743",
     "name": "湖北ETF博时",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159735",
     "name": "港股消费ETF银华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159725",
     "name": "线上消费ETF工银",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159716",
     "name": "深证100ETF华宝",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159707",
     "name": "地产ETF华宝",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159697",
     "name": "石油ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159688",
     "name": "恒生互联网ETF华安",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159679",
     "name": "中证1000增强ETF国泰",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159671",
     "name": "稀有金属ETF工银",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159662",
     "name": "交运ETF南方",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159655",
     "name": "标普500ETF华夏",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159645",
     "name": "疫苗ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159637",
     "name": "新能源车ETF东财",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159629",
     "name": "中证1000ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159620",
     "name": "中证500成长ETF华夏",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159612",
     "name": "标普500ETF国泰",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159605",
     "name": "中概互联ETF广发",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159596",
     "name": "A50ETF华宝",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159588",
     "name": "石油ETF景顺",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159577",
     "name": "美国50ETF汇添富",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159569",
     "name": "港股红利低波ETF景顺",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159561",
     "name": "德国ETF嘉实",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159553",
     "name": "中证2000增强ETF海富通",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159545",
     "name": "恒生红利低波ETF易方达",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159537",
     "name": "信创ETF国泰",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159529",
     "name": "标普消费ETF景顺",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159520",
     "name": "消费龙头ETF工银",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159512",
     "name": "汽车ETF广发",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159505",
     "name": "国证2000ETF博时",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159397",
     "name": "信用债ETF广发",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159389",
     "name": "数字经济ETF嘉实",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159381",
     "name": "创业板人工智能ETF华夏",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159373",
     "name": "创业板50ETF嘉实",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159366",
     "name": "港股医疗ETF永赢",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159358",
     "name": "中证A500ETF大成",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159350",
     "name": "深证50ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159332",
     "name": "央企红利ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159325",
     "name": "半导体ETF南方",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159315",
     "name": "黄金股ETF工银",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159305",
     "name": "储能电池ETF广发",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159297",
     "name": "港股通创新药ETF南方",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159289",
     "name": "创业板综指ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159280",
     "name": "港股通互联网ETF汇添富",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159272",
     "name": "机器人ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159265",
     "name": "港股消费ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159257",
     "name": "航空ETF汇添富",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159247",
     "name": "创业板ETF汇添富",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159239",
     "name": "港股通汽车ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159231",
     "name": "通用航空ETF华宝",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159223",
     "name": "现金流ETF永赢",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159216",
     "name": "深证100ETF大成",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159208",
     "name": "航空航天ETF万家",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159200",
     "name": "科创债ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sz159190",
     "name": "创业板新能源ETF天弘",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159180",
-    "name": "软件ETF银华",
-    "category": "指数型"
+    "code": "sz159181",
+    "name": "石油ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159171",
-    "name": "工业有色ETF博时",
-    "category": "指数型"
+    "code": "sz159172",
+    "name": "养殖ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159163",
-    "name": "有色ETF泰康",
-    "category": "指数型"
+    "code": "sz159165",
+    "name": "养殖ETF永赢",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159155",
-    "name": "电池ETF大成",
-    "category": "指数型"
+    "code": "sz159156",
+    "name": "电池ETF万家",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159147",
-    "name": "电池ETF南方",
-    "category": "指数型"
+    "code": "sz159148",
+    "name": "石油ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159139",
-    "name": "科创创业人工智能ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "sz159140",
+    "name": "科创创业人工智能ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159131",
-    "name": "港股通信息技术ETF华宝",
-    "category": "指数型"
+    "code": "sz159132",
+    "name": "恒生生物科技ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159123",
-    "name": "光伏ETF嘉实",
-    "category": "指数型"
+    "code": "sz159125",
+    "name": "港股通科技ETF招商",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159116",
-    "name": "科创债ETF工银",
-    "category": "指数型"
+    "code": "sz159117",
+    "name": "港股通红利低波ETF鹏华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159108",
-    "name": "工业软件ETF博时",
-    "category": "指数型"
+    "code": "sz159109",
+    "name": "恒生50ETF景顺",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sz159100",
-    "name": "巴西ETF华夏",
-    "category": "指数型"
+    "code": "sz159101",
+    "name": "港股通科技ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh589980",
-    "name": "科创100ETF汇添富",
-    "category": "指数型"
+    "code": "sz159009",
+    "name": "创业板新能源ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh589850",
-    "name": "科创50ETF东财",
-    "category": "指数型"
+    "code": "sh589960",
+    "name": "科创新能源ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh589680",
-    "name": "科创综指ETF鹏华",
-    "category": "指数型"
+    "code": "sh589820",
+    "name": "科创200ETF建信",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh589520",
-    "name": "科创人工智能ETF华宝",
-    "category": "指数型"
+    "code": "sh589660",
+    "name": "科创综指ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh589220",
-    "name": "科创200ETF国泰",
-    "category": "指数型"
+    "code": "sh589500",
+    "name": "科创综指ETF工银",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh589150",
-    "name": "科创50ETF平安",
-    "category": "指数型"
+    "code": "sh589210",
+    "name": "科创芯片设计ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh589070",
-    "name": "科创芯片设计ETF天弘",
-    "category": "指数型"
+    "code": "sh589130",
+    "name": "科创芯片ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588990",
-    "name": "科创芯片ETF博时",
-    "category": "指数型"
+    "code": "sh589060",
+    "name": "科创综指ETF东财",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588910",
-    "name": "科创价值ETF建信",
-    "category": "指数型"
+    "code": "sh588980",
+    "name": "科创100ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588840",
-    "name": "科创50ETF万家",
-    "category": "指数型"
+    "code": "sh588900",
+    "name": "科创100ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588770",
-    "name": "科创信息ETF摩根",
-    "category": "指数型"
+    "code": "sh588830",
+    "name": "科创新能源ETF鹏华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588690",
-    "name": "科创增强ETF银华",
-    "category": "指数型"
+    "code": "sh588760",
+    "name": "科创人工智能ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588460",
-    "name": "科创50增强ETF鹏华",
-    "category": "指数型"
+    "code": "sh588680",
+    "name": "科创100增强ETF广发",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588380",
-    "name": "科创创业ETF富国",
-    "category": "指数型"
+    "code": "sh588450",
+    "name": "科创50增强ETF招商",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588300",
-    "name": "科创创业50ETF招商",
-    "category": "指数型"
+    "code": "sh588370",
+    "name": "科创50增强ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588230",
-    "name": "科创200ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "sh588290",
+    "name": "科创芯片ETF华安",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588160",
-    "name": "科创新材料ETF南方",
-    "category": "指数型"
+    "code": "sh588220",
+    "name": "科创100ETF鹏华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588090",
-    "name": "科创50ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "sh588150",
+    "name": "科创50ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh588020",
-    "name": "科创成长ETF易方达",
-    "category": "指数型"
+    "code": "sh588080",
+    "name": "科创50ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh563900",
-    "name": "300自由现金流ETF摩根",
-    "category": "指数型"
+    "code": "sh588010",
+    "name": "科创新材料ETF博时",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh563800",
-    "name": "A500ETF广发",
-    "category": "指数型"
+    "code": "sh563890",
+    "name": "国企红利ETF创金合信",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh563690",
-    "name": "红利低波ETF永赢",
-    "category": "指数型"
+    "code": "sh563790",
+    "name": "卫星ETF鹏华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh563600",
-    "name": "A500增强ETF易方达",
-    "category": "指数型"
+    "code": "sh563680",
+    "name": "800现金流ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh563520",
-    "name": "沪深300ETF永赢",
-    "category": "指数型"
+    "code": "sh563590",
+    "name": "A500红利低波动ETF国寿",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh563330",
-    "name": "A股ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "sh563510",
+    "name": "A500红利低波ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh563200",
-    "name": "中证2000ETF富国",
-    "category": "指数型"
+    "code": "sh563320",
+    "name": "通用航空ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh563030",
-    "name": "中证500增强ETF易方达",
-    "category": "指数型"
+    "code": "sh563180",
+    "name": "高股息ETF银华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh562950",
-    "name": "消费电子ETF易方达",
-    "category": "指数型"
+    "code": "sh563020",
+    "name": "红利低波ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh562870",
-    "name": "证券ETF嘉实",
-    "category": "指数型"
+    "code": "sh562930",
+    "name": "软件ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh562660",
-    "name": "中证2000ETF华夏",
-    "category": "指数型"
+    "code": "sh562860",
+    "name": "疫苗ETF嘉实",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh562530",
-    "name": "中证1000价值ETF华夏",
-    "category": "指数型"
+    "code": "sh562600",
+    "name": "医疗器械ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh562350",
-    "name": "电力ETF银华",
-    "category": "指数型"
+    "code": "sh562520",
+    "name": "中证1000成长ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh562070",
-    "name": "沪深300指增ETF华宝",
-    "category": "指数型"
+    "code": "sh562340",
+    "name": "中证500成长ETF银华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh561980",
-    "name": "半导体设备ETF招商",
-    "category": "指数型"
+    "code": "sh562060",
+    "name": "标普A股红利ETF华宝",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh561880",
-    "name": "A100ETF华富",
-    "category": "指数型"
+    "code": "sh561960",
+    "name": "央企回报ETF招商",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh561750",
-    "name": "A50ETF博时",
-    "category": "指数型"
+    "code": "sh561870",
+    "name": "现金流全指ETF华富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh561570",
-    "name": "油气ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "sh561700",
+    "name": "电力ETF博时",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh561360",
-    "name": "石油ETF国泰",
-    "category": "指数型"
+    "code": "sh561560",
+    "name": "电力ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh561260",
-    "name": "能源ETF工银",
-    "category": "指数型"
+    "code": "sh561350",
+    "name": "中证500ETF国泰",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh561160",
-    "name": "电池ETF富国",
-    "category": "指数型"
+    "code": "sh561230",
+    "name": "中证A50ETF工银",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh561010",
-    "name": "软件ETF华安",
-    "category": "指数型"
+    "code": "sh561130",
+    "name": "国货ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560860",
-    "name": "工业有色ETF万家",
-    "category": "指数型"
+    "code": "sh561000",
+    "name": "沪深300增强ETF华安",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560750",
-    "name": "A500ETF申万菱信",
-    "category": "指数型"
+    "code": "sh560850",
+    "name": "信创ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560630",
-    "name": "机器人ETF万家",
-    "category": "指数型"
+    "code": "sh560710",
+    "name": "船舶ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560550",
-    "name": "碳中和ETF广发",
-    "category": "指数型"
+    "code": "sh560620",
+    "name": "公用事业ETF万家",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560390",
-    "name": "电网设备ETF易方达",
-    "category": "指数型"
+    "code": "sh560530",
+    "name": "中证A500ETF摩根",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560300",
-    "name": "电信ETF汇添富",
-    "category": "指数型"
+    "code": "sh560380",
+    "name": "A100ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560210",
-    "name": "农牧渔ETF景顺",
-    "category": "指数型"
+    "code": "sh560290",
+    "name": "有色ETF景顺",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560120",
-    "name": "中证500现金流ETF华夏",
-    "category": "指数型"
+    "code": "sh560190",
+    "name": "公用事业ETF鹏华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh560050",
-    "name": "中国A50ETF汇添富",
-    "category": "指数型"
+    "code": "sh560110",
+    "name": "中证1000ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh551580",
-    "name": "科创债ETF泰康",
-    "category": "指数型"
+    "code": "sh560030",
+    "name": "800价值ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh551060",
-    "name": "科创债ETF中银",
-    "category": "指数型"
+    "code": "sh551560",
+    "name": "科创债ETF兴业",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh530530",
-    "name": "上证580ETF华夏",
-    "category": "指数型"
+    "code": "sh551030",
+    "name": "科创债ETF鹏华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh530060",
-    "name": "上证指数ETF易方达",
-    "category": "指数型"
+    "code": "sh530380",
+    "name": "上证380ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh520970",
-    "name": "港股通创新药ETF嘉实",
-    "category": "指数型"
+    "code": "sh530050",
+    "name": "上证50ETF东财",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh520900",
-    "name": "港股通红利ETF广发",
-    "category": "指数型"
+    "code": "sh520960",
+    "name": "恒指港股通ETF嘉实",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh520830",
-    "name": "沙特ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "sh520890",
+    "name": "港股通红利低波ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh520720",
-    "name": "港股汽车ETF国泰",
-    "category": "指数型"
+    "code": "sh520820",
+    "name": "恒指港股通ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh520630",
-    "name": "港股通互联网ETF广发",
-    "category": "指数型"
+    "code": "sh520700",
+    "name": "港股通创新药ETF万家",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh520560",
-    "name": "香港大盘30ETF华宝",
-    "category": "指数型"
+    "code": "sh520620",
+    "name": "恒生消费ETF嘉实",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh518880",
-    "name": "黄金ETF华安",
-    "category": "指数型"
+    "code": "sh520550",
+    "name": "港股红利低波ETF招商",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh517990",
-    "name": "沪港深医药ETF招商",
-    "category": "指数型"
+    "code": "sh518860",
+    "name": "上海金ETF建信",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh517660",
-    "name": "物联网ETF天弘",
-    "category": "指数型"
+    "code": "sh517950",
+    "name": "沪深港科技50ETF交银",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh517350",
-    "name": "沪港深科技ETF广发",
-    "category": "指数型"
+    "code": "sh517550",
+    "name": "沪港深消费龙头ETF招商",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh517120",
-    "name": "创新药ETF华泰柏瑞",
-    "category": "指数型"
+    "code": "sh517330",
+    "name": "长江保护ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh517010",
-    "name": "沪港深500ETF易方达",
-    "category": "指数型"
+    "code": "sh517110",
+    "name": "创新药ETF国泰",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516920",
-    "name": "芯片ETF汇添富",
-    "category": "指数型"
+    "code": "sh517000",
+    "name": "沪港深500ETF银华",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516830",
-    "name": "沪深300ESGETF富国",
-    "category": "指数型"
+    "code": "sh516910",
+    "name": "物流ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516760",
-    "name": "养殖ETF平安",
-    "category": "指数型"
+    "code": "sh516820",
+    "name": "医疗创新ETF平安",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516660",
-    "name": "新能源车ETF华安",
-    "category": "指数型"
+    "code": "sh516750",
+    "name": "建材ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516590",
-    "name": "智能汽车ETF易方达",
-    "category": "指数型"
+    "code": "sh516650",
+    "name": "有色金属ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516510",
-    "name": "云计算ETF易方达",
-    "category": "指数型"
+    "code": "sh516580",
+    "name": "新能源ETF博时",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516350",
-    "name": "芯片ETF易方达",
-    "category": "指数型"
+    "code": "sh516500",
+    "name": "生物科技ETF华夏",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516260",
-    "name": "物联网ETF华夏",
-    "category": "指数型"
+    "code": "sh516330",
+    "name": "物联网ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516180",
-    "name": "光伏ETF平安",
-    "category": "指数型"
+    "code": "sh516250",
+    "name": "工程机械ETF富国",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516090",
-    "name": "新能源ETF易方达",
-    "category": "指数型"
+    "code": "sh516160",
+    "name": "新能源ETF南方",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh516000",
-    "name": "大数据ETF华夏",
-    "category": "指数型"
+    "code": "sh516080",
+    "name": "创新药ETF易方达",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh515910",
-    "name": "质量ETF中金",
-    "category": "指数型"
+    "code": "sh515990",
+    "name": "一带一路ETF汇添富",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh515800",
-    "name": "中证800ETF汇添富",
-    "category": "指数型"
+    "code": "sh515900",
+    "name": "央企创新ETF博时",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
-    "code": "sh515710",
-    "name": "食品饮料ETF华宝",
-    "category": "指数型"
+    "code": "sh515790",
+    "name": "光伏ETF华泰柏瑞",
+    "category": "指数型",
+    "shareClass": "无"
+  },
+  {
+    "code": "sh515700",
+    "name": "新能源车ETF平安",
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh515590",
     "name": "500等权ETF前海开源",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh515400",
     "name": "大数据ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh515320",
     "name": "电子50ETF华安",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh515220",
     "name": "煤炭ETF国泰",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh515150",
     "name": "一带一路ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh515070",
     "name": "人工智能ETF华夏",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513990",
     "name": "港股通ETF招商",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513900",
     "name": "港股通100ETF华安",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513820",
     "name": "港股通红利ETF汇添富",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513720",
     "name": "港股互联网ETF国泰",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513590",
     "name": "港股通消费ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513400",
     "name": "道琼斯ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513310",
     "name": "中韩半导体ETF华泰柏瑞",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513210",
     "name": "恒生ETF易方达",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513140",
     "name": "港股通金融ETF华泰柏瑞",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513070",
     "name": "港股通消费ETF易方达",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh513000",
     "name": "日经225ETF易方达",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512930",
     "name": "AI人工智能ETF平安",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512810",
     "name": "军工ETF华宝",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512710",
     "name": "军工龙头ETF富国",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512640",
     "name": "金融地产ETF嘉实",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512550",
     "name": "富时A50ETF嘉实",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512450",
     "name": "畜牧养殖ETF广发",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512290",
     "name": "生物医药ETF国泰",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512180",
     "name": "MSCIA股ETF建信",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512090",
     "name": "MSCIA股ETF易方达",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh512020",
     "name": "A500ETF鹏华",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   },
   {
     "code": "sh511950",
     "name": "添利货币ETF广发",
-    "category": "指数型"
-  },
-  {
-    "code": "sh511850",
-    "name": "招商财富宝ETF",
-    "category": "指数型"
+    "category": "指数型",
+    "shareClass": "无"
   }
 ];
