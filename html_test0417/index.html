@@ -243,6 +243,7 @@
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
         <h2 class="text-2xl font-bold flex items-center gap-2"><span class="w-1 h-6 bg-gradient-to-b from-violet-500 to-purple-400 rounded-full"></span>基金精选</h2>
         <div class="flex items-center gap-2">
+          <button id="fund-compare-toggle" onclick="toggleCompareMode()" class="px-3 py-2 text-sm rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-primary hover:border-primary transition shadow-sm">对比</button>
           <div class="relative">
             <input id="fund-search" type="text" placeholder="搜索基金名称、代码或别名（如：白酒C）..."
               class="w-48 md:w-64 pl-9 pr-3 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition shadow-sm bg-white"
@@ -264,6 +265,25 @@
       </div>
       <div class="mt-8" id="fund-rankings">
         <!-- JS生成 -->
+      </div>
+      <!-- 对比浮动按钮 -->
+      <div id="fund-compare-float" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 hidden">
+        <button onclick="openComparePage()" class="px-6 py-3 btn-gradient text-white rounded-full shadow-lg font-medium flex items-center gap-2 hover:shadow-xl transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          对比选中基金
+          <span id="fund-compare-count" class="bg-white/20 px-2 py-0.5 rounded-full text-sm">0/4</span>
+        </button>
+      </div>
+      <!-- 对比页面 -->
+      <div id="fund-compare-section" class="hidden">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xl font-bold flex items-center gap-2">
+            <span class="w-1 h-6 bg-gradient-to-b from-violet-500 to-purple-400 rounded-full"></span>基金对比
+          </h3>
+          <button onclick="closeComparePage()" class="px-4 py-2 text-sm rounded-xl border border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition">返回列表</button>
+        </div>
+        <div id="fund-compare-chart" class="w-full h-[360px] rounded-2xl bg-gray-50 mb-6"></div>
+        <div id="fund-compare-table" class="overflow-x-auto"></div>
       </div>
     </section>
 

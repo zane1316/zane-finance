@@ -224,8 +224,27 @@ function renderFundCards() {
     const curatedBadge = f.isCurated
       ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-100 text-amber-600 ml-1">精选</span>`
       : '';
+    const isSelected = selectedForCompare.includes(f.code);
+    const compareCheckbox = compareMode
+      ? `<div class="absolute top-3 left-3 z-10"
+          onclick="event.stopPropagation();"
+        >
+          <label class="flex items-center cursor-pointer"
+            onclick="event.stopPropagation();"
+          >
+            <input type="checkbox"
+              ${isSelected ? 'checked' : ''}
+              ${!isSelected && selectedForCompare.length >= MAX_COMPARE ? 'disabled' : ''}
+              onchange="toggleFundCompare('${f.code}', event)"
+              onclick="event.stopPropagation();"
+              class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+            >
+          </label>
+        </div>`
+      : '';
     return `
-      <div onclick="showFundDetail('${f.code}')" class="card-gradient p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 stagger-card relative cursor-pointer" style="animation-delay:${(i%8)*0.05}s">
+      <div onclick="${compareMode ? '' : `showFundDetail('${f.code}')`}" class="card-gradient p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 stagger-card relative ${compareMode ? '' : 'cursor-pointer'}" style="animation-delay:${(i%8)*0.05}s">
+        ${compareCheckbox}
         <div class="absolute top-3 right-3">${starBtn}</div>
         <div class="flex items-start justify-between mb-3 pr-6">
           <div class="min-w-0">
@@ -853,3 +872,232 @@ function runFundDCA() {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeFundDetail();
 });
+
+// ========== Fund Comparison Tool ==========
+let compareMode = false;
+let selectedForCompare = [];
+const MAX_COMPARE = 4;
+const COMPARE_COLORS = ['#DC2626', '#2563EB', '#16A34A', '#9333EA'];
+
+function toggleCompareMode() {
+  compareMode = !compareMode;
+  selectedForCompare = [];
+  updateCompareUI();
+  renderFundCards();
+  const btn = document.getElementById('fund-compare-toggle');
+  if (btn) {
+    if (compareMode) {
+      btn.className = 'px-3 py-2 text-sm rounded-xl border border-primary bg-primary text-white shadow-sm transition';
+      btn.textContent = '退出对比';
+    } else {
+      btn.className = 'px-3 py-2 text-sm rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-primary hover:border-primary transition shadow-sm';
+      btn.textContent = '对比';
+    }
+  }
+}
+
+function toggleFundCompare(code, event) {
+  if (event) event.stopPropagation();
+  const idx = selectedForCompare.indexOf(code);
+  if (idx >= 0) {
+    selectedForCompare.splice(idx, 1);
+  } else if (selectedForCompare.length < MAX_COMPARE) {
+    selectedForCompare.push(code);
+  }
+  updateCompareUI();
+  renderFundCards();
+}
+
+function updateCompareUI() {
+  const floatBtn = document.getElementById('fund-compare-float');
+  const countEl = document.getElementById('fund-compare-count');
+  if (floatBtn) {
+    if (compareMode && selectedForCompare.length >= 2) {
+      floatBtn.classList.remove('hidden');
+    } else {
+      floatBtn.classList.add('hidden');
+    }
+  }
+  if (countEl) {
+    countEl.textContent = selectedForCompare.length + '/' + MAX_COMPARE;
+  }
+}
+
+function openComparePage() {
+  if (selectedForCompare.length < 2) return;
+  const cards = document.getElementById('fund-cards');
+  const tabs = document.getElementById('fund-tabs');
+  const rankings = document.getElementById('fund-rankings');
+  const searchBox = document.getElementById('fund-search')?.parentElement?.parentElement;
+  const compareSection = document.getElementById('fund-compare-section');
+
+  if (cards) cards.classList.add('hidden');
+  if (tabs) tabs.classList.add('hidden');
+  if (rankings) rankings.classList.add('hidden');
+  if (searchBox) searchBox.classList.add('hidden');
+  if (compareSection) compareSection.classList.remove('hidden');
+  if (floatBtn) floatBtn.classList.add('hidden');
+
+  renderComparePage();
+}
+
+function closeComparePage() {
+  const cards = document.getElementById('fund-cards');
+  const tabs = document.getElementById('fund-tabs');
+  const rankings = document.getElementById('fund-rankings');
+  const searchBox = document.getElementById('fund-search')?.parentElement?.parentElement;
+  const compareSection = document.getElementById('fund-compare-section');
+
+  if (cards) cards.classList.remove('hidden');
+  if (tabs) tabs.classList.remove('hidden');
+  if (rankings) rankings.classList.remove('hidden');
+  if (searchBox) searchBox.classList.remove('hidden');
+  if (compareSection) compareSection.classList.add('hidden');
+
+  // Reset compare mode
+  compareMode = false;
+  selectedForCompare = [];
+  updateCompareUI();
+  renderFundCards();
+  const btn = document.getElementById('fund-compare-toggle');
+  if (btn) {
+    btn.className = 'px-3 py-2 text-sm rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-primary hover:border-primary transition shadow-sm';
+    btn.textContent = '对比';
+  }
+}
+
+function renderComparePage() {
+  const codes = selectedForCompare;
+  const chartContainer = document.getElementById('fund-compare-chart');
+  const tableContainer = document.getElementById('fund-compare-table');
+
+  if (!chartContainer || !tableContainer) return;
+
+  chartContainer.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">正在加载对比数据...</div>';
+
+  // Resolve fund info
+  let pool = [];
+  if (allFundsFullCache) pool = allFundsFullCache;
+  else if (typeof allFunds !== 'undefined' && Array.isArray(allFunds)) pool = allFunds;
+  else pool = curatedFunds;
+
+  const funds = codes.map(c => pool.find(f => f.code === c)).filter(Boolean);
+
+  // Load history for all funds and render
+  Promise.all(codes.map(c => fetchFundHistory(c, 12))).then(results => {
+    const valid = results.filter(r => r && r.length > 0);
+    if (valid.length === 0) {
+      chartContainer.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">无法获取历史数据</div>';
+      return;
+    }
+    renderCompareChart(chartContainer, funds, results);
+    renderCompareTable(tableContainer, funds, results);
+  }).catch(err => {
+    console.warn('Compare load failed:', err);
+    chartContainer.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">加载失败</div>';
+  });
+}
+
+function renderCompareChart(container, funds, histories) {
+  container.innerHTML = '';
+  const chart = window.LightweightCharts.createChart(container, {
+    width: container.clientWidth,
+    height: 360,
+    layout: { background: { color: '#f8fafc' }, textColor: '#374151' },
+    grid: { vertLines: { color: '#e2e8f0' }, horizLines: { color: '#e2e8f0' } },
+    rightPriceScale: { borderColor: '#e2e8f0' },
+    timeScale: { borderColor: '#e2e8f0', timeVisible: false },
+    crosshair: { mode: 1 },
+    handleScroll: { vertTouchDrag: false }
+  });
+
+  funds.forEach((fund, idx) => {
+    const hist = histories[idx];
+    if (!hist || hist.length === 0) return;
+    // Normalize to start at 1.0
+    const base = hist[0].value;
+    const data = hist.map(d => ({ time: d.time, value: d.value / base }));
+
+    const series = chart.addSeries(window.LightweightCharts.LineSeries, {
+      color: COMPARE_COLORS[idx % COMPARE_COLORS.length],
+      lineWidth: 2,
+      title: fund.name
+    });
+    series.setData(data);
+  });
+
+  chart.timeScale().fitContent();
+
+  const resizeHandler = () => chart.applyOptions({ width: container.clientWidth });
+  window.addEventListener('resize', resizeHandler);
+  container._chartCleanup = () => window.removeEventListener('resize', resizeHandler);
+}
+
+function renderCompareTable(container, funds, histories) {
+  const rows = funds.map((f, idx) => {
+    const hist = histories[idx];
+    const q = fundQuoteCache[f.code];
+    const price = q ? formatNumber(q.price, 4) : '--';
+    const change = q ? q.changePercent : null;
+    const changeStr = change !== null ? (change >= 0 ? '+' : '') + formatNumber(change, 2) + '%' : '--';
+    const changeClass = change !== null ? (change >= 0 ? 'text-up' : 'text-down') : 'text-gray-400';
+
+    // Calculate period returns
+    let m1 = '--', m3 = '--', m6 = '--', m12 = '--';
+    if (hist && hist.length > 1) {
+      const end = hist[hist.length - 1].value;
+      m12 = formatReturn((end - hist[0].value) / hist[0].value);
+      const idx6 = Math.max(0, hist.length - Math.floor(hist.length * 0.5));
+      m6 = formatReturn((end - hist[idx6].value) / hist[idx6].value);
+      const idx3 = Math.max(0, hist.length - Math.floor(hist.length * 0.25));
+      m3 = formatReturn((end - hist[idx3].value) / hist[idx3].value);
+      const idx1 = Math.max(0, hist.length - Math.floor(hist.length * 0.083));
+      m1 = formatReturn((end - hist[idx1].value) / hist[idx1].value);
+    }
+
+    return { fund, price, changeStr, changeClass, m1, m3, m6, m12 };
+  });
+
+  container.innerHTML = `
+    <table class="w-full text-sm bg-white rounded-2xl shadow border border-gray-100 overflow-hidden">
+      <thead>
+        <tr class="bg-gray-50 text-gray-500">
+          <th class="px-4 py-3 text-left font-medium">基金</th>
+          <th class="px-4 py-3 text-right font-medium">最新净值</th>
+          <th class="px-4 py-3 text-right font-medium">日涨跌</th>
+          <th class="px-4 py-3 text-right font-medium">近1月</th>
+          <th class="px-4 py-3 text-right font-medium">近3月</th>
+          <th class="px-4 py-3 text-right font-medium">近6月</th>
+          <th class="px-4 py-3 text-right font-medium">近1年</th>
+          <th class="px-4 py-3 text-left font-medium">类型</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map(r => `
+          <tr class="border-t border-gray-100 hover:bg-gray-50 transition">
+            <td class="px-4 py-3">
+              <p class="font-medium text-gray-800">${r.fund.name}</p>
+              <p class="text-xs text-gray-400">${r.fund.code}</p>
+            </td>
+            <td class="px-4 py-3 text-right font-bold">${r.price}</td>
+            <td class="px-4 py-3 text-right ${r.changeClass}">${r.changeStr}</td>
+            <td class="px-4 py-3 text-right">${r.m1}</td>
+            <td class="px-4 py-3 text-right">${r.m3}</td>
+            <td class="px-4 py-3 text-right">${r.m6}</td>
+            <td class="px-4 py-3 text-right">${r.m12}</td>
+            <td class="px-4 py-3">
+              <span class="px-2 py-0.5 rounded text-xs font-medium ${getCategoryBadgeClass(r.fund.category)}">${r.fund.category}</span>
+            </td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function formatReturn(val) {
+  if (val === null || val === undefined || isNaN(val)) return '--';
+  const pct = val * 100;
+  const cls = pct >= 0 ? 'text-up' : 'text-down';
+  return `<span class="${cls}">${pct >= 0 ? '+' : ''}${formatNumber(pct, 2)}%</span>`;
+}
