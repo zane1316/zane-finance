@@ -30,28 +30,35 @@ def build_stock_list():
         name = str(row.iloc[1]).strip()
         if not code or not name:
             continue
-        if code in seen:
+
+        # akshare may return codes with prefix (e.g. 'sh601939') or without (e.g. '601939')
+        # Strip any existing prefix before adding the correct one
+        import re
+        digits = re.sub(r'^(sh|sz|bj)', '', code)
+        if not digits or not digits.isdigit():
             continue
-        seen.add(code)
+        if digits in seen:
+            continue
+        seen.add(digits)
 
         # Determine prefix: sh/sz/bj
-        if code.startswith('6'):
+        if digits.startswith('6'):
             prefix = 'sh'
-        elif code.startswith('8') or code.startswith('4'):
+        elif digits.startswith('8') or digits.startswith('4'):
             prefix = 'bj'
         else:
             prefix = 'sz'
 
         stocks.append({
-            'rawCode': code,
-            'code': prefix + code,
+            'rawCode': digits,
+            'code': prefix + digits,
             'name': name
         })
 
     print(f"Deduplicated: {len(stocks)} stocks")
 
-    # Write JS file
-    output_dir = os.path.join(os.path.dirname(__file__), '..', 'js')
+    # Write JS file to public/js/ so Vite copies it to dist/
+    output_dir = os.path.join(os.path.dirname(__file__), '..', 'public', 'js')
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, 'all-stocks.js')
 

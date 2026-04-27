@@ -182,10 +182,14 @@ function refreshAllQuotes(force = false) {
     console.log('[API] Market closed, skipping quote refresh');
     return;
   }
-  const allCodes = indexList.map(i => i.code).concat(allStocks.map(s => s.c));
+  // Include watchlist stocks in quote refresh
+  const wl = loadWatchlist();
+  const watchlistCodes = wl.stocks.map(s => s.code);
+  const allCodes = indexList.map(i => i.code).concat(allStocks.map(s => s.c)).concat(watchlistCodes);
+  const uniqueCodes = [...new Set(allCodes)];
   const chunkSize = 60;
-  for (let i = 0; i < allCodes.length; i += chunkSize) {
-    const chunk = allCodes.slice(i, i + chunkSize);
+  for (let i = 0; i < uniqueCodes.length; i += chunkSize) {
+    const chunk = uniqueCodes.slice(i, i + chunkSize);
     loadTencentAPI(chunk, (err, data) => {
       if (err) {
         console.warn('Quote refresh failed for batch', i, err);
@@ -197,6 +201,7 @@ function refreshAllQuotes(force = false) {
       updateIndexCards(data);
       if (!document.getElementById('market').classList.contains('hidden')) {
         updateMarketPage(data);
+        renderWatchlistSection();
       }
       if (!document.getElementById('trading').classList.contains('hidden')) {
         updateTradingPrices(data);
@@ -275,8 +280,64 @@ function updateIndexCards(data) {
 let allAStockList = null;
 let eastmoneyRankingCache = { gainers: [], losers: [] };
 const EASTMONEY_UT = 'bd1d9ddb04089700cf9c27f6f7426281';
-const STOCK_CACHE_KEY = 'zfinance_allstocks_v2';
+const STOCK_CACHE_KEY = 'zfinance_allstocks_v3';
 const STOCK_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+
+// Core stock fallback list — ensures search never completely fails even if all-stocks.js fails to load
+const CORE_STOCK_FALLBACK = [
+  { rawCode: '600519', code: 'sh600519', name: '贵州茅台' },
+  { rawCode: '601939', code: 'sh601939', name: '建设银行' },
+  { rawCode: '600143', code: 'sh600143', name: '金发科技' },
+  { rawCode: '601318', code: 'sh601318', name: '中国平安' },
+  { rawCode: '600036', code: 'sh600036', name: '招商银行' },
+  { rawCode: '601398', code: 'sh601398', name: '工商银行' },
+  { rawCode: '600276', code: 'sh600276', name: '恒瑞医药' },
+  { rawCode: '601012', code: 'sh601012', name: '隆基绿能' },
+  { rawCode: '600900', code: 'sh600900', name: '长江电力' },
+  { rawCode: '601888', code: 'sh601888', name: '中国中免' },
+  { rawCode: '600030', code: 'sh600030', name: '中信证券' },
+  { rawCode: '601628', code: 'sh601628', name: '中国人寿' },
+  { rawCode: '600809', code: 'sh600809', name: '山西汾酒' },
+  { rawCode: '601166', code: 'sh601166', name: '兴业银行' },
+  { rawCode: '600887', code: 'sh600887', name: '伊利股份' },
+  { rawCode: '601668', code: 'sh601668', name: '中国建筑' },
+  { rawCode: '600000', code: 'sh600000', name: '浦发银行' },
+  { rawCode: '601288', code: 'sh601288', name: '农业银行' },
+  { rawCode: '600438', code: 'sh600438', name: '通威股份' },
+  { rawCode: '601857', code: 'sh601857', name: '中国石油' },
+  { rawCode: '000858', code: 'sz000858', name: '五粮液' },
+  { rawCode: '000333', code: 'sz000333', name: '美的集团' },
+  { rawCode: '002594', code: 'sz002594', name: '比亚迪' },
+  { rawCode: '000568', code: 'sz000568', name: '泸州老窖' },
+  { rawCode: '002415', code: 'sz002415', name: '海康威视' },
+  { rawCode: '000001', code: 'sz000001', name: '平安银行' },
+  { rawCode: '002475', code: 'sz002475', name: '立讯精密' },
+  { rawCode: '000651', code: 'sz000651', name: '格力电器' },
+  { rawCode: '002714', code: 'sz002714', name: '牧原股份' },
+  { rawCode: '000002', code: 'sz000002', name: '万科A' },
+  { rawCode: '002230', code: 'sz002230', name: '科大讯飞' },
+  { rawCode: '000725', code: 'sz000725', name: '京东方A' },
+  { rawCode: '002352', code: 'sz002352', name: '顺丰控股' },
+  { rawCode: '000063', code: 'sz000063', name: '中兴通讯' },
+  { rawCode: '002142', code: 'sz002142', name: '宁波银行' },
+  { rawCode: '000538', code: 'sz000538', name: '云南白药' },
+  { rawCode: '002271', code: 'sz002271', name: '东方雨虹' },
+  { rawCode: '000768', code: 'sz000768', name: '中航西飞' },
+  { rawCode: '002049', code: 'sz002049', name: '紫光国微' },
+  { rawCode: '300750', code: 'sz300750', name: '宁德时代' },
+  { rawCode: '300059', code: 'sz300059', name: '东方财富' },
+  { rawCode: '300122', code: 'sz300122', name: '智飞生物' },
+  { rawCode: '300274', code: 'sz300274', name: '阳光电源' },
+  { rawCode: '300760', code: 'sz300760', name: '迈瑞医疗' },
+  { rawCode: '300124', code: 'sz300124', name: '汇川技术' },
+  { rawCode: '300015', code: 'sz300015', name: '爱尔眼科' },
+  { rawCode: '300014', code: 'sz300014', name: '亿纬锂能' },
+  { rawCode: '300433', code: 'sz300433', name: '蓝思科技' },
+  { rawCode: '300496', code: 'sz300496', name: '中科创达' },
+  { rawCode: '688981', code: 'sh688981', name: '中芯国际' },
+  { rawCode: '688111', code: 'sh688111', name: '金山办公' },
+  { rawCode: '688012', code: 'sh688012', name: '中微公司' }
+];
 
 // Get correct exchange prefix for A-share code
 function getStockPrefix(rawCode) {
@@ -307,8 +368,10 @@ function loadAllAStockListFromCache() {
       console.log('Stock cache expired, will refresh from API');
       return null;
     }
-    console.log(`Loaded ${data.length} stocks from local cache`);
-    return data;
+    // Normalize cached data in case it contains malformed codes from old versions
+    const normalized = data.map(normalizeStockEntry);
+    console.log(`Loaded ${normalized.length} stocks from local cache (normalized)`);
+    return normalized;
   } catch (e) {
     console.warn('Failed to load stock cache:', e);
     return null;
@@ -321,6 +384,184 @@ function saveAllAStockListToCache(data) {
   } catch (e) {
     console.warn('Failed to save stock cache:', e);
   }
+}
+
+// ==================== Watchlist ====================
+const WATCHLIST_KEY = 'zfinance_watchlist';
+
+function loadWatchlist() {
+  try {
+    const raw = localStorage.getItem(WATCHLIST_KEY);
+    if (!raw) return { version: 1, stocks: [], funds: [] };
+    const data = JSON.parse(raw);
+    if (!data || !Array.isArray(data.stocks) || !Array.isArray(data.funds)) {
+      return { version: 1, stocks: [], funds: [] };
+    }
+    return data;
+  } catch (e) {
+    console.warn('Failed to load watchlist:', e);
+    return { version: 1, stocks: [], funds: [] };
+  }
+}
+
+function saveWatchlist(data) {
+  try {
+    localStorage.setItem(WATCHLIST_KEY, JSON.stringify(data));
+  } catch (e) {
+    console.warn('Failed to save watchlist:', e);
+  }
+}
+
+function isInWatchlist(type, code) {
+  const wl = loadWatchlist();
+  return wl[type].some(item => item.code === code);
+}
+
+function addToWatchlist(type, code, name) {
+  const wl = loadWatchlist();
+  if (wl[type].some(item => item.code === code)) return wl;
+  wl[type].push({ code, name, addedAt: new Date().toISOString() });
+  saveWatchlist(wl);
+  if (type === 'stocks') renderWatchlistSection();
+  if (type === 'funds') renderFundWatchlist();
+  return wl;
+}
+
+function removeFromWatchlist(type, code) {
+  const wl = loadWatchlist();
+  wl[type] = wl[type].filter(item => item.code !== code);
+  saveWatchlist(wl);
+  if (type === 'stocks') renderWatchlistSection();
+  if (type === 'funds') renderFundWatchlist();
+  return wl;
+}
+
+function toggleWatchlist(type, code, name) {
+  if (isInWatchlist(type, code)) {
+    removeFromWatchlist(type, code);
+    return false;
+  } else {
+    addToWatchlist(type, code, name);
+    return true;
+  }
+}
+
+function getWatchlistStarIcon(filled, onclick) {
+  const colorClass = filled ? 'text-amber-400' : 'text-gray-300 hover:text-amber-400';
+  const title = filled ? '移除自选' : '加入自选';
+  return `<button onclick="${onclick}" class="${colorClass} transition p-1" title="${title}">
+    <svg class="w-5 h-5" fill="${filled ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+    </svg>
+  </button>`;
+}
+
+function renderWatchlistSection() {
+  const container = document.getElementById('watchlist-section');
+  if (!container) return;
+  const wl = loadWatchlist();
+  const stocks = wl.stocks;
+
+  if (stocks.length === 0) {
+    container.innerHTML = `
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-bold flex items-center gap-2">
+            <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            我的自选
+          </h3>
+          <span class="text-xs text-gray-500">0 只</span>
+        </div>
+        <div class="text-center py-6 text-gray-400 text-sm">
+          <p>暂无自选股票</p>
+          <p class="text-xs mt-1">点击股票卡片上的星形图标添加自选</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const cardsHtml = stocks.map(s => {
+    const quote = apiCache[s.code];
+    return renderStockCard(s.code, s.name, quote, { showRefresh: true });
+  }).join('');
+
+  container.innerHTML = `
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 mb-6">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold flex items-center gap-2">
+          <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          我的自选
+        </h3>
+        <span class="text-xs text-gray-500">${stocks.length} 只</span>
+      </div>
+      <div class="overflow-x-auto">
+        <div class="flex gap-3 min-w-max">${cardsHtml}</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderFundWatchlist() {
+  const container = document.getElementById('fund-watchlist-section');
+  if (!container) return;
+  const wl = loadWatchlist();
+  const funds = wl.funds;
+
+  if (funds.length === 0) {
+    container.innerHTML = `
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-bold flex items-center gap-2">
+            <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            我的自选基金
+          </h3>
+          <span class="text-xs text-gray-500">0 只</span>
+        </div>
+        <div class="text-center py-6 text-gray-400 text-sm">
+          <p>暂无自选基金</p>
+          <p class="text-xs mt-1">点击基金卡片上的星形图标添加自选</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const cardsHtml = funds.map(f => {
+    const q = fundQuoteCache[f.code];
+    const changeStr = q ? `${q.changePercent >= 0 ? '+' : ''}${q.changePercent.toFixed(2)}%` : '--';
+    const changeClass = q ? (q.changePercent >= 0 ? 'text-up' : 'text-down') : 'text-gray-400';
+    return `
+      <div class="min-w-[200px] bg-gray-50 rounded-xl p-4 border border-gray-100 hover:shadow-md transition relative group">
+        <div class="absolute top-2 right-2">
+          <button onclick="toggleWatchlist('funds', '${f.code}', '${f.name.replace(/'/g, "\\'")}')" class="text-amber-400 p-1" title="移除自选">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </button>
+        </div>
+        <p class="font-medium text-sm text-gray-800 truncate pr-6">${f.name}</p>
+        <p class="text-xs text-gray-400 mt-1">${f.code}</p>
+        <div class="mt-2 flex items-center justify-between">
+          <span class="text-lg font-bold ${changeClass}">${changeStr}</span>
+          <span class="text-xs text-gray-400">${q ? '净值 ' + q.price.toFixed(4) : '加载中...'}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 mb-6">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold flex items-center gap-2">
+          <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          我的自选基金
+        </h3>
+        <span class="text-xs text-gray-500">${funds.length} 只</span>
+      </div>
+      <div class="overflow-x-auto">
+        <div class="flex gap-3 min-w-max">${cardsHtml}</div>
+      </div>
+    </div>
+  `;
 }
 
 function loadAllAStockList() {
@@ -500,6 +741,7 @@ function initMarket() {
   updateMarketPage(apiCache);
   initMarketSearch();
   clearMarketSearch();
+  renderWatchlistSection();
   // Pre-load full A-share list for search
   loadAllAStockList().catch(() => {});
 }
@@ -564,13 +806,20 @@ function renderStockCard(stock, data, opts = {}) {
   const code = stock.code || stock.c || '';
   const showRefresh = opts.showRefresh || false;
   const minWidth = opts.minWidth || '180px';
+  const isWatched = isInWatchlist('stocks', code);
+  const starBtn = `<button onclick="event.stopPropagation(); toggleWatchlist('stocks', '${code}', '${name.replace(/'/g, "\\'")}');" class="${isWatched ? 'text-amber-400' : 'text-gray-300 hover:text-amber-400'} transition p-0.5" title="${isWatched ? '移除自选' : '加入自选'}">
+    <svg class="w-4 h-4" fill="${isWatched ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+    </svg>
+  </button>`;
 
   if (!data || data._failed || data._missing) {
     const msg = data && (data._failed || data._missing) ? '暂无实时数据' : '同步中...';
     const refreshBtn = showRefresh ? `<button onclick="refreshSearchResults()" class="mt-2 text-xs text-primary hover:underline">点击刷新</button>` : '';
     return `
-      <div class="min-w-[${minWidth}] bg-white rounded-lg shadow border border-border p-3">
-        <p class="font-bold text-sm">${name}</p><p class="text-xs text-gray-500">${code}</p>
+      <div class="min-w-[${minWidth}] bg-white rounded-lg shadow border border-border p-3 relative">
+        <div class="absolute top-2 right-2">${starBtn}</div>
+        <p class="font-bold text-sm pr-6">${name}</p><p class="text-xs text-gray-500">${code}</p>
         <p class="text-gray-400 text-sm mt-2">${msg}</p>
         ${refreshBtn}
       </div>`;
@@ -579,8 +828,9 @@ function renderStockCard(stock, data, opts = {}) {
   const arrow = data.changePercent >= 0 ? '▲' : '▼';
   const price = data.price > 0 ? formatNumber(data.price,2) : '--';
   return `
-    <div class="min-w-[${minWidth}] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition">
-      <div class="flex justify-between items-start">
+    <div class="min-w-[${minWidth}] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition relative">
+      <div class="absolute top-2 right-2">${starBtn}</div>
+      <div class="flex justify-between items-start pr-6">
         <div>
           <p class="font-bold text-sm">${name}</p>
           <p class="text-xs text-gray-500">${code}</p>
@@ -861,8 +1111,8 @@ function doMarketSearch(query) {
     directCode = getStockPrefix(q) + q;
   }
 
-  // Search in full A-share list (preferred)
-  const list = allAStockList && allAStockList.length > 0 ? allAStockList : [];
+  // Search in full A-share list (preferred), fallback to core list if empty
+  const list = allAStockList && allAStockList.length > 0 ? allAStockList : CORE_STOCK_FALLBACK;
 
   // If list never loaded, trigger async load and show loading state
   if (allAStockList === null) {

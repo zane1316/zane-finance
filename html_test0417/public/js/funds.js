@@ -79,6 +79,7 @@ const curatedFunds = [
 
 function initFunds() {
   renderFundTabs();
+  renderFundWatchlist();
   renderFundCards();
   loadFundQuotes();
   renderFundRankings();
@@ -164,9 +165,16 @@ function renderFundCards() {
     const changeStr = change !== null ? (change >= 0 ? '+' : '') + formatNumber(change, 2) + '%' : '--';
     const changeClass = change !== null ? (change >= 0 ? 'text-up' : 'text-down') : 'text-gray-400';
     const bgClass = change !== null ? (change >= 0 ? 'bg-red-50' : 'bg-green-50') : 'bg-gray-50';
+    const isWatched = isInWatchlist('funds', f.code);
+    const starBtn = `<button onclick="event.stopPropagation(); toggleWatchlist('funds', '${f.code}', '${f.name.replace(/'/g, "\\'")}');" class="${isWatched ? 'text-amber-400' : 'text-gray-300 hover:text-amber-400'} transition p-0.5" title="${isWatched ? '移除自选' : '加入自选'}">
+      <svg class="w-4 h-4" fill="${isWatched ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+      </svg>
+    </button>`;
     return `
-      <div class="card-gradient p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 stagger-card" style="animation-delay:${(i%8)*0.05}s">
-        <div class="flex items-start justify-between mb-3">
+      <div class="card-gradient p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 stagger-card relative" style="animation-delay:${(i%8)*0.05}s">
+        <div class="absolute top-3 right-3">${starBtn}</div>
+        <div class="flex items-start justify-between mb-3 pr-6">
           <div class="min-w-0">
             <h4 class="font-bold text-gray-800 truncate" title="${f.name}">${f.name}</h4>
             <p class="text-xs text-gray-400 mt-0.5">${f.code}</p>
@@ -218,13 +226,16 @@ function getCategoryBadgeClass(cat) {
 
 function loadFundQuotes() {
   const funds = getFilteredFunds();
-  if (funds.length === 0) return;
-  // Only fetch quotes for currently visible funds
+  const wl = loadWatchlist();
+  const watchlistCodes = wl.funds.map(f => f.code);
+  // Include visible funds + watchlist funds
   const visibleCount = Math.min(funds.length, fundCurrentPage * FUND_PAGE_SIZE);
-  const codes = funds.slice(0, visibleCount).map(f => f.code);
+  const codes = funds.slice(0, visibleCount).map(f => f.code).concat(watchlistCodes);
+  const uniqueCodes = [...new Set(codes)];
+  if (uniqueCodes.length === 0) return;
   const chunkSize = 40;
-  for (let i = 0; i < codes.length; i += chunkSize) {
-    const chunk = codes.slice(i, i + chunkSize);
+  for (let i = 0; i < uniqueCodes.length; i += chunkSize) {
+    const chunk = uniqueCodes.slice(i, i + chunkSize);
     loadTencentAPI(chunk, (err, data) => {
       if (err) {
         console.warn('Fund quote load failed:', err);
@@ -233,6 +244,7 @@ function loadFundQuotes() {
       Object.assign(fundQuoteCache, data);
       renderFundCards();
       renderFundRankings();
+      renderFundWatchlist();
     });
   }
 }
