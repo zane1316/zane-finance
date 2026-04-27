@@ -2,8 +2,10 @@
 const sections = ['home','market','funds','learning','kline','ai','trading','calculator','news','glossary','resources','contact'];
 
 // Lazy-load large data modules on first section visit
+// Cache-busting query string ensures browser loads fresh all-stocks.js after deploy
+const ASSETS_VERSION = 'v20250427';
 const lazyModules = {
-  'market':  () => loadScript('./js/all-stocks.js'),
+  'market':  () => loadScript(`./js/all-stocks.js?${ASSETS_VERSION}`),
   'funds':   () => loadScript('./js/all-funds.js'),
   'learning':() => loadScript('./js/learning.js')
 };

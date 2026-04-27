@@ -368,6 +368,12 @@ function loadAllAStockListFromCache() {
       console.log('Stock cache expired, will refresh from API');
       return null;
     }
+    // Reject suspiciously small caches (likely incomplete/truncated API response)
+    if (data.length < 4000) {
+      console.warn(`Stock cache too small (${data.length}), discarding`);
+      localStorage.removeItem(STOCK_CACHE_KEY);
+      return null;
+    }
     // Normalize cached data in case it contains malformed codes from old versions
     const normalized = data.map(normalizeStockEntry);
     console.log(`Loaded ${normalized.length} stocks from local cache (normalized)`);
@@ -580,6 +586,15 @@ function loadAllAStockList() {
     console.log(`Loaded ${allAStockList.length} A-share stocks from local bundle (normalized)`);
   }
 
+  // Validate that Eastmoney response contains a reasonably complete list
+  function validateStockList(list, source) {
+    if (!list || !Array.isArray(list) || list.length < 4000) {
+      console.warn(`[StockList] ${source} returned suspiciously small list (${list ? list.length : 0}), ignoring`);
+      return false;
+    }
+    return true;
+  }
+
   // If we already have data from cache or local bundle, return immediately
   // and refresh from API in the background so search is never blocked.
   if (allAStockList) {
@@ -591,11 +606,13 @@ function loadAllAStockList() {
       .then(data => {
         clearTimeout(timeoutId);
         if (!data || !data.data || !data.data.diff) return;
-        allAStockList = data.data.diff.map(item => {
+        const fetched = data.data.diff.map(item => {
           const rawCode = item.f12;
           const prefix = getStockPrefix(rawCode);
           return { rawCode, code: prefix + rawCode, name: item.f14 };
         });
+        if (!validateStockList(fetched, 'Eastmoney background refresh')) return;
+        allAStockList = fetched;
         saveAllAStockListToCache(allAStockList);
         console.log(`Background refreshed ${allAStockList.length} A-share stocks from Eastmoney`);
       })
@@ -619,11 +636,21 @@ function loadAllAStockList() {
         allAStockList = [];
         return allAStockList;
       }
-      allAStockList = data.data.diff.map(item => {
+      const fetched = data.data.diff.map(item => {
         const rawCode = item.f12;
         const prefix = getStockPrefix(rawCode);
         return { rawCode, code: prefix + rawCode, name: item.f14 };
       });
+      if (!validateStockList(fetched, 'Eastmoney API')) {
+        if (typeof allAStockListLocal !== 'undefined' && Array.isArray(allAStockListLocal)) {
+          allAStockList = allAStockListLocal.map(normalizeStockEntry);
+          console.log(`Fallback: loaded ${allAStockList.length} stocks from local bundle (normalized)`);
+          return allAStockList;
+        }
+        allAStockList = [];
+        return allAStockList;
+      }
+      allAStockList = fetched;
       saveAllAStockListToCache(allAStockList);
       console.log(`Loaded ${allAStockList.length} A-share stocks from Eastmoney`);
       return allAStockList;

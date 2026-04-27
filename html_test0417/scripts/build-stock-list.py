@@ -44,7 +44,7 @@ def build_stock_list():
         # Determine prefix: sh/sz/bj
         if digits.startswith('6'):
             prefix = 'sh'
-        elif digits.startswith('8') or digits.startswith('4'):
+        elif digits.startswith('8') or digits.startswith('4') or digits.startswith('9'):
             prefix = 'bj'
         else:
             prefix = 'sz'
