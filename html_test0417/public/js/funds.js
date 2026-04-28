@@ -586,55 +586,78 @@ function fetchFundHistory(code, months) {
   if (fundDetailHistoryCache[cacheKey]) return Promise.resolve(fundDetailHistoryCache[cacheKey]);
 
   const rawCode = code.replace(/^(of|sh|sz|bj)/, '');
-  const per = Math.min(months * 22, 500); // roughly 22 trading days per month
+  const per = Math.min(months * 22, 500);
   const url = `https://fundf10.eastmoney.com/F10DataApi.aspx?type=lsjz&code=${rawCode}&page=1&per=${per}`;
 
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
-    const callbackName = 'fundHist_' + rawCode + '_' + Date.now();
-    window[callbackName] = function (result) {
-      document.head.removeChild(script);
-      delete window[callbackName];
+    script.src = url;
+    let resolved = false;
+
+    function doResolve(data) {
+      if (resolved) return;
+      resolved = true;
       try {
-        const data = parseFundHistory(result);
-        fundDetailHistoryCache[cacheKey] = data;
-        resolve(data);
+        const parsed = parseFundHistory(data);
+        fundDetailHistoryCache[cacheKey] = parsed;
+        resolve(parsed);
       } catch (e) {
         reject(e);
       }
+      cleanup();
+    }
+
+    function doReject(err) {
+      if (resolved) return;
+      resolved = true;
+      reject(err);
+      cleanup();
+    }
+
+    function cleanup() {
+      if (script.parentNode) script.parentNode.removeChild(script);
+      delete window.apidata;
+    }
+
+    script.onload = () => {
+      // Eastmoney fund API returns: var apidata={ content:"...", records:N };
+      // After script loads, window.apidata should be populated
+      if (window.apidata && window.apidata.content !== undefined) {
+        doResolve(window.apidata);
+      }
+      // If not, wait a tick for execution
     };
-    script.src = url + '&callback=' + callbackName;
+
     script.onerror = () => {
-      document.head.removeChild(script);
-      delete window[callbackName];
-      reject(new Error('Script load error'));
+      doReject(new Error('Script load error'));
     };
+
     document.head.appendChild(script);
 
-    // Fallback: some Eastmoney APIs ignore callback, use timeout with direct fetch
+    // Fallback 1: try fetch and parse the JS response text
     setTimeout(() => {
-      if (window[callbackName]) {
-        // Try direct fetch as fallback
+      if (!resolved) {
         fetch(url).then(r => r.text()).then(text => {
+          if (resolved) return;
           try {
             const data = parseFundHistory(text);
             fundDetailHistoryCache[cacheKey] = data;
             resolve(data);
+            resolved = true;
+            cleanup();
           } catch (e) {
-            // If callback hasn't fired either, reject
+            // Will be handled by hard timeout
           }
         }).catch(() => {});
       }
-    }, 3000);
+    }, 2000);
 
     // Hard timeout
     setTimeout(() => {
-      if (window[callbackName]) {
-        delete window[callbackName];
-        if (document.head.contains(script)) document.head.removeChild(script);
-        reject(new Error('Timeout'));
+      if (!resolved) {
+        doReject(new Error('Timeout loading fund history'));
       }
-    }, 8000);
+    }, 10000);
   });
 }
 
@@ -643,9 +666,26 @@ function parseFundHistory(raw) {
   // content is HTML table rows
   if (!raw) return [];
   let text = raw;
+
+  // Handle object directly (from window.apidata)
   if (typeof raw === 'object' && raw.content) {
     text = raw.content;
   }
+
+  // Handle string that might be: var apidata={ content:"...", records:N };
+  if (typeof text === 'string') {
+    // Try to extract the apidata object from JS assignment
+    const match = text.match(/var\s+apidata\s*=\s*({[\s\S]*?});?\s*$/);
+    if (match) {
+      try {
+        const obj = JSON.parse(match[1].replace(/\s+/g, ' '));
+        if (obj.content) text = obj.content;
+      } catch (e) {
+        // If JSON.parse fails, the text might already be HTML, continue
+      }
+    }
+  }
+
   // Extract table rows
   const rows = [];
   const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
@@ -969,6 +1009,7 @@ function openComparePage() {
   const rankings = document.getElementById('fund-rankings');
   const searchBox = document.getElementById('fund-search')?.parentElement?.parentElement;
   const compareSection = document.getElementById('fund-compare-section');
+  const floatBtn = document.getElementById('fund-compare-float');
 
   if (cards) cards.classList.add('hidden');
   if (tabs) tabs.classList.add('hidden');

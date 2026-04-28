@@ -112,6 +112,8 @@ function refreshNewsData() {
   updateNewsSidebarIndex();
   loadMarketRadar();
   loadCapitalFlow();
+  loadNorthboundFlow();
+  loadConvertibleBonds();
 
   const t = document.getElementById('news-update-time');
   if (t) {
@@ -340,7 +342,7 @@ function updateNewsSidebarIndex() {
 // ==================== Market Radar (Limit Up / Down / Volume Surge) ====================
 function loadMarketRadar() {
   const fields = 'f12,f14,f2,f3,f4,f5,f6,f7,f8';
-  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=m:0+t:6&fields=' + fields;
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=200&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=' + fields;
 
   jsonpFetch(url, 6000)
     .then(data => {
@@ -359,8 +361,24 @@ function loadMarketRadar() {
           turnover: parseFloat(item.f8) || 0
         };
       });
-      const limitUp = items.filter(i => i.changePercent >= 9.5).sort((a, b) => b.changePercent - a.changePercent).slice(0, 15);
-      const limitDown = items.filter(i => i.changePercent <= -9.5).sort((a, b) => a.changePercent - b.changePercent).slice(0, 15);
+      // Smart limit up/down detection based on market segment
+      function isLimitUp(item) {
+        const c = item.code;
+        // 科创板(68) / 创业板(30) = 20%
+        if (c.startsWith('68') || c.startsWith('30')) return item.changePercent >= 19.5;
+        // 北交所(8/4/9) = 30%
+        if (c.startsWith('8') || c.startsWith('4') || c.startsWith('9')) return item.changePercent >= 29.5;
+        // 主板/ST = 10% (approximate, ST could be 5% but we use 9.5 as threshold)
+        return item.changePercent >= 9.5;
+      }
+      function isLimitDown(item) {
+        const c = item.code;
+        if (c.startsWith('68') || c.startsWith('30')) return item.changePercent <= -19.5;
+        if (c.startsWith('8') || c.startsWith('4') || c.startsWith('9')) return item.changePercent <= -29.5;
+        return item.changePercent <= -9.5;
+      }
+      const limitUp = items.filter(isLimitUp).sort((a, b) => b.changePercent - a.changePercent).slice(0, 15);
+      const limitDown = items.filter(isLimitDown).sort((a, b) => a.changePercent - b.changePercent).slice(0, 15);
       const volumeSurge = items.filter(i => i.turnover > 5).sort((a, b) => b.volumeMoney - a.volumeMoney).slice(0, 15);
       renderRadarLimitUp(limitUp);
       renderRadarLimitDown(limitDown);
@@ -488,13 +506,15 @@ function restoreNewsFromCache() {
   if (cache.radarLimitDown) renderRadarLimitDown(cache.radarLimitDown);
   if (cache.radarVolume) renderRadarVolume(cache.radarVolume);
   if (cache.capitalFlow) renderCapitalFlow(cache.capitalFlow);
+  if (cache.northboundFlow) renderNorthboundFlow(cache.northboundFlow);
+  if (cache.convertibleBonds) renderConvertibleBonds(cache.convertibleBonds);
   renderNewsCacheIndicator();
 }
 
 // ==================== Capital Flow (Eastmoney) ====================
 function loadCapitalFlow() {
   const fields = 'f12,f14,f2,f3,f62';
-  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=10&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f62&fs=m:0+t:6&fields=' + fields;
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=10&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f62&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=' + fields;
 
   jsonpFetch(url, 6000)
     .then(data => {
@@ -573,39 +593,180 @@ function searchAnnouncements() {
 
   const url = 'https://np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=20&page_index=1&ann_type=A&client_source=web&stock_list=' + code;
 
+  // Try direct fetch first
   fetchJSON(url, 8000)
+    .then(data => renderAnnouncements(data, code, resultsEl))
+    .catch(err => {
+      console.warn('Announcement direct fetch failed:', err);
+      // Fallback: try JSONP via Eastmoney data center
+      tryJSONPAnnouncements(code, resultsEl);
+    });
+}
+
+function renderAnnouncements(data, code, resultsEl) {
+  if (!data || !data.data || !Array.isArray(data.data)) {
+    resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">未找到公告数据</p></div>';
+    return;
+  }
+  const list = data.data;
+  if (list.length === 0) {
+    resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">该股票暂无公告</p></div>';
+    return;
+  }
+  const stockName = list[0] && list[0].codes && list[0].codes[0] ? list[0].codes[0].stock_name : code;
+  resultsEl.innerHTML = `
+    <div class="mb-3 flex items-center justify-between">
+      <span class="text-sm font-medium text-gray-700">${stockName} (${code})</span>
+      <span class="text-xs text-gray-400">共 ${list.length} 条</span>
+    </div>
+    <div class="space-y-2">
+      ${list.map(item => {
+        const title = item.title || '无标题';
+        const date = item.notice_date ? new Date(item.notice_date).toLocaleDateString('zh-CN') : '';
+        const artCode = item.art_code;
+        const href = artCode ? 'https://data.eastmoney.com/notices/detail/' + code + '/' + artCode + '.html' : '#';
+        return `
+          <a href="${href}" target="_blank" class="block p-3 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm hover:bg-blue-50/30 transition">
+            <p class="text-sm text-gray-800 line-clamp-2">${title}</p>
+            <p class="text-xs text-gray-400 mt-1">${date}</p>
+          </a>`;
+      }).join('')}
+    </div>`;
+}
+
+function tryJSONPAnnouncements(code, resultsEl) {
+  // Use Eastmoney's notice search via JSONP
+  const cbName = 'em_ann_' + Date.now();
+  const url = 'https://searchapi.eastmoney.com/api/suggest/get?input=' + code + '&type=14&count=5&cb=' + cbName;
+  const script = document.createElement('script');
+  script.src = url;
+  script.onerror = () => {
+    resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">查询失败（可能是网络代理限制），请直接访问 <a href="https://data.eastmoney.com/notices/" target="_blank" class="text-primary underline">东方财富公告中心</a></p></div>';
+    if (script.parentNode) script.parentNode.removeChild(script);
+    delete window[cbName];
+  };
+  const timeoutId = setTimeout(() => {
+    resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">查询超时，请稍后重试</p></div>';
+    if (script.parentNode) script.parentNode.removeChild(script);
+    delete window[cbName];
+  }, 6000);
+  window[cbName] = function(data) {
+    clearTimeout(timeoutId);
+    if (script.parentNode) script.parentNode.removeChild(script);
+    delete window[cbName];
+    // JSONP fallback only gives suggestion data, not full announcements
+    resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">查询失败（可能是网络代理限制），请直接访问 <a href="https://data.eastmoney.com/notices/" target="_blank" class="text-primary underline">东方财富公告中心</a></p></div>';
+  };
+  document.head.appendChild(script);
+}
+
+// ==================== Northbound Capital Flow (沪深港通) ====================
+function loadNorthboundFlow() {
+  // Use Eastmoney's northbound fund flow API
+  const fields = 'f12,f14,f2,f3,f62';
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=10&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f62&fs=b:BK0707&fields=' + fields;
+
+  jsonpFetch(url, 6000)
     .then(data => {
-      if (!data || !data.data || !Array.isArray(data.data)) {
-        resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">未找到公告数据</p></div>';
-        return;
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid northbound data');
       }
-      const list = data.data;
-      if (list.length === 0) {
-        resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">该股票暂无公告</p></div>';
-        return;
-      }
-      const stockName = list[0] && list[0].codes && list[0].codes[0] ? list[0].codes[0].stock_name : code;
-      resultsEl.innerHTML = `
-        <div class="mb-3 flex items-center justify-between">
-          <span class="text-sm font-medium text-gray-700">${stockName} (${code})</span>
-          <span class="text-xs text-gray-400">共 ${list.length} 条</span>
-        </div>
-        <div class="space-y-2">
-          ${list.map(item => {
-            const title = item.title || '无标题';
-            const date = item.notice_date ? new Date(item.notice_date).toLocaleDateString('zh-CN') : '';
-            const artCode = item.art_code;
-            const href = artCode ? 'https://data.eastmoney.com/notices/detail/' + code + '/' + artCode + '.html' : '#';
-            return `
-              <a href="${href}" target="_blank" class="block p-3 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm hover:bg-blue-50/30 transition">
-                <p class="text-sm text-gray-800 line-clamp-2">${title}</p>
-                <p class="text-xs text-gray-400 mt-1">${date}</p>
-              </a>`;
-          }).join('')}
-        </div>`;
+      const items = data.data.diff.map(item => {
+        const rawCode = item.f12 || '';
+        return {
+          code: rawCode,
+          name: item.f14 || rawCode,
+          changePercent: parseFloat(item.f3) || 0,
+          netInflow: (parseFloat(item.f62) || 0) / 10000
+        };
+      });
+      renderNorthboundFlow(items);
+      const cache = loadNewsCache() || {};
+      cache.northboundFlow = items;
+      saveNewsCache(cache);
     })
     .catch(err => {
-      console.warn('Announcement search failed:', err);
-      resultsEl.innerHTML = '<div class="text-center py-8"><p class="text-gray-400 text-sm">查询失败，请稍后重试</p></div>';
+      console.warn('Northbound flow failed:', err);
+      const cache = loadNewsCache();
+      if (cache && cache.northboundFlow) {
+        renderNorthboundFlow(cache.northboundFlow);
+        renderNewsCacheIndicator();
+      } else {
+        renderNorthboundFlow([]);
+      }
     });
+}
+
+function renderNorthboundFlow(list) {
+  const el = document.getElementById('news-sidebar-northbound');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">北向资金数据加载中...</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 px-2 rounded hover:bg-gray-50 transition">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 ${d.netInflow >= 0 ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'} text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate" title="${d.name}">${d.name}</span>
+      </span>
+      <div class="text-right">
+        <span class="${d.netInflow >= 0 ? 'text-red-600' : 'text-green-600'} font-medium">${d.netInflow >= 0 ? '+' : ''}${formatNumber(d.netInflow, 2)}亿</span>
+      </div>
+    </div>`).join('');
+}
+
+// ==================== Convertible Bonds ====================
+function loadConvertibleBonds() {
+  const fields = 'f12,f14,f2,f3,f4,f5,f6,f8';
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=10&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=b:MK0354&fields=' + fields;
+
+  jsonpFetch(url, 6000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid bond data');
+      }
+      const items = data.data.diff.map(item => {
+        const rawCode = item.f12 || '';
+        return {
+          code: rawCode,
+          name: item.f14 || rawCode,
+          changePercent: parseFloat(item.f3) || 0,
+          turnover: parseFloat(item.f8) || 0
+        };
+      });
+      renderConvertibleBonds(items);
+      const cache = loadNewsCache() || {};
+      cache.convertibleBonds = items;
+      saveNewsCache(cache);
+    })
+    .catch(err => {
+      console.warn('Convertible bonds failed:', err);
+      const cache = loadNewsCache();
+      if (cache && cache.convertibleBonds) {
+        renderConvertibleBonds(cache.convertibleBonds);
+        renderNewsCacheIndicator();
+      } else {
+        renderConvertibleBonds([]);
+      }
+    });
+}
+
+function renderConvertibleBonds(list) {
+  const el = document.getElementById('news-sidebar-bonds');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">可转债数据加载中...</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 px-2 rounded hover:bg-gray-50 transition">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 ${d.changePercent >= 0 ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'} text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate" title="${d.name}">${d.name}</span>
+      </span>
+      <div class="text-right">
+        <span class="${d.changePercent >= 0 ? 'text-up' : 'text-down'} font-medium">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
+      </div>
+    </div>`).join('');
 }
