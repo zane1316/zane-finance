@@ -1,6 +1,7 @@
 // Funds Data & Page Logic
 const fundCategories = ['全部', '股票型', '混合型', '债券型', '指数型', 'QDII', '货币型'];
 let currentFundCategory = '全部';
+let currentShareClassFilter = '全部';
 let fundQuoteCache = {};
 let allFundsFullCache = null;
 let allFundsFullPromise = null;
@@ -102,16 +103,35 @@ function initFunds() {
 function renderFundTabs() {
   const container = document.getElementById('fund-tabs');
   if (!container) return;
-  container.innerHTML = fundCategories.map(cat => {
+  const shareClasses = ['全部', 'A', 'B', 'C', 'E', 'I'];
+  const catHtml = fundCategories.map(cat => {
     const active = cat === currentFundCategory ? 'bg-primary text-white shadow-md' : 'bg-white text-gray-600 hover:text-primary hover:border-primary border border-gray-200';
     return `<button onclick="switchFundCategory('${cat}')" class="px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition ${active}">${cat}</button>`;
   }).join('');
+  const filterHtml = `
+    <div class="relative ml-auto shrink-0">
+      <select id="fund-share-filter" onchange="switchShareClassFilter(this.value)"
+        class="px-3 py-2 rounded-xl text-sm border border-gray-200 bg-white text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer"
+      >
+        ${shareClasses.map(sc => `<option value="${sc}" ${sc === currentShareClassFilter ? 'selected' : ''}>${sc === '全部' ? '全部份额' : sc + '类份额'}</option>`).join('')}
+      </select>
+    </div>
+  `;
+  container.innerHTML = `<div class="flex gap-2">${catHtml}</div>${filterHtml}`;
 }
 
 function switchFundCategory(cat) {
   currentFundCategory = cat;
   fundCurrentPage = 1;
   renderFundTabs();
+  renderFundCards();
+  loadFundQuotes();
+  renderFundRankings();
+}
+
+function switchShareClassFilter(sc) {
+  currentShareClassFilter = sc;
+  fundCurrentPage = 1;
   renderFundCards();
   loadFundQuotes();
   renderFundRankings();
@@ -156,6 +176,9 @@ function getFilteredFunds() {
 
   if (currentFundCategory !== '全部') {
     list = list.filter(f => f.category === currentFundCategory);
+  }
+  if (currentShareClassFilter !== '全部') {
+    list = list.filter(f => (f.shareClass || '无') === currentShareClassFilter);
   }
   if (query) {
     // Build curated code set for highlighting
@@ -226,12 +249,8 @@ function renderFundCards() {
       : '';
     const isSelected = selectedForCompare.includes(f.code);
     const compareCheckbox = compareMode
-      ? `<div class="absolute top-3 left-3 z-10"
-          onclick="event.stopPropagation();"
-        >
-          <label class="flex items-center cursor-pointer"
-            onclick="event.stopPropagation();"
-          >
+      ? `<div class="absolute top-3 left-3 z-10" onclick="event.stopPropagation();">
+          <label class="flex items-center cursor-pointer" onclick="event.stopPropagation();">
             <input type="checkbox"
               ${isSelected ? 'checked' : ''}
               ${!isSelected && selectedForCompare.length >= MAX_COMPARE ? 'disabled' : ''}
@@ -242,13 +261,33 @@ function renderFundCards() {
           </label>
         </div>`
       : '';
+    // ETF premium/discount calculation
+    const etfPremium = (() => {
+      if (!f.code.match(/^(sh|sz)/)) return null;
+      const qq = fundQuoteCache[f.code];
+      if (!qq || !qq.price || !qq.close || qq.close <= 0) return null;
+      const premium = ((qq.price - qq.close) / qq.close) * 100;
+      return premium;
+    })();
+    const premiumBadge = etfPremium !== null
+      ? (() => {
+          const p = etfPremium;
+          let cls, txt;
+          if (p > 2) { cls = 'bg-red-100 text-red-600'; txt = `溢价 ${formatNumber(p, 2)}%`; }
+          else if (p > 0.5) { cls = 'bg-orange-100 text-orange-600'; txt = `溢价 ${formatNumber(p, 2)}%`; }
+          else if (p < -2) { cls = 'bg-green-100 text-green-600'; txt = `折价 ${formatNumber(Math.abs(p), 2)}%`; }
+          else if (p < -0.5) { cls = 'bg-emerald-100 text-emerald-600'; txt = `折价 ${formatNumber(Math.abs(p), 2)}%`; }
+          else { cls = 'bg-gray-100 text-gray-500'; txt = `平溢 ${formatNumber(p, 2)}%`; }
+          return `<span class="px-1.5 py-0.5 rounded text-[10px] font-medium ${cls} ml-1">${txt}</span>`;
+        })()
+      : '';
     return `
       <div onclick="${compareMode ? '' : `showFundDetail('${f.code}')`}" class="card-gradient p-5 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 stagger-card relative ${compareMode ? '' : 'cursor-pointer'}" style="animation-delay:${(i%8)*0.05}s">
         ${compareCheckbox}
         <div class="absolute top-3 right-3">${starBtn}</div>
         <div class="flex items-start justify-between mb-3 pr-6">
           <div class="min-w-0">
-            <h4 class="font-bold text-gray-800 truncate" title="${f.name}">${f.name}${shareClassBadge}${curatedBadge}</h4>
+            <h4 class="font-bold text-gray-800 truncate" title="${f.name}">${f.name}${shareClassBadge}${curatedBadge}${premiumBadge}</h4>
             <p class="text-xs text-gray-400 mt-0.5">${f.code}</p>
           </div>
           <span class="px-2 py-0.5 rounded-lg text-xs font-medium ${getCategoryBadgeClass(f.category)}">${f.category}</span>
