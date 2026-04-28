@@ -1140,3 +1140,167 @@ function formatReturn(val) {
   const cls = pct >= 0 ? 'text-up' : 'text-down';
   return `<span class="${cls}">${pct >= 0 ? '+' : ''}${formatNumber(pct, 2)}%</span>`;
 }
+
+// ========== Correlation Matrix ==========
+let currentCompareView = 'chart';
+
+function switchCompareView(view) {
+  currentCompareView = view;
+  document.getElementById('compare-view-chart').className = view === 'chart'
+    ? 'px-4 py-2 text-sm font-medium bg-primary text-white'
+    : 'px-4 py-2 text-sm font-medium bg-white text-gray-600 hover:text-primary transition';
+  document.getElementById('compare-view-corr').className = view === 'corr'
+    ? 'px-4 py-2 text-sm font-medium bg-primary text-white'
+    : 'px-4 py-2 text-sm font-medium bg-white text-gray-600 hover:text-primary transition';
+
+  const chartEl = document.getElementById('fund-compare-chart');
+  const tableEl = document.getElementById('fund-compare-table');
+  const corrEl = document.getElementById('fund-compare-corr');
+
+  if (view === 'chart') {
+    if (chartEl) chartEl.classList.remove('hidden');
+    if (tableEl) tableEl.classList.remove('hidden');
+    if (corrEl) corrEl.classList.add('hidden');
+  } else {
+    if (chartEl) chartEl.classList.add('hidden');
+    if (tableEl) tableEl.classList.add('hidden');
+    if (corrEl) corrEl.classList.remove('hidden');
+    renderCompareCorrelation();
+  }
+}
+
+function renderCompareCorrelation() {
+  const container = document.getElementById('fund-corr-chart');
+  if (!container) return;
+  container.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">正在计算相关性...</div>';
+
+  const codes = selectedForCompare;
+  Promise.all(codes.map(c => fetchFundHistory(c, 6))).then(results => {
+    const valid = results.filter(r => r && r.length > 10);
+    if (valid.length < 2) {
+      container.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">数据不足，无法计算相关性</div>';
+      return;
+    }
+
+    let pool = [];
+    if (allFundsFullCache) pool = allFundsFullCache;
+    else if (typeof allFunds !== 'undefined' && Array.isArray(allFunds)) pool = allFunds;
+    else pool = curatedFunds;
+    const funds = codes.map(c => pool.find(f => f.code === c)).filter(Boolean);
+
+    const matrix = calculateCorrelationMatrix(results);
+    renderCorrelationHeatmap(container, funds, matrix);
+  }).catch(err => {
+    console.warn('Correlation calculation failed:', err);
+    container.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">计算失败</div>';
+  });
+}
+
+function calculateCorrelationMatrix(histories) {
+  // Calculate daily returns for each fund
+  const returns = histories.map(hist => {
+    if (!hist || hist.length < 2) return [];
+    const rev = [...hist].reverse(); // oldest first
+    const daily = [];
+    for (let i = 1; i < rev.length; i++) {
+      const r = (rev[i].value - rev[i - 1].value) / rev[i - 1].value;
+      daily.push(r);
+    }
+    return daily;
+  });
+
+  const n = returns.length;
+  const matrix = Array.from({ length: n }, () => Array(n).fill(0));
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      if (i === j) {
+        matrix[i][j] = 1;
+        continue;
+      }
+      const ri = returns[i];
+      const rj = returns[j];
+      const minLen = Math.min(ri.length, rj.length);
+      if (minLen < 5) {
+        matrix[i][j] = 0;
+        continue;
+      }
+      // Pearson correlation
+      let sumI = 0, sumJ = 0, sumII = 0, sumJJ = 0, sumIJ = 0;
+      for (let k = 0; k < minLen; k++) {
+        sumI += ri[k];
+        sumJ += rj[k];
+        sumII += ri[k] * ri[k];
+        sumJJ += rj[k] * rj[k];
+        sumIJ += ri[k] * rj[k];
+      }
+      const num = minLen * sumIJ - sumI * sumJ;
+      const den = Math.sqrt((minLen * sumII - sumI * sumI) * (minLen * sumJJ - sumJ * sumJ));
+      matrix[i][j] = den > 0 ? num / den : 0;
+    }
+  }
+  return matrix;
+}
+
+function renderCorrelationHeatmap(container, funds, matrix) {
+  container.innerHTML = '';
+  if (!window.echarts) {
+    container.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">echarts 未加载</div>';
+    return;
+  }
+
+  const names = funds.map(f => f.name.length > 8 ? f.name.slice(0, 8) + '...' : f.name);
+  const data = [];
+  for (let i = 0; i < funds.length; i++) {
+    for (let j = 0; j < funds.length; j++) {
+      data.push([i, j, formatNumber(matrix[i][j], 3)]);
+    }
+  }
+
+  const chart = window.echarts.init(container);
+  chart.setOption({
+    tooltip: {
+      position: 'top',
+      formatter: function(p) {
+        return `${funds[p.data[0]].name} <-> ${funds[p.data[1]].name}<br/>相关性: ${p.data[2]}`;
+      }
+    },
+    grid: { left: '15%', right: '10%', top: '10%', bottom: '15%' },
+    xAxis: {
+      type: 'category',
+      data: names,
+      splitArea: { show: true },
+      axisLabel: { fontSize: 11, rotate: 30 }
+    },
+    yAxis: {
+      type: 'category',
+      data: names,
+      splitArea: { show: true },
+      axisLabel: { fontSize: 11 }
+    },
+    visualMap: {
+      min: -1,
+      max: 1,
+      calculable: true,
+      orient: 'horizontal',
+      left: 'center',
+      bottom: '0%',
+      inRange: {
+        color: ['#16A34A', '#ffffff', '#DC2626']
+      }
+    },
+    series: [{
+      name: '相关性',
+      type: 'heatmap',
+      data: data,
+      label: { show: true, fontSize: 12, formatter: p => p.data[2] },
+      emphasis: {
+        itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.3)' }
+      }
+    }]
+  });
+
+  const resizeHandler = () => chart.resize();
+  window.addEventListener('resize', resizeHandler);
+  container._chartCleanup = () => window.removeEventListener('resize', resizeHandler);
+}
