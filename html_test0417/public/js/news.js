@@ -11,6 +11,8 @@ function initNewsPage() {
   refreshNewsData();
   setupTelegraphFallback();
   startNewsRefresh();
+  // Delay market summary update to allow api.js to load index data first
+  setTimeout(() => updateMarketSummary(), 1500);
   const announceInput = document.getElementById('news-announce-input');
   announceInput?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') searchAnnouncements();
@@ -109,11 +111,14 @@ function fetchJSON(url, timeoutMs) {
 function refreshNewsData() {
   loadNewsSectorRanking();
   loadNewsConceptRanking();
-  updateNewsSidebarIndex();
+  updateMarketSummary();
   loadMarketRadar();
   loadCapitalFlow();
+  loadCapitalOutflow();
   loadNorthboundFlow();
   loadConvertibleBonds();
+  loadGlobalMarkets();
+  loadIPOCalendar();
 
   const t = document.getElementById('news-update-time');
   if (t) {
@@ -312,31 +317,30 @@ function renderNewsSidebarConcepts(list) {
 }
 
 // ==================== Index Sidebar ====================
-function updateNewsSidebarIndex() {
-  const el = document.getElementById('news-sidebar-index');
-  if (!el) return;
-  const hasData = indexList.some(idx => apiCache[idx.code]);
-  if (!hasData) {
-    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">指数数据加载中...</p>';
-    return;
-  }
-  el.innerHTML = indexList.map(idx => {
-    const d = apiCache[idx.code];
-    if (!d) return `
-      <div class="flex justify-between items-center text-sm py-2 border-b last:border-0">
-        <span class="text-gray-600">${idx.name}</span>
-        <span class="text-gray-400">--</span>
-      </div>`;
+// Market summary bar at top of news page
+function updateMarketSummary() {
+  // Update major index summary cards
+  const idxMap = [
+    { code: 'sh000001', elPrice: 'news-summary-sh', elChange: 'news-summary-sh-change' },
+    { code: 'sz399001', elPrice: 'news-summary-sz', elChange: 'news-summary-sz-change' },
+    { code: 'sz399006', elPrice: 'news-summary-cy', elChange: 'news-summary-cy-change' }
+  ];
+  idxMap.forEach(item => {
+    const d = apiCache[item.code];
+    const priceEl = document.getElementById(item.elPrice);
+    const changeEl = document.getElementById(item.elChange);
+    if (!priceEl || !changeEl) return;
+    if (!d || !d.price) {
+      priceEl.textContent = '--';
+      changeEl.textContent = '--';
+      changeEl.className = 'text-xs font-medium';
+      return;
+    }
+    priceEl.textContent = formatNumber(d.price, 2);
     const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
-    return `
-      <div class="flex justify-between items-center text-sm py-2 border-b last:border-0">
-        <span class="text-gray-600">${idx.name}</span>
-        <div class="text-right">
-          <span class="font-medium ${color}">${formatNumber(d.price, 2)}</span>
-          <span class="text-xs ${color} ml-1">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
-        </div>
-      </div>`;
-  }).join('');
+    changeEl.textContent = (d.changePercent >= 0 ? '+' : '') + formatNumber(d.changePercent, 2) + '%';
+    changeEl.className = 'text-xs font-medium ' + color;
+  });
 }
 
 // ==================== Market Radar (Limit Up / Down / Volume Surge) ====================
@@ -383,6 +387,9 @@ function loadMarketRadar() {
       renderRadarLimitUp(limitUp);
       renderRadarLimitDown(limitDown);
       renderRadarVolume(volumeSurge);
+      // Update summary bar limit stats
+      const limitEl = document.getElementById('news-summary-limit');
+      if (limitEl) limitEl.textContent = limitUp.length + ' / ' + limitDown.length;
       const cache = loadNewsCache() || {};
       cache.radarLimitUp = limitUp;
       cache.radarLimitDown = limitDown;
@@ -506,8 +513,11 @@ function restoreNewsFromCache() {
   if (cache.radarLimitDown) renderRadarLimitDown(cache.radarLimitDown);
   if (cache.radarVolume) renderRadarVolume(cache.radarVolume);
   if (cache.capitalFlow) renderCapitalFlow(cache.capitalFlow);
+  if (cache.capitalOutflow) renderCapitalOutflow(cache.capitalOutflow);
   if (cache.northboundFlow) renderNorthboundFlow(cache.northboundFlow);
   if (cache.convertibleBonds) renderConvertibleBonds(cache.convertibleBonds);
+  if (cache.globalMarkets) renderGlobalMarkets(cache.globalMarkets);
+  if (cache.ipoCalendar) renderIPOCalendar(cache.ipoCalendar);
   renderNewsCacheIndicator();
 }
 
@@ -566,6 +576,162 @@ function renderCapitalFlow(list) {
         <span class="text-emerald-600 font-medium">+${formatNumber(d.netInflow, 2)}亿</span>
         <span class="text-xs ${d.changePercent >= 0 ? 'text-up' : 'text-down'} ml-1">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
       </div>
+    </div>`).join('');
+}
+
+// ==================== Capital Outflow (净流出) ====================
+function loadCapitalOutflow() {
+  const fields = 'f12,f14,f2,f3,f62';
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=10&po=0&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f62&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=' + fields;
+
+  jsonpFetch(url, 6000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid outflow data');
+      }
+      const items = data.data.diff.map(item => {
+        const rawCode = item.f12 || '';
+        const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
+        return {
+          code: rawCode,
+          name: item.f14 || rawCode,
+          price: price,
+          changePercent: parseFloat(item.f3) || 0,
+          netInflow: (parseFloat(item.f62) || 0) / 10000
+        };
+      });
+      renderCapitalOutflow(items);
+      const cache = loadNewsCache() || {};
+      cache.capitalOutflow = items;
+      saveNewsCache(cache);
+    })
+    .catch(err => {
+      console.warn('Capital outflow failed:', err);
+      const cache = loadNewsCache();
+      if (cache && cache.capitalOutflow) {
+        renderCapitalOutflow(cache.capitalOutflow);
+        renderNewsCacheIndicator();
+      } else {
+        setNewsError('news-sidebar-outflow', '数据加载失败');
+      }
+    });
+}
+
+function renderCapitalOutflow(list) {
+  const el = document.getElementById('news-sidebar-outflow');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">暂无数据</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 px-2 rounded hover:bg-gray-50 transition">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 bg-green-50 text-green-700 text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate" title="${d.name}">${d.name}</span>
+      </span>
+      <div class="text-right">
+        <span class="text-green-600 font-medium">${formatNumber(d.netInflow, 2)}亿</span>
+        <span class="text-xs ${d.changePercent >= 0 ? 'text-up' : 'text-down'} ml-1">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
+      </div>
+    </div>`).join('');
+}
+
+// ==================== Global Markets ====================
+function loadGlobalMarkets() {
+  // Query global indices via Eastmoney ulist
+  const url = 'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&invt=2&fields=f2,f3,f12,f14&secids=0.HSI,100.NDX,100.DXJS,100.N225';
+
+  jsonpFetch(url, 6000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid global data');
+      }
+      const nameMap = { 'HSI': '恒生指数', 'NDX': '纳斯达克', 'DXJS': '道琼斯', 'N225': '日经225' };
+      const items = data.data.diff.map(item => {
+        const rawCode = item.f12 || '';
+        return {
+          code: rawCode,
+          name: nameMap[rawCode] || item.f14 || rawCode,
+          changePercent: parseFloat(item.f3) || 0
+        };
+      });
+      renderGlobalMarkets(items);
+      const cache = loadNewsCache() || {};
+      cache.globalMarkets = items;
+      saveNewsCache(cache);
+    })
+    .catch(err => {
+      console.warn('Global markets failed:', err);
+      const cache = loadNewsCache();
+      if (cache && cache.globalMarkets) {
+        renderGlobalMarkets(cache.globalMarkets);
+        renderNewsCacheIndicator();
+      } else {
+        renderGlobalMarkets([]);
+      }
+    });
+}
+
+function renderGlobalMarkets(list) {
+  const el = document.getElementById('news-sidebar-global');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">全球市场数据加载中...</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 px-2 rounded hover:bg-gray-50 transition">
+      <span class="truncate" title="${d.name}">${d.name}</span>
+      <span class="${d.changePercent >= 0 ? 'text-up' : 'text-down'} font-medium">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
+    </div>`).join('');
+}
+
+// ==================== IPO Calendar ====================
+function loadIPOCalendar() {
+  const url = 'https://datacenter-web.eastmoney.com/api/data/v1/get?sortColumns=APPLY_DATE,SECURITY_CODE&sortTypes=-1,-1&pageSize=5&pageNumber=1&reportName=RPTA_WEB_IPO_APPLY&columns=SECURITY_CODE,SECURITY_NAME_ABBR,APPLY_DATE';
+
+  jsonpFetch(url, 8000)
+    .then(data => {
+      if (!data || !data.result || !Array.isArray(data.result.data)) {
+        throw new Error('Invalid IPO data');
+      }
+      const items = data.result.data.map(item => ({
+        code: item.SECURITY_CODE || '',
+        name: item.SECURITY_NAME_ABBR || '',
+        applyDate: item.APPLY_DATE ? item.APPLY_DATE.slice(0, 10) : ''
+      }));
+      renderIPOCalendar(items);
+      const cache = loadNewsCache() || {};
+      cache.ipoCalendar = items;
+      saveNewsCache(cache);
+    })
+    .catch(err => {
+      console.warn('IPO calendar failed:', err);
+      const cache = loadNewsCache();
+      if (cache && cache.ipoCalendar) {
+        renderIPOCalendar(cache.ipoCalendar);
+        renderNewsCacheIndicator();
+      } else {
+        renderIPOCalendar([]);
+      }
+    });
+}
+
+function renderIPOCalendar(list) {
+  const el = document.getElementById('news-sidebar-ipo');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm py-2 text-center">新股申购数据加载中...</p>';
+    return;
+  }
+  el.innerHTML = list.map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 px-2 rounded hover:bg-gray-50 transition">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 bg-amber-50 text-amber-700 text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate" title="${d.name}">${d.name}</span>
+      </span>
+      <span class="text-xs text-gray-400">${d.applyDate}</span>
     </div>`).join('');
 }
 
