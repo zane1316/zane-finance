@@ -119,6 +119,7 @@ function refreshNewsData() {
   loadConvertibleBonds();
   loadGlobalMarkets();
   loadIPOCalendar();
+  loadCapitalFlowHistory();
 
   const t = document.getElementById('news-update-time');
   if (t) {
@@ -129,30 +130,43 @@ function refreshNewsData() {
 // ==================== Sector Ranking (Eastmoney JSONP) ====================
 function loadNewsSectorRanking() {
   const fields = 'f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f18,f20,f21';
-  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=20&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=m:90+t:2&fields=' + fields;
+  const fs = 'm:90+t:2';
+  // Fetch gainers (descending)
+  const gainersUrl = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=20&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=' + fs + '&fields=' + fields;
+  // Fetch losers (ascending)
+  const losersUrl = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=20&po=0&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=' + fs + '&fields=' + fields;
 
-  jsonpFetch(url, 6000)
-    .then(data => {
-      if (!data || !data.data || !Array.isArray(data.data.diff)) {
-        throw new Error('Invalid sector data');
+  function parseSectorItems(diff) {
+    return diff.map(item => {
+      const rawCode = item.f12 || '';
+      const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
+      return {
+        code: rawCode,
+        name: item.f14 || rawCode,
+        price: price,
+        changePercent: parseFloat(item.f3) || 0,
+        changeAmount: parseFloat(item.f4) || 0,
+        volume: item.f5 || 0,
+        volumeMoney: item.f6 ? item.f6 / 10000 : 0,
+        turnover: parseFloat(item.f8) || 0,
+        marketCap: item.f20 ? item.f20 / 100000000 : 0
+      };
+    });
+  }
+
+  Promise.all([
+    jsonpFetch(gainersUrl, 6000),
+    jsonpFetch(losersUrl, 6000)
+  ])
+    .then(([gainersData, losersData]) => {
+      let gainers = [];
+      let losers = [];
+      if (gainersData && gainersData.data && Array.isArray(gainersData.data.diff)) {
+        gainers = parseSectorItems(gainersData.data.diff).filter(i => i.changePercent > 0).sort((a, b) => b.changePercent - a.changePercent);
       }
-      const items = data.data.diff.map(item => {
-        const rawCode = item.f12 || '';
-        const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
-        return {
-          code: rawCode,
-          name: item.f14 || rawCode,
-          price: price,
-          changePercent: parseFloat(item.f3) || 0,
-          changeAmount: parseFloat(item.f4) || 0,
-          volume: item.f5 || 0,
-          volumeMoney: item.f6 ? item.f6 / 10000 : 0,
-          turnover: parseFloat(item.f8) || 0,
-          marketCap: item.f20 ? item.f20 / 100000000 : 0
-        };
-      });
-      const gainers = items.filter(i => i.changePercent > 0).sort((a, b) => b.changePercent - a.changePercent);
-      const losers = items.filter(i => i.changePercent < 0).sort((a, b) => a.changePercent - b.changePercent);
+      if (losersData && losersData.data && Array.isArray(losersData.data.diff)) {
+        losers = parseSectorItems(losersData.data.diff).filter(i => i.changePercent < 0).sort((a, b) => a.changePercent - b.changePercent);
+      }
       newsSectorCache = { gainers, losers };
       const topGainers = gainers.slice(0, 10);
       const topLosers = losers.slice(0, 10);
@@ -346,44 +360,64 @@ function updateMarketSummary() {
 // ==================== Market Radar (Limit Up / Down / Volume Surge) ====================
 function loadMarketRadar() {
   const fields = 'f12,f14,f2,f3,f4,f5,f6,f7,f8';
-  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=200&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=' + fields;
+  const fs = 'm:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23';
+  // Smart limit up/down detection based on market segment
+  function isLimitUp(item) {
+    const c = item.code;
+    if (c.startsWith('68') || c.startsWith('30')) return item.changePercent >= 19.5;
+    if (c.startsWith('8') || c.startsWith('4') || c.startsWith('9')) return item.changePercent >= 29.5;
+    return item.changePercent >= 9.5;
+  }
+  function isLimitDown(item) {
+    const c = item.code;
+    if (c.startsWith('68') || c.startsWith('30')) return item.changePercent <= -19.5;
+    if (c.startsWith('8') || c.startsWith('4') || c.startsWith('9')) return item.changePercent <= -29.5;
+    return item.changePercent <= -9.5;
+  }
 
-  jsonpFetch(url, 6000)
-    .then(data => {
-      if (!data || !data.data || !Array.isArray(data.data.diff)) {
-        throw new Error('Invalid radar data');
+  // Fetch limit-up stocks (descending by changePercent)
+  const upUrl = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=200&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=' + fs + '&fields=' + fields;
+  // Fetch limit-down stocks (ascending by changePercent)
+  const downUrl = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=200&po=0&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=' + fs + '&fields=' + fields;
+
+  function parseRadarItems(diff) {
+    return diff.map(item => {
+      const rawCode = item.f12 || '';
+      const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
+      return {
+        code: rawCode,
+        name: item.f14 || rawCode,
+        price: price,
+        changePercent: parseFloat(item.f3) || 0,
+        volumeMoney: item.f6 ? item.f6 / 10000 : 0,
+        turnover: parseFloat(item.f8) || 0
+      };
+    });
+  }
+
+  Promise.all([
+    jsonpFetch(upUrl, 6000),
+    jsonpFetch(downUrl, 6000)
+  ])
+    .then(([upData, downData]) => {
+      let allItems = [];
+      if (upData && upData.data && Array.isArray(upData.data.diff)) {
+        allItems = allItems.concat(parseRadarItems(upData.data.diff));
       }
-      const items = data.data.diff.map(item => {
-        const rawCode = item.f12 || '';
-        const price = item.f2 === '-' ? 0 : (parseFloat(item.f2) || 0);
-        return {
-          code: rawCode,
-          name: item.f14 || rawCode,
-          price: price,
-          changePercent: parseFloat(item.f3) || 0,
-          volumeMoney: item.f6 ? item.f6 / 10000 : 0,
-          turnover: parseFloat(item.f8) || 0
-        };
+      if (downData && downData.data && Array.isArray(downData.data.diff)) {
+        allItems = allItems.concat(parseRadarItems(downData.data.diff));
+      }
+      // Deduplicate by code
+      const seen = new Set();
+      allItems = allItems.filter(item => {
+        if (seen.has(item.code)) return false;
+        seen.add(item.code);
+        return true;
       });
-      // Smart limit up/down detection based on market segment
-      function isLimitUp(item) {
-        const c = item.code;
-        // 科创板(68) / 创业板(30) = 20%
-        if (c.startsWith('68') || c.startsWith('30')) return item.changePercent >= 19.5;
-        // 北交所(8/4/9) = 30%
-        if (c.startsWith('8') || c.startsWith('4') || c.startsWith('9')) return item.changePercent >= 29.5;
-        // 主板/ST = 10% (approximate, ST could be 5% but we use 9.5 as threshold)
-        return item.changePercent >= 9.5;
-      }
-      function isLimitDown(item) {
-        const c = item.code;
-        if (c.startsWith('68') || c.startsWith('30')) return item.changePercent <= -19.5;
-        if (c.startsWith('8') || c.startsWith('4') || c.startsWith('9')) return item.changePercent <= -29.5;
-        return item.changePercent <= -9.5;
-      }
-      const limitUp = items.filter(isLimitUp).sort((a, b) => b.changePercent - a.changePercent).slice(0, 15);
-      const limitDown = items.filter(isLimitDown).sort((a, b) => a.changePercent - b.changePercent).slice(0, 15);
-      const volumeSurge = items.filter(i => i.turnover > 5).sort((a, b) => b.volumeMoney - a.volumeMoney).slice(0, 15);
+
+      const limitUp = allItems.filter(isLimitUp).sort((a, b) => b.changePercent - a.changePercent).slice(0, 15);
+      const limitDown = allItems.filter(isLimitDown).sort((a, b) => a.changePercent - b.changePercent).slice(0, 15);
+      const volumeSurge = allItems.filter(i => i.turnover > 5).sort((a, b) => b.volumeMoney - a.volumeMoney).slice(0, 15);
       renderRadarLimitUp(limitUp);
       renderRadarLimitDown(limitDown);
       renderRadarVolume(volumeSurge);
@@ -518,6 +552,7 @@ function restoreNewsFromCache() {
   if (cache.convertibleBonds) renderConvertibleBonds(cache.convertibleBonds);
   if (cache.globalMarkets) renderGlobalMarkets(cache.globalMarkets);
   if (cache.ipoCalendar) renderIPOCalendar(cache.ipoCalendar);
+  if (cache.capitalFlowHistory) renderCapitalFlowChart(cache.capitalFlowHistory);
   renderNewsCacheIndicator();
 }
 
@@ -935,4 +970,109 @@ function renderConvertibleBonds(list) {
         <span class="${d.changePercent >= 0 ? 'text-up' : 'text-down'} font-medium">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</span>
       </div>
     </div>`).join('');
+}
+
+// ==================== Capital Flow History Chart (主力资金流向走势) ====================
+let capitalFlowChartInstance = null;
+
+function loadCapitalFlowHistory() {
+  // Eastmoney Shanghai Index capital flow day kline
+  const url = 'https://push2.eastmoney.com/api/qt/stock/fflow/daykline/get?lmt=10&klt=101&fields1=f1,f2,f3,f7&fields2=f51,f52,f53,f54,f55,f56&ut=' + EASTMONEY_UT + '&secid=1.000001';
+
+  jsonpFetch(url, 8000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.klines)) {
+        throw new Error('Invalid capital flow history data');
+      }
+      const items = data.data.klines.map(line => {
+        const parts = line.split(',');
+        return {
+          date: parts[0] || '',
+          mainForce: parseFloat(parts[1]) || 0, // 主力净流入
+          superLarge: parseFloat(parts[2]) || 0,
+          large: parseFloat(parts[3]) || 0,
+          medium: parseFloat(parts[4]) || 0,
+          small: parseFloat(parts[5]) || 0
+        };
+      });
+      renderCapitalFlowChart(items);
+      const cache = loadNewsCache() || {};
+      cache.capitalFlowHistory = items;
+      saveNewsCache(cache);
+    })
+    .catch(err => {
+      console.warn('Capital flow history failed:', err);
+      const cache = loadNewsCache();
+      if (cache && cache.capitalFlowHistory) {
+        renderCapitalFlowChart(cache.capitalFlowHistory);
+        renderNewsCacheIndicator();
+      } else {
+        const el = document.getElementById('news-capital-flow-chart');
+        if (el) el.innerHTML = '<p class="text-gray-400 text-sm text-center py-16">资金流向数据加载失败</p>';
+      }
+    });
+}
+
+function renderCapitalFlowChart(items) {
+  const el = document.getElementById('news-capital-flow-chart');
+  if (!el || !window.echarts) return;
+  if (!items || !items.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm text-center py-16">暂无资金流向数据</p>';
+    return;
+  }
+
+  if (capitalFlowChartInstance) {
+    capitalFlowChartInstance.dispose();
+  }
+  capitalFlowChartInstance = window.echarts.init(el);
+
+  const dates = items.map(d => d.date.slice(5)); // MM-DD
+  const values = items.map(d => parseFloat((d.mainForce / 10000).toFixed(2))); // convert to 亿元
+
+  const isDark = document.documentElement.classList.contains('dark');
+  const textColor = isDark ? '#d1d5db' : '#6b7280';
+  const gridColor = isDark ? '#374151' : '#e5e7eb';
+  const bgColor = isDark ? '#1f2937' : '#f9fafb';
+
+  capitalFlowChartInstance.setOption({
+    backgroundColor: bgColor,
+    grid: { left: 10, right: 10, top: 10, bottom: 24 },
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: isDark ? '#1f2937' : '#fff',
+      borderColor: isDark ? '#4b5563' : '#e5e7eb',
+      textStyle: { color: isDark ? '#e5e7eb' : '#374151', fontSize: 12 },
+      formatter: function(params) {
+        const v = params[0].value;
+        const color = v >= 0 ? '#DC2626' : '#16A34A';
+        return '<div style="font-size:12px">' + params[0].name + '<br/>主力净流入: <span style="color:' + color + ';font-weight:600">' + (v >= 0 ? '+' : '') + v + '亿</span></div>';
+      }
+    },
+    xAxis: {
+      type: 'category',
+      data: dates,
+      axisLine: { lineStyle: { color: gridColor } },
+      axisTick: { show: false },
+      axisLabel: { color: textColor, fontSize: 10, interval: 0 }
+    },
+    yAxis: {
+      type: 'value',
+      axisLine: { show: false },
+      axisTick: { show: false },
+      splitLine: { lineStyle: { color: gridColor, type: 'dashed' } },
+      axisLabel: {
+        color: textColor,
+        fontSize: 10,
+        formatter: v => v + '亿'
+      }
+    },
+    series: [{
+      type: 'bar',
+      data: values.map(v => ({
+        value: v,
+        itemStyle: { color: v >= 0 ? '#DC2626' : '#16A34A', borderRadius: [3, 3, 0, 0] }
+      })),
+      barWidth: '50%'
+    }]
+  });
 }

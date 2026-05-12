@@ -422,6 +422,29 @@ input, textarea, select {
   border-color: var(--glass-border);
 }
 
+/* Dark mode header / nav */
+.dark header {
+  background: rgba(31, 41, 55, 0.9);
+  border-color: #374151;
+}
+.dark .nav-link {
+  color: #d1d5db;
+}
+.dark .nav-link:hover {
+  color: #60A5FA;
+  background: rgba(59, 130, 246, 0.15);
+}
+.dark header h1,
+.dark header .text-gray-900 {
+  color: #f3f4f6;
+}
+.dark header .text-gray-500 {
+  color: #9ca3af;
+}
+.dark #theme-toggle:hover {
+  background: #374151;
+}
+
 /* Dark mode chart containers */
 .dark .lw-chart,
 .dark #asset-chart,

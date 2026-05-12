@@ -164,6 +164,14 @@ function initAPI() {
   loadQuoteCache();
   refreshAllQuotes(true);
   quoteRefreshInterval = setInterval(() => refreshAllQuotes(), 30000);
+  // Load market sentiment after DOM is ready
+  setTimeout(() => loadMarketSentiment(), 2000);
+  // Refresh sentiment every 60s
+  setInterval(() => {
+    if (!document.getElementById('home')?.classList.contains('hidden')) {
+      loadMarketSentiment();
+    }
+  }, 60000);
   // Pause refresh when tab is hidden to save battery / reduce load
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
@@ -1399,6 +1407,7 @@ function renderStockDetailChart(container, data) {
   if (!el || !window.LightweightCharts) return;
 
   // Build a simulated intraday trend using open, high, low, close
+  // Use proper Lightweight Charts time formats
   const chartData = [];
   if (data && data.open > 0 && data.close > 0) {
     const open = data.open;
@@ -1406,11 +1415,13 @@ function renderStockDetailChart(container, data) {
     const high = data.high || Math.max(open, close);
     const low = data.low || Math.min(open, close);
     const steps = 30;
+    const today = new Date();
+    const baseYear = today.getFullYear();
+    const baseMonth = today.getMonth() + 1;
+    const baseDay = today.getDate();
     for (let i = 0; i <= steps; i++) {
       const t = i / steps;
-      // Simple curve from open to close with a peak/trough
       let v = open + (close - open) * t;
-      // Add some noise based on high/low
       const mid = (open + close) / 2;
       if (close >= open) {
         v = mid + (high - mid) * Math.sin(t * Math.PI) * 0.8 + (close - open) * t;
@@ -1418,10 +1429,13 @@ function renderStockDetailChart(container, data) {
         v = mid - (mid - low) * Math.sin(t * Math.PI) * 0.8 + (close - open) * t;
       }
       v = Math.max(low, Math.min(high, v));
-      const hours = 9 + Math.floor((i / steps) * 4);
-      const minutes = Math.floor(((i / steps) * 4 % 1) * 60);
-      const timeStr = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
-      chartData.push({ time: timeStr, value: parseFloat(v.toFixed(2)) });
+      const hour = 9 + Math.floor(t * 4);
+      const minute = Math.floor((t * 4 * 60) % 60);
+      // LC v5 supports { year, month, day, hour, minute } for intraday
+      chartData.push({
+        time: { year: baseYear, month: baseMonth, day: baseDay, hour: hour, minute: minute },
+        value: parseFloat(v.toFixed(2))
+      });
     }
   }
 
@@ -1470,37 +1484,49 @@ function renderStockDetailChart(container, data) {
 
 function renderStockDetailNews(container, code) {
   container.innerHTML = '<div class="text-center py-8 text-gray-400 text-sm">正在加载相关资讯...</div>';
-  // Use Eastmoney search API for stock news
   const rawCode = code.replace(/^(sh|sz|bj)/, '');
-  const url = `https://searchapi.eastmoney.com/api/sns/get?type=14&count=10&code=${rawCode}`;
-  const script = document.createElement('script');
-  const cbName = 'stockNewsCB_' + Date.now();
-  script.src = url + '&cb=' + cbName;
-  window[cbName] = (res) => {
-    delete window[cbName];
-    if (script.parentNode) script.parentNode.removeChild(script);
-    const list = res?.data?.list || [];
-    if (list.length === 0) {
-      container.innerHTML = '<div class="text-center py-8 text-gray-400 text-sm">暂无相关资讯</div>';
-      return;
-    }
-    container.innerHTML = list.map(item => `
-      <a href="${item.url || item.link || '#' }" target="_blank" class="block p-3 rounded-xl hover:bg-gray-50 transition border-b border-gray-100 last:border-0"
-        onclick="event.stopPropagation()"
-      >
-        <p class="text-sm font-medium text-gray-800 line-clamp-1">${item.title || item.content || '无标题'}</p>
-        <p class="text-xs text-gray-400 mt-1">${item.source || '东方财富'} · ${item.showTime || item.time || ''}</p>
-      </a>
-    `).join('');
-  };
-  document.head.appendChild(script);
-  setTimeout(() => {
-    if (window[cbName]) {
-      delete window[cbName];
-      if (script.parentNode) script.parentNode.removeChild(script);
-      container.innerHTML = '<div class="text-center py-8 text-gray-400 text-sm">资讯加载失败，请稍后重试</div>';
-    }
-  }, 5000);
+  const stockName = apiCache[code]?.name || rawCode;
+
+  // Try direct fetch for announcements (same API as news page)
+  const annUrl = 'https://np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=10&page_index=1&ann_type=A&client_source=web&stock_list=' + rawCode;
+
+  fetchJSON(annUrl, 8000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data) || data.data.length === 0) {
+        throw new Error('No announcement data');
+      }
+      const list = data.data;
+      container.innerHTML = list.map(item => {
+        const title = item.title || '无标题';
+        const date = item.notice_date ? new Date(item.notice_date).toLocaleDateString('zh-CN') : '';
+        const artCode = item.art_code;
+        const href = artCode ? 'https://data.eastmoney.com/notices/detail/' + rawCode + '/' + artCode + '.html' : '#';
+        return `
+          <a href="${href}" target="_blank" class="block p-3 rounded-xl hover:bg-gray-50 transition border-b border-gray-100 last:border-0"
+            onclick="event.stopPropagation()"
+          >
+            <p class="text-sm font-medium text-gray-800 line-clamp-2">${title}</p>
+            <p class="text-xs text-gray-400 mt-1">公告 · ${date}</p>
+          </a>
+        `;
+      }).join('');
+    })
+    .catch(() => {
+      // Fallback: show external links
+      container.innerHTML = `
+        <div class="text-center py-6 text-gray-400 text-sm">
+          <p class="mb-4">个股资讯需要访问外部数据源</p>
+          <div class="flex flex-col gap-2 items-center">
+            <a href="https://stock.finance.qq.com/sstock/ggcx/${code}.shtml" target="_blank" class="px-4 py-2 rounded-lg bg-primary text-white text-sm hover:shadow-md transition"
+              onclick="event.stopPropagation()"
+            >腾讯财经 - ${stockName} ↗</a>
+            <a href="https://data.eastmoney.com/notices/stock/${rawCode}.html" target="_blank" class="px-4 py-2 rounded-lg border border-gray-200 text-gray-600 text-sm hover:border-primary hover:text-primary transition"
+              onclick="event.stopPropagation()"
+            >东方财富公告 ↗</a>
+          </div>
+        </div>
+      `;
+    });
 }
 
 function updateStockDetailWatchlistBtn() {
@@ -1729,42 +1755,38 @@ function renderWatchlistPage() {
 
 // ==================== Market Sentiment ====================
 function loadMarketSentiment() {
-  const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f3&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=f2,f3,f12,f14`;
-  const script = document.createElement('script');
-  const cbName = 'sentimentCB_' + Date.now();
-  script.src = url + '&cb=' + cbName;
-  window[cbName] = (res) => {
-    delete window[cbName];
-    if (script.parentNode) script.parentNode.removeChild(script);
-    if (!res || !res.data || !res.data.diff) return;
-    const list = res.data.diff;
-    let up = 0, down = 0, flat = 0, limitUp = 0, limitDown = 0;
-    list.forEach(item => {
-      const cp = item.f3;
-      if (cp > 0) up++;
-      else if (cp < 0) down++;
-      else flat++;
-      const code = item.f12;
-      if (code.startsWith('68') || code.startsWith('30')) {
-        if (cp >= 19.5) limitUp++;
-        if (cp <= -19.5) limitDown++;
-      } else if (code.startsWith('8') || code.startsWith('4') || code.startsWith('9')) {
-        if (cp >= 29.5) limitUp++;
-        if (cp <= -29.5) limitDown++;
-      } else {
-        if (cp >= 9.5) limitUp++;
-        if (cp <= -9.5) limitDown++;
+  const fields = 'f2,f3,f12,f14';
+  const url = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=' + EASTMONEY_UT + '&fltt=2&invt=2&fid=f3&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=' + fields;
+
+  jsonpFetch(url, 8000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid sentiment data');
       }
+      const list = data.data.diff;
+      let up = 0, down = 0, flat = 0, limitUp = 0, limitDown = 0;
+      list.forEach(item => {
+        const cp = parseFloat(item.f3) || 0;
+        if (cp > 0) up++;
+        else if (cp < 0) down++;
+        else flat++;
+        const code = item.f12 || '';
+        if (code.startsWith('68') || code.startsWith('30')) {
+          if (cp >= 19.5) limitUp++;
+          if (cp <= -19.5) limitDown++;
+        } else if (code.startsWith('8') || code.startsWith('4') || code.startsWith('9')) {
+          if (cp >= 29.5) limitUp++;
+          if (cp <= -29.5) limitDown++;
+        } else {
+          if (cp >= 9.5) limitUp++;
+          if (cp <= -9.5) limitDown++;
+        }
+      });
+      renderMarketSentiment({ up, down, flat, limitUp, limitDown, total: list.length });
+    })
+    .catch(err => {
+      console.warn('Market sentiment load failed:', err);
     });
-    renderMarketSentiment({ up, down, flat, limitUp, limitDown, total: list.length });
-  };
-  document.head.appendChild(script);
-  setTimeout(() => {
-    if (window[cbName]) {
-      delete window[cbName];
-      if (script.parentNode) script.parentNode.removeChild(script);
-    }
-  }, 8000);
 }
 
 function renderMarketSentiment(data) {
@@ -1798,7 +1820,3 @@ function renderMarketSentiment(data) {
   `;
 }
 
-// Init market sentiment on page load
-if (typeof window !== 'undefined') {
-  setTimeout(() => loadMarketSentiment(), 3000);
-}
