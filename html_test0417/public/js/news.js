@@ -59,8 +59,8 @@ function switchNewsTab(key) {
   if (active) active.classList.remove('hidden');
 }
 
-// JSONP helper for Eastmoney APIs (bypasses CORS and corp proxies)
-function jsonpFetch(url, timeoutMs) {
+// Direct JSONP via script tag (fastest, but may fail behind corp firewalls)
+function jsonpFetchDirect(url, timeoutMs) {
   return new Promise((resolve, reject) => {
     const cbName = 'em_cb_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
     const sep = url.includes('?') ? '&' : '?';
@@ -89,6 +89,26 @@ function jsonpFetch(url, timeoutMs) {
     }
 
     document.head.appendChild(script);
+  });
+}
+
+// jsonpFetch with same-origin proxy fallback
+// Strategy: try direct JSONP first, fall back to /api/proxy if blocked by network
+function jsonpFetch(url, timeoutMs) {
+  return new Promise((resolve, reject) => {
+    jsonpFetchDirect(url, timeoutMs)
+      .then(resolve)
+      .catch(err1 => {
+        // Remove cb parameter since proxy returns pure JSON
+        const urlObj = new URL(url, window.location.href);
+        urlObj.searchParams.delete('cb');
+        const proxyUrl = '/api/proxy?url=' + encodeURIComponent(urlObj.toString());
+        fetchJSON(proxyUrl, timeoutMs)
+          .then(resolve)
+          .catch(err2 => {
+            reject(new Error('Both direct JSONP and proxy failed: ' + err2.message));
+          });
+      });
   });
 }
 
