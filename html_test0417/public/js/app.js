@@ -1,5 +1,5 @@
 // SPA Router & Common Utilities
-const sections = ['home','market','funds','learning','kline','ai','trading','calculator','news','glossary','resources','contact'];
+const sections = ['home','market','watchlist','funds','learning','kline','ai','trading','calculator','news','glossary','resources','contact'];
 
 // Lazy-load large data modules on first section visit
 // Cache-busting query string ensures browser loads fresh all-stocks.js after deploy
@@ -32,6 +32,7 @@ async function ensureLazyModule(sectionId) {
 const pageMeta = {
   home: { title: 'Zane财经 - 新手炒股第一站 | 零基础到实盘实战', desc: 'Zane财经是专业的A股新手学习平台，提供实时行情、K线教学、模拟交易、AI分析等一站式炒股学习服务。' },
   market: { title: 'A股实时行情 - Zane财经', desc: '全市场A股实时行情数据，沪深京交易所全覆盖，支持行业板块与全市场排名。' },
+  watchlist: { title: '我的自选 - Zane财经', desc: '统一管理自选股票与基金，实时盯盘，支持涨跌排序与一键操作。' },
   funds: { title: '基金精选与搜索 - Zane财经', desc: '精选优质基金，覆盖股票型、混合型、指数型、QDII等六大类别，支持全市场基金搜索。' },
   learning: { title: '股票与基金学习路径 - Zane财经', desc: '系统化的A股学习路径，从开户到建立交易系统，覆盖K线、指标、基本面与风控。' },
   kline: { title: 'K线技术分析 - Zane财经', desc: '42种K线形态图解，包含单根形态、组合形态、趋势形态与指标叠加分析。' },
@@ -75,6 +76,7 @@ async function showSection(id) {
 
   // Trigger section init
   if (id === 'market') initMarket();
+  if (id === 'watchlist') initWatchlist();
   if (id === 'funds') initFunds();
   if (id === 'learning') { switchLearningPath(currentLearningPath || 'stock'); }
   if (id === 'kline') initKlineGallery();
@@ -88,6 +90,7 @@ async function showSection(id) {
   if (id !== 'funds' && typeof stopFundRefresh === 'function') stopFundRefresh();
   if (id !== 'news' && typeof stopNewsRefresh === 'function') stopNewsRefresh();
   if (id !== 'market' && typeof stopQuoteRefresh === 'function') stopQuoteRefresh();
+  if (id !== 'watchlist' && typeof stopWatchlistRefresh === 'function') stopWatchlistRefresh();
 }
 
 function handleRoute() {
@@ -97,6 +100,7 @@ function handleRoute() {
 
 window.addEventListener('hashchange', handleRoute);
 window.addEventListener('load', () => {
+  initTheme();
   initAPI();
   if (typeof initLearningProgress === 'function') initLearningProgress();
   if (typeof initTrading === 'function') initTrading();
@@ -130,6 +134,40 @@ function closeOnboarding() {
     window.autoSyncOnboarding();
   }
 }
+
+// ==================== Theme (Dark Mode) ====================
+const THEME_KEY = 'zfinance_theme';
+
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = saved === 'dark' || (!saved && prefersDark);
+  applyTheme(isDark);
+}
+
+function applyTheme(isDark) {
+  const html = document.documentElement;
+  const moon = document.getElementById('theme-icon-moon');
+  const sun = document.getElementById('theme-icon-sun');
+  if (isDark) {
+    html.classList.add('dark');
+    if (moon) moon.classList.add('hidden');
+    if (sun) sun.classList.remove('hidden');
+  } else {
+    html.classList.remove('dark');
+    if (moon) moon.classList.remove('hidden');
+    if (sun) sun.classList.add('hidden');
+  }
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.contains('dark');
+  const newDark = !isDark;
+  applyTheme(newDark);
+  localStorage.setItem(THEME_KEY, newDark ? 'dark' : 'light');
+}
+
+document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
 
 function formatNumber(n, digits=2) {
   return Number(n).toLocaleString('zh-CN', { minimumFractionDigits: digits, maximumFractionDigits: digits });

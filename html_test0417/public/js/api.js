@@ -855,8 +855,8 @@ function renderStockCard(stock, data, opts = {}) {
   const arrow = data.changePercent >= 0 ? '▲' : '▼';
   const price = data.price > 0 ? formatNumber(data.price,2) : '--';
   return `
-    <div class="min-w-[${minWidth}] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition relative">
-      <div class="absolute top-2 right-2">${starBtn}</div>
+    <div onclick="showStockDetail('${code}')" class="min-w-[${minWidth}] bg-white rounded-lg shadow border border-border p-3 cursor-pointer hover:shadow-md transition relative">
+      <div class="absolute top-2 right-2" onclick="event.stopPropagation()">${starBtn}</div>
       <div class="flex justify-between items-start pr-6">
         <div>
           <p class="font-bold text-sm">${name}</p>
@@ -1280,4 +1280,525 @@ function clearMarketSearch() {
   if (clearBtn) clearBtn.classList.add('hidden');
   hideSearchAutocomplete();
   currentSearchCodes = [];
+}
+
+// ==================== Stock Detail Modal ====================
+let currentStockDetailCode = null;
+let currentStockDetailTab = 'overview';
+
+function showStockDetail(code) {
+  currentStockDetailCode = code;
+  currentStockDetailTab = 'overview';
+  const modal = document.getElementById('stock-detail-modal');
+  if (!modal) return;
+
+  const data = apiCache[code];
+  const name = data?.name || resolveStockName(code) || code;
+
+  document.getElementById('stock-detail-name').textContent = name;
+  document.getElementById('stock-detail-code').textContent = code;
+
+  const priceEl = document.getElementById('stock-detail-price');
+  const changeEl = document.getElementById('stock-detail-change');
+  if (data && data.price > 0) {
+    const color = data.changePercent >= 0 ? 'text-up' : 'text-down';
+    priceEl.textContent = formatNumber(data.price, 2);
+    priceEl.className = 'text-2xl font-bold ' + color;
+    changeEl.textContent = `${data.changePercent >= 0 ? '+' : ''}${formatNumber(data.changePercent, 2)}%  ${data.changeAmount >= 0 ? '+' : ''}${formatNumber(data.changeAmount, 2)}`;
+    changeEl.className = 'text-sm font-medium ' + color;
+  } else {
+    priceEl.textContent = '--';
+    priceEl.className = 'text-2xl font-bold text-gray-400';
+    changeEl.textContent = '暂无数据';
+    changeEl.className = 'text-sm font-medium text-gray-400';
+  }
+
+  // Update watchlist button state
+  updateStockDetailWatchlistBtn();
+
+  // Update external link
+  document.getElementById('stock-detail-qq-link').href = `https://stock.finance.qq.com/sstock/ggcx/${code}.shtml`;
+
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  renderStockDetailTab();
+}
+
+function closeStockDetail() {
+  const modal = document.getElementById('stock-detail-modal');
+  if (modal) modal.classList.add('hidden');
+  document.body.style.overflow = '';
+  currentStockDetailCode = null;
+}
+
+function switchStockDetailTab(tab) {
+  currentStockDetailTab = tab;
+  document.querySelectorAll('#stock-detail-modal .border-b-2').forEach(el => {
+    el.classList.remove('border-primary', 'text-primary');
+    el.classList.add('border-transparent', 'text-gray-500');
+  });
+  const activeBtn = document.getElementById('stock-tab-' + tab);
+  if (activeBtn) {
+    activeBtn.classList.remove('border-transparent', 'text-gray-500');
+    activeBtn.classList.add('border-primary', 'text-primary');
+  }
+  renderStockDetailTab();
+}
+
+function renderStockDetailTab() {
+  const container = document.getElementById('stock-detail-content');
+  if (!container || !currentStockDetailCode) return;
+  const data = apiCache[currentStockDetailCode];
+
+  if (currentStockDetailTab === 'overview') {
+    renderStockDetailOverview(container, data);
+  } else if (currentStockDetailTab === 'chart') {
+    renderStockDetailChart(container, data);
+  } else if (currentStockDetailTab === 'news') {
+    renderStockDetailNews(container, currentStockDetailCode);
+  }
+}
+
+function renderStockDetailOverview(container, data) {
+  if (!data || data._failed || data._missing) {
+    container.innerHTML = '<div class="text-center py-12 text-gray-400 text-sm">暂无实时数据，请稍后重试</div>';
+    return;
+  }
+  const color = data.changePercent >= 0 ? 'text-up' : 'text-down';
+  const items = [
+    { label: '今开', value: data.open > 0 ? formatNumber(data.open, 2) : '--' },
+    { label: '昨收', value: data.close > 0 ? formatNumber(data.close, 2) : '--' },
+    { label: '最高', value: data.high > 0 ? formatNumber(data.high, 2) : '--' },
+    { label: '最低', value: data.low > 0 ? formatNumber(data.low, 2) : '--' },
+    { label: '成交量', value: data.volume > 0 ? formatNumber(data.volume / 10000, 2) + '万手' : '--' },
+    { label: '成交额', value: data.volumeMoney > 0 ? formatNumber(data.volumeMoney, 2) + '万' : '--' },
+    { label: '换手率', value: data.turnover > 0 ? formatNumber(data.turnover, 2) + '%' : '--' },
+    { label: '市盈率(PE)', value: data.pe > 0 ? formatNumber(data.pe, 2) : '--' },
+    { label: '总市值', value: data.marketCap > 0 ? formatNumber(data.marketCap, 2) + '亿' : '--' },
+    { label: '振幅', value: (data.high > 0 && data.low > 0) ? formatNumber((data.high - data.low) / data.close * 100, 2) + '%' : '--' },
+  ];
+  container.innerHTML = `
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      ${items.map(it => `
+        <div class="bg-gray-50 rounded-xl p-3 border border-gray-100">
+          <p class="text-xs text-gray-400 mb-1">${it.label}</p>
+          <p class="text-sm font-semibold text-gray-800">${it.value}</p>
+        </div>
+      `).join('')}
+    </div>
+    <div class="mt-4 p-3 bg-blue-50 rounded-xl border border-blue-100 text-xs text-blue-700">
+      <p class="font-medium mb-1">💡 新手提示</p>
+      <p>市盈率(PE) = 股价 / 每股收益，衡量股票估值高低。一般而言，PE 越低代表估值越便宜，但不同行业的合理PE范围差异很大。</p>
+    </div>
+  `;
+}
+
+function renderStockDetailChart(container, data) {
+  container.innerHTML = '<div id="stock-detail-chart-inner" class="w-full h-[360px] rounded-xl bg-gray-50"></div>';
+  const el = document.getElementById('stock-detail-chart-inner');
+  if (!el || !window.LightweightCharts) return;
+
+  // Build a simulated intraday trend using open, high, low, close
+  const chartData = [];
+  if (data && data.open > 0 && data.close > 0) {
+    const open = data.open;
+    const close = data.price || data.close;
+    const high = data.high || Math.max(open, close);
+    const low = data.low || Math.min(open, close);
+    const steps = 30;
+    for (let i = 0; i <= steps; i++) {
+      const t = i / steps;
+      // Simple curve from open to close with a peak/trough
+      let v = open + (close - open) * t;
+      // Add some noise based on high/low
+      const mid = (open + close) / 2;
+      if (close >= open) {
+        v = mid + (high - mid) * Math.sin(t * Math.PI) * 0.8 + (close - open) * t;
+      } else {
+        v = mid - (mid - low) * Math.sin(t * Math.PI) * 0.8 + (close - open) * t;
+      }
+      v = Math.max(low, Math.min(high, v));
+      const hours = 9 + Math.floor((i / steps) * 4);
+      const minutes = Math.floor(((i / steps) * 4 % 1) * 60);
+      const timeStr = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+      chartData.push({ time: timeStr, value: parseFloat(v.toFixed(2)) });
+    }
+  }
+
+  if (chartData.length === 0) {
+    el.innerHTML = '<div class="flex items-center justify-center h-full text-gray-400 text-sm">暂无走势数据</div>';
+    return;
+  }
+
+  const isDark = document.documentElement.classList.contains('dark');
+  const chart = window.LightweightCharts.createChart(el, {
+    width: el.clientWidth,
+    height: 360,
+    layout: {
+      background: { color: isDark ? '#1f2937' : '#f8fafc' },
+      textColor: isDark ? '#e5e7eb' : '#374151'
+    },
+    grid: {
+      vertLines: { color: isDark ? '#374151' : '#e2e8f0' },
+      horizLines: { color: isDark ? '#374151' : '#e2e8f0' }
+    },
+    rightPriceScale: { borderColor: isDark ? '#374151' : '#e2e8f0' },
+    timeScale: { borderColor: isDark ? '#374151' : '#e2e8f0', timeVisible: true },
+    crosshair: { mode: 1 },
+    handleScroll: { vertTouchDrag: false }
+  });
+
+  const up = chartData[chartData.length - 1].value >= chartData[0].value;
+  const lineColor = up ? '#DC2626' : '#16A34A';
+  const areaColor = up ? 'rgba(220, 38, 38, 0.1)' : 'rgba(22, 163, 74, 0.1)';
+
+  const series = chart.addSeries(window.LightweightCharts.AreaSeries, {
+    lineColor: lineColor,
+    topColor: areaColor,
+    bottomColor: 'rgba(255,255,255,0)',
+    lineWidth: 2,
+    lastValueVisible: true,
+    priceLineVisible: false
+  });
+  series.setData(chartData);
+  chart.timeScale().fitContent();
+
+  const resizeHandler = () => chart.applyOptions({ width: el.clientWidth });
+  window.addEventListener('resize', resizeHandler);
+  el._chartCleanup = () => window.removeEventListener('resize', resizeHandler);
+}
+
+function renderStockDetailNews(container, code) {
+  container.innerHTML = '<div class="text-center py-8 text-gray-400 text-sm">正在加载相关资讯...</div>';
+  // Use Eastmoney search API for stock news
+  const rawCode = code.replace(/^(sh|sz|bj)/, '');
+  const url = `https://searchapi.eastmoney.com/api/sns/get?type=14&count=10&code=${rawCode}`;
+  const script = document.createElement('script');
+  const cbName = 'stockNewsCB_' + Date.now();
+  script.src = url + '&cb=' + cbName;
+  window[cbName] = (res) => {
+    delete window[cbName];
+    if (script.parentNode) script.parentNode.removeChild(script);
+    const list = res?.data?.list || [];
+    if (list.length === 0) {
+      container.innerHTML = '<div class="text-center py-8 text-gray-400 text-sm">暂无相关资讯</div>';
+      return;
+    }
+    container.innerHTML = list.map(item => `
+      <a href="${item.url || item.link || '#' }" target="_blank" class="block p-3 rounded-xl hover:bg-gray-50 transition border-b border-gray-100 last:border-0"
+        onclick="event.stopPropagation()"
+      >
+        <p class="text-sm font-medium text-gray-800 line-clamp-1">${item.title || item.content || '无标题'}</p>
+        <p class="text-xs text-gray-400 mt-1">${item.source || '东方财富'} · ${item.showTime || item.time || ''}</p>
+      </a>
+    `).join('');
+  };
+  document.head.appendChild(script);
+  setTimeout(() => {
+    if (window[cbName]) {
+      delete window[cbName];
+      if (script.parentNode) script.parentNode.removeChild(script);
+      container.innerHTML = '<div class="text-center py-8 text-gray-400 text-sm">资讯加载失败，请稍后重试</div>';
+    }
+  }, 5000);
+}
+
+function updateStockDetailWatchlistBtn() {
+  const btnText = document.getElementById('stock-detail-watchlist-text');
+  const btn = document.getElementById('stock-detail-watchlist-btn');
+  if (!btnText || !currentStockDetailCode) return;
+  const isWatched = isInWatchlist('stocks', currentStockDetailCode);
+  btnText.textContent = isWatched ? '移除自选' : '加入自选';
+  if (isWatched) {
+    btn.classList.add('text-amber-600', 'border-amber-300');
+    btn.classList.remove('text-gray-700');
+  } else {
+    btn.classList.remove('text-amber-600', 'border-amber-300');
+    btn.classList.add('text-gray-700');
+  }
+}
+
+function toggleStockDetailWatchlist() {
+  if (!currentStockDetailCode) return;
+  const name = apiCache[currentStockDetailCode]?.name || resolveStockName(currentStockDetailCode) || currentStockDetailCode;
+  const nowWatched = toggleWatchlist('stocks', currentStockDetailCode, name);
+  updateStockDetailWatchlistBtn();
+  // Also refresh market page watchlist section if visible
+  renderWatchlistSection();
+}
+
+// ESC to close stock detail modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && currentStockDetailCode) closeStockDetail();
+});
+
+// ==================== Watchlist Page ====================
+let watchlistRefreshInterval = null;
+let currentWatchlistTab = 'stocks';
+let currentWatchlistSort = 'changePercent';
+
+function initWatchlist() {
+  renderWatchlistPage();
+  // Immediate refresh
+  refreshWatchlistQuotes();
+  // Set up interval
+  if (watchlistRefreshInterval) clearInterval(watchlistRefreshInterval);
+  watchlistRefreshInterval = setInterval(() => refreshWatchlistQuotes(), 30000);
+}
+
+function stopWatchlistRefresh() {
+  if (watchlistRefreshInterval) {
+    clearInterval(watchlistRefreshInterval);
+    watchlistRefreshInterval = null;
+  }
+}
+
+function refreshWatchlistQuotes() {
+  const wl = loadWatchlist();
+  const codes = wl.stocks.map(s => s.code).concat(wl.funds.map(f => f.code.replace(/^of/, 'jj')));
+  if (codes.length === 0) return;
+  const stockCodes = wl.stocks.map(s => s.code);
+  if (stockCodes.length > 0) {
+    loadTencentAPI(stockCodes, (err, data) => {
+      if (!err) {
+        Object.assign(apiCache, data);
+        if (!document.getElementById('watchlist').classList.contains('hidden')) {
+          renderWatchlistPage();
+        }
+      }
+    });
+  }
+  // Fund quotes are refreshed by funds.js interval, but we can trigger a manual refresh here
+  if (wl.funds.length > 0 && typeof loadFundQuotes === 'function') {
+    loadFundQuotes();
+  }
+}
+
+function switchWatchlistTab(tab) {
+  currentWatchlistTab = tab;
+  document.getElementById('wl-tab-stocks').className = tab === 'stocks'
+    ? 'px-5 py-3 text-sm font-medium border-b-2 border-primary text-primary'
+    : 'px-5 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700';
+  document.getElementById('wl-tab-funds').className = tab === 'funds'
+    ? 'px-5 py-3 text-sm font-medium border-b-2 border-primary text-primary'
+    : 'px-5 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700';
+  document.getElementById('watchlist-stocks-panel').classList.toggle('hidden', tab !== 'stocks');
+  document.getElementById('watchlist-funds-panel').classList.toggle('hidden', tab !== 'funds');
+  renderWatchlistPage();
+}
+
+function sortWatchlist(field) {
+  currentWatchlistSort = field;
+  renderWatchlistPage();
+}
+
+function clearWatchlist() {
+  if (!confirm('确定要清空所有自选吗？此操作不可撤销。')) return;
+  localStorage.setItem(WATCHLIST_KEY, JSON.stringify({ version: 1, stocks: [], funds: [] }));
+  renderWatchlistPage();
+  renderWatchlistSection();
+  if (typeof renderFundWatchlist === 'function') renderFundWatchlist();
+}
+
+function renderWatchlistPage() {
+  const wl = loadWatchlist();
+
+  // Stats
+  const statsEl = document.getElementById('watchlist-stats');
+  if (statsEl) {
+    let upCount = 0, downCount = 0, totalChange = 0, validCount = 0;
+    wl.stocks.forEach(s => {
+      const d = apiCache[s.code];
+      if (d && d.changePercent !== undefined) {
+        if (d.changePercent >= 0) upCount++;
+        else downCount++;
+        totalChange += d.changePercent;
+        validCount++;
+      }
+    });
+    const avgChange = validCount > 0 ? totalChange / validCount : 0;
+    const avgColor = avgChange >= 0 ? 'text-up' : 'text-down';
+    statsEl.innerHTML = `
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
+        <p class="text-xs text-gray-400 mb-1">自选股票</p>
+        <p class="text-xl font-bold text-gray-800">${wl.stocks.length}</p>
+      </div>
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
+        <p class="text-xs text-gray-400 mb-1">上涨</p>
+        <p class="text-xl font-bold text-up">${upCount}</p>
+      </div>
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
+        <p class="text-xs text-gray-400 mb-1">下跌</p>
+        <p class="text-xl font-bold text-down">${downCount}</p>
+      </div>
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
+        <p class="text-xs text-gray-400 mb-1">平均涨跌</p>
+        <p class="text-xl font-bold ${avgColor}">${avgChange >= 0 ? '+' : ''}${formatNumber(avgChange, 2)}%</p>
+      </div>
+    `;
+  }
+
+  // Stocks table
+  const tbody = document.getElementById('watchlist-stocks-tbody');
+  const stocksEmpty = document.getElementById('watchlist-stocks-empty');
+  if (tbody) {
+    if (wl.stocks.length === 0) {
+      tbody.innerHTML = '';
+      if (stocksEmpty) stocksEmpty.classList.remove('hidden');
+    } else {
+      if (stocksEmpty) stocksEmpty.classList.add('hidden');
+      let stocks = wl.stocks.map(s => ({ ...s, data: apiCache[s.code] }));
+      if (currentWatchlistSort === 'changePercent') {
+        stocks.sort((a, b) => (b.data?.changePercent || 0) - (a.data?.changePercent || 0));
+      } else if (currentWatchlistSort === 'marketCap') {
+        stocks.sort((a, b) => (b.data?.marketCap || 0) - (a.data?.marketCap || 0));
+      }
+      tbody.innerHTML = stocks.map(s => {
+        const d = s.data;
+        if (!d || d._failed || d._missing) {
+          return `
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-4 py-3">
+                <p class="font-medium text-sm text-gray-800">${s.name}</p>
+                <p class="text-xs text-gray-400">${s.code}</p>
+              </td>
+              <td class="px-4 py-3 text-right text-sm text-gray-400" colspan="5">暂无数据</td>
+              <td class="px-4 py-3 text-center">
+                <button onclick="removeFromWatchlist('stocks', '${s.code}'); renderWatchlistPage();" class="text-gray-400 hover:text-red-500 transition" title="移除自选">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                </button>
+              </td>
+            </tr>
+          `;
+        }
+        const color = d.changePercent >= 0 ? 'text-up' : 'text-down';
+        return `
+          <tr class="hover:bg-gray-50 transition cursor-pointer" onclick="showStockDetail('${s.code}')">
+            <td class="px-4 py-3">
+              <p class="font-medium text-sm text-gray-800">${d.name || s.name}</p>
+              <p class="text-xs text-gray-400">${s.code}</p>
+            </td>
+            <td class="px-4 py-3 text-right text-sm font-semibold ${color}">${formatNumber(d.price, 2)}</td>
+            <td class="px-4 py-3 text-right text-sm ${color}">${d.changeAmount >= 0 ? '+' : ''}${formatNumber(d.changeAmount, 2)}</td>
+            <td class="px-4 py-3 text-right text-sm ${color}">${d.changePercent >= 0 ? '+' : ''}${formatNumber(d.changePercent, 2)}%</td>
+            <td class="px-4 py-3 text-right text-sm text-gray-600 hidden md:table-cell">${formatNumber(d.turnover, 2)}%</td>
+            <td class="px-4 py-3 text-right text-sm text-gray-600 hidden md:table-cell">${formatNumber(d.marketCap, 2)}亿</td>
+            <td class="px-4 py-3 text-center" onclick="event.stopPropagation()">
+              <button onclick="removeFromWatchlist('stocks', '${s.code}'); renderWatchlistPage();" class="text-gray-400 hover:text-red-500 transition" title="移除自选">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+  }
+
+  // Funds grid
+  const fundsGrid = document.getElementById('watchlist-funds-grid');
+  const fundsEmpty = document.getElementById('watchlist-funds-empty');
+  if (fundsGrid) {
+    if (wl.funds.length === 0) {
+      fundsGrid.innerHTML = '';
+      if (fundsEmpty) fundsEmpty.classList.remove('hidden');
+    } else {
+      if (fundsEmpty) fundsEmpty.classList.add('hidden');
+      fundsGrid.innerHTML = wl.funds.map(f => {
+        const q = typeof fundQuoteCache !== 'undefined' ? fundQuoteCache[f.code] : null;
+        const changeStr = q ? `${q.changePercent >= 0 ? '+' : ''}${q.changePercent.toFixed(2)}%` : '--';
+        const changeClass = q ? (q.changePercent >= 0 ? 'text-up' : 'text-down') : 'text-gray-400';
+        return `
+          <div class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition relative group">
+            <div class="absolute top-2 right-2">
+              <button onclick="removeFromWatchlist('funds', '${f.code}'); renderWatchlistPage(); if(typeof renderFundWatchlist==='function') renderFundWatchlist();" class="text-gray-300 hover:text-red-500 transition p-1" title="移除自选">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+              </button>
+            </div>
+            <p class="font-medium text-sm text-gray-800 truncate pr-6">${f.name}</p>
+            <p class="text-xs text-gray-400 mt-1">${f.code}</p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold ${changeClass}">${changeStr}</span>
+              <span class="text-xs text-gray-400">${q ? '净值 ' + q.price.toFixed(4) : '加载中...'}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+  }
+}
+
+// ==================== Market Sentiment ====================
+function loadMarketSentiment() {
+  const url = `https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=${EASTMONEY_UT}&fltt=2&invt=2&fid=f3&fs=m:0+t:6,m:0+t:13,m:1+t:2,m:1+t:23&fields=f2,f3,f12,f14`;
+  const script = document.createElement('script');
+  const cbName = 'sentimentCB_' + Date.now();
+  script.src = url + '&cb=' + cbName;
+  window[cbName] = (res) => {
+    delete window[cbName];
+    if (script.parentNode) script.parentNode.removeChild(script);
+    if (!res || !res.data || !res.data.diff) return;
+    const list = res.data.diff;
+    let up = 0, down = 0, flat = 0, limitUp = 0, limitDown = 0;
+    list.forEach(item => {
+      const cp = item.f3;
+      if (cp > 0) up++;
+      else if (cp < 0) down++;
+      else flat++;
+      const code = item.f12;
+      if (code.startsWith('68') || code.startsWith('30')) {
+        if (cp >= 19.5) limitUp++;
+        if (cp <= -19.5) limitDown++;
+      } else if (code.startsWith('8') || code.startsWith('4') || code.startsWith('9')) {
+        if (cp >= 29.5) limitUp++;
+        if (cp <= -29.5) limitDown++;
+      } else {
+        if (cp >= 9.5) limitUp++;
+        if (cp <= -9.5) limitDown++;
+      }
+    });
+    renderMarketSentiment({ up, down, flat, limitUp, limitDown, total: list.length });
+  };
+  document.head.appendChild(script);
+  setTimeout(() => {
+    if (window[cbName]) {
+      delete window[cbName];
+      if (script.parentNode) script.parentNode.removeChild(script);
+    }
+  }, 8000);
+}
+
+function renderMarketSentiment(data) {
+  const container = document.getElementById('market-sentiment');
+  if (!container) return;
+  const upPct = data.total > 0 ? (data.up / data.total * 100).toFixed(1) : 0;
+  const downPct = data.total > 0 ? (data.down / data.total * 100).toFixed(1) : 0;
+  container.innerHTML = `
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
+        <p class="text-xs text-gray-400 mb-1">上涨家数</p>
+        <p class="text-2xl font-bold text-up">${data.up}</p>
+        <p class="text-xs text-gray-400">${upPct}%</p>
+      </div>
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
+        <p class="text-xs text-gray-400 mb-1">下跌家数</p>
+        <p class="text-2xl font-bold text-down">${data.down}</p>
+        <p class="text-xs text-gray-400">${downPct}%</p>
+      </div>
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
+        <p class="text-xs text-gray-400 mb-1">涨停</p>
+        <p class="text-2xl font-bold text-up">${data.limitUp}</p>
+        <p class="text-xs text-gray-400">强势</p>
+      </div>
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
+        <p class="text-xs text-gray-400 mb-1">跌停</p>
+        <p class="text-2xl font-bold text-down">${data.limitDown}</p>
+        <p class="text-xs text-gray-400">弱势</p>
+      </div>
+    </div>
+  `;
+}
+
+// Init market sentiment on page load
+if (typeof window !== 'undefined') {
+  setTimeout(() => loadMarketSentiment(), 3000);
 }

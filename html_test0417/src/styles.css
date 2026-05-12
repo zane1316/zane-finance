@@ -319,3 +319,113 @@ input, textarea, select {
 .gradient-border:hover::before {
   opacity: 0.5;
 }
+
+/* ==================== Dark Mode ==================== */
+.dark {
+  --primary: #3B82F6;
+  --primary-light: #60A5FA;
+  --up: #FF6B6B;
+  --down: #4ADE80;
+  --bg: #111827;
+  --border: #374151;
+  --glass-bg: rgba(31, 41, 55, 0.72);
+  --glass-border: rgba(75, 85, 99, 0.5);
+}
+
+.dark body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 30%, #1e293b 70%, #0f172a 100%);
+  color: #e5e7eb;
+}
+
+.dark .bg-white,
+.dark .bg-bg {
+  background-color: #1f2937;
+}
+
+.dark .text-gray-800 { color: #f3f4f6; }
+.dark .text-gray-700 { color: #e5e7eb; }
+.dark .text-gray-600 { color: #d1d5db; }
+.dark .text-gray-500 { color: #9ca3af; }
+.dark .text-gray-400 { color: #9ca3af; }
+.dark .text-gray-300 { color: #6b7280; }
+
+.dark .border-gray-100 { border-color: #374151; }
+.dark .border-gray-200 { border-color: #4b5563; }
+.dark .border-gray-300 { border-color: #4b5563; }
+.dark .border-border { border-color: var(--border); }
+
+.dark .bg-gray-50 { background-color: #111827; }
+.dark .bg-gray-100 { background-color: #1f2937; }
+.dark .bg-gray-200 { background-color: #374151; }
+.dark .bg-gray-300 { background-color: #4b5563; }
+
+.dark .hover\:bg-gray-50:hover { background-color: #1f2937; }
+.dark .hover\:bg-gray-100:hover { background-color: #374151; }
+.dark .hover\:bg-blue-50:hover { background-color: rgba(59, 130, 246, 0.15); }
+
+.dark .shadow-sm,
+.dark .shadow-lg,
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.dark table tbody tr:nth-child(even) { background-color: #1f2937; }
+.dark table tbody tr:hover { background-color: #374151; }
+
+.dark .nav-link.active {
+  color: #60A5FA;
+  background-color: rgba(59, 130, 246, 0.15);
+}
+.dark .mobile-nav-link.active {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60A5FA;
+}
+
+.dark .kline-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.dark .shimmer {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+}
+
+.dark .card-gradient {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-color: rgba(75, 85, 99, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+}
+
+.dark #stock-cards > div,
+.dark #search-result-cards > div {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #1f2937;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #6b7280;
+}
+
+.dark .glass-card {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+}
+
+/* Dark mode chart containers */
+.dark .lw-chart,
+.dark #asset-chart,
+.dark #pl-chart,
+.dark #dca-chart {
+  background: #1f2937;
+}
