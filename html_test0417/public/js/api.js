@@ -1765,24 +1765,48 @@ function loadMarketSentiment() {
       }
       const list = data.data.diff;
       let up = 0, down = 0, flat = 0, limitUp = 0, limitDown = 0;
+      const limitUpStocks = [];
+      const limitDownStocks = [];
+
       list.forEach(item => {
         const cp = parseFloat(item.f3) || 0;
+        const code = item.f12 || '';
+        const name = item.f14 || '';
         if (cp > 0) up++;
         else if (cp < 0) down++;
         else flat++;
-        const code = item.f12 || '';
+
+        let isUp = false, isDown = false;
         if (code.startsWith('68') || code.startsWith('30')) {
-          if (cp >= 19.5) limitUp++;
-          if (cp <= -19.5) limitDown++;
+          if (cp >= 19.5) isUp = true;
+          if (cp <= -19.5) isDown = true;
         } else if (code.startsWith('8') || code.startsWith('4') || code.startsWith('9')) {
-          if (cp >= 29.5) limitUp++;
-          if (cp <= -29.5) limitDown++;
+          if (cp >= 29.5) isUp = true;
+          if (cp <= -29.5) isDown = true;
         } else {
-          if (cp >= 9.5) limitUp++;
-          if (cp <= -9.5) limitDown++;
+          if (cp >= 9.5) isUp = true;
+          if (cp <= -9.5) isDown = true;
+        }
+
+        if (isUp) {
+          limitUp++;
+          limitUpStocks.push({ code, name, changePercent: cp });
+        }
+        if (isDown) {
+          limitDown++;
+          limitDownStocks.push({ code, name, changePercent: cp });
         }
       });
-      renderMarketSentiment({ up, down, flat, limitUp, limitDown, total: list.length });
+
+      // Sort by change percent and take top 10
+      limitUpStocks.sort((a, b) => b.changePercent - a.changePercent);
+      limitDownStocks.sort((a, b) => a.changePercent - b.changePercent);
+
+      renderMarketSentiment({
+        up, down, flat, limitUp, limitDown, total: list.length,
+        limitUpStocks: limitUpStocks.slice(0, 10),
+        limitDownStocks: limitDownStocks.slice(0, 10)
+      });
     })
     .catch(err => {
       console.warn('Market sentiment load failed:', err);
@@ -1794,6 +1818,27 @@ function renderMarketSentiment(data) {
   if (!container) return;
   const upPct = data.total > 0 ? (data.up / data.total * 100).toFixed(1) : 0;
   const downPct = data.total > 0 ? (data.down / data.total * 100).toFixed(1) : 0;
+
+  const upList = (data.limitUpStocks || []).map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-red-50/30'} px-2 rounded">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 bg-red-100 text-red-700 text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate max-w-[100px]" title="${d.name}">${d.name}</span>
+        <span class="text-[10px] text-gray-400">${d.code}</span>
+      </span>
+      <span class="text-up font-medium">+${formatNumber(d.changePercent, 2)}%</span>
+    </div>`).join('');
+
+  const downList = (data.limitDownStocks || []).map((d, i) => `
+    <div class="flex justify-between items-center text-sm py-1.5 border-b last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-green-50/30'} px-2 rounded">
+      <span class="flex items-center gap-2">
+        <span class="w-5 h-5 bg-green-100 text-green-700 text-xs rounded flex items-center justify-center font-medium">${i + 1}</span>
+        <span class="truncate max-w-[100px]" title="${d.name}">${d.name}</span>
+        <span class="text-[10px] text-gray-400">${d.code}</span>
+      </span>
+      <span class="text-down font-medium">${formatNumber(d.changePercent, 2)}%</span>
+    </div>`).join('');
+
   container.innerHTML = `
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <div class="bg-white rounded-xl shadow border border-gray-100 p-4 text-center">
@@ -1815,6 +1860,20 @@ function renderMarketSentiment(data) {
         <p class="text-xs text-gray-400 mb-1">跌停</p>
         <p class="text-2xl font-bold text-down">${data.limitDown}</p>
         <p class="text-xs text-gray-400">弱势</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4">
+        <p class="text-xs text-gray-400 mb-2 flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>涨停榜 (Top 10)
+        </p>
+        ${upList || '<p class="text-gray-400 text-sm py-2 text-center">暂无涨停股</p>'}
+      </div>
+      <div class="bg-white rounded-xl shadow border border-gray-100 p-4">
+        <p class="text-xs text-gray-400 mb-2 flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>跌停榜 (Top 10)
+        </p>
+        ${downList || '<p class="text-gray-400 text-sm py-2 text-center">暂无跌停股</p>'}
       </div>
     </div>
   `;

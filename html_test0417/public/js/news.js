@@ -552,7 +552,9 @@ function restoreNewsFromCache() {
   if (cache.convertibleBonds) renderConvertibleBonds(cache.convertibleBonds);
   if (cache.globalMarkets) renderGlobalMarkets(cache.globalMarkets);
   if (cache.ipoCalendar) renderIPOCalendar(cache.ipoCalendar);
-  if (cache.capitalFlowHistory) renderCapitalFlowChart(cache.capitalFlowHistory);
+  if (cache.capitalFlowHistory && cache.capitalFlowHistory.length && cache.capitalFlowHistory[0].label !== undefined) {
+    renderCapitalFlowChart(cache.capitalFlowHistory);
+  }
   renderNewsCacheIndicator();
 }
 
@@ -976,28 +978,44 @@ function renderConvertibleBonds(list) {
 let capitalFlowChartInstance = null;
 
 function loadCapitalFlowHistory() {
-  // Eastmoney Shanghai Index capital flow day kline
-  const url = 'https://push2.eastmoney.com/api/qt/stock/fflow/daykline/get?lmt=10&klt=101&fields1=f1,f2,f3,f7&fields2=f51,f52,f53,f54,f55,f56&ut=' + EASTMONEY_UT + '&secid=1.000001';
+  // Eastmoney Shanghai Index capital flow 1-minute kline (intraday real-time)
+  // klt=1 means 1-min bar; lmt=240 covers the full 4-hour trading session (9:30-11:30, 13:00-15:00)
+  const url = 'https://push2.eastmoney.com/api/qt/stock/fflow/daykline/get?lmt=240&klt=1&fields1=f1,f2,f3,f7&fields2=f51,f52,f53,f54,f55,f56&ut=' + EASTMONEY_UT + '&secid=1.000001';
 
   jsonpFetch(url, 8000)
     .then(data => {
       if (!data || !data.data || !Array.isArray(data.data.klines)) {
         throw new Error('Invalid capital flow history data');
       }
-      const items = data.data.klines.map(line => {
+      const rawItems = data.data.klines.map(line => {
         const parts = line.split(',');
         return {
-          date: parts[0] || '',
-          mainForce: parseFloat(parts[1]) || 0, // 主力净流入
+          time: parts[0] || '',           // YYYY-MM-DD HH:MM or HH:MM
+          mainForce: parseFloat(parts[1]) || 0, // 主力净流入 (yuan)
           superLarge: parseFloat(parts[2]) || 0,
           large: parseFloat(parts[3]) || 0,
           medium: parseFloat(parts[4]) || 0,
           small: parseFloat(parts[5]) || 0
         };
       });
-      renderCapitalFlowChart(items);
+
+      // Filter to the most recent trading day only (in case API returns multiple days)
+      const lastDay = rawItems.length > 0 ? rawItems[rawItems.length - 1].time.slice(0, 10) : '';
+      const items = rawItems.filter(d => d.time.startsWith(lastDay) || d.time.length <= 5);
+
+      // Compute cumulative main-force net inflow so the line shows the trend from open to now
+      let cumulative = 0;
+      const chartItems = items.map(d => {
+        cumulative += d.mainForce;
+        return {
+          label: d.time.length > 5 ? d.time.slice(11, 16) : d.time, // HH:MM
+          value: parseFloat((cumulative / 100000000).toFixed(2)) // yuan -> 亿元
+        };
+      });
+
+      renderCapitalFlowChart(chartItems);
       const cache = loadNewsCache() || {};
-      cache.capitalFlowHistory = items;
+      cache.capitalFlowHistory = chartItems;
       saveNewsCache(cache);
     })
     .catch(err => {
@@ -1026,17 +1044,25 @@ function renderCapitalFlowChart(items) {
   }
   capitalFlowChartInstance = window.echarts.init(el);
 
-  const dates = items.map(d => d.date.slice(5)); // MM-DD
-  const values = items.map(d => parseFloat((d.mainForce / 10000).toFixed(2))); // convert to 亿元
+  const labels = items.map(d => d.label);
+  const values = items.map(d => d.value);
+  const lastValue = values[values.length - 1] || 0;
+  const lineColor = lastValue >= 0 ? '#DC2626' : '#16A34A';
+  const areaColor = lastValue >= 0
+    ? 'rgba(220, 38, 38, 0.12)'
+    : 'rgba(22, 163, 74, 0.12)';
 
   const isDark = document.documentElement.classList.contains('dark');
   const textColor = isDark ? '#d1d5db' : '#6b7280';
   const gridColor = isDark ? '#374151' : '#e5e7eb';
   const bgColor = isDark ? '#1f2937' : '#f9fafb';
 
+  // Show roughly 8-10 ticks on x-axis to avoid crowding
+  const interval = Math.max(1, Math.floor(labels.length / 8));
+
   capitalFlowChartInstance.setOption({
     backgroundColor: bgColor,
-    grid: { left: 10, right: 10, top: 10, bottom: 24 },
+    grid: { left: 8, right: 12, top: 16, bottom: 24 },
     tooltip: {
       trigger: 'axis',
       backgroundColor: isDark ? '#1f2937' : '#fff',
@@ -1045,15 +1071,16 @@ function renderCapitalFlowChart(items) {
       formatter: function(params) {
         const v = params[0].value;
         const color = v >= 0 ? '#DC2626' : '#16A34A';
-        return '<div style="font-size:12px">' + params[0].name + '<br/>主力净流入: <span style="color:' + color + ';font-weight:600">' + (v >= 0 ? '+' : '') + v + '亿</span></div>';
+        return '<div style="font-size:12px">' + params[0].name + '<br/>累计主力净流入: <span style="color:' + color + ';font-weight:600">' + (v >= 0 ? '+' : '') + v + '亿</span></div>';
       }
     },
     xAxis: {
       type: 'category',
-      data: dates,
+      data: labels,
+      boundaryGap: false,
       axisLine: { lineStyle: { color: gridColor } },
       axisTick: { show: false },
-      axisLabel: { color: textColor, fontSize: 10, interval: 0 }
+      axisLabel: { color: textColor, fontSize: 10, interval: interval }
     },
     yAxis: {
       type: 'value',
@@ -1067,12 +1094,18 @@ function renderCapitalFlowChart(items) {
       }
     },
     series: [{
-      type: 'bar',
-      data: values.map(v => ({
-        value: v,
-        itemStyle: { color: v >= 0 ? '#DC2626' : '#16A34A', borderRadius: [3, 3, 0, 0] }
-      })),
-      barWidth: '50%'
+      type: 'line',
+      data: values,
+      smooth: 0.3,
+      symbol: 'none',
+      lineStyle: { color: lineColor, width: 2 },
+      areaStyle: { color: areaColor },
+      markLine: {
+        silent: true,
+        symbol: 'none',
+        lineStyle: { color: gridColor, type: 'dashed', width: 1 },
+        data: [{ yAxis: 0 }]
+      }
     }]
   });
 }

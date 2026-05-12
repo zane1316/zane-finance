@@ -452,3 +452,11 @@ input, textarea, select {
 .dark #dca-chart {
   background: #1f2937;
 }
+
+/* Dark mode market sentiment list backgrounds */
+.dark #market-sentiment .bg-red-50\/30 {
+  background-color: rgba(127, 29, 29, 0.15);
+}
+.dark #market-sentiment .bg-green-50\/30 {
+  background-color: rgba(20, 83, 45, 0.15);
+}
