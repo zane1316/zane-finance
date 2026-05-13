@@ -93,6 +93,7 @@ const curatedFunds = [
 function initFunds() {
   renderFundTabs();
   renderFundWatchlist();
+  loadGlobalAssets();
   renderFundCards();
   loadFundQuotes();
   renderFundRankings();
@@ -1344,4 +1345,278 @@ function renderCorrelationHeatmap(container, funds, matrix) {
   const resizeHandler = () => chart.resize();
   window.addEventListener('resize', resizeHandler);
   container._chartCleanup = () => window.removeEventListener('resize', resizeHandler);
+}
+
+// ==================== Global Assets (QDII + US Indices) ====================
+const globalQDIIFunds = [
+  { code: 'of005698', name: '华夏全球科技先锋混合(QDII)A', short: '华夏全球科技' },
+  { code: 'of002891', name: '华夏移动互联混合', short: '华夏移动互联' },
+  { code: 'of000906', name: '广发全球精选股票(QDII)美元A', short: '广发全球精选' },
+  { code: 'of12109', name: '华宝致远混合(QDII)A', short: '华宝致远混合' },
+  { code: 'of12349', name: '易方达全球成长精选混合(QDII)人民币A', short: '易方达全球成长' },
+  { code: 'of12493', name: '天弘全球高端制造混合(QDII)A', short: '天弘全球高端制造' },
+  { code: 'of006373', name: '国富全球科技互联混合(QDII)人民币A', short: '国富全球科技' },
+  { code: 'of11347', name: '建信纳斯达克100指数(QDII)A人民币', short: '建信纳斯达克100' }
+];
+
+function loadGlobalAssets() {
+  loadGlobalQDIICards();
+  loadUSIndices();
+  loadUSTrendChart();
+}
+
+function loadGlobalQDIICards() {
+  const codes = globalQDIIFunds.map(f => f.code);
+  loadTencentAPI(codes, (err, data) => {
+    if (err) {
+      console.warn('Global QDII load failed:', err);
+      renderGlobalQDIICards(null);
+      return;
+    }
+    Object.assign(fundQuoteCache, data);
+    renderGlobalQDIICards(data);
+  });
+}
+
+function renderGlobalQDIICards(data) {
+  const container = document.getElementById('global-qdii-cards');
+  if (!container) return;
+
+  const html = globalQDIIFunds.map(f => {
+    const q = data ? data[f.code] : fundQuoteCache[f.code];
+    const price = q ? formatNumber(q.price, 4) : '--';
+    const change = q ? q.changePercent : null;
+    const changeStr = change !== null ? (change >= 0 ? '+' : '') + formatNumber(change, 2) + '%' : '--';
+    const changeClass = change !== null ? (change >= 0 ? 'text-up' : 'text-down') : 'text-gray-400';
+    const bgClass = change !== null ? (change >= 0 ? 'bg-red-50' : 'bg-green-50') : 'bg-gray-50';
+    const arrow = change !== null ? (change >= 0 ? '↑' : '↓') : '';
+
+    return `
+      <div onclick="showFundDetail('${f.code}')" class="card-gradient p-4 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 cursor-pointer"
+           title="${f.name}">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-lg">QDII</span>
+          <span class="text-xs text-gray-400">${f.code.replace('of', '')}</span>
+        </div>
+        <h4 class="font-bold text-gray-800 text-sm mb-1 truncate">${f.short}</h4>
+        <p class="text-xs text-gray-400 mb-3 truncate">${f.name}</p>
+        <div class="flex items-end justify-between">
+          <div>
+            <p class="text-xs text-gray-400 mb-0.5">最新净值</p>
+            <p class="text-xl font-bold ${changeClass}">${price}</p>
+          </div>
+          <span class="inline-block px-2.5 py-1 rounded-lg text-sm font-bold ${bgClass} ${changeClass}">${arrow}${changeStr}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = html;
+}
+
+function getUSTradingStatus() {
+  const now = new Date();
+  const etStr = now.toLocaleString('en-US', { timeZone: 'America/New_York', hour12: false });
+  const etDate = new Date(etStr);
+  const hour = etDate.getHours();
+  const minute = etDate.getMinutes();
+  const time = hour * 60 + minute;
+  const day = etDate.getDay();
+
+  // Weekend check
+  if (day === 0 || day === 6) {
+    return { status: 'closed', label: '周末休市', color: 'bg-gray-100 text-gray-500' };
+  }
+
+  // Pre-market: 4:00 - 9:30 ET
+  if (time >= 240 && time < 570) {
+    return { status: 'premarket', label: '盘前交易', color: 'bg-blue-100 text-blue-600' };
+  }
+  // Regular: 9:30 - 16:00 ET
+  if (time >= 570 && time < 960) {
+    return { status: 'regular', label: '交易中', color: 'bg-red-100 text-red-600 live-indicator' };
+  }
+  // After-hours: 16:00 - 20:00 ET
+  if (time >= 960 && time < 1200) {
+    return { status: 'afterhours', label: '盘后交易', color: 'bg-purple-100 text-purple-600' };
+  }
+  // Closed: 20:00 - 4:00 ET
+  return { status: 'closed', label: '已收盘', color: 'bg-gray-100 text-gray-500' };
+}
+
+function loadUSIndices() {
+  const url = 'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&invt=2&fields=f2,f3,f4,f5,f12,f14,f18&secids=100.NDX,100.INX,100.DXJS';
+
+  jsonpFetch(url, 8000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.diff)) {
+        throw new Error('Invalid US indices data');
+      }
+      renderUSIndices(data.data.diff);
+    })
+    .catch(err => {
+      console.warn('US indices load failed:', err);
+      renderUSIndices([]);
+    });
+}
+
+function renderUSIndices(items) {
+  const container = document.getElementById('us-indices-board');
+  const statusEl = document.getElementById('us-market-status');
+  if (!container) return;
+
+  const tradingStatus = getUSTradingStatus();
+  if (statusEl) {
+    statusEl.className = `ml-auto text-xs font-normal px-2 py-1 rounded-full ${tradingStatus.color}`;
+    statusEl.textContent = `美股 · ${tradingStatus.label}`;
+  }
+
+  const nameMap = {
+    'NDX': '纳斯达克100',
+    'INX': '标普500',
+    'DXJS': '道琼斯'
+  };
+
+  if (!items.length) {
+    container.innerHTML = `
+      <div class="col-span-full text-center py-8 text-gray-400 text-sm bg-white rounded-2xl shadow-lg border border-gray-100">
+        美股指数数据加载失败，请稍后刷新
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = items.map(item => {
+    const code = item.f12 || '';
+    const name = nameMap[code] || item.f14 || code;
+    const price = parseFloat(item.f2) || 0;
+    const changePercent = parseFloat(item.f3) || 0;
+    const changeAmount = parseFloat(item.f4) || 0;
+    const high = parseFloat(item.f5) || 0;
+    const low = parseFloat(item.f18) || 0;
+    const changeClass = changePercent >= 0 ? 'text-up' : 'text-down';
+    const bgClass = changePercent >= 0 ? 'bg-red-50' : 'bg-green-50';
+    const sign = changePercent >= 0 ? '+' : '';
+
+    return `
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 text-center hover:shadow-xl hover:-translate-y-0.5 transition">
+        <h4 class="font-bold text-gray-800 mb-2">${name}</h4>
+        <p class="text-3xl font-bold ${changeClass} mb-1">${formatNumber(price, 2)}</p>
+        <div class="flex items-center justify-center gap-2 mb-3">
+          <span class="inline-block px-2 py-0.5 rounded text-xs font-medium ${bgClass} ${changeClass}">${sign}${formatNumber(changeAmount, 2)}</span>
+          <span class="inline-block px-2 py-0.5 rounded text-xs font-medium ${bgClass} ${changeClass}">${sign}${formatNumber(changePercent, 2)}%</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-400 pt-3 border-t border-gray-100">
+          <span>最高 ${high ? formatNumber(high, 2) : '--'}</span>
+          <span>最低 ${low ? formatNumber(low, 2) : '--'}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+let usTrendChartInstance = null;
+
+function loadUSTrendChart() {
+  // Try kline API for daily data (more reliable than trends2 for US indices)
+  const url = 'https://push2.eastmoney.com/api/qt/stock/kline/get?secid=100.NDX&fields1=f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61&klt=101&fqt=0&end=20500101&lmt=15&ut=' + EASTMONEY_UT;
+
+  jsonpFetch(url, 8000)
+    .then(data => {
+      if (!data || !data.data || !Array.isArray(data.data.klines)) {
+        throw new Error('Invalid US trend data');
+      }
+      const items = data.data.klines.map(line => {
+        const parts = line.split(',');
+        return {
+          date: parts[0],
+          open: parseFloat(parts[1]),
+          close: parseFloat(parts[2]),
+          low: parseFloat(parts[3]),
+          high: parseFloat(parts[4])
+        };
+      });
+      renderUSTrendChart(items);
+    })
+    .catch(err => {
+      console.warn('US trend chart load failed:', err);
+      const el = document.getElementById('us-trend-chart');
+      if (el) el.innerHTML = '<p class="text-gray-400 text-sm text-center py-20">走势图数据加载失败</p>';
+    });
+}
+
+function renderUSTrendChart(items) {
+  const el = document.getElementById('us-trend-chart');
+  if (!el || !window.echarts) return;
+  if (!items || !items.length) {
+    el.innerHTML = '<p class="text-gray-400 text-sm text-center py-20">暂无走势图数据</p>';
+    return;
+  }
+
+  if (usTrendChartInstance) {
+    usTrendChartInstance.dispose();
+  }
+  usTrendChartInstance = window.echarts.init(el);
+
+  const dates = items.map(d => d.date.slice(5)); // MM-DD
+  const values = items.map(d => parseFloat(d.close.toFixed(2)));
+  const firstValue = values[0];
+  const lastValue = values[values.length - 1];
+  const lineColor = lastValue >= firstValue ? '#DC2626' : '#16A34A';
+  const areaColor = lastValue >= firstValue
+    ? 'rgba(220, 38, 38, 0.12)'
+    : 'rgba(22, 163, 74, 0.12)';
+
+  const isDark = document.documentElement.classList.contains('dark');
+  const textColor = isDark ? '#d1d5db' : '#6b7280';
+  const gridColor = isDark ? '#374151' : '#e5e7eb';
+  const bgColor = isDark ? '#1f2937' : '#f9fafb';
+
+  usTrendChartInstance.setOption({
+    backgroundColor: bgColor,
+    grid: { left: 8, right: 12, top: 16, bottom: 24 },
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: isDark ? '#1f2937' : '#fff',
+      borderColor: isDark ? '#4b5563' : '#e5e7eb',
+      textStyle: { color: isDark ? '#e5e7eb' : '#374151', fontSize: 12 },
+      formatter: function(params) {
+        const v = params[0].value;
+        const prev = params[0].dataIndex > 0 ? values[params[0].dataIndex - 1] : v;
+        const change = ((v - prev) / prev * 100);
+        const color = v >= prev ? '#DC2626' : '#16A34A';
+        const sign = change >= 0 ? '+' : '';
+        return `<div style="font-size:12px">${params[0].name}<br/>收盘: <span style="font-weight:600">${v}</span><br/>较前日: <span style="color:${color};font-weight:600">${sign}${formatNumber(change, 2)}%</span></div>`;
+      }
+    },
+    xAxis: {
+      type: 'category',
+      data: dates,
+      boundaryGap: false,
+      axisLine: { lineStyle: { color: gridColor } },
+      axisTick: { show: false },
+      axisLabel: { color: textColor, fontSize: 10 }
+    },
+    yAxis: {
+      type: 'value',
+      scale: true,
+      axisLine: { show: false },
+      axisTick: { show: false },
+      splitLine: { lineStyle: { color: gridColor, type: 'dashed' } },
+      axisLabel: { color: textColor, fontSize: 10 }
+    },
+    series: [{
+      type: 'line',
+      data: values,
+      smooth: 0.3,
+      symbol: 'none',
+      lineStyle: { color: lineColor, width: 2 },
+      areaStyle: { color: areaColor },
+      markLine: {
+        silent: true,
+        symbol: 'none',
+        lineStyle: { color: gridColor, type: 'dashed', width: 1 },
+        data: [{ yAxis: firstValue }]
+      }
+    }]
+  });
 }
